@@ -1,0 +1,46 @@
+\usepackage[obeyFinal]{todonotes}              % todos in text
+\presetkeys{todonotes}{fancyline,
+                        backgroundcolor=thesisSecondaryColor!50,
+                        bordercolor=thesisMainColor,
+                        linecolor=thesisMainColor,
+                        size=\scriptsize %\footnotesize
+                       }{}
+\tikzset{/tikz/notestyleraw/.append style={text=thesisMainColor}} % set textcolor
+\setlength{\marginparwidth}{2.2cm} % Rand-Notizenbreite einstellen \todo{blahblubb}
+
+\ifdraftdoc
+    %%--- define a new todo-list style ---
+    \makeatletter
+    \def\myaddcontentsline#1#2#3{%
+      \addtocontents{#1}{\protect\contentsline{#2}{#3}{\textcolor{thesisMainColor}{\thepage\ ~~ (\textbf{Chapter \thechapter})}}{}}}
+    \renewcommand{\@todonotes@addElementToListOfTodos}{%
+        \if@todonotes@colorinlistoftodos%
+            \myaddcontentsline{tdo}{todo}{{%
+                \colorbox{\@todonotes@currentbackgroundcolor}%
+                    {\textcolor{\@todonotes@currentbackgroundcolor}{o}}%
+                \ \@todonotes@caption}}%
+        \else%
+            \myaddcontentsline{tdo}{todo}{{\@todonotes@caption}}%
+        \fi}%
+    \newcommand*\mylistoftodos{%
+      \begingroup
+           \setbox\@tempboxa\hbox{Chapter 9.9 (p. 999)}%
+           \renewcommand*\@tocrmarg{\the\wd\@tempboxa}%
+           \renewcommand*\@pnumwidth{\the\wd\@tempboxa}%
+           \textcolor{thesisMainColor}{%[rgb]{1.00,0.00,0.00}{
+            %\pagecolor{thesisSecondaryColor!50}%
+            \begin{small}
+                \listoftodos%
+            \end{small}
+            \todototoc%
+            }
+        %\clearpage ~~
+        %\afterpage{\nopagecolor}
+        \clearpage
+
+      \endgroup
+    }
+    \makeatother
+\else
+    \newcommand{\mylistoftodos}{}
+\fi %end: ifdraftdoc

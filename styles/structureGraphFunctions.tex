@@ -1,0 +1,197 @@
+
+
+%
+% use as option in tcolorbox environment:
+% [code={\pgfkeysalsofrom{\outerboxoptions}}, otheroption=...]
+%
+\def\outerboxoptions{ %the thesis frame
+    colback=structureGraphBackgroundColorBigtopicbox,%grey10,%structureGraphBgColorMain,
+    colframe=structureGraphFrameColorBigtopicbox,%structureGraphFrameColorMain,
+    colbacktitle=structureGraphTitleBackgroundColorBigtopicbox,%structureGraphBgColorTitleMain,
+    coltitle=thesisMainColor!50!black,%structureGraphTextTitleColorMain,
+    left=1mm,
+    right=1mm,
+    boxrule=0.8pt
+}
+
+\def\topicboxoptions{
+    %sidebyside,righthand width=.26\textwidth,
+    colback=structureGraphBgColorMain,
+    colframe=structureGraphFrameColorMain,
+    colbacktitle=structureGraphBgColorTitleMain,
+    coltitle=structureGraphTextTitleColorMain,
+    boxrule=0.8pt,
+    left=1mm,
+    right=1mm
+}
+
+
+\def\chapterboxoptions{
+    colback=structureGraphBackgroundColorChapterbox,
+    colframe=structureGraphFrameColorChapterbox,
+    colbacktitle=structureGraphTitleBackgroundColorChapterbox,
+    coltitle=structureGraphTextTitleColorChapterbox,
+    boxrule=0.6pt,
+    left=0.6mm,
+    right=0.6mm,
+    top=1mm,
+    bottom=1mm
+    %drop large lifted shadow,
+}
+
+\def\outerrasteroptions{
+    raster width=\linewidth,
+    raster columns=1,
+    %% Forces same height in all columns on same row
+    raster equal height=rows,
+    raster every box/.style={valign=center, halign=center}
+}
+
+\def\innerrastersinglecoloptions{
+    raster columns=1,
+    raster width=0.5\linewidth, %otherwise inherits from outer raster
+    %% Forces same height in all columns on same row
+    raster equal height=rows,
+    raster every box/.style={valign=center, halign=center},
+}
+
+\def\innerrasterdualcoloptions{
+    raster columns=2,
+    raster width=0.992\linewidth, %otherwise inherits from outer raster
+    %% Forces same height in all columns on same row
+    raster equal height=rows,
+    raster every box/.style={valign=center, halign=center},
+}
+
+\def\innerrastertriplecoloptions{
+    raster columns=3,
+    raster width=0.992\linewidth, %otherwise inherits from outer raster
+    %% Forces same height in all columns on same row
+    raster equal height=rows,
+    raster every box/.style={valign=center, halign=center},
+}
+
+
+
+
+
+
+
+
+
+\newcommand{\drawChapterbox}[2]{
+    %\begingroup
+        \hypersetup{hidelinks=true}%
+        \begin{tcolorbox}[code={\pgfkeysalsofrom{\chapterboxoptions}},
+                          title=\structuregraphChapterName{#1}]
+            \flushleft{
+                \footnotesize{\color{thesisCiteColor}{#2}}%
+            }%
+        \end{tcolorbox}%
+    %\endgroup
+}
+
+
+%% use this (and make according commands for the other boxes) 
+%% if you do not want to use citations in the graph:
+%% leave it at to input-vals to be compatible.
+%\newcommand{\drawChapterbox}[2]{
+%    %\begingroup
+%        \hypersetup{hidelinks=true}%
+%        \begin{tcolorbox}[code={\pgfkeysalsofrom{\chapterboxoptions}},
+%                          title=\textbf{\small{Chapter~\ref{#1}}}]
+%            \flushleft{
+%                \footnotesize{\color{thesisCiteColor}{\nameref{#1}}}%
+%            }%
+%        \end{tcolorbox}%
+%    %\endgroup
+%}
+
+
+\newcommand{\drawChapterboxSota}[2]{
+    %\begingroup
+        \hypersetup{hidelinks=true}%
+        \begin{tcolorbox}[code={\pgfkeysalsofrom{\chapterboxoptions}},
+                          title=\footnotesize{\textbf{Chapter~\ref{#1}}~\\[0.5ex]\nameref{#1} \newline\rule{0mm}{4.5mm}}]
+            \flushleft{
+                \footnotesize{\color{thesisCiteColor}{#2}}%
+            }%
+        \end{tcolorbox}%
+    %\endgroup
+}
+
+\newcommand{\drawAppendixbox}[2]{
+    %\begingroup
+        \hypersetup{hidelinks=true}%
+        \begin{tcolorbox}[code={\pgfkeysalsofrom{\chapterboxoptions}},
+                          width=0.3\linewidth,
+                          %drop large lifted shadow,
+                          title=\structuregraphAppendixName{#1}]
+            \flushleft{
+                \footnotesize{\color{thesisCiteColor}{#2}}%
+            }%
+        \end{tcolorbox}%
+    %\endgroup
+}
+
+
+
+
+
+
+% command for identical newline space between different boxes
+\newcommand{\structuregraphNewline}{~\\[3ex]}
+
+% command for Part captions
+\newcommand{\structuregraphPartCaption}[1]{
+    \Large
+        ~\\ %% some extra space to separate Part-Header from chapters before
+        \textbf{Part~\ref{#1}}~\\[2ex]
+    \normalsize
+}
+
+% command for the basic info in each box (w/o the cites)
+\newcommand{\structuregraphChapterName}[1]{
+    %\color{structureGraphSectionColor}{
+    \footnotesize{
+        \textbf{Chapter~\ref{#1}}~\\[0.5ex]
+        \nameref{#1}
+        }
+    %}%
+}
+
+% command for the basic info in each box (w/o the cites)
+\newcommand{\structuregraphAppendixName}[1]{
+    %\color{structureGraphSectionColor}{
+    \footnotesize{
+        \textbf{Appendix~\ref{#1}}~\\[0.5ex]%~\ref{#1}}~\\[0.5ex]
+        \nameref{#1}
+        }
+    %}%
+}
+
+
+\newcommand{\partbox}[3]{
+    \begin{tcolorbox}[enhanced,
+                      sidebyside,
+                      comment outside listing,
+                      lefthand width=8mm,
+                      title=#1,
+                      boxsep=-0.5pt,
+                      bottom=1.5mm,
+                      left=1.5mm,
+                      right=2.5mm,
+                      top=1.5mm,
+                      boxrule=0.5pt,
+                      colframe=descriptionColor,
+                      %lower separated=false, % no separation line
+                      notitle,
+                      ]
+        \rotatebox{90}{\textcolor{descriptionColor}{#1}}
+        \rotatebox{90}{\textcolor{descriptionColor}{#2}}
+         \tcblower
+         #3
+    \end{tcolorbox}
+}
+
+

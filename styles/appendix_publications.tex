@@ -1,0 +1,134 @@
+%%-------------------------------------------------------------------------------
+%% a style package for cumulative dissertations
+%% provides funtions for ease of appending pdf publications
+%%
+%% author: Florian Cordes
+%% date:   2018-03-07
+%%-------------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+
+\usepackage{etoolbox}
+\usepackage[final]{pdfpages} %%including compiled pdf files in document
+
+%% make a new page style, initially copy from ruled
+\copypagestyle{pubsAppendix}{ruled}
+
+%%define commands for publication info
+\newcommand{\pubTitle}{[nan] \textbf{dummy title}}
+\newcommand{\pubAuthors}{\emph{Author}}
+\newcommand{\pubPlace}{where published}
+
+\newcommand{\pubInfo}{\scriptsize \pubTitle~\\  \pubAuthors~\\  in: \pubPlace}
+
+
+\makeevenhead{pubsAppendix}{}{\pubInfo}{}
+\makeoddhead{pubsAppendix}{}{\pubInfo}{}
+%%leave footer as copied from original style
+%\makeevenfoot{pubsAppendix}{left}{center}{right}
+%\makeoddfoot{pubsAppendix}{left}{center}{right}
+
+
+%% commands for bibkey list
+\newcounter{bibkeycnt}
+\newcommand\setbibkey[2]{%
+  \csdef{bibkey#1}{#2}%
+}
+\newcommand\addbibkey[1]{%
+    \stepcounter{bibkeycnt}%
+    \csdef{bibkey\thebibkeycnt}{#1}
+}
+\newcommand\getbibkey[1]{%
+      \csuse{bibkey#1}%
+}
+
+%% commands for title list
+\newcounter{titlecnt}
+\newcommand\settitle[2]{%
+  \csdef{title#1}{#2}%
+}
+\newcommand\addtitle[1]{%
+    \stepcounter{titlecnt}%
+    \csdef{title\thetitlecnt}{#1}
+}
+\newcommand\gettitle[1]{%
+      \csuse{title#1}%
+}
+
+%% commands for authors list
+\newcounter{authorscnt}
+\newcommand\setauthors[2]{%
+  \csdef{authors#1}{#2}%
+}
+\newcommand\addauthors[1]{%
+    \stepcounter{authorscnt}%
+    \csdef{authors\theauthorscnt}{#1}
+}
+\newcommand\getauthors[1]{%
+      \csuse{authors#1}%
+}
+
+
+%% commands for place list
+\newcounter{placecnt}
+\newcommand\setplace[2]{%
+  \csdef{place#1}{#2}%
+}
+\newcommand\addplace[1]{%
+    \stepcounter{placecnt}%
+    \csdef{place\theplacecnt}{#1}
+}
+\newcommand\getplace[1]{%
+      \csuse{place#1}%
+}
+
+%% commands for copyright list
+\newcounter{copyrgtcnt}
+\newcommand\setcopyrgt[2]{%
+  \csdef{copyrgt#1}{#2}%
+}
+\newcommand\addcopyrgt[1]{%
+    \stepcounter{copyrgtcnt}%
+    \csdef{copyrgt\thecopyrgtcnt}{#1}
+}
+\newcommand\getcopyrgt[1]{%
+      \csuse{copyrgt#1}%
+}
+
+%% commands for internetlink list
+\newcounter{urllinkcnt}
+\newcommand\seturllink[2]{%
+  \csdef{urllink#1}{#2}%
+}
+\newcommand\addurllink[1]{%
+    \stepcounter{urllinkcnt}%
+    \csdef{urllink\theurllinkcnt}{#1}
+}
+\newcommand\geturllink[1]{%
+      \csuse{urllink#1}%
+}
+
+
+
+
+
+
+%% this constructes the header and includes the pdf file (name should be the same as the bib key
+\newcommand{\includeAccuPub}[1]{
+    \renewcommand{\pubTitle}{\citeown{\getbibkey{#1}}: \textbf{\gettitle{#1}}}
+    \renewcommand{\pubAuthors}{\emph{\getauthors{#1}}}
+    \renewcommand{\pubPlace}{\getplace{#1}}
+
+    \renewcommand{\pubInfo}{\scriptsize  \pubTitle~\\  \pubAuthors~\\ in: \pubPlace \quad \getcopyrgt{#1}}
+
+    \addcontentsline{toc}{section}{[#1] -- \gettitle{#1}}%\pubTitle}
+    \ifthenelse{\boolean{printVersion}}
+    {%if true: include greyscale publications
+        \includepdf[pages=-,scale=0.8,frame=true,offset=0cm 0.0cm,pagecommand={\pagestyle{pubsAppendix}}]{publications/\getbibkey{#1}_bw.pdf}
+    }
+    {%else: include color publications
+        \includepdf[pages=-,scale=0.8,frame=true,offset=0cm 0.0cm,pagecommand={\pagestyle{pubsAppendix}}]{publications/\getbibkey{#1}.pdf}
+    }
+    
+    \cleardoublepage %start each paper on right page. Leave left page blank/no header or footer
+}

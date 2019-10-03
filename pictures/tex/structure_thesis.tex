@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% structural graph of thesis document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% helper for minipages
+%%  \begin{minipage}[outerPos][height][innerPos]{width}
+%%	     Beispieltext
+%%  \end{minipage}
+%% outerPos (optional; c,t,b): where the minipage is on the page (center, top, bottom)
+%% height (optional): height o minipage, regardless of contents
+%% innerPos (optional; c,t,b): where the content is (center, top, bottom)
+
+% set some dimension variables for minipages
+\newlength{\structureGraphHeight}
+\setlength{\structureGraphHeight}{100mm}
+
+\newlength{\chapterboxWith}
+\setlength{\chapterboxWith}{0.45\linewidth}
+
+\newlength{\chapterboxHeight}
+\setlength{\chapterboxHeight}{21mm}
+
+
+
+
+
+%%% the actual graph
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% this is the actual structure plot
+%% settings are in   thesis_colors.sty   and   styles/structrueGraphFunctions.tex
+%%
+
+
+
+%\begin{tcolorbox}[code={\pgfkeysalsofrom{\outerboxoptions}},
+%                  title=Thesis: \newline\qq{\myWorkingTitle}]
+    %external raster
+    \begin{tcbraster}[ code={\pgfkeysalsofrom{\outerrasteroptions}} ]
+            %ROW 1                                                        % |-- SINGLE-box-Options
+            \partbox{Intro}{}{                                            % v
+                \begin{tcboxedraster}[ code={\pgfkeysalsofrom{\innerrastersinglecoloptions}} ]{blankest}
+                        \rule{0.25\linewidth}{0pt}% remove for dual
+                        \drawChapterbox{sec:introduction}{\introCites}%
+                        %\rule{0.2\linewidth}{0pt}%
+                \end{tcboxedraster}
+            }
+            % ROW2
+            \partbox{Foundations}{}{
+                \begin{tcboxedraster}[ code={\pgfkeysalsofrom{\innerrasterdualcoloptions}} ]{blankest} 
+                        \drawChapterboxSota{sec:sota}{ \sotaCites }%
+                        \drawChapterbox{sec:ReqirementsConditions}{ ~ }%
+                \end{tcboxedraster}
+            }
+            % ROW3                                                       % |-- DUAL-box-Options
+            \partbox{Design}{}{                                          % v
+                \begin{tcboxedraster}[ code={\pgfkeysalsofrom{\innerrasterdualcoloptions}} ]{blankest} %<- no drawn box or white space around inner boxes
+                        \drawChapterbox{sec:RobotDesign}{ \designCites }%
+                        \drawChapterbox{sec:control}{ \controlCites }%
+                \end{tcboxedraster}
+            }
+            %ROW 4
+            \partbox{~~Experi-}{mentation}{
+                \begin{tcboxedraster}[ code={\pgfkeysalsofrom{\innerrastersinglecoloptions}} ]{blankest}
+                        \rule{0.25\linewidth}{0pt}%
+                        \drawChapterbox{sec:Experiments}{ \expCites }%
+                        %\rule{0.2\linewidth}{0pt}%
+                \end{tcboxedraster}
+            }
+            %ROW 5
+            \partbox{Conclusion}{}{
+                \begin{tcboxedraster}[ code={\pgfkeysalsofrom{\innerrastersinglecoloptions}} ]{blankest}
+                        \rule{0.25\linewidth}{0pt}%
+                        \drawChapterbox{sec:ConclusionOutlook}{ \conclusionCites }%
+                        %\rule{0.2\linewidth}{0pt}%
+                \end{tcboxedraster}
+           }
+            %ROW 6
+            \partbox{Appendix}{}{
+                \begin{tcboxedraster}[ code={\pgfkeysalsofrom{\innerrastertriplecoloptions}} ]{blankest}
+                        %\rule{0.25\linewidth}{0pt}%
+                        \drawAppendixbox{sec:Appendix:AdditionalMaterial}{ ~ }%
+                        \drawAppendixbox{sec:Appendix:MoreStuff}{ ~ }%
+                        \drawAppendixbox{sec:Appendix:Enough}{ ~ }%
+                        %\rule{0.2\linewidth}{0pt}%
+                \end{tcboxedraster}
+            }
+    \end{tcbraster}
+%\end{tcolorbox}	
+
+
+
+
+
+
+
+
+
+
+
+
+

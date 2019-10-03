@@ -1,0 +1,147 @@
+%%hyphenation
+\hyphenation{every-where}
+\hyphenation{re-con-fi-gu-rable}
+
+%% toc "Parts"
+\newcommand{\addTocCaption}[1]{%
+    \cftaddtitleline{toc}{chapter}{\vspace{-0.2cm}}{} %extra space before caption
+    \cftaddtitleline{toc}{chapter}{\centerline{\rule{20mm}{0.2mm}~~\textsc{\Large{#1}}~~\rule{20mm}{0.2mm}}\vspace{-0.2cm}}{}%
+}
+
+\newcommand{\addTocPubEntry}[1]{%
+    \cftaddtitleline{toc}{section}{[#1] -- \gettitle{#1} \hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill}{}
+    \cftaddtitleline{toc}{chapter}{\vspace{-0.75cm}}{} % more spacing after entry
+}
+
+%% referencing stuff
+\newcommand{\refFig}[1]{\textcolor{thesisLinkColor}{Figure}~\ref{#1}}
+\newcommand{\refTab}[1]{\textcolor{thesisLinkColor}{Table}~\ref{#1}}
+\newcommand{\refChpt}[1]{\textcolor{thesisLinkColor}{Chapter}~\ref{#1}}
+\newcommand{\refSec}[1]{\textcolor{thesisLinkColor}{Section}~\ref{#1}}
+\newcommand{\refSubSec}[1]{\textcolor{thesisLinkColor}{Subsection}~\ref{#1}}
+\newcommand{\refApp}[1]{\textcolor{thesisLinkColor}{Appendix}~\ref{#1}}
+\newcommand{\refEqn}[1]{\textcolor{thesisLinkColor}{Equation\,(\ref{#1})}}
+\newcommand{\refPage}[1]{\textcolor{thesisLinkColor}{Page\,\pageref{#1}}}
+\newcommand{\refToAccumulatedPubs}{\textcolor{thesisLinkColor}{Appendix}~\ref{sec:AccumulatedPublications} -- \nameref{sec:AccumulatedPublications}\xspace}
+
+
+%% how software commands are formatted within text:
+\newcommand{\swCmd}[1]{\texttt{#1}}
+
+
+
+%% other names
+\newcommand{\ftsensor}{force/torque sensor\xspace}
+\newcommand{\Ftsensor}{Force/torque sensor\xspace} %new sentence
+\newcommand{\ftsensors}{force/torque sensors\xspace}
+\newcommand{\Ftsensors}{Force/torque sensors\xspace} %new sentence
+\newcommand{\icH}{iC-Haus\xspace}
+\newcommand{\eg}{e.g.\;} %
+\newcommand{\ie}{i.e.\;} %
+\newcommand{\cf}{cf.\;} %
+\newcommand{\wrt}{with respect to\xspace}%{w.r.t.\;}
+
+\newcommand{\etal}{et.\,al.}
+
+\newcommand{\x}{\ensuremath{\times}}
+
+\newcommand{\dg}{\ensuremath{^\circ}\xspace}
+\newcommand{\uC}{\ensuremath{\mu}C\xspace}
+\newcommand{\Ohm}{\ensuremath{\Omega}\xspace}
+
+
+%% greek symbols
+%\newunicodechar{ɑ}{\ensuremath{\alpha}}
+%\newunicodechar{β}{\ensuremath{\beta}}
+
+%% shortcuts (removed from acronyms)
+\newcommand{\SOTA}{state of the art\xspace}
+\newcommand{\SoS}{system of systems\xspace}
+\newcommand{\OBC}{on board computer\xspace}
+\newcommand{\HD}{HD\xspace}
+\newcommand{\MAV}{mars ascend vehicle\xspace}
+\newcommand{\PMS}{power management system\xspace}
+\newcommand{\INC}{internal communication\xspace}
+\newcommand{\LOC}{local communication\xspace}
+\newcommand{\GLC}{global communication\xspace}
+%\newcommand{\PSR}{\ac{PSR}\xspace}
+%\newcommand{\PSRs}{\acp{PSR}\xspace}
+\newcommand{\CAD}{CAD\xspace}
+
+\newcommand{\fromFirstToLastPub}{[\textcolor{thesisCiteColor}{1}] - [\textcolor{thesisCiteColor}{13}]\xspace}
+
+\newcommand{\massSherpaTT}{170\,kg\xspace}
+
+
+%% common phrases
+\newcommand{\elecmech}{electromechanical\xspace}
+\newcommand{\electromech}{\elecmech} %synonym
+\newcommand{\elecmechly}{electromechanically\xspace}
+\newcommand{\Elecmech}{Electromechanical\xspace}
+\newcommand{\ElecMech}{Electromechanical\xspace}%{Electro-Mechanical\xspace}
+
+%% units
+\newcommand{\unitmm}{\text{\,mm}\xspace}
+\newcommand{\unitmeter}{\text{\,m}\xspace}
+\newcommand{\unitm}{\unitmeter}
+\newcommand{\unitkg}{\text{\,kg}\xspace}
+\newcommand{\unitcubmeter}{\text{\,m\ensuremath{^3}}\xspace}
+\newcommand{\unitNewton}{\text{\,N}\xspace}
+\newcommand{\unitN}{\unitNewton}
+\newcommand{\unitsecond}{\text{\,s}\xspace}
+\newcommand{\units}{\unitsecond}
+\newcommand{\unitmpersec}{\,\text{m/s}\xspace}
+\newcommand{\unitdegpersec}{\,\text{deg/s}\xspace}
+\newcommand{\unitW}{\,\text{W}\xspace}
+
+
+%% math stuff
+% to make greek letters bold
+\usepackage{bm}
+\newcommand*{\B}[1]{\ifmmode\bm{#1}\else\textbf{#1}\fi}
+
+% atan2
+\newcommand{\atant}{\arctan\!2\xspace}
+
+%notation of vector symbols (can be bold or with arrow on top etc...)
+\newcommand{\myVec}[1]{\ensuremath{\B{#1}}} %% vector notation in text
+\newcommand{\myVecSub}[2]{\ensuremath{\myVec{#1}_{#2}}} %% vector notation with subscript in text
+\newcommand{\myVecSup}[2]{\ensuremath{\myVec{#1}^{#2}}} %% vector notation with subscript in text
+\newcommand{\myVecSubSup}[3]{\ensuremath{\myVec{#1}_{#2}^{#3}}} %% vector notation with subscript and superscript in text
+
+
+%alias for matrices. can be changed later to different style if required
+\newcommand{\myMat}[1]{\myVec{#1}}
+\newcommand{\myMatSub}[2]{\myVecSub{#1}{#2}}
+\newcommand{\myMatSup}[2]{\myVecSup{#1}{#2}}
+\newcommand{\myMatSubSup}[3]{\myVecSubSup{#1}{#2}{#3}}
+
+
+% stacked vectors in math environment
+\newcommand{\vekk}[2]{\begin{pmatrix} #1\\ #2 \end{pmatrix}}
+\newcommand{\vekkk}[3]{\begin{pmatrix} #1\\ #2\\ #3\end{pmatrix}}
+\newcommand{\vekkkk}[4]{\begin{pmatrix} #1\\ #2\\ #3\\ #4\end{pmatrix}}
+\newcommand{\vekkkkkk}[6]{\begin{pmatrix} #1\\ #2\\ #3\\ #4\\ #5\\ #6 \end{pmatrix}}
+
+%%%----------------------formula text functions---------------------------------%%%
+\newcommand{\ftf}[1]{\begin{array}[c]{l}  \text{\footnotesize{#1}} \end{array}}  % Formeltext 1Zeile, footnotesize                                                                                      % Formeltext 1Zeile, footnotesize
+\newcommand{\ftff}[2]{\begin{array}[c]{l} \text{\footnotesize{#1}}\\
+                                          \text{\footnotesize{#2}}\end{array}}  % Formeltext 2Zeilen, footnotesize
+\newcommand{\ftfff}[3]{\begin{array}[c]{l}\text{\footnotesize{#1}}\\
+                                          \text{\footnotesize{#2}}\\
+                                          \text{\footnotesize{#3}}\end{array}}  % Formeltext 3Zeilen, footnotesize
+\newcommand{\ftffff}[4]{\begin{array}[c]{l}\text{\footnotesize{#1}}\\
+                                          \text{\footnotesize{#2}}\\
+                                          \text{\footnotesize{#3}}\\
+                                          \text{\footnotesize{#4}}\end{array}}  % Formeltext 4Zeilen, footnotesize
+\newcommand{\ftfffff}[5]{\begin{array}[c]{l}\text{\footnotesize{#1}}\\
+                                          \text{\footnotesize{#2}}\\
+                                          \text{\footnotesize{#3}}\\
+                                          \text{\footnotesize{#4}}\\
+                                          \text{\footnotesize{#5}}\end{array}}  % Formeltext 5Zeilen, footnotesize
+\newcommand{\ftffffff}[6]{\begin{array}[c]{l}\text{\footnotesize{#1}}\\
+                                          \text{\footnotesize{#2}}\\
+                                          \text{\footnotesize{#3}}\\
+                                          \text{\footnotesize{#4}}\\
+                                          \text{\footnotesize{#5}}\\
+                                          \text{\footnotesize{#6}}\end{array}}  % Formeltext 6Zeilen, footnotesize 

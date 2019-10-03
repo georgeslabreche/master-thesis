@@ -1,0 +1,287 @@
+%% draft+final=finaldraft (no todos, but draft note at foot of page)
+\documentclass[%
+    draft, % comment draft to remove draft imprint at page foot
+    %final, % give final when done. Overwrites draft. Removes todos.
+    11pt,
+    a4paper,
+    fleqn,
+    %openany %%chapter on right and left pages (no cleardoublepage)
+]
+{memoir}
+
+%% define control flags
+\usepackage{ifthen}
+\newboolean{printVersion}
+
+\setboolean{printVersion}{false} % do not use colored links for print
+
+
+\input{styles/setupDocument.tex}
+\input{styles/newCommands.tex}
+
+
+% if both, draft, final are set, we get the draft note at the bottom of a page
+\ifoptionfinal{
+    \ifoptiondraft{
+        \makeevenfoot{plain}{}{\thepage}{\myFinalDraftNote}
+        \makeoddfoot{plain}{\myFinalDraftNote}{\thepage}{}
+        \makeevenfoot{ruled}{\thepage}{}{\myFinalDraftNote}
+        \makeoddfoot{ruled}{\myFinalDraftNote}{}{\thepage}
+    }{}
+}{}
+%\fi
+
+\ifthenelse{\boolean{printVersion}}
+{%if true
+    \hypersetup{hidelinks=true}
+    %%furthermore select b/w versions of included publications in styles/appendix_publications.tex
+}
+{%else
+    %% empty: highlight links according to color definitions
+}
+
+
+%% Document Meta Data %%
+\newcommand{\myWorkingTitle}[0]{%
+This is the (Working) Title of the Thesis%
+}
+\newcommand{\thesisAuthor}[0]{%
+Firstname Lastname%
+}
+\newcommand{\thesisKeyWords}[0]{%
+keyword 1, autonomous robots, keyword 3, thesis%
+}
+\newcommand{\metaDataSubject}[0]{%
+%Dissertation%
+%Cumulative Dissertation%
+Master Thesis%
+%Bachelor Thesis%
+}
+
+
+%% for long-term archives (can generate large pdf file size):
+%\input{styles/pdf_a_compability.tex}
+
+
+
+\begin{document}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Title page
+\input{sections/titlepage.tex}
+%\clearpage
+%\input{sections/GutachterSeite.tex} %probably not required
+
+
+
+\cleardoublepage
+
+
+%%\pagenumbering{roman}
+\frontmatter
+\pagestyle{plain} %% to get all pages numbered. otherwise second page of toc etc is pagestyle empty
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Abstracts and Thanks
+\ifdraftdoc
+    %remove more space (check for your own version)
+    \cftaddtitleline{toc}{chapter}{\vspace{-25mm}}{} %extra neg. space in toc
+\else
+    %remove space in toc
+    \cftaddtitleline{toc}{chapter}{\vspace{-15mm}}{} %extra neg. space in toc
+\fi
+
+\addTocCaption{Preface} %a "heading" within the toc
+\chapter{Abstract}
+\input{sections/abstract.tex}
+\clearpage
+
+\setlength\parskip{1.5\myRegularParskip}
+\chapter{Thanks}
+\input{sections/thanks.tex}
+%\textcolor{thesisSecondaryColor}{TODO.}
+\cleardoublepage
+\setlength\parskip{\myRegularParskip}
+
+\ifdraftdoc
+    %(do nothing)
+\else
+    \clearpage
+\fi
+
+%% List of ToDo's
+\mylistoftodos
+%\listoftodos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% indizes
+\begin{normalsize} %to group lists for \hypersetup
+\hypersetup{hidelinks=true} % make list black
+    \tableofcontents 	
+    \clearpage
+
+    \listoffigures
+    \clearpage
+
+    \listoftables
+
+    \clearpage
+\end{normalsize}
+
+\twocolumn
+    \input{sections/acronyms.tex}
+\onecolumn
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%the real contents follow here:
+%\clearpage
+%\pagenumbering{arabic}
+%\setcounter{page}{1}
+\mainmatter  %% sorgt dafür, dass Chpt1 auf jeden Fall auf einer rechten/ungeraden Seite ist (?)
+%\onehalfspacing
+\pagestyle{ruled}
+
+\addTocCaption{Thesis}
+
+%\todo[inline]{JOSE: The first part of the conclusion explained me much more than the abstract of the thesis of what i would be expecting. maybe you can re-use some of the conclusion as abstract/intro. The abstractd/intro are currently a bit confusing mixing the 20 systems you developed , the EMI, hybrid locomotion usw. Reading this following paragraph at the very beginning would have helped me:\newline\newline In this thesis, the \electromech design, implementation, locomotion control and experimental validation of a novel type of hybrid wheeled-leg exploration rover are presented. The actively articulated suspension system of the rover is the the basis for advanced locomotive capabilities of a mobile exploration robot.
+%The developed locomotion control system abstracts the complex kinematics of the suspension
+%system and provides platform control inputs usable by autonomous behaviors or human remote
+%control.
+%The rover is part of a multi-robot exploration system with an aspired sample return mission to the lunar south pole or currently hard-to-access regions on Mars. The multi-robot system pursues a modular and reconfigurable design methodology and combines heterogeneous robots
+%with different locomotion capabilities for enhanced overall performance}
+
+%\todo[inline]{JOSE: you are more concise talking about one rover in general. of course, later you mention all the developments as they are, but maybe start a bit more generic and to the point.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\label{sec:introduction}
+\acresetall                 %% reset all acronym abbreviations and write first appearance long: Ackronyms from toc, lof, lot, loa are not written long in first appearance
+\input{sections/acused.tex} %%define ackronyms that are "common sense"
+\input{sections/introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{State of the Art}
+\label{sec:sota}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+\input{sections/sota.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter[Requirements and Design Drivers: Heterogeneous Modular Multi-Robot Systems] %%for toc
+        [Design Drivers: Heterogeneous Modular Multi-Robot Systems] %% for head
+        {Requirements and Design Drivers: Heterogeneous Modular \\ Multi-Robot Systems} %%for chapter page
+\label{sec:ReqirementsConditions}
+\shinyChapterQuote{A shiny quote for the start?}
+       {If you like to.}
+This is an example chapter for usage of three types of chapter headings. (see source file)
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{\ElecMech Rover Design}
+\label{sec:RobotDesign}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+\input{sections/RobotDesign.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Control System Design}
+\label{sec:control}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+\input{sections/ControlSystemDesign.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Experimental Evaluation}
+\label{sec:Experiments}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+\input{sections/experiments.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conclusion and Outlook}
+\label{sec:ConclusionOutlook}
+\input{sections/ConclusionOutlook.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% redefine headers for Bibliography
+\makeevenhead{ruled}{\itshape\leftmark}{}{}
+\makeoddhead{ruled}{}{}{\itshape\rightmark}
+\pagestyle{ruled}
+
+\addTocCaption{Bibliography}
+
+\begin{small}
+%\addcontentsline{toc}{chapter}{Bibliography}
+%\bibliographystyle{alpha}
+%\bibliography{../../ownPublications} % literaturverzeichnis
+\bibliographysota{sections/sota}
+\bibliographyown{sections/ownPublications} %%liegt über root-verzeichnis der eigentlichen Diss...
+\end{small}
+\cleardoublepage
+
+
+\todo[inline]{check printing/digital flag for link colors}
+
+
+%% redefine headers for Appendix
+\makeevenhead{ruled}{\scshape Appendix \leftmark}{}{}
+\makeoddhead{ruled}{}{}{\itshape\rightmark}
+\pagestyle{ruled}
+
+\begin{appendix}
+\addTocCaption{Appendix}
+%\addcontentsline{toc}{chapter}{Appendix}
+%\backmatter %%changes formatting!
+
+\chapter{Additional Material}
+\label{sec:Appendix:AdditionalMaterial}
+\input{sections/Appendix_AdditionalMaterial.tex}
+
+%\addcontentsline{toc}{chapter}{Accumulated Publications}
+\chapter{More Stuff}
+\label{sec:Appendix:MoreStuff}
+
+
+%% this is how to teak the toc:
+%% add extra spacing to get caption on next page of toc
+%\cftaddtitleline{toc}{chapter}{\vspace{5mm}}{} %extra neg. space in toc
+
+\chapter{Enough!}
+\label{sec:Appendix:Enough}
+
+\end{appendix}
+
+
+
+\end{document}
+
+

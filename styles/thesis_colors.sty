@@ -1,0 +1,101 @@
+%%------------------
+%% new colors
+
+% defines the main color theme
+% command \colorlet is used to derivate colors from this main color
+\definecolor{thesisMainColor}{rgb}{0.36, 0.54, 0.66} %% (92,138,167)@256=100%   #5C8AA7
+\definecolor{thesisSecondaryColor}{rgb}{1.00,0.60,0.10} % {cmyk}{0.1, 0.6, 1, 0} %% (255,154,26)@256=100   #FF9A1A
+
+\colorlet{thesisMainColor_dark5}{black!5!thesisMainColor}
+\colorlet{thesisMainColor_dark10}{black!10!thesisMainColor}
+\colorlet{thesisMainColor_dark15}{black!15!thesisMainColor}
+\colorlet{thesisMainColor_dark20}{black!20!thesisMainColor}
+
+% DFKI colors
+\definecolor{dfki1}{cmyk}{0.9, 0.55, 0.1, 0}	% DFKI blue
+\definecolor{dfki2}{cmyk}{0.1, 0.6, 1, 0}		% DFKI orange
+\definecolor{dfki3}{cmyk}{0, 0.89, 0.06, 0.1}	% Magenta Coler Tetrad
+\definecolor{dfki4}{cmyk}{0.89, 0, 0.83, 0.1}	% Green Coler Tetrad
+
+\definecolor{grey80}{gray}{0.2}
+\definecolor{grey60}{gray}{0.4}
+\definecolor{grey40}{gray}{0.6}
+\definecolor{grey20}{gray}{0.8}
+\definecolor{grey10}{gray}{0.9}
+
+
+
+%%------------------
+%% derived colors
+
+
+%chapter numbers
+\colorlet{chaptercolor}{thesisMainColor_dark5}
+
+%tables
+\colorlet{tableheadingcolor}{thesisMainColor!40}
+\colorlet{tablesubheadingcolor}{thesisSecondaryColor!30}
+
+%captions
+\colorlet{captionCatergoryColor}{thesisMainColor_dark20}%{grey80!60!thesisMainColor}
+\colorlet{captionTextColor}{captionCatergoryColor}%{grey60!60!thesisMainColor}
+
+%itemize
+\colorlet{itemicolor}{thesisMainColor_dark5}
+\colorlet{itemiicolor}{itemicolor}
+\colorlet{itemiiicolor}{itemicolor}
+
+%description text
+\colorlet{descriptionColor}{captionCatergoryColor}%{black!20!thesisMainColor}%{thesisMainColor!70!black}%
+
+%footnotes
+\colorlet{footnoteMarkColor}{captionCatergoryColor}
+\colorlet{footnoteRuleColor}{footnoteMarkColor}
+%\colorlet{footnoteTextColor}{footnoteMarkColor} %%not yet needed, color is given by ruleColor
+
+
+%hyperrefcolors
+% we need this switch because of the \refFig etc definitions
+\ifthenelse{\boolean{printVersion}}
+{%if true
+    \colorlet{thesisLinkColor}{black}
+    \colorlet{thesisUrlColor}{black}
+    \colorlet{thesisCiteColor}{black}
+}
+{%else
+    \colorlet{thesisLinkColor}{captionCatergoryColor}%{black}%{thesisMainColor}%{blue!60!black}
+    \colorlet{thesisUrlColor}{thesisMainColor}%{blue!60!black}
+    \colorlet{thesisCiteColor}{thesisMainColor}%{thesisSecondaryColor}%{green!60!black}
+}
+
+
+%colors in for acronyms
+\colorlet{acroextraColor}{thesisLinkColor}
+
+%color for chapter quotes
+\colorlet{quoteColor}{chaptercolor!70!grey80}%{captionTextColor}%
+
+% colors for structure graphs
+%% colors for all graph types
+\colorlet{structureGraphBgColorMain}{white}%{thesisSecondaryColor!5}%
+\colorlet{structureGraphFrameColorMain}{black}%{thesisSecondaryColor!30}%
+\colorlet{structureGraphBgColorTitleMain}{grey60}%{thesisSecondaryColor!30}%
+\colorlet{structureGraphTextTitleColorMain}{thesisSecondaryColor!80}%{black!50!white}%
+\colorlet{structureGraphTextTitleColorBigtopicbox}{white}
+%\colorlet{structureGraphContentColor}{thesisMainColor!75} %%not needed, take title_bg_color
+
+%% topic graph
+\colorlet{structureGraphBackgroundColorBigtopicbox}{grey20}%{thesisSecondaryColor!5}%
+\colorlet{structureGraphFrameColorBigtopicbox}{thesisSecondaryColor!30}%{black!55!white}%
+\colorlet{structureGraphTitleBackgroundColorBigtopicbox}{grey40}%{thesisSecondaryColor!45}%
+
+\colorlet{structureGraphBackgroundColorTopicbox}{thesisMainColor!5}
+\colorlet{structureGraphFrameColorTopicbox}{thesisMainColor!50}%{thesisSecondaryColor!30}%
+\colorlet{structureGraphTitleBackgroundColorTopicbox}{thesisMainColor_dark5}%{thesisMainColor!75}
+\colorlet{structureGraphTextTitleColorTopicbox}{thesisMainColor!10}%{white}%{thesisSecondaryColor!30}%
+
+%% chapter graph
+\colorlet{structureGraphBackgroundColorChapterbox}{thesisMainColor!1}%{structureGraphBackgroundColorTopicbox}
+\colorlet{structureGraphFrameColorChapterbox}{grey40}%{structureGraphFrameColorTopicbox}
+\colorlet{structureGraphTitleBackgroundColorChapterbox}{thesisMainColor_dark5}%{structureGraphTitleBackgroundColorTopicbox}
+\colorlet{structureGraphTextTitleColorChapterbox}{thesisMainColor!1}%{structureGraphTextTitleColorTopicbox}

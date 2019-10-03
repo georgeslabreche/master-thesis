@@ -1,0 +1,242 @@
+% ********************************************************************
+% composed by Florian Cordes @ DFKI RIC
+%
+% to be used with documentclass memoir:
+% \documentclass[11pt,a4paper]{memoir}
+%
+% January 2018
+% ********************************************************************
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{phdDocumentStyle_FCordes}[2018/01/19 v1.0 Style for PhD document]
+
+
+
+%Zeilenumbruch, falls overfull hbox
+\sloppy
+%\relax
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% define what happens when
+%% draft option is set in documentclass
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myDraftNote}[0]{\color{thesisSecondaryColor}{\textit{Draft version: \today}}}
+\newcommand{\myFinalDraftNote}[0]{\color{thesisSecondaryColor}{\textit{Final Draft (\today)}}}
+
+\ifdraftdoc
+    \makeevenfoot{plain}{}{\thepage}{\myDraftNote}
+    \makeoddfoot{plain}{\myDraftNote}{\thepage}{}
+    \makeevenfoot{ruled}{\thepage}{}{\myDraftNote}
+    \makeoddfoot{ruled}{\myDraftNote}{}{\thepage}
+\fi
+
+\makeevenhead{ruled}{\scshape Chapter \leftmark}{}{}
+\makeoddhead{ruled}{}{}{\itshape\rightmark}
+
+
+%%%%%%%%%%%%%%%%
+%% Itimisation
+%%%%%%%%%%%%%%%%
+\newlength{\sqsize}
+\setlength{\sqsize}{0.8ex}
+\newcommand*\sq{\raisebox{0.4\sqsize}{\rule{\sqsize}{\sqsize}}} % define a small square for itemize bullet
+
+\renewcommand{\labelitemi}{${\color{itemicolor}\sq}$}%\blacksquare}$}
+\renewcommand{\labelitemii}{${\color{itemiicolor}\blacktriangleright}$} %\bullet}$}
+\renewcommand{\labelitemiii}{${\color{itemiiicolor}\square}$}
+
+
+
+
+%%%%%%%%%%%%%%%%
+%% Description
+%%%%%%%%%%%%%%%%
+\renewcommand*{\descriptionlabel}[1]{\hspace
+                                     \labelsep
+                                     \normalfont
+                                     \textbf{\color{descriptionColor}{#1}}
+                                 }
+
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%% footnote formatting and colors
+%%%%%%%%%%%%%%%%%%%
+%change the mark (reference-number)
+\renewcommand\thefootnote{\textcolor{footnoteMarkColor}{
+                                            (\alph{footnote})%
+                                            %\arabic{footnote})%
+                                            }}
+
+%change the text at the bottom of the page
+\renewcommand{\foottextfont}{\footnotesize}%\color{footnoteTextColor}}
+
+%change the rule above the footnote
+\renewcommand*{\footnoterule}{%
+    \kern-3pt%
+    \color{footnoteRuleColor}\hrule width 0.4\columnwidth %%also sets the text-body color when written like this
+    \kern 2.6pt
+    }
+
+\setlength{\footnotesep}{2ex}       % the separation between footnotes
+\setlength{\footmarkwidth}{1.5em}   % indention of complete footnote textblock
+\setlength{\footmarksep}{0.3em}       % indention of second and following lines
+\setlength{\footparindent}{2em}     % indention of paragraph within footnote
+
+%make a refernce-command for footnotes
+\makeatletter
+\newcommand\fnref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+%do not reset counter per chapter
+\counterwithout*{footnote}{chapter}
+
+% footnotes shall be at the bottom of the page, even wenn a figure has [b] option
+\feetbelowfloat
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Define sectioning depth
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setsecnumdepth{subsection}
+\settocdepth{section}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% new line spacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setSingleSpace{1.05}
+\SingleSpacing
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% define the text field for the pages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\myRegularParskip}
+\setlength{\myRegularParskip}{1.8mm}
+
+\newlength{\myCenterSpaceOffset}
+\setlength{\myCenterSpaceOffset}{0.7mm} % pos increases spacing in center of double page
+
+\textheight235mm              % Höhe des Textbereichs
+\textwidth160mm             % Breite des Textbereichs
+\topmargin-20mm
+\topskip5mm
+\headheight20mm
+\headsep3mm
+\setlength\evensidemargin{-\myCenterSpaceOffset} % pos vals to move in
+\setlength\oddsidemargin{\myCenterSpaceOffset}   % neg vals to move in
+\footskip15mm
+\headwidth\textwidth
+
+\setlength\parindent{0mm}
+\setlength\parskip{\myRegularParskip}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Defines for Chapter Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{kpfonts}
+
+\newcommand\numlifter[1]{\raisebox{-2.5cm}[0pt][0pt]{\smash{#1}}} % how low can you go?
+\newcommand\numindent{\kern10pt} %space from right margin
+\newlength\chaptertitleboxheight
+\makechapterstyle{cordesDiss}{
+  \renewcommand\printchaptername{\raggedleft}
+  \renewcommand\printchapternum{%
+    \begingroup%
+    \leavevmode%
+    \chapnumfont%
+    \strut%
+    \numlifter{\thechapter}%{\fontfamily{pnc}\selectfont \thechapter} }%
+    \numindent%
+\endgroup%
+}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\begingroup%
+      \leavevmode%
+      \chapnumfont%
+      \numlifter{\vphantom{9}}%
+      \numindent%
+      \endgroup}
+    \afterchapternum}
+  \setlength\midchapskip{0pt}
+  \setlength\beforechapskip{0.5\baselineskip}
+  \setlength{\afterchapskip}{3\baselineskip}
+  \renewcommand\chapnumfont{%
+    \fontsize{4cm}{0cm}%
+    \bfseries%
+    \sffamily%
+    \color{chaptercolor}%
+  }
+  \renewcommand\chaptitlefont{%
+    \normalfont%
+    \huge%
+    \bfseries%
+    \raggedleft%
+  }%
+  \settototalheight\chaptertitleboxheight{%
+    \parbox{\textwidth}{\chaptitlefont \strut bg\\bg\strut}}
+  \renewcommand\printchaptertitle[1]{%
+    \parbox[t][\chaptertitleboxheight][t]{\textwidth}{%
+      %\microtypesetup{protrusion=false}% add this if you use microtype
+      \chaptitlefont\fontsize{0.9cm}{\baselineskip}\selectfont\strut ##1\strut}%FC
+      %\chaptitlefont \strut ##1\strut}% ORIGINAL
+      %\HUGE\bfseries\strut ##1\strut}% FC
+}}
+
+%% now set the style active
+\chapterstyle{cordesDiss}
+\aliaspagestyle{chapter}{plain} % just to save some space: no header
+
+%\createplainmark{toc}{both}{\acronym}
+
+
+%% -----------------------------
+%% floating environment options
+%% -----------------------------
+
+% define how much text shall be on same page with large images
+%% standard seems to be 0.20 --> 20%
+%\renewcommand{\textfraction}{0.01}
+
+
+%% setup caption style
+\captionsetup[figure]{labelfont={bf,color=captionCatergoryColor},textfont={it,color=captionTextColor},justification=raggedright,singlelinecheck=false,format=hang}
+\captionsetup[table]{labelfont={bf,color=captionCatergoryColor},textfont={it,color=captionTextColor},justification=raggedright,singlelinecheck=false,format=hang}
+%\captionsetup[table]{skip=7pt} %% mehr platz zwischen tabelle und caption
+
+%% Durchgängige Nummerierung von Figures und Tables:
+%\usepackage{chngcntr}
+%\counterwithout{figure}{chapter}
+%\counterwithout{table}{chapter}
+
+
+
+%% --------------------
+%% special functions
+%% --------------------
+
+% acronym
+\newcommand{\dissAcroextra}[1]{\acroextra{~\\[-0.6ex]\textcolor{acroextraColor}{\scriptsize{(#1)}}}}
+
+% quote at beginning of chapter
+\newcommand{\shinyChapterQuote}[2]{
+\begin{quote}\hypersetup{hidelinks=true}
+    \textcolor{quoteColor}{
+        \emph{#1}
+        \newline\indent\qquad -- #2
+    }
+\end{quote}
+}
+
+% a command to add (smaller) extra info in captions of Figures and Tables
+\newcommand{\dissExtraCaption}[1]{\newline\footnotesize{#1}}
+
+%% symbols
+\newcommand{\dissCheck}{\textcolor{thesisMainColor}{$\mathbf{\checkmark}$}}
+\newcommand{\dissUncheck}{\textcolor{thesisSecondaryColor}{$\mathbf{\times}$}}
+\newcommand{\myTTAmark}{\textcolor{thesisSecondaryColor!80}{\ensuremath{^\star}}\xspace}%{\ensuremath{^\circledast}}\xspace}%{\ensuremath{^\blacklozenge}}\xspace}

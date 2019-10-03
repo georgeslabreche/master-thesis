@@ -1,0 +1,237 @@
+
+\usepackage{lipsum}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOC space settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setpnumwidth{3em}
+\setrmarg{4em}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% floating environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[final]          %w/o option final: no images in document-draft-mode
+             {graphics}		% einbinden von graphiken
+
+%\usepackage{caption}  %% not needed with documentclass memoir
+\usepackage{subcaption} % neue subfigure-Umgebung %% should probably not be used with memoir: generates warning
+
+%\usepackage[section]{placeins} %% \FloatBarrier
+
+%% setup caption style (\usepackage{caption} w/o documentclass memoir)
+\captionsetup[figure]{  labelfont       = {bf,color=captionCatergoryColor},
+                        textfont        = {it,color=captionTextColor},
+                        justification   = raggedright,
+                        singlelinecheck = false,
+                        position        = bottom,
+                        format=hang
+                        }
+\captionsetup[table]{   labelfont       = {bf,color=captionCatergoryColor},
+                        textfont        = {it,color=captionTextColor},
+                        justification   = raggedright,
+                        singlelinecheck = false,
+                        position        = top,
+                        format          = hang
+                        }
+%\captionsetup[table]{skip=7pt} %% mehr platz zwischen tabelle und caption
+
+% move Text to Image. 1ex ~1 line of Text
+% unfortunately: also valid for subcaptions.
+%\setlength{\belowcaptionskip}{0ex}
+
+% define how much text shall be on same page with large images
+%% standard seems to be 0.20 --> 20%
+%\renewcommand{\textfraction}{0.01}
+
+
+%% Durchgängige Nummerierung von Figures und Tables:
+%\usepackage{chngcntr}
+%\counterwithout{figure}{chapter}
+%\counterwithout{table}{chapter}
+
+
+%define common figure sizes for subfigures
+% -> redefined in each environment
+\newlength{\subfigureWidth}
+\setlength{\subfigureWidth}{0.22\textwidth}
+\newlength{\graphicsHeight}
+\setlength{\graphicsHeight}{25mm}
+
+%% for page delte (see title-page-tex-file)
+%\usepackage{atbegshi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% table environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % zentriert mit Breitenangabe
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % rechtsbündig mit Breitenangabe
+
+
+%% allow multi-row
+\usepackage{multirow}
+\usepackage{booktabs} %% toprule, midrule and bottomrule for tables
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%for color definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xcolor}
+\input{styles/thesis_colors.sty} %%own colors with names
+
+
+
+
+%print draft text indo background
+\usepackage{rotating}
+\usepackage{eso-pic}
+%\usepackage{color}
+\usepackage{type1cm}
+
+\newcommand{\printdraft}[1][Draft]{
+    \AddToShipoutPicture{%
+       \AtPageCenter{%\section
+         \makebox(0,0){%
+           \rotatebox{50}{
+               \textcolor[gray]{0.95}{
+               		\fontsize{7cm}{7cm}%
+               		\selectfont{#1}
+                }
+            }
+          }
+        }
+    }
+}
+
+\usepackage[bookmarks,bookmarksopen=false,bookmarksnumbered=true,pdftex,pdfhighlight=/N,
+  linkcolor=thesisLinkColor,%blue!60!black,
+  urlcolor=thesisUrlColor,%blue!60!black,
+  citecolor=thesisCiteColor,%green!60!black,
+  colorlinks=true,
+  pdftitle={},
+  pdfsubject={},  % insert subtitle
+  pdfkeywords={PhD, Multi-Robot System, Wheeled-Leg Rover, SherpaTT, Sherpa},
+  pdfauthor={Florian Cordes},
+  %final %%use links also in draft mode
+  ]{hyperref}
+
+
+\usepackage{ifdraft} %\ifdraft, \ifoptiondraft, \ifoptionfinal
+
+%% in final document for print: no colored links(?)
+\ifdraftdoc
+    \hypersetup{final}  %use hyper-final option in draft mode: standard-links
+    %\printdraft	        % Print "Draft" Watermark
+\else
+    %\hypersetup{draft} % use hyper-draft in final document: no links
+\fi
+
+
+
+%% for faster use of pdflatex
+%% DO NOT USE FOR PDF/A compability!
+%%\pdfcompresslevel=5
+%% check styles/pdf_a_compability.tex
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% setup todo style
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%usage: \todo[inline]{blah}
+%       \todo{blubb}
+\input{styles/fancyTodoStyle.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% page style setup FCordes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{styles/documentStyle.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% define the boxes for thesis structure graph
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{styles/structureGraphFunctions.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% cumlative PhD functions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a package for including the publications pdfs
+%\input{styles/appendix_publications.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% miscellaneous packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+
+\usepackage{tabto} %%something like a tabstop: required for usage in itemize
+
+\usepackage{moreverb}
+\usepackage{ifthen}     % Programmierkonstrukte
+
+\usepackage{textcmds} %% quotation marks with \qq{my text} \q{my text}
+\usepackage{xspace}
+
+\usepackage[per=fraction,separate-uncertainty=true,multi-part-units=single,round-mode=places,round-precision=1]{siunitx}
+
+
+\usepackage{paralist}    % for compact item
+
+%\usepackage{relsize}
+\usepackage[%nolist,         %% no listing for acronyms
+            printonlyused,  %% print only the used ones, not the full list
+            %smaller        %% to be a bit smaller in text (needs relsize package)
+            ]
+            {acronym}
+
+
+\usepackage{afterpage}
+
+\usepackage{forloop}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% math stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% structure graphs
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[most]{tcolorbox} %% colored boxes
+\usepackage{colortbl}   %%colored tables
+
+
+%%define the citations contributing to a chapter
+\input{publications/define_chapter_cites.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% bib setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% two separate bibs
+\usepackage{multibib}
+\newcites{sota,own}%
+         {Literature References,Own Publications}%
+\bibliographystylesota{apalike}%{alpha}
+\bibliographystyleown{ieeetr}%{unsrt}%{plain}
+
+
+
+
+

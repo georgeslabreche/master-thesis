@@ -1,0 +1,10 @@
+thesis.pdf
+*.aux
+*.lot
+*.lof
+*.log
+*.out
+*.toc
+*.tdo
+*.gz
+
