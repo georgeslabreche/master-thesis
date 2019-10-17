@@ -1,5 +1,12 @@
 thesis.pdf
+.tex
 *.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.mw
 *.lot
 *.lof
 *.log

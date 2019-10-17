@@ -9,6 +9,8 @@
 ]
 {memoir}
 
+
+
 %% define control flags
 \usepackage{ifthen}
 \newboolean{printVersion}
@@ -119,7 +121,7 @@ Master Thesis%
 %%% indizes
 \begin{normalsize} %to group lists for \hypersetup
 \hypersetup{hidelinks=true} % make list black
-    \tableofcontents 	
+    \tableofcontents
     \clearpage
 
     \listoffigures
@@ -178,6 +180,16 @@ Master Thesis%
 \input{sections/sota.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{The Martian Environment}
+\shinyChapterQuote{Maybe I’ll post a consumer review. “Brought product to surface of Mars. It stopped working. 0/10.”}
+  {Andy Weir, The Martian.}
+\label{sec:MartianEnvironment}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+\input{sections/martian-environment/index.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -245,6 +257,9 @@ This is an example chapter for usage of three types of chapter headings. (see so
 %\bibliography{../../ownPublications} % literaturverzeichnis
 \bibliographysota{sections/sota}
 \bibliographyown{sections/ownPublications} %%liegt über root-verzeichnis der eigentlichen Diss...
+\bibliographymarsenv{references/marsenv}
+\bibliographymoonenv{references/moonenv}
+\bibliographypower{references/power}
 \end{small}
 \cleardoublepage
 
@@ -283,5 +298,3 @@ This is an example chapter for usage of three types of chapter headings. (see so
 
 
 \end{document}
-
-

@@ -224,14 +224,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %% bib setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-% two separate bibs
+% Multiple bibs
 \usepackage{multibib}
-\newcites{sota,own}%
-         {Literature References,Own Publications}%
+
+%% Solve the error “No room for a new \write”, which occurs when the user,
+%% or when the user’s packages have ‘allocated too many streams’ using \newwrite.
+\usepackage{morewrites}
+
+\newcites{sota,own,marsenv,moonenv,power}%
+         {Literature References,Own Publications,Mars Environment Literature,Moon Environment Literature,Power Literature}%
 \bibliographystylesota{apalike}%{alpha}
 \bibliographystyleown{ieeetr}%{unsrt}%{plain}
-
-
-
-
-
+\bibliographystylemarsenv{apalike}%{alpha}
+\bibliographystylemoonenv{apalike}%{alpha}
+\bibliographystylepower{apalike}%{alpha}
