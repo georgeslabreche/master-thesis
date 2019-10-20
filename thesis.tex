@@ -4,7 +4,7 @@
     %final, % give final when done. Overwrites draft. Removes todos.
     11pt,
     a4paper
-    %fleqn, % 
+    %fleqn, %
     %openany %%chapter on right and left pages (no cleardoublepage)
 ]
 {memoir}
@@ -46,13 +46,13 @@
 
 %% Document Meta Data %%
 \newcommand{\myWorkingTitle}[0]{%
-This is the (Working) Title of the Thesis%
+Solar Array Integration on SherpaTT Rover Considering Mars and Lunar Deployments%
 }
 \newcommand{\thesisAuthor}[0]{%
-Firstname Lastname%
+Georges Labreche%
 }
 \newcommand{\thesisKeyWords}[0]{%
-keyword 1, autonomous robots, keyword 3, thesis%
+Mars, rover, solar panel, power, energy%
 }
 \newcommand{\metaDataSubject}[0]{%
 %Dissertation%
@@ -97,15 +97,15 @@ Master Thesis%
 \fi
 
 \addTocCaption{Preface} %a "heading" within the toc
-\chapter{Abstract}
-\input{sections/abstract.tex}
-\clearpage
+%#%\chapter{Abstract}
+%#%\input{sections/abstract.tex}
+%#%\clearpage
 
 \setlength\parskip{1.5\myRegularParskip}
-\chapter{Thanks}
-\input{sections/thanks.tex}
+%#%\chapter{Thanks}
+%#%\input{sections/thanks.tex}
 %\textcolor{thesisSecondaryColor}{TODO.}
-\cleardoublepage
+%#%\cleardoublepage
 \setlength\parskip{\myRegularParskip}
 
 \ifdraftdoc
@@ -115,27 +115,27 @@ Master Thesis%
 \fi
 
 %% List of ToDo's
-\mylistoftodos
+%#%\mylistoftodos
 %\listoftodos
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% indizes
-\begin{normalsize} %to group lists for \hypersetup
-\hypersetup{hidelinks=true} % make list black
-    \tableofcontents
-    \clearpage
+%#%\begin{normalsize} %to group lists for \hypersetup
+%#%\hypersetup{hidelinks=true} % make list black
+%#%    \tableofcontents
+%#%    \clearpage
 
-    \listoffigures
-    \clearpage
+%#%    \listoffigures
+%#%    \clearpage
 
-    \listoftables
+%#%    \listoftables
 
-    \clearpage
-\end{normalsize}
+%#%    \clearpage
+%#%\end{normalsize}
 
-\twocolumn
-    \input{sections/acronyms.tex}
-\onecolumn
+%#%\twocolumn
+%#%    \input{sections/acronyms.tex}
+%#%\onecolumn
 
 
 
@@ -163,85 +163,138 @@ Master Thesis%
 %\todo[inline]{JOSE: you are more concise talking about one rover in general. of course, later you mention all the developments as they are, but maybe start a bit more generic and to the point.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Introduction}
-\label{sec:introduction}
-\acresetall                 %% reset all acronym abbreviations and write first appearance long: Ackronyms from toc, lof, lot, loa are not written long in first appearance
-\input{sections/acused.tex} %%define ackronyms that are "common sense"
-\input{sections/introduction}
+%#%\chapter{Introduction}
+%#%\label{sec:introduction}
+%#%\acresetall                 %% reset all acronym abbreviations and write first appearance long: Ackronyms from toc, lof, lot, loa are not written long in first appearance
+%#%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+%#%\input{sections/introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#%\chapter{State of the Art}
+%#%\label{sec:sota}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+%#%\input{sections/sota.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+%\shinyChapterQuote{}
+\label{sec:Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{State of the Art}
-\label{sec:sota}
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-\input{sections/sota.tex}
+%\shinyChapterQuote{}
+\label{sec:StateOfTheArt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{The Martian Environment}
-\shinyChapterQuote{Maybe I’ll post a consumer review. “Brought product to surface of Mars. It stopped working. 0/10.”}
-  {Andy Weir, The Martian.}
+%\shinyChapterQuote{}
 \label{sec:MartianEnvironment}
 %\acresetall                 %% reset all acronym abbreviations and write first appearance long
 %\input{sections/acused.tex} %%define ackronyms that are "common sense"
 \input{sections/martian-environment/index.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter[Requirements and Design Drivers: Heterogeneous Modular Multi-Robot Systems] %%for toc
-        [Design Drivers: Heterogeneous Modular Multi-Robot Systems] %% for head
-        {Requirements and Design Drivers: Heterogeneous Modular \\ Multi-Robot Systems} %%for chapter page
-\label{sec:ReqirementsConditions}
-\shinyChapterQuote{A shiny quote for the start?}
-       {If you like to.}
-This is an example chapter for usage of three types of chapter headings. (see source file)
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Energy Predictions}
+%\shinyChapterQuote{}
+\label{sec:EnergyPredictions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{\ElecMech Rover Design}
-\label{sec:RobotDesign}
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-\input{sections/RobotDesign.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Requirements and Design Drivers}
+%\shinyChapterQuote{}
+\label{sec:RequirementsAndDesignDrivers}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Control System Design}
-\label{sec:control}
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-\input{sections/ControlSystemDesign.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Solar Array Design, Integration, and Deployment Mechanism}
+\shinyChapterQuote{Mechanisms and mechanical systems, everybody can design them but everybody has a hard time making them work.}
+  {Aaron Cohen, Engineering the Space Shuttle.}
+\label{sec:SolarArrayDesign}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Experimental Evaluation}
-\label{sec:Experiments}
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-\input{sections/experiments.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Battery Configuration}
+%\shinyChapterQuote{}
+\label{sec:BatteryConfiguration}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Mission Scenarios}
+\shinyChapterQuote{Maybe I’ll post a consumer review. “Brought product to surface of Mars. It stopped working. 0/10.”}
+  {Andy Weir, The Martian.}
+\label{sec:MissionScenarios}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusion and Outlook}
-\label{sec:ConclusionOutlook}
-\input{sections/ConclusionOutlook.tex}
+%\shinyChapterQuote{}
+\label{sec:ConclusionAndOutlook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#%\chapter[Requirements and Design Drivers: Heterogeneous Modular Multi-Robot Systems] %%for toc
+%#%        [Design Drivers: Heterogeneous Modular Multi-Robot Systems] %% for head
+%#%        {Requirements and Design Drivers: Heterogeneous Modular \\ Multi-Robot Systems} %%for chapter page
+%#%\label{sec:ReqirementsConditions}
+%#%\shinyChapterQuote{A shiny quote for the start?}
+%#%       {If you like to.}
+%#%This is an example chapter for usage of three types of chapter headings. (see source file)
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#%\chapter{\ElecMech Rover Design}
+%#%\label{sec:RobotDesign}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+%#%\input{sections/RobotDesign.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#%\chapter{Control System Design}
+%#%\label{sec:control}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+%#%\input{sections/ControlSystemDesign.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#%\chapter{Experimental Evaluation}
+%#%\label{sec:Experiments}
+%\acresetall                 %% reset all acronym abbreviations and write first appearance long
+%\input{sections/acused.tex} %%define ackronyms that are "common sense"
+%#%\input{sections/experiments.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%#%\chapter{Conclusion and Outlook}
+%#%\label{sec:ConclusionOutlook}
+%#%\input{sections/ConclusionOutlook.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -265,7 +318,7 @@ This is an example chapter for usage of three types of chapter headings. (see so
 \cleardoublepage
 
 
-\todo[inline]{check printing/digital flag for link colors}
+%#%\todo[inline]{check printing/digital flag for link colors}
 
 
 %% redefine headers for Appendix
@@ -273,28 +326,28 @@ This is an example chapter for usage of three types of chapter headings. (see so
 \makeoddhead{ruled}{}{}{\itshape\rightmark}
 \pagestyle{ruled}
 
-\begin{appendix}
-\addTocCaption{Appendix}
+%#%\begin{appendix}
+%#%\addTocCaption{Appendix}
 %\addcontentsline{toc}{chapter}{Appendix}
 %\backmatter %%changes formatting!
 
-\chapter{Additional Material}
-\label{sec:Appendix:AdditionalMaterial}
-\input{sections/Appendix_AdditionalMaterial.tex}
+%#%\chapter{Additional Material}
+%#%\label{sec:Appendix:AdditionalMaterial}
+%#%\input{sections/Appendix_AdditionalMaterial.tex}
 
 %\addcontentsline{toc}{chapter}{Accumulated Publications}
-\chapter{More Stuff}
-\label{sec:Appendix:MoreStuff}
+%#%\chapter{More Stuff}
+%#%\label{sec:Appendix:MoreStuff}
 
 
 %% this is how to teak the toc:
 %% add extra spacing to get caption on next page of toc
 %\cftaddtitleline{toc}{chapter}{\vspace{5mm}}{} %extra neg. space in toc
 
-\chapter{Enough!}
-\label{sec:Appendix:Enough}
+%#%\chapter{Enough!}
+%#%\label{sec:Appendix:Enough}
 
-\end{appendix}
+%#%\end{appendix}
 
 
 
