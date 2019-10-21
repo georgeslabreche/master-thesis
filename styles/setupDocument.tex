@@ -231,10 +231,8 @@
 %% or when the user’s packages have ‘allocated too many streams’ using \newwrite.
 \usepackage{morewrites}
 
-\newcites{sota,own,marsenv,moonenv,power}%
-         {Literature References,Own Publications,Mars Environment Literature,Moon Environment Literature,Power Literature}%
-\bibliographystylesota{apalike}%{alpha}
-\bibliographystyleown{ieeetr}%{unsrt}%{plain}
-\bibliographystylemarsenv{apalike}%{alpha}
-\bibliographystylemoonenv{apalike}%{alpha}
-\bibliographystylepower{apalike}%{alpha}
+\newcites{marsenv,power,other}%
+         {Mars Environment Literature,Power Literature,Other Literature}%
+\bibliographystylemarsenv{ieeetr}%{alpha}
+\bibliographystylepower{ieeetr}%{alpha}
+\bibliographystyleother{ieeetr}%{alpha}

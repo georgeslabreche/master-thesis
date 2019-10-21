@@ -1,8 +1,11 @@
 #!/bin/bash
+rm *.bbl
+rm *.blg
+
 pdflatex thesis.tex
-bibtex own.aux
-bibtex sota.aux
+
 bibtex marsenv.aux
-bibtex moonenv.aux
 bibtex power.aux
+bibtex other.aux
+
 pdflatex thesis.tex

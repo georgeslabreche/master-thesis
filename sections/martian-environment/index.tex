@@ -2,7 +2,7 @@
 
 \section{Seasons}
 \label{sec:MartianEnvironment:Seasons}
-The red planet's axis is tilted away from the sun at \SI{25}{\degree}. Very much like Earth's \SI{23.5}{\degree} axial tilt, this results in seasons. Mars has an orbit with a semi-major axis of \SI{1.524}{\astronomicalunit} which translates to a Martian year corresponding to an orbital period of 687 days. Martian seasons are longer and for every Martian year 1.88 Earth years go by. Sidereal days are 24.62 hours long and solar days are 24.65 hours long. A Martian day, known as a Sol, is approximately 40 minutes longer than an Earth day. Mars' position on its orbit is described in terms of areocentric longitude of the Sun, $L_{s}$, and is measured Eastwards from $L_{s} = \SI{0}{\degree}$ at the northern hemisphere's Vernal equinox. The transition of Martian seasons are presented in Table \ref{table:mars-seasonal-advances} with respect to areocentric longitudes.
+The red planet's axis is tilted away from the sun at \SI{25}{\degree}. Very much like Earth's \SI{23.5}{\degree} axial tilt, this results in seasons. Mars has an orbit with a semi-major axis of \SI{1.524}{\astronomicalunit} which translates to a Martian year corresponding to an orbital period of 687 days. Martian seasons are longer and for every Martian year 1.88 Earth years go by. Sidereal days are 24.62 hours long and solar days are 24.65 hours long. A Martian day, known as a Sol, is approximately 40 minutes longer than an Earth day. Mars' position on its orbit is described in terms of areocentric longitude of the Sun, $L_{s}$, and is measured Eastwards from $L_{s} = \SI{0}{\degree}$ at the northern hemisphere's Vernal equinox. The transition of Martian seasons are presented in Table \ref{tab:mars-seasonal-advances} with respect to areocentric longitudes.
 
 \input{sections/martian-environment/tables/mars-seasons.tex}
 
@@ -11,9 +11,11 @@ The red planet's axis is tilted away from the sun at \SI{25}{\degree}. Very much
 \label{sec:MartianEnvironment:Dust}
 The Martian surface is aeolianly active with varying concentration of airborn dust throughout the year due to processes of dust lifting, transportation, and deposition \citemarsenv{Kahre2006}.
 
+\todo[inline]{TODO: Spice up this intro.}
+
 \subsection{Atmospheric Opacity}
 \label{sec:MartianEnvironment:Dust:AtmosphericOpacity}
-The density of suspended dust determines the atmospheric opacity, or optical depth, measured in $\tau$ factors. A $\tau$ factor between 0 to 0.5 indicates a clear to relatively clear day. Higher $\tau$ factors indicate dusty days with growing atmospheric dust opacity as represented in Figure \ref{fig:image:tau-factors} with simulated views pointing towards the Sun. A $\tau$ factor of 4.7 indicates \SI{99}{\percent} of sunlight blocked.
+The density of suspended dust determines the atmospheric opacity, or optical depth, measured in $\tau$ factors. A $\tau$ factor between 0 and 0.5 indicates a clear to relatively clear day. Higher $\tau$ factors indicate dusty days with growing atmospheric dust opacity as represented in Figure \ref{fig:image:tau-factors} for simulated views pointing towards the Sun. \SI{99}{\percent} of sunlight is blocked at $\tau$ factor 4.7.
 
 \todo[inline]{TODO: Source the 99\% claim.}
 
@@ -21,34 +23,39 @@ The density of suspended dust determines the atmospheric opacity, or optical dep
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.8\linewidth]{sections/martian-environment/images/tau-factors.png}\\
-  \caption[Simulated views of atmopheric dust opacity for varying $\tau$ factors]
-          {Simulated views of atmopheric dust opacity for varying $\tau$ factors. From left to right frames, tau factors of 1, 3, 5, 7, 9, and 11  (Credit: NASA/JPL-Caltech/TAMU).}
+  \caption[Simulated views of atmospheric dust opacity for varying $\tau$ factors]
+          {Simulated views of atmospheric dust opacity for varying $\tau$ factors. From left to right frames, tau factors of 1, 3, 5, 7, 9, and 11. Credits: NASA/JPL-Caltech/TAMU.}
   \label{fig:image:tau-factors}
 \end{figure}
 
 \subsection{Storms}
 \label{sec:MartianEnvironment:Dust:Storms}
 
-Past a density threshold, the geographical coverage of airborn dust gives rise to local or global dust storms. These storms are triggered by temperature fluctuations as well as differences in warmth between hemispheres. Global dust storms that cover an area of over \SI{e7}{\kilo\meter\squared} have a yearly probability of \SI{30}{\percent} to \SI{80}{\percent} whereas local dust storms that cover an area less than \SI{e7}{\kilo\meter\squared} occur with a \SI{5}{\percent} probability \citepower{Kerslake1999}. Local dust storms typically have a $\tau$ factor of approximately 1 \citepower{Kerslake1999} whereas the largest in-situ measured $\tau$ factor recorded by MER Opportunity was 10.8 on Sol 5111 (June 10, 2018).
+Dust storms are likely to occur between $L_{s} = \SI{180}{\degree}$ and $L_{s} = \SI{330}{\degree}$ while Mars approaches the Sun, with the perihelion at $L_{s} = \SI{248}{\degree}$. The Sun's proximity warms the atmosphere which creates temperature differences that produce dust lifting winds. The process is exacerbated by the release of carbon dioxide from the evaporating winter polar cap which thickens the atmosphere and increases surface pressure so that dust particles remain airborn.
+
+% Source: https://www.nasa.gov/feature/goddard/2018/curiosity-photos-show-martian-dust-storm-growing
+
+Global dust storms that cover an area of over \SI{e7}{\kilo\meter\squared} have a yearly probability of \SI{30}{\percent} to \SI{80}{\percent} whereas local dust storms that cover an area less than \SI{e7}{\kilo\meter\squared} occur with a \SI{5}{\percent} probability \citepower{Kerslake1999}. Local dust storms typically have a $\tau$ factor of approximately 1 \citepower{Kerslake1999} whereas the largest in situ $\tau$ factor recorded by MER Opportunity was 10.8 on Sol 5111 at $L_{s} = \SI{180}{\degree}$.
+
 
 \section{Solar Radiation}
 \label{sec:MartianEnvironment:SolarRadiation}
 
 \todo[inline]{TODO: Short introduction on Solar Radiation}
 
-The radiation profiles illustrated in this section with resepct to Martian surface are for MER Opportunity's final location at Endeavour crater. Calculations presented in this section as well their nomenclatures are taken from \citemarsenv{Appelbaum1990} and \citemarsenv{Appelbaum1994} where profiles for Viking Landers VL1 and VL2 can be observed.
+The radiation profiles illustrated in this section with respect to Martian surface are for MER Opportunity's final location at Endeavour Crater. Calculations presented in this section as well their nomenclatures are taken from \citemarsenv{Appelbaum1990} and \citemarsenv{Appelbaum1994} where profiles for Viking Landers VL1 and VL2 can be observed.
 
 \subsection{Irradiance}
 \label{sec:MartianEnvironment:SolarRadiation:Irradiance}
 
-Beam irradiance, expressed in \SI{}{\watt\meter\squared}, is a measure of solar radiation from direct sunlight. At the top of the Martian atmosphere the instantaneous beam irradiance, expressed as $G_{ob}$, is a function the areocentric longitude $L_{s}$:
+Beam irradiance is the total solar flux density expressed in \si{\watt\per\meter\squared}. It is a measure of solar radiation from direct sunlight. At the top of the Martian atmosphere the instantaneous beam irradiance, $G_{ob}$, is a function the areocentric longitude $L_{s}$:
 
 \begin{equation}
   \label{eq:G_ob}
   G_{ob} = 590 \frac{[1 + e \cos{(Ls - 248)}]^2}{(1-e^2)^2}
 \end{equation}
 
-Where \SI{590}{\watt\meter\squared} is the mean beam irradiance at the top of the Martian atmosphere, $L_{s} - \SI{248}{\degree}$ is the true anomaly, and $e$ is the Mars eccentricity. The variation of $G_{ob}$ is presented in Figure \ref{fig:plot:beam-irradiance-top-of-mars-atmosphere}. At its closest, the periphelion, Mars is at a distance of \SI{1.381}{\astronomicalunit} from the Sun with a beam irradiance on top of its atmosphere reaching its maximum of \SI{718}{\watt\meter\squared} at $L_{s} = \SI{248}{\degree}$. At its furthest of \SI{1.666}{\astronomicalunit}, the aphelion, beam irradiance reaches its minimum of \SI{494}{\watt\meter\squared} at $L_{s} = \SI{71}{\degree}$.
+Where \SI{590}{\watt\per\meter\squared} is the mean beam irradiance at the top of the Martian atmosphere, $L_{s} - \SI{248}{\degree}$ is the true anomaly, and $e$ is the Mars eccentricity. The variation of $G_{ob}$ is presented in Figure \ref{fig:plot:beam-irradiance-top-of-mars-atmosphere}. At its closest, the perihelion, Mars is at a distance of \SI{1.381}{\astronomicalunit} from the Sun with a beam irradiance on top of its atmosphere reaching its maximum of \SI{718}{\watt\per\meter\squared} at $L_{s} = \SI{248}{\degree}$. At its furthest of \SI{1.666}{\astronomicalunit}, the aphelion, beam irradiance reaches its minimum of \SI{494}{\watt\per\meter\squared} at $L_{s} = \SI{71}{\degree}$.
 
 \begin{figure}[H]
   \centering
@@ -79,14 +86,15 @@ Solar radiation calculations using Equation \ref{eq:G_obh} as a function of Sola
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.8\linewidth]{sections/martian-environment/plots/diurnal-variation-of-beam-irradiance-on-a-horizontal-surface-at-top-of-mars-atmosphere.png}\\
-  \caption[Diurnal variation of beam irradiance on a horizontal surface at top of Mars atmosphere above Endaveaour crater]
-  {Diurnal variation of beam irradiance on a horizontal surface at top of Mars atmosphere above Endaveaour crater}
+  \caption[Diurnal variation of beam irradiance on a horizontal surface at top of Mars atmosphere above Endaveaour Crater]
+  {Diurnal variation of beam irradiance on a horizontal surface at top of Mars atmosphere above Endaveaour Crater.}
   \label{fig:plot:diurnal-variation-of-beam-irradiance-on-a-horizontal-surface-at-top-of-mars-atmosphere}
 \end{figure}
 
-% TOOD: Mention scattering: https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20040191326.pdf
-
 Obtaining the irradiance on the surface of Mars requires the atmospheric opacity $\tau$ as an additional parameter. A distinction exists between global, direct, and diffuse beam irradiance where global beam irradiance $G_{h}$ is the sum of direct, $G_{bh}$, and diffuse beam irradiances, $G_{dh}$:
+
+\todo[inline]{TODO: Explain scattering a bit or at least mention it.}
+% TOOD: Mention scattering: https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20040191326.pdf
 
 \begin{equation}
   \label{eq:G_h_1}
@@ -107,7 +115,7 @@ where $f(z,\tau)$ is the normalized net flux function derived from the net solar
   G_{bh} = G_{ob}\cos{z}\exp(\frac{-\tau}{cos{z}})
 \end{equation}
 
-Diurnal irradiance profiles at Endaveour crater are presented in Figure \ref{fig:plot:irradiances-phi} for different planetary latitudes during the periphelion. At $L_{s} = \SI{248}{\degree}$ the northern hemisphere is in mid-Autumn whereas the southern hemisphere in mid-Spring, as such irradiances are much larger at $\phi = \SI{-40}{\degree}$ and $\phi = \SI{-20}{\degree}$ than they are at $\phi = \SI{0}{\degree}$ and $\phi = \SI{40}{\degree}$.
+Diurnal irradiance profiles at Endaveour Crater are presented in Figure \ref{fig:plot:irradiances-phi} for different planetary latitudes during the perihelion. At $L_{s} = \SI{248}{\degree}$ the northern hemisphere is in mid-Autumn whereas the southern hemisphere in mid-Spring, as such irradiances are much larger at $\phi = \SI{-40}{\degree}$ and $\phi = \SI{-20}{\degree}$ than they are at $\phi = \SI{0}{\degree}$ and $\phi = \SI{40}{\degree}$.
 
 \begin{figure}[H]
 \vspace{-2ex}
@@ -155,7 +163,7 @@ Diurnal irradiance profiles at Endaveour crater are presented in Figure \ref{fig
 
 Solar insolation is the amount solar radiation incident on a planetary surface during a time period. It is expressed in \si{\watt\hour\per\meter\squared} and obtained by integrating the equations of irradiance over a time period between $\omega_1$ and $\omega_2$. Thus, insolation on a horizontal surface at the top of Mars atmosphere, denoted as $I_{obh}$, is obtained by integrating Equation \ref{eq:G_h_2} of $G_{obh}$.
 
-Global, beam, and diffuse insolations on a horizontal Mars surface are denoted as $I_{h}$, $I_{bh}$, and $I_{dh}$ respectively. Their values are obtained by integrating \ref{eq:G_h_2} for $I_{h}$ and \ref{eq:G_bh} for $I_{bh}$. Diffuse insolation $I_{dh}$ is obtained through the same relationship presented in Equation \ref{eq:G_h_1}. The variation of insolation as a function of $L_{s}$ for different levels of atmospheric opacities are illustrated in Figure \ref{fig:plot:insolation-ls}. Evidently, the insolation curves peak at the periphelion with $L_{s} = \SI{248}{\degree}$ and reach their lowest during the aphelion with $L_{s} = \SI{71}{\degree}$. Interestingly, diffuse insolation is already the largest component contributing to the global insolation at $\tau = 1$ and, on a dusty day at $\tau = 3$, global insolation is mostly diffuse.
+Global, beam, and diffuse insolations on a horizontal Mars surface are denoted as $I_{h}$, $I_{bh}$, and $I_{dh}$ respectively. Their values are obtained by integrating \ref{eq:G_h_2} for $I_{h}$ and \ref{eq:G_bh} for $I_{bh}$. Diffuse insolation $I_{dh}$ is obtained through the same relationship presented in Equation \ref{eq:G_h_1}. The variation of insolation as a function of $L_{s}$ for different levels of atmospheric opacities are illustrated in Figure \ref{fig:plot:insolation-ls}. Evidently, the insolation curves peak at the perihelion with $L_{s} = \SI{248}{\degree}$ and reach their lowest during the aphelion with $L_{s} = \SI{71}{\degree}$. Interestingly, diffuse insolation is already the largest component contributing to the global insolation at $\tau = 1$ and, on a dusty day at $\tau = 3$, global insolation is mostly diffuse.
 
 \begin{figure}[H]
 \vspace{-2ex}
@@ -192,7 +200,7 @@ Global, beam, and diffuse insolations on a horizontal Mars surface are denoted a
   		\subcaption{Tau factor 3}
   		\label{fig:sub:insolation-ls-tau-factor-3}
 	   \end{subfigure}\hfill
-	\caption{Variation of global, beam, and diffuse insolation on Mars horizontal surface as a function of areocentric longitude at Endeavour crater}
+	\caption{Variation of global, beam, and diffuse insolation on Mars horizontal surface as a function of areocentric longitude at Endeavour Crater.}
 	\label{fig:plot:insolation-ls}
 \vspace{-2ex}
 \end{figure}
@@ -268,7 +276,7 @@ The Sun angle of incidence itself is a function of the Sun zenith angle $z$ for 
 
 where the Sun zenith angle is given by \ref{eq:cosz}.
 
-Variation of the global irradiance at the periphelion for different inclination angles are presented in Figure \ref{fig:plot:irradiance-inclined-gamma-c} for South, East, North, and West slope orientations. The influence of the inclination angle is most noticeable for a \SI{20}{\degree} slope oriented southwards resulting in a stronger irradiance profile than all other showcased slope angle and orientation configurations.
+Variation of the global irradiance at the perihelion for different inclination angles are presented in Figure \ref{fig:plot:irradiance-inclined-gamma-c} for South, East, North, and West slope orientations. The influence of the inclination angle is most noticeable for a \SI{20}{\degree} slope oriented southwards resulting in a stronger irradiance profile than all other showcased slope angle and orientation configurations.
 
 \ref{fig:plot:irradiance-inclined-gamma-c}
 
@@ -315,6 +323,8 @@ Variation of the global irradiance at the periphelion for different inclination 
 \subsubsection{Insolation}
 \label{sec:MartianEnvironment:SolarRadiation:InclinedSurface:Insolation}
 
-Insolations on an inclined surface are obtained by following the same procedure described in Section \ref{sec:MartianEnvironment:SolarRadiation:Insolation}. That is to say, integrating the $G_{\beta}$ irradiance Equation \ref{eq:G_beta} over a time period between $\omega_1$ and $\omega_2$
+Insolations on an inclined surface are obtained by following the same procedure described in Section \ref{sec:MartianEnvironment:SolarRadiation:Insolation}. That is to say, integrating the $G_{\beta}$ irradiance Equation \ref{eq:G_beta} over a time period between $\omega_1$ and $\omega_2$.
 
 \todo[inline]{TODO: Present plots for diurnal variation of global insolation on Mars inclined surface for different orientations. This is obtained by integrating the global irradiance on Mars incline surface.}
+
+\todo[inline]{TODO: Emphasize that it doesn't matter which inclination and orientation configuration you have when most of the irradiance is scattered (dusty days).}

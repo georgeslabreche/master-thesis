@@ -185,12 +185,14 @@ Master Thesis%
 \chapter{Introduction}
 %\shinyChapterQuote{}
 \label{sec:Introduction}
+\input{sections/introduction/index.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{State of the Art}
 %\shinyChapterQuote{}
 \label{sec:StateOfTheArt}
+\input{sections/state-of-the-art/index.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -204,9 +206,11 @@ Master Thesis%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Energy Predictions}
-%\shinyChapterQuote{}
-\label{sec:EnergyPredictions}
+\chapter{Power and Energy Predictions}
+%\shinyChapterQuote{I have the power!}
+%  {He-Man}
+\label{sec:PowerAndEnergyPredictions}
+\input{sections/power-and-energy-predictions/index.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -219,8 +223,8 @@ Master Thesis%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Solar Array Design, Integration, and Deployment Mechanism}
-\shinyChapterQuote{Mechanisms and mechanical systems, everybody can design them but everybody has a hard time making them work.}
-  {Aaron Cohen, Engineering the Space Shuttle.}
+%\shinyChapterQuote{Mechanisms and mechanical systems, everybody can design them but everybody has a hard time making them work.}
+%  {Aaron Cohen, Engineering the Space Shuttle.}
 \label{sec:SolarArrayDesign}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -234,8 +238,8 @@ Master Thesis%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Mission Scenarios}
-\shinyChapterQuote{Maybe I’ll post a consumer review. “Brought product to surface of Mars. It stopped working. 0/10.”}
-  {Andy Weir, The Martian.}
+%\shinyChapterQuote{Maybe I’ll post a consumer review. “Brought product to surface of Mars. It stopped working. 0/10.”}
+%  {Andy Weir, The Martian.}
 \label{sec:MissionScenarios}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -309,11 +313,9 @@ Master Thesis%
 %\addcontentsline{toc}{chapter}{Bibliography}
 %\bibliographystyle{alpha}
 %\bibliography{../../ownPublications} % literaturverzeichnis
-\bibliographysota{sections/sota}
-\bibliographyown{sections/ownPublications} %%liegt über root-verzeichnis der eigentlichen Diss...
 \bibliographymarsenv{references/marsenv}
-\bibliographymoonenv{references/moonenv}
 \bibliographypower{references/power}
+\bibliographyother{references/other}
 \end{small}
 \cleardoublepage
 
