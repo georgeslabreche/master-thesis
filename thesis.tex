@@ -120,22 +120,22 @@ Master Thesis%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% indizes
-%#%\begin{normalsize} %to group lists for \hypersetup
-%#%\hypersetup{hidelinks=true} % make list black
-%#%    \tableofcontents
-%#%    \clearpage
+\begin{normalsize} %to group lists for \hypersetup
+\hypersetup{hidelinks=true} % make list black
+    \tableofcontents
+    \clearpage
 
-%#%    \listoffigures
-%#%    \clearpage
+    \listoffigures
+    \clearpage
 
-%#%    \listoftables
+    \listoftables
 
-%#%    \clearpage
-%#%\end{normalsize}
+    \clearpage
+\end{normalsize}
 
-%#%\twocolumn
-%#%    \input{sections/acronyms.tex}
-%#%\onecolumn
+\twocolumn
+    \input{sections/acronyms.tex}
+\onecolumn
 
 
 
@@ -216,7 +216,9 @@ Master Thesis%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Requirements and Design Drivers}
-%\shinyChapterQuote{}
+%\shinyChapterQuote{Adjusting to the requirement for perfection is, I think, the most difficult part of learning to program.}
+%  {Frederick P. Brooks Jr., The Mythical Man-Month: Essays on Software Engineering}
+% Also: For the human makers of things, the incompletenesses and inconsistencies of our ideas become clear only during implementation.
 \label{sec:RequirementsAndDesignDrivers}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -328,14 +330,15 @@ Master Thesis%
 \makeoddhead{ruled}{}{}{\itshape\rightmark}
 \pagestyle{ruled}
 
-%#%\begin{appendix}
-%#%\addTocCaption{Appendix}
+\begin{appendix}
+
+\end{appendix}\addTocCaption{Appendix}
 %\addcontentsline{toc}{chapter}{Appendix}
 %\backmatter %%changes formatting!
 
-%#%\chapter{Additional Material}
-%#%\label{sec:Appendix:AdditionalMaterial}
-%#%\input{sections/Appendix_AdditionalMaterial.tex}
+\chapter{Insolation Calculation Verification}
+\label{sec:Appendix:InsolationCalculationVerification}
+\input{sections/appendix/A/index.tex}
 
 %\addcontentsline{toc}{chapter}{Accumulated Publications}
 %#%\chapter{More Stuff}

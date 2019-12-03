@@ -103,7 +103,7 @@ For the purpose of insolation calculations, the areocentric longitude $L_{s}$ wa
 
 \todo[inline]{TODO: Split figure into subfigures. Include a legend.}
 
-A clear outlier is observed during the second half of Mars year MY33 in which predicted daily energy productions are much higher than what was reported. This is due to the rover's inclined descent through 'Bitterroot Valley' during an intensive investigation into a gully at Endeavour Crater's western rim. The inclination and orientation of the descent make horizontal surface assumptions ill-suited for energy production predictions. Applying Equation \ref{eq:SA_slope_energy} for $E_{\beta}$ would be more applicable. As such, data from MY33 is not considered in the validation exercise for horizontal surfaces.
+A clear outlier is observed during the second half of Mars year MY33 in which predicted daily energy productions are much higher than what was reported. This is due to the rover's inclined descent through 'Bitterroot Valley' during an intensive investigation into a gully at Endeavour Crater's western rim. The inclination and orientation of the descent make horizontal surface assumptions ill-suited for energy production predictions using Equation \ref{eq:SA_energy}. Applying Equation \ref{eq:SA_slope_energy} for $E_{\beta}$ would be more applicable. As such, data from MY33 is not considered in the validation exercise for horizontal surfaces.
 
 \todo[inline]{TODO: Include reference to rover update for Bitterroot Valley descent.}
 % Source: https://mars.nasa.gov/mer/mission/rover-status/opportunity/recent/all/?y=2016
@@ -122,7 +122,35 @@ Divergences from the predicted energy production are presented in Figure \ref{fi
 
 \todo[inline]{TODO: I have gone through the MER Opportunity status update logs and figured out causes for the divergence peaks/outliers. Maybe I should present them here?}
 
-The margin of error range is reduced by selecting a target range and applying corrective uncertainties to the reported solar array dust factor in combination with revised performance degradation factors pertaining to shadowing and other losses. Table \ref{tab:target-error-margins} presents the adjustment coefficients that were iteratively obtained:
+% List percentage of measurements that are in between certain thresholds
+-25
+-25/-20
+-20/-15
+-15/-10
+-10/-6
+-5/0
+0/5
+6/10
+
+
+Maxima outliers contribute to the wide error margin band, notably for local maxima at Sol 2204 (-32\%), 2218 (-26\%), 2519 (-25\%)), and 3901 (-21\%)). Table \ref{tab:divergences-less-than-m20pc} lists all divergences that are less than -20\%.
+
+\input{sections/power-and-energy-predictions/tables/divergences-less-than-m20pc.tex}
+
+\begin{enumerate}[(a)]
+  \item Sol 2199: No turns or inclinations reported.
+  \item Sol 2204: Turn - short sharp arc turn.
+  \item Sol 2211: Inclination - crossed a series of ripples.
+  \item Sol 2218: No turns or inclinations reported.
+  \item Sol 2519: Turn - sharp repositioning turn.
+  \item Sol 3901: Inclination - descended from the summit of 'Cape Tribulation'.
+\end{enumerate}
+
+%Sources. For terrestrial year 2010: https://mars.nasa.gov/mer/mission/rover-status/opportunity/2010/
+
+
+
+The margin of error range is narrowed by selecting a target range and applying corrective uncertainties to the reported solar array dust factor in combination with revised performance degradation factors pertaining to shadowing and other losses. Table \ref{tab:target-error-margins} presents the adjustment coefficients that were iteratively obtained:
 
 \input{sections/power-and-energy-predictions/tables/target-error-margins.tex}
 
