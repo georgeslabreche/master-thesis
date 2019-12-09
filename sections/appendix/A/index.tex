@@ -1,10 +1,18 @@
-Formulae for insolation calculations were taken from [?], [?], and [?] and implemented as an R package developed for this thesis. [?], [?], and [?] include tables of calculated insolation predictions for various input parameters at VL1 and VL2 locations. This chapter compares those predictions with those obtained from the R implementation. This comparative analysis served to verify the implementation of the insolation calculation formalae. The observed deviations are presented in this chapter.
+The formulae for insolation calculations were taken from \citemarsenv{Appelbaum1989}, \citemarsenv{Appelbaum1990}, \citemarsenv{Appelbaum1991}, and \citemarsenv{Appelbaum1993}. For the purpose of this thesis, the formulae were implemented into an R package to be used in mission analysis power budgets and energy predictions. Both \citemarsenv{Appelbaum1990} and \citemarsenv{Appelbaum1993} include tables listing pre-calculated insolation values for horizontal and inclined surfacesnat VL1 and VL2 locations. These published values were used to validate the R implementation of the insolation formulae. This chapter compares the published and calculated insolation values with each other in order to verify and validate the R package derived from publication.
 
 
-\section{first}
+\section{Horizontal Surface}
 \input{sections/appendix/A/appendix-01.tex}
-%\clearpage
+\clearpage
 
-\section{second}
+\section{Inclined Surface with Beta Equals Phi}
 \input{sections/appendix/A/appendix-02.tex}
-%\clearpage
+\clearpage
+
+\section{Inclined Surface with Optimal Beta Angle}
+\input{sections/appendix/A/appendix-03.tex}
+\clearpage
+
+\section{Conclusion}
+\input{sections/appendix/A/appendix-04.tex}
+\clearpage
