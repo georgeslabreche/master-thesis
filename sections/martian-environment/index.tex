@@ -43,7 +43,7 @@ Global dust storms that cover an area of over \SI{e7}{\kilo\meter\squared} have 
 
 \todo[inline]{TODO: Short introduction on Solar Radiation}
 
-The radiation profiles illustrated in this section with respect to Martian surface are for MER Opportunity's final location at Endeavour Crater. Calculations presented in this section as well their nomenclatures are taken from \citemarsenv{Appelbaum1990} and \citemarsenv{Appelbaum1994} where profiles for Viking Landers VL1 and VL2 can be observed.
+The radiation profiles illustrated in this section with respect to Martian surface are for MER Opportunity's final location at Endeavour Crater. Calculations presented in this section as well their nomenclatures are taken from \citemarsenv{Appelbaum1989}, \citemarsenv{Appelbaum1990}, \citemarsenv{Appelbaum1991}, \citemarsenv{Appelbaum1993}, and \citemarsenv{Appelbaum1994} where profiles at locations of Viking Landers VL1 and VL2 can be observed.
 
 \subsection{Irradiance}
 \label{sec:MartianEnvironment:SolarRadiation:Irradiance}
@@ -60,7 +60,7 @@ Where \SI{590}{\watt\per\meter\squared} is the mean beam irradiance at the top o
 \begin{figure}[H]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/martian-environment/plots/beam-irradiance-at-top-of-mars-atmosphere-as-a-function-of-areocentric-longitude.png}\\
+  \includegraphics[width=0.8\linewidth]{sections/martian-environment/plots/gob-daily-variations.png}\\
   \caption[Beam irradiance at top of Mars atmosphere as a function of Areocentric Longitude]
           {Beam irradiance at top of Mars atmosphere as a function of Areocentric Longitude}
   \label{fig:plot:beam-irradiance-top-of-mars-atmosphere}
@@ -85,7 +85,7 @@ Solar radiation calculations using Equation \ref{eq:G_obh} as a function of Sola
 \begin{figure}[H]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/martian-environment/plots/diurnal-variation-of-beam-irradiance-on-a-horizontal-surface-at-top-of-mars-atmosphere.png}\\
+  \includegraphics[width=0.8\linewidth]{sections/martian-environment/plots/gobh-diurnal-over-endaveaour-crater.png}\\
   \caption[Diurnal variation of beam irradiance on a horizontal surface at top of Mars atmosphere above Endaveaour Crater]
   {Diurnal variation of beam irradiance on a horizontal surface at top of Mars atmosphere above Endaveaour Crater.}
   \label{fig:plot:diurnal-variation-of-beam-irradiance-on-a-horizontal-surface-at-top-of-mars-atmosphere}
@@ -118,6 +118,7 @@ where $f(z,\tau)$ is the normalized net flux function derived from the net solar
 Diurnal irradiance profiles at Endaveour Crater are presented in Figure \ref{fig:plot:irradiances-phi} for different planetary latitudes during the perihelion. At $L_{s} = \SI{248}{\degree}$ the northern hemisphere is in mid-Autumn whereas the southern hemisphere in mid-Spring, as such irradiances are much larger at $\phi = \SI{-40}{\degree}$ and $\phi = \SI{-20}{\degree}$ than they are at $\phi = \SI{0}{\degree}$ and $\phi = \SI{40}{\degree}$.
 
 \begin{figure}[H]
+\captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
 	\centering
     %% setup sizes
@@ -129,26 +130,26 @@ Diurnal irradiance profiles at Endaveour Crater are presented in Figure \ref{fig
 %% 1st row
   	\begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-irradiance-variation-1-for-ls-248-phi-20-and-tau-05.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gh-gbh-gdh-variation-1-for-ls-248-phi-20-tau-05-and-albedo-027.png}
   		\subcaption{$\phi = \SI{-40}{\degree}$}
   		\label{fig:sub:irradiance-phi-m20}
   	\end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-irradiance-variation-2-for-ls-248-phi-0-and-tau-05.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gh-gbh-gdh-variation-2-for-ls-248-phi-0-tau-05-and-albedo-027.png}
   		\subcaption{$\phi = \SI{-20}{\degree}$}
   		\label{fig:sub:irradiance-phi-0}
   	\end{subfigure}\\[0.8ex]
 %% 2nd row
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-irradiance-variation-3-for-ls-248-phi-20-and-tau-05.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gh-gbh-gdh-variation-3-for-ls-248-phi-20-tau-05-and-albedo-027.png}
   		\subcaption{$\phi = \SI{0}{\degree}$}
   		\label{fig:sub:irradiance-phi-p20}
   	\end{subfigure}\hfill
 	   \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-irradiance-variation-4-for-ls-248-phi-40-and-tau-05.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gh-gbh-gdh-variation-4-for-ls-248-phi-40-tau-05-and-albedo-027.png}
   		\subcaption{$\phi = \SI{20}{\degree}$}
   		\label{fig:sub:irradiance-phi-p40}
 	   \end{subfigure}\hfill
@@ -166,6 +167,7 @@ Solar insolation is the amount solar radiation incident on a planetary surface d
 Global, beam, and diffuse insolations on a horizontal Mars surface are denoted as $I_{h}$, $I_{bh}$, and $I_{dh}$ respectively. Their values are obtained by integrating \ref{eq:G_h_2} for $I_{h}$ and \ref{eq:G_bh} for $I_{bh}$. Diffuse insolation $I_{dh}$ is obtained through the same relationship presented in Equation \ref{eq:G_h_1}. The variation of insolation as a function of $L_{s}$ for different levels of atmospheric opacities are illustrated in Figure \ref{fig:plot:insolation-ls}. Evidently, the insolation curves peak at the perihelion with $L_{s} = \SI{248}{\degree}$ and reach their lowest during the aphelion with $L_{s} = \SI{71}{\degree}$. Interestingly, diffuse insolation is already the largest component contributing to the global insolation at $\tau = 1$ and, on a dusty day at $\tau = 3$, global insolation is mostly diffuse.
 
 \begin{figure}[H]
+\captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
 	\centering
     %% setup sizes
@@ -177,27 +179,27 @@ Global, beam, and diffuse insolations on a horizontal Mars surface are denoted a
 %% 1st row
   	\begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/variation-of-global-beam-and-diffuse-insolation-on-mars-horizontal-surface-as-a-function-of-areocentric-longitude-for-tau05-and-phi205.png}
-  		\subcaption{Tau factor 0.5}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/hh-hbh-and-hdh-as-a-function-of-ls-for-tau05-phi205-and-albedo-027}
+  		\subcaption{$\tau = 0.5$}
   		\label{fig:sub:insolation-ls-tau-factor-0p5}
   	\end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/variation-of-global-beam-and-diffuse-insolation-on-mars-horizontal-surface-as-a-function-of-areocentric-longitude-for-tau1-and-phi205.png}
-  		\subcaption{Tau factor 1}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/hh-hbh-and-hdh-as-a-function-of-ls-for-tau1-phi205-and-albedo-027}
+  		\subcaption{$\tau = 1$}
   		\label{fig:sub:insolation-ls-tau-factor-1}
   	\end{subfigure}\\[0.8ex]
 %% 2nd row
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/variation-of-global-beam-and-diffuse-insolation-on-mars-horizontal-surface-as-a-function-of-areocentric-longitude-for-tau2-and-phi205.png}
-  		\subcaption{Tau factor 2}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/hh-hbh-and-hdh-as-a-function-of-ls-for-tau2-phi205-and-albedo-027}
+  		\subcaption{$\tau = 2$}
   		\label{fig:sub:insolation-ls-tau-factor-2}
   	\end{subfigure}\hfill
 	   \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/variation-of-global-beam-and-diffuse-insolation-on-mars-horizontal-surface-as-a-function-of-areocentric-longitude-for-tau3-and-phi205.png}
-  		\subcaption{Tau factor 3}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/hh-hbh-and-hdh-as-a-function-of-ls-for-tau3-phi205-and-albedo-027}
+  		\subcaption{$\tau = 3$}
   		\label{fig:sub:insolation-ls-tau-factor-3}
 	   \end{subfigure}\hfill
 	\caption{Variation of global, beam, and diffuse insolation on Mars horizontal surface as a function of areocentric longitude at Endeavour Crater.}
@@ -211,6 +213,7 @@ To illustrate the variation of beam, direct, and diffuse insolations during a Ma
 
 
 \begin{figure}[H]
+\captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
 	\centering
     %% setup sizes
@@ -222,27 +225,27 @@ To illustrate the variation of beam, direct, and diffuse insolations during a Ma
 %% 1st row
   	\begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-insolation-variation-1-for-ls-71-phi-40-and-tau-05.png}
-  		\subcaption{$\phi = \SI{-40}{\degree}$}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/ih-ibh-and-idh-variation-1-for-ls-71-phi-40-tau-05-and-albedo-027}
+  		\subcaption{$\phi = \SI{40}{\degree}$}
   		\label{fig:sub:insolation-phi-m40}
   	\end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-insolation-variation-2-for-ls-71-phi-20-and-tau-05.png}
-  		\subcaption{$\phi = \SI{-20}{\degree}$}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/ih-ibh-and-idh-variation-2-for-ls-71-phi-0-tau-05-and-albedo-027}
+  		\subcaption{$\phi = \SI{0}{\degree}$}
   		\label{fig:sub:insolation-phi-m20}
   	\end{subfigure}\\[0.8ex]
 %% 2nd row
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-insolation-variation-3-for-ls-71-phi-0-and-tau-05.png}
-  		\subcaption{$\phi = \SI{0}{\degree}$}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/ih-ibh-and-idh-variation-3-for-ls-71-phi-20-tau-05-and-albedo-027}
+  		\subcaption{$\phi = \SI{-20}{\degree}$}
   		\label{fig:sub:insolation-phi-0}
   	\end{subfigure}\hfill
 	   \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-insolation-variation-4-for-ls-71-phi-40-and-tau-05.png}
-  		\subcaption{$\phi = \SI{20}{\degree}$}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/ih-ibh-and-idh-variation-4-for-ls-71-phi-40-tau-05-and-albedo-027}
+  		\subcaption{$\phi = \SI{-40}{\degree}$}
   		\label{fig:sub:insolation-phi-p20}
 	   \end{subfigure}\hfill
 	\caption{Diurnal variation of global, beam, and diffuse insolation on Mars horizontal surface at different planetary latitudes.}
@@ -281,6 +284,7 @@ Variation of the global irradiance at the perihelion for different inclination a
 \ref{fig:plot:irradiance-inclined-gamma-c}
 
 \begin{figure}[H]
+\captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
 	\centering
     %% setup sizes
@@ -292,28 +296,28 @@ Variation of the global irradiance at the perihelion for different inclination a
 %% 1st row
   	\begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-irradiance-slope-angle-variation-1-for-ls-248-phi-2-tau-05-and-gammac-0.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variation-1-for-ls-248-phi-2-tau-05-gammac-0-and-albedo-027.png}
   		\subcaption{$\gamma_{c} = \SI{0}{\degree}$ (South)}
   		\label{fig:sub:irradiance-inclined-gamma-c-0}
   	\end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-irradiance-slope-angle-variation-2-for-ls-248-phi-2-tau-05-and-gammac-90.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variation-2-for-ls-248-phi-2-tau-05-gammac-90-and-albedo-027.png}
   		\subcaption{$\gamma_{c} = \SI{-90}{\degree}$ (East)}
   		\label{fig:sub:irradiance-inclined-gamma-c-m90}
   	\end{subfigure}\\[0.8ex]
 %% 2nd row
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-irradiance-slope-angle-variation-3-for-ls-248-phi-2-tau-05-and-gammac-180.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variation-3-for-ls-248-phi-2-tau-05-gammac-180-and-albedo-027.png}
   		\subcaption{$\gamma_{c} = \SI{-180}{\degree}$ (North)}
   		\label{fig:sub:irradiance-inclined-gamma-c-m180}
   	\end{subfigure}\hfill
 	   \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/diurnal-irradiance-slope-angle-variation-4-for-ls-248-phi-2-tau-05-and-gammac-270.png}
-  		\subcaption{$\gamma_{c} = \SI{270}{\degree}$ (West)}
-  		\label{fig:sub:irradiance-inclined-gamma-c-m270}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variation-4-for-ls-248-phi-2-tau-05-gammac-90-and-albedo-027.png}
+  		\subcaption{$\gamma_{c} = \SI{90}{\degree}$ (West)}
+  		\label{fig:sub:irradiance-inclined-gamma-c-90}
 	   \end{subfigure}\hfill
 	\caption{Diurnal variation of global irradiance on Mars inclined surface for different orientations when $L_{s} = \SI{248}{\degree}$, $\phi = \SI{-2}{\degree}$, and $\tau = \SI{0}{\degree}$.}
 	\label{fig:plot:irradiance-inclined-gamma-c}
