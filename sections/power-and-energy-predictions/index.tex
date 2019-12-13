@@ -11,11 +11,11 @@ Power and energy calculations take into account solar cell performance ratio $PR
 \end{enumerate}
 
 The components used for $PR$ in the daily energy calculations throughout this chapter will initially be made up of degradation coefficients from (\ref{itm:pr:perm_loss}) and
-(\ref{itm:pr:temp} where validation against MER Opportunity data will use the solar array dust factor reported by the rover rather than those described in (\ref{itm:pr:deposition}) and (\ref{itm:pr:saturation}). Losses from (\ref{itm:pr:shadowing}) and other unaccounted factors will be initially assumed at \SI{5}{\percent} and then iteratively revised along with the solar array dust factor so that the error margin range may be reduced.
+(\ref{itm:pr:temp}) where validation against MER Opportunity data will use the solar array dust factor reported by the rover rather than those described in (\ref{itm:pr:deposition}) and (\ref{itm:pr:saturation}). Losses from (\ref{itm:pr:shadowing}) and other unaccounted factors will be initially assumed at \SI{5}{\percent} and then iteratively revised along with the solar array dust factor so that the error margin range may be reduced.
 
 Dust deposition induced losses do not perennially degrade the solar cells but fluctuate due to probabilistic dust cleaning events such as encounters with dust devils, storm winds, or even from a steep tilt angle as seen in Figure \ref{fig:image:mer-opportunity-dust-streaks}.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.6\linewidth]{sections/power-and-energy-predictions/images/mer-opportunity-dust-streaks.png}\\
@@ -25,6 +25,7 @@ Dust deposition induced losses do not perennially degrade the solar cells but fl
 \end{figure}
 % Source: https://www.nasa.gov/feature/jpl/rover-takes-on-steepest-slope-ever-tried-on-mars
 
+\clearpage
 \section{Predictions}
 \label{sec:PowerAndEnergyPredictions:Predictions}
 
@@ -61,7 +62,7 @@ It is worth emphasizing the difference between PV cell, panel/module, and array 
 
 \todo[inline]{TODO: Source E-mail exchange with Richard C. Ewell (NASA/JPL) for the MER solar cell size.}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/images/mer-solar-arrays.png}\\
@@ -71,7 +72,7 @@ It is worth emphasizing the difference between PV cell, panel/module, and array 
 \end{figure}
 % Source: https://mars.nasa.gov/resources/5852/opportunity-self-portrait/?site=insight
 
-
+\clearpage
 \section{Validation}
 \label{sec:PowerAndEnergyPredictions:Validation}
 
@@ -80,7 +81,7 @@ It is worth emphasizing the difference between PV cell, panel/module, and array 
 \subsection{Horizontal Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}
 
-In order to validate the formulas presented in Section \ref{sec:PowerAndEnergyPredictions:Predictions}, MER Opportunity status update parameters were applied to the daily energy calculation presented in \ref{eq:SA_energy}. The following data was scraped from the rover's update website for Mars years MY29 through MY33:
+In order to validate the formulas presented in Section \ref{sec:PowerAndEnergyPredictions:Predictions}, MER Opportunity status update parameters were applied to the daily energy calculation presented in Equation \ref{eq:SA_energy}. The following data was scraped from the rover's status update website for Mars years MY29 through MY33:
 
 \begin{enumerate}[(a)]
   \item Sol: the mission's Martian day when the status report was made.
@@ -90,53 +91,94 @@ In order to validate the formulas presented in Section \ref{sec:PowerAndEnergyPr
   \item Daily energy production: in watt-hours (\si{\watt\hour}).
 \end{enumerate}
 
-For the purpose of insolation calculations, the areocentric longitude $L_{s}$ was determined from the terrestrial date based on the process and equations presented in \citeother{Allison2000}. The resulting predicted energy production was then compared to the rover's reported daily energy production. These are presented for selected Mars years in Figure \ref{fig:plot:mer-energy-production-predicted-vs-reported}.
+For the purpose of insolation calculations, the areocentric longitude $L_{s}$ was determined from the terrestrial date based on the process and equations in \citeother{Allison2000}. The resulting predicted energy production was then compared to the rover's reported daily energy production. These are presented for selected Mars years in Figure \ref{fig:plot:mer-energy-production-predicted-vs-reported}.
 
-\begin{figure}[H]
-  \centering
-  \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/plots/energy-production-predicted-vs-reported.png}\\
-  \caption[MER Opportunity PV energy production: predicted vs reported]
-          {MER Opportunity PV energy production: predicted vs reported.}
-  \label{fig:plot:mer-energy-production-predicted-vs-reported}
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{80mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+%% 1st row
+  	\begin{subfigure}[t]{\subfigureWidth}
+      \centering
+  		\includegraphics[height=\graphicsHeight]{sections/power-and-energy-predictions/plots/predicted-vs-measured-energy-my29.png}
+  		\subcaption{MY29}
+  		\label{fig:plot:sub:mer-energy-production-predicted-vs-reported-my29}
+  	\end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+      \centering
+  		\includegraphics[height=\graphicsHeight]{sections/power-and-energy-predictions/plots/predicted-vs-measured-energy-my30.png}
+  		\subcaption{MY30}
+  		\label{fig:plot:sub:mer-energy-production-predicted-vs-reported-my30}
+  	\end{subfigure}\\[0.8ex]
+%% 2nd row
+    \begin{subfigure}[t]{\subfigureWidth}
+      \centering
+  		\includegraphics[height=\graphicsHeight]{sections/power-and-energy-predictions/plots/predicted-vs-measured-energy-my32.png}
+  		\subcaption{MY32}
+  		\label{fig:plot:sub:mer-energy-production-predicted-vs-reported-my32}
+  	\end{subfigure}\hfill
+	   \begin{subfigure}[t]{\subfigureWidth}
+      \centering
+  		\includegraphics[height=\graphicsHeight]{sections/power-and-energy-predictions/plots/predicted-vs-measured-energy-my33.png}
+  		\subcaption{MY33}
+  		\label{fig:plot:sub:mer-energy-production-predicted-vs-reported-my33}
+	   \end{subfigure}\hfill
+    \caption[MER Opportunity PV energy production: predicted vs reported]
+            {MER Opportunity PV energy production: predicted vs reported. Not shown are data for MY28 and MY34 which have also been scraped from the rover's status update logs.}
+	\label{fig:plot:mer-energy-production-predicted-vs-reported}
+\vspace{-2ex}
 \end{figure}
 
-\todo[inline]{TODO: Split figure into subfigures. Include a legend.}
+\clearpage
 
-A clear outlier is observed during the second half of Mars year MY33 in which predicted daily energy productions are much higher than what was reported. This is due to the rover's inclined descent through 'Bitterroot Valley' during an intensive investigation into a gully at Endeavour Crater's western rim. The inclination and orientation of the descent make horizontal surface assumptions ill-suited for energy production predictions using Equation \ref{eq:SA_energy}. Applying Equation \ref{eq:SA_slope_energy} for $E_{\beta}$ would be more applicable. As such, data from MY33 is not considered in the validation exercise for horizontal surfaces.
+A clear outlier is observed during the second half of MY33 in which predicted daily energy productions are much higher than what was reported. This is due to the rover's inclined descent through ``Bitterroot Valley'' during an intensive investigation into a gully at Endeavour Crater's western rim. Energy production predictions with horizontal surface Equation \ref{eq:SA_energy} not suited due to the inclination and orientation of such a descent. Applying Equation \ref{eq:SA_slope_energy} for $E_{\beta}$ would be more applicable. As such, data from MY33 is not considered in the validation exercise for horizontal surfaces.
 
 \todo[inline]{TODO: Include reference to rover update for Bitterroot Valley descent.}
 % Source: https://mars.nasa.gov/mer/mission/rover-status/opportunity/recent/all/?y=2016
 % Source: https://www.nasa.gov/feature/jpl/rover-takes-on-steepest-slope-ever-tried-on-mars
 
-Divergences from the predicted energy production are presented in Figure \ref{fig:plot:mer-energy-prediction-divergences}. Negative values indicate predicted daily energy production greater than what was measured and the inverse is indicated by positive values. A -32\%/+9\% error margin is noticed from the observed divergences.
+Not included in Figure \ref{fig:plot:mer-energy-production-predicted-vs-reported} is data for MY34 during which the rover spent most of the year driving down ``Perseverance Valley'' on the west rim of Endeavour Crater. As was the case for MY33, applying Equation \ref{eq:SA_energy} for the MY34 would not be appropriate considering the rover's inclination during descents and is not considered in the validation exercise for horizontal surfaces.
 
-\begin{figure}[H]
+% Source:https://mars.nasa.gov/mer/mission/rover-status/opportunity/recent/all/?y=2017
+% Opportunity Remains at Current Location Due to Solar Conjunction
+% sols 4787 to 4792, July 12, 2017 - July 17, 2017
+% Opportunity entered Perseverance Valley on the west rim of Endeavour crater. The rover is positioned within the valley where she will spend the solar conjunction period.
+
+Divergences from the predicted energy production are presented in Figure \ref{fig:plot:mer-energy-prediction-divergences} from which a -33\%/+7\% error margin range is observed. Negative values indicate predicted daily energy production greater than what was measured and the inverse is indicated by positive values.
+
+\begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/plots/energy-prediction-divergences.png}\\
+  \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/plots/energy-prediction-divergences-from-my28-to-my32.png}\\
   \caption[Divergences from predicted MER Opportunity PV energy production]
           {Divergences from predicted MER Opportunity PV energy production.}
   \label{fig:plot:mer-energy-prediction-divergences}
 \end{figure}
 
-\todo[inline]{TODO: I have gone through the MER Opportunity status update logs and figured out causes for the divergence peaks/outliers. Maybe I should present them here?}
+\clearpage
 
-% List percentage of measurements that are in between certain thresholds
--25
--25/-20
--20/-15
--15/-10
--10/-6
--5/0
-0/5
-6/10
+Figure \ref{fig:plot:binned-error-margins} bins the distribution of divergences across the -33\%/+7\% error margin range into 5\% increments. 65.5\% of the divergences occur within a -10\%/0\% error margin and 90.7\%  within -15\%/+5\%.
 
+\begin{figure}[h]
+  \centering
+  \hypersetup{linkcolor=captionTextColor}
+  \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/plots/binned-error-margins.png}\\
+  \caption[Binned error margins]
+          {Binned error margins.}
+  \label{fig:plot:binned-error-margins}
+\end{figure}
 
-Maxima outliers contribute to the wide error margin band, notably for local maxima at Sol 2204 (-32\%), 2218 (-26\%), 2519 (-25\%)), and 3901 (-21\%)). Table \ref{tab:divergences-less-than-m20pc} lists all divergences that are less than -20\%.
+The wide error margin range is thus a result of isolated local maxima outliers, notably at Sol 2204 (-33\%), 2218 (-27\%), 2519 (-28\%), and 3901 (-24\%). Table \ref{tab:divergences-less-than-m20pc} lists all divergences that are beyond -20\%.
 
 \input{sections/power-and-energy-predictions/tables/divergences-less-than-m20pc.tex}
 
+With the exception of Sol 2199 and 2218, possible explanations for large divergences beyond -20\% were obtained from MER Opportunity's status logs [?]:
 \begin{enumerate}[(a)]
   \item Sol 2199: No turns or inclinations reported.
   \item Sol 2204: Turn - short sharp arc turn.
@@ -146,28 +188,21 @@ Maxima outliers contribute to the wide error margin band, notably for local maxi
   \item Sol 3901: Inclination - descended from the summit of 'Cape Tribulation'.
 \end{enumerate}
 
+\todo[inline]{TODO: Source MER Opportunity status log.}
 %Sources. For terrestrial year 2010: https://mars.nasa.gov/mer/mission/rover-status/opportunity/2010/
 
+The use of fixed daily values for the certain irradiance calculation variables also contributes to the observed divergences:
+\begin{enumerate}[(a)]
+  \item A fixed $\tau$ factor does not reflect the continuous changes in atmopheric optical depth.
+  \item A fixed solar array dust factor does not reflect the irregularity of dust deposition over the entirety of the solar cell coverage area.
+  \item A fixed shadowing performance loss coefficient does not reflect the diurnal changes in overshadowed area. Overshadowing changes throughout the day due to the position of the sun with respect to the location of the rover's petruding instruments, notably the Pancam Mast Assembly (PMA) as well as the low-gain and high-gain antennas.
+\end{enumerate}
 
+Attempts to narrow down the error margin range by adjusting the reported dust factor as well as shadowing and other losses are described in Appendix \ref{sec:Appendix:NarrowedEnergyPredictionErrorMarginRange}. However, these attempts resulted in overly conservative energy predictions and will not be applied.
 
-The margin of error range is narrowed by selecting a target range and applying corrective uncertainties to the reported solar array dust factor in combination with revised performance degradation factors pertaining to shadowing and other losses. Table \ref{tab:target-error-margins} presents the adjustment coefficients that were iteratively obtained:
+By setting aside outliers causing divergences greater than 5\% and lesser than -15\% that were obtained with only 9.2\% of the dataset, the predicted energy production obtained with Equation \ref{eq:SA_energy} become acceptable for preliminary mission scenario analysis on a horizontal surfaces.
 
-\input{sections/power-and-energy-predictions/tables/target-error-margins.tex}
-
-
-The -10\%/+25\% error margin is preferred as it has the smallest negative value which corresponds to a worst-case over-estimated daily energy prediction. PR adjustment coefficient combination of \SI{8.25}{\percent} for solar array dust factor adjustment and \SI{7}{\percent} for shadowing and other losses is the preferred option in order to restict adjustments below a \SI{10}{\percent} threshold. Applying these adjustment coefficients results in adjusted divergences presented in Figure \ref{fig:plot:mer-energy-prediction-divergences-adjusted}:
-
-\begin{figure}[H]
-  \centering
-  \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/plots/energy-prediction-divergences-adjusted.png}\\
-  \caption[Adjusted divergences from predicted MER Opportunity PV energy production]
-          {Adjusted divergences from predicted MER Opportunity PV energy production.}
-  \label{fig:plot:mer-energy-prediction-divergences-adjusted}
-\end{figure}
-
-The PR adjustment coefficients obtained in this section will henceforth be applied to power and energy calculations for mission planning on a Mars horizontal surface. Furthermore, a worst-case \SI{-10}{\percent} error margin will be applied to all calculated power and energy productions.
-
+\clearpage
 \subsection{Inclined Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:InclinedSurface}
 \todo[inline]{TODO: Here we repeat the same exercise as in the previous section and compare if the obtained reduced error margins are similar. However, this is trickier because we don't have hundreds of data points since we lack slope angle data. Validation will have to be done at a micro level sich as when Opportunity's tilt hit 32 degrees on March 10, 2016, while making its closest approach to an intended target near the crest of 'Knudsen Ridge.'}
