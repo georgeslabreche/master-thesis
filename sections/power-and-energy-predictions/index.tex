@@ -1,5 +1,5 @@
 \section{Performance Ratio}
-
+\label{sec:PowerAndEnergyPredictions:PerformanceRatio}
 Power and energy calculations take into account solar cell performance ratio $PR$, also known as the coefficient for losses. $PR$ components are taken from Mars PV literature:
 
 \begin{enumerate}[(a)]
@@ -45,7 +45,7 @@ The generated daily energy output $E$ is measured in watt-hours (\si{\watt\hour}
   E = A \cdot \eta \cdot H_{h} \cdot PR
 \end{equation}
 
-Power and energy calculations for inclined solar arrays are obtained from $G_{\beta}$ and $I_{\beta}$ and are denoted as $P_{\beta}$ and $E_{\beta}$ respectively:
+Power and energy calculations for inclined solar arrays are obtained from $G_{\beta}$ and $I_{\beta}$. They are denoted as $P_{\beta}$ and $E_{\beta}$ respectively:
 
 \begin{equation}
   \label{eq:SA_slope_power}
@@ -205,7 +205,30 @@ By setting aside outliers causing divergences greater than 5\% and lesser than -
 \clearpage
 \subsection{Inclined Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:InclinedSurface}
-\todo[inline]{TODO: Here we repeat the same exercise as in the previous section and compare if the obtained reduced error margins are similar. However, this is trickier because we don't have hundreds of data points since we lack slope angle data. Validation will have to be done at a micro level sich as when Opportunity's tilt hit 32 degrees on March 10, 2016, while making its closest approach to an intended target near the crest of 'Knudsen Ridge.'}
+
+Equation \ref{eq:SA_slope_energy} for energy predictions on an inclined surface requires slope and rover orientation angles in order to determine $H_{\beta}$. However, these parameters are seldom reported in the MER Opportunity status updates.
+
+Cherry-picked energy production measurements made while MER Opportunity's descended into and ascended out of Endaveaour crater during MY33 were used in an attempt to validate predictions made with Equation \ref{eq:SA_slope_energy}. These measurements were selected based on traverse phases that preserved consistent orientations which could be more reliable measured from the rover's Traverse Map Archive [z].
+
+An average slope angle of 13 degrees was assumed based on the following:
+\begin{itemize}
+  \item On Sol 4269 and 4270, MER Opportunity status logs reported that the rover climbed slopes close to \SI{30}{\degree} near the crest of ``Knudsen Ridge'' [a], reaching \SI{32}{\degree} on March 10, 2016 (Sol 4310) [b].
+  \item An image taken in March 22, 2016 (Sol 4322), was rotated \SI{13.5}{\degree} degrees to adjust for the tilt of the rover.
+  \item Perseverance Valley extends downhill at around \SI{15}{\degree} for about 200 meters toward Endeavour crater's interior [c].
+\end{itemize}
+
+As was the case in Section \ref{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}, performance ratios described in Section \ref{sec:PowerAndEnergyPredictions:PerformanceRatio} were also used. Due to large uncertainties regarding slope rover orientation angles, this section only aims to validate that using Equation \ref{eq:SA_slope_energy} results in smaller energy predictions divergences than what would otherwise be obtained using Equation \ref{eq:SA_energy}. The results are presented in Table \ref{tab:divergences-inclined-surfaces}:
+
+\input{sections/power-and-energy-predictions/tables/divergences-inclined-surfaces.tex}
+
+Equation \ref{eq:SA_slope_energy} resulted in a larger divergence range than with Equation \ref{eq:SA_energy} at -30\%/32\% for the former and -45\%/-27\% for the latter. However, the magnitude of divergences are smaller with Equation \ref{eq:SA_slope_energy}. Furthermore, with the exception of Sol 4582, divergences with \ref{eq:SA_slope_energy} result in conservative under-estimated energy predictions rather than the worst-case over-estimated values consistently obtained with Equation \ref{eq:SA_energy}.
+
+The pool of measured data used for this validation was much too small to draw convincing conclusions and the magnitude of divergences remained significantly large. Inaccurate slope and rover orientation angles are likely to have contributed to unfavourable results. Further data will have to be obtained to validate Equation \ref{eq:SA_slope_energy} against reported measurements. However, for the purpose of this thesis, mission scenario analysis on inclined surfaces will still rely on predictions obtained with Equation \ref{eq:SA_slope_energy} in light of it being derived from applying solar geometry to Equation \ref{eq:SA_energy}, with which favourably results were obtained as described in Section \ref{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}.
+
+% [z] Rover traverse map. [https://mars.nasa.gov/mer/mission/traverse-maps/opportunity/]
+% [a] https://mars.nasa.gov/mer/mission/rover-status/opportunity/recent/all/?y=2016
+% [b] https://www.jpl.nasa.gov/news/news.php?feature=6193
+% [c] https://www.planetary.org/explore/space-topics/space-missions/mer-updates/2018/04-mer-update-special-perseverance-valley-lpsc-2018.html
 
 %Particularly while it was exploring steep outcrops within 'Marathon Valley' when the rover was inclined on the slopes of 'Knudsen Ridge' at Sol 4303 (March 1, 2016).
 %The rover's tilt hit 32 degrees on March 10 while Opportunity was making its closest approach to an intended target near the crest of "Knudsen Ridge."
