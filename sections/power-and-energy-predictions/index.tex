@@ -1,6 +1,6 @@
 \section{Performance Ratio}
 \label{sec:PowerAndEnergyPredictions:PerformanceRatio}
-Power and energy calculations take into account solar cell performance ratio $PR$, also known as the coefficient for losses. $PR$ components are taken from Mars PV literature:
+Power and energy calculations take into account solar cell performance ratio $PR$, also known as the coefficient for losses. $PR$ components are taken from Mars \ac{PV} literature:
 
 \begin{enumerate}[(a)]
   \item\label{itm:pr:perm_loss}After deployment, \SI{5}{\percent} permanent dust power loss \citepower{McNatt2016}.
@@ -10,8 +10,7 @@ Power and energy calculations take into account solar cell performance ratio $PR
   \item\label{itm:pr:shadowing}Variable shadowing from protruding rover structures \citepower{Stella2005} and terrain masking \citepower{Kerslake1999}.
 \end{enumerate}
 
-The components used for $PR$ in the daily energy calculations throughout this chapter will initially be made up of degradation coefficients from (\ref{itm:pr:perm_loss}) and
-(\ref{itm:pr:temp}) where validation against MER Opportunity data will use the solar array dust factor reported by the rover rather than those described in (\ref{itm:pr:deposition}) and (\ref{itm:pr:saturation}). Losses from (\ref{itm:pr:shadowing}) and other unaccounted factors will be initially assumed at \SI{5}{\percent} and then iteratively revised along with the solar array dust factor so that the error margin range may be reduced.
+The components used for \ac{PR} in the daily energy calculations throughout this chapter will initially be made up of degradation coefficients from (\ref{itm:pr:perm_loss}) and (\ref{itm:pr:temp}) where validation against \ac{MER} Opportunity data will use the solar array dust factor reported by the rover rather than those described in (\ref{itm:pr:deposition}) and (\ref{itm:pr:saturation}). Losses from (\ref{itm:pr:shadowing}) and other unaccounted factors will be initially assumed at \SI{5}{\percent} and then iteratively revised along with the solar array dust factor so that the error margin range may be reduced.
 
 Dust deposition induced losses do not perennially degrade the solar cells but fluctuate due to probabilistic dust cleaning events such as encounters with dust devils, storm winds, or even from a steep tilt angle as seen in Figure \ref{fig:image:mer-opportunity-dust-streaks}.
 
@@ -19,8 +18,8 @@ Dust deposition induced losses do not perennially degrade the solar cells but fl
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.6\linewidth]{sections/power-and-energy-predictions/images/mer-opportunity-dust-streaks.png}\\
-  \caption[Streak of dust on MER Opportunity's rear solar array during a steep tilt]
-          {During a forward, uphill drive on Sol 4311 (March 10, 2016), Opportunity's tilt reached \SI{32}{\degree}. Vibrations from wheels slipping against the ground caused dust to streak down from MER Opportunity's rear solar array while the rover was steeply tilted. Image taken on Sol 4322 (March 21, 2016). Credits: NASA/JPL-Caltech.}
+  \caption[Streak of dust on \ac{MER} Opportunity's rear solar array during a steep tilt]
+          {During a forward, uphill drive on Sol 4311 (March 10, 2016), Opportunity's tilt reached \SI{32}{\degree}. Vibrations from wheels slipping against the ground caused dust to streak down from \ac{MER} Opportunity's rear solar array while the rover was steeply tilted. Image taken on Sol 4322 (March 21, 2016). Image: \ac{NASA}/\ac{JPL}-Caltech.}
   \label{fig:image:mer-opportunity-dust-streaks}
 \end{figure}
 % Source: https://www.nasa.gov/feature/jpl/rover-takes-on-steepest-slope-ever-tried-on-mars
@@ -58,7 +57,7 @@ Power and energy calculations for inclined solar arrays are obtained from $G_{\b
   E_{\beta} = A \cdot \eta \cdot H_{\beta} \cdot PR
 \end{equation}
 
-It is worth emphasizing the difference between PV cell, panel/module, and array surface areas in order to emphasize the correct parameter when calculating generated power and energy. PV cells are interconnected together in a package called a panel, or module, which is then wired in series and parallel into a PV array. The interconnections between cells and wiring between panels introduce cell coverage gaps from which no power is generated. As such, considering panel or array rather than cell surface area for power and energy calculations would result in over-estimated values. By way of example, we consider the solar arrays on MER rovers in Figure \ref{fig:image:mer-solar-arrays} which is made up of a total of 499 cells: 165 on the port wing, 167 on the starboard wing, 102 on the stern, and 65 on the body. A cell's dimension is $\SI{3.95}{\centi\meter} \times \SI{6.89}{\centi\meter}$ with two cropped corners. This provides an active area of \SI{26.6}{\centi\meter\squared} thus the solar cell coverage area is $499 \times \SI{26.6}{\centi\meter\squared} = \SI{1.3}{\meter\squared}$.
+It is worth emphasizing the difference between \ac{PV} cell, panel/module, and array surface areas in order to emphasize the correct parameter when calculating generated power and energy. \ac{PV} cells are interconnected together in a package called a panel, or module, which is then wired in series and parallel into a PV array. The interconnections between cells and wiring between panels introduce cell coverage gaps from which no power is generated. As such, considering panel or array rather than cell surface area for power and energy calculations would result in over-estimated values. By way of example, we consider the solar arrays on MER rovers in Figure \ref{fig:image:mer-solar-arrays} which is made up of a total of 499 cells: 165 on the port wing, 167 on the starboard wing, 102 on the stern, and 65 on the body. A cell's dimension is $\SI{3.95}{\centi\meter} \times \SI{6.89}{\centi\meter}$ with two cropped corners. This provides an active area of \SI{26.6}{\centi\meter\squared} thus the solar cell coverage area is $499 \times \SI{26.6}{\centi\meter\squared} = \SI{1.3}{\meter\squared}$.
 
 \todo[inline]{TODO: Source E-mail exchange with Richard C. Ewell (NASA/JPL) for the MER solar cell size.}
 
@@ -66,8 +65,8 @@ It is worth emphasizing the difference between PV cell, panel/module, and array 
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/images/mer-solar-arrays.png}\\
-  \caption[MER solar arrays]
-          {MER solar arrays. Credits: NASA/JPL-Caltech/Cornell.}
+  \caption[\ac{MER} solar arrays]
+          {\ac{MER} solar arrays. Image: \ac{NASA}/\ac{JPL}-Caltech/Cornell.}
   \label{fig:image:mer-solar-arrays}
 \end{figure}
 % Source: https://mars.nasa.gov/resources/5852/opportunity-self-portrait/?site=insight
@@ -81,7 +80,7 @@ It is worth emphasizing the difference between PV cell, panel/module, and array 
 \subsection{Horizontal Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}
 
-In order to validate the formulas presented in Section \ref{sec:PowerAndEnergyPredictions:Predictions}, MER Opportunity status update parameters were applied to the daily energy calculation presented in Equation \ref{eq:SA_energy}. The following data was scraped from the rover's status update website for Mars years MY29 through MY33:
+In order to validate the formulas presented in Section \ref{sec:PowerAndEnergyPredictions:Predictions}, \ac{MER} Opportunity status update parameters were applied to the daily energy calculation presented in Equation \ref{eq:SA_energy}. The following data was scraped from the rover's status update website for Mars years MY29 through MY33:
 
 \begin{enumerate}[(a)]
   \item Sol: the mission's Martian day when the status report was made.
@@ -156,8 +155,8 @@ Divergences from the predicted energy production are presented in Figure \ref{fi
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/plots/energy-prediction-divergences-from-my28-to-my32.png}\\
-  \caption[Divergences from predicted MER Opportunity PV energy production]
-          {Divergences from predicted MER Opportunity PV energy production.}
+  \caption[Divergences from predicted \ac{MER} Opportunity \ac{PV} energy production]
+          {Divergences from predicted \ac{MER} Opportunity \ac{PV} energy production.}
   \label{fig:plot:mer-energy-prediction-divergences}
 \end{figure}
 
@@ -206,13 +205,13 @@ By setting aside outliers causing divergences greater than 5\% and lesser than -
 \subsection{Inclined Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:InclinedSurface}
 
-Equation \ref{eq:SA_slope_energy} for energy predictions on an inclined surface requires slope and rover orientation angles in order to determine $H_{\beta}$. However, these parameters are seldom reported in the MER Opportunity status updates.
+Equation \ref{eq:SA_slope_energy} for energy predictions on an inclined surface requires slope and rover orientation angles in order to determine $H_{\beta}$. However, these parameters are seldom reported in the \ac{MER} Opportunity status updates.
 
-Cherry-picked energy production measurements made while MER Opportunity's descended into and ascended out of Endaveaour crater during MY33 were used in an attempt to validate predictions made with Equation \ref{eq:SA_slope_energy}. These measurements were selected based on traverse phases that preserved consistent orientations which could be more reliable measured from the rover's Traverse Map Archive [z].
+Cherry-picked energy production measurements made while \ac{MER} Opportunity's descended into and ascended out of Endaveaour crater during MY33 were used in an attempt to validate predictions made with Equation \ref{eq:SA_slope_energy}. These measurements were selected based on traverse phases that preserved consistent orientations which could be more reliable measured from the rover's Traverse Map Archive [z].
 
 An average slope angle of 13 degrees was assumed based on the following:
 \begin{itemize}
-  \item On Sol 4269 and 4270, MER Opportunity status logs reported that the rover climbed slopes close to \SI{30}{\degree} near the crest of ``Knudsen Ridge'' [a], reaching \SI{32}{\degree} on March 10, 2016 (Sol 4310) [b].
+  \item On Sol 4269 and 4270, \ac{MER} Opportunity status logs reported that the rover climbed slopes close to \SI{30}{\degree} near the crest of ``Knudsen Ridge'' [a], reaching \SI{32}{\degree} on March 10, 2016 (Sol 4310) [b].
   \item An image taken in March 22, 2016 (Sol 4322), was rotated \SI{13.5}{\degree} degrees to adjust for the tilt of the rover.
   \item Perseverance Valley extends downhill at around \SI{15}{\degree} for about 200 meters toward Endeavour crater's interior [c].
 \end{itemize}
