@@ -1,0 +1,17 @@
+\begin{table}[h]
+\small
+\centering
+\caption{Rover modes}
+\label{tab:rover-modes}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{\begin{tabular}[c]{@{}l@{}}Duration\\ per Sol\end{tabular}} \\ \hline
+\textbf{RM-01} & Traverse & \begin{tabular}[c]{@{}l@{}}\textbf{Pre-planned traverses to target destinations.} \\ Daytime only. Batteries not charging.\\ Propulsion ON.\\ Navigation ON.\\ Communication ON.\\ Science OFF.\\ Heaters OFF.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Up to\\ 180 min\end{tabular} \\ \hline
+\textbf{RM-02} & \begin{tabular}[c]{@{}l@{}}Science Stop - Short\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Short science activities in between traverses.} \\ Daytime only. Batteries charging.\\ Propulsion OFF.\\ Navigation OFF.\\ Communication ON.\\ Science ON.\\ Heaters OFF.\end{tabular} & 60 min \\ \hline
+\textbf{RM-03} & \begin{tabular}[c]{@{}l@{}}Science Stop - Long\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{All day dedicated to science activities.} \\ Daytime only. Batteries charging.\\ Propulsion OFF.\\ Navigation OFF.\\ Communication ON.\\ Science ON.\\ Heaters OFF.\end{tabular} & 240 min \\ \hline
+\textbf{RM-04} & \begin{tabular}[c]{@{}l@{}}Commnunication\\ \ac{DTE} \end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Planned communication sessions.} \\ Daytime only. Batteries not charging.\\ Propulsion OFF.\\ Navigation OFF.\\ Communication ON.\\ Science OFF.\\ Heaters OFF.\end{tabular} & 5-30 min \\ \hline
+\textbf{RM-05} & Idle - Day & \begin{tabular}[c]{@{}l@{}}\textbf{All day dedicated to charging batteries.} \\ Daytime only. Batteries charging.\\ Propulsion OFF.\\ Navigation OFF.\\ Communication ON.\\ Science OFF.\\ Heaters OFF.\end{tabular} & All day \\ \hline
+\textbf{RM-06} & Idle - Night & \begin{tabular}[c]{@{}l@{}}\textbf{Minimum battery usage during night.} \\ Night-time only. Batteries not charging.\\ Propulsion OFF.\\ Navigation OFF.\\ Communication ON.\\ Science OFF.\\ Heaters ON.\end{tabular} & All night \\ \hline
+\textbf{RM-07} & Hibernation & \begin{tabular}[c]{@{}l@{}}\textbf{Survival mode during dust storms ($\tau \geq 1$).}\\ Daytime and/or night-time. Batteries not charging.\\ Propulsion OFF.\\ Navigation OFF.\\ Communication OFF.\\ Science OFF.\\ Heaters ON.\end{tabular} & \begin{tabular}[c]{@{}l@{}}All day\\ and night\end{tabular} \\ \hline
+\end{tabular}
+\end{table}

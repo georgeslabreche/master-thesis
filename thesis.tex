@@ -9,6 +9,8 @@
 ]
 {memoir}
 
+\usepackage{blindtext}
+
 %% Prevents figure and table placements in random locations.
 \usepackage{float}
 
@@ -48,7 +50,7 @@
 
 %% Document Meta Data %%
 \newcommand{\myWorkingTitle}[0]{%
-Solar Array Integration on SherpaTT Rover Considering Mars and Lunar Deployments%
+Design of SherpaTT Rover Solar Arrays for Simulated Mars Mission Phases and Analysis of Operational Scenarios%
 }
 \newcommand{\thesisAuthor}[0]{%
 Georges Labreche%
@@ -216,15 +218,21 @@ Master Thesis%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Propulsion Power Constraints}
-\label{sec:PropulsionPowerConstraints}
-\input{sections/locomotion-power-draws/index.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Mission Sites}
 \label{sec:MissionSites}
 \input{sections/mission-sites/index.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Reference Sols}
+\label{sec:ReferenceSols}
+\input{sections/reference-sols/index.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Power Budget}
+\label{sec:PowerBudget}
+\input{sections/locomotion-power-draws/index.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -238,7 +246,7 @@ Master Thesis%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Solar Array Design, Integration, and Deployment Mechanism}
+\chapter{Solar Array}
 %\shinyChapterQuote{Mechanisms and mechanical systems, everybody can design them but everybody has a hard time making them work.}
 %  {Aaron Cohen, Engineering the Space Shuttle.}
 \label{sec:SolarArrayDesign}
@@ -253,7 +261,7 @@ Master Thesis%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Mission Scenarios}
+\chapter{Simulations}
 %\shinyChapterQuote{Maybe I’ll post a consumer review. “Brought product to surface of Mars. It stopped working. 0/10.”}
 %  {Andy Weir, The Martian.}
 \label{sec:MissionScenarios}

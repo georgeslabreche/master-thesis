@@ -1,38 +1,50 @@
 \section{Introduction}
 \label{sec:RequirementsAndDesignDrivers:Introduction}
-Solar array design requirements were obtained from the following constraints:
+Two sets of requirements must be differenciated, those pertaining to the rover's performance and those pertaining to the design of its solar arrays. The former drove the latter and unfeasable results for the latter adjusted the former through several iterations until a final set of requirements were achieved. The scope of this work limited the rover's performance requirements to that of sustaining the required energy for rover propulsion as well as allowing for battery charge time. Rover Modes were defined in order to constrain these requirements. Solar array design requirements were determined by the rover's performance requirements in light of the available worst-case solar insolation at the selected mission sites.
 
-\begin{itemize}
-    \item Solar insolation.
-    \item Propulsion power draws.
-    \item Science instrument power budget.
-    \item Thermal power budget.
-\end{itemize}
-
-The first two constraints were extracted from detailed analysis in Sections \ref{sec:PowerAndEnergyPredictions} and \ref{sec:PropulsionPowerConstraints}, respectively. The latter two are briefly presented in this section and extracted from literature and initial assumptions. Satisfying these requirements drove the desiye of the rover's solar array in terms or solar cell coverage area.
-
-\section{Worst Cases}
-\label{sec:RequirementsAndDesignDrivers:WorstCases}
-Two solar insolation worst-cases needed to be defined: for a clear day and for a dust storm day.
-Design drivers were based on worst-case scenarios for power and energy generation predictions as well as power draws for rover operations.
-
-\subsection{Propulsion}
-\label{sec:RequirementsAndDesignDrivers:WorstCases:Propulsion}
-
-\subsection{Instrumentation}
-\label{sec:RequirementsAndDesignDrivers:WorstCases:Instrumentation}
-
-\subsection{Thermal}
-\label{sec:RequirementsAndDesignDrivers:WorstCases:Thermal}
-
-\section{Rover Modes}
-\label{sec:RequirementsAndDesignDrivers:RoverModes}
 
 \section{Assumptions}
 \label{sec:RequirementsAndDesignDrivers:Assumptions}
+Solar array performance degredations as well as propulsion power draw assumptions were made in Sections \ref{sec:PowerAndEnergyPredictions:PerformanceRatio} and \ref{sec:PropulsionPowerConstraints:Conclusion}, respectively. Further assumptions were made for the \ac{BOL} and \ac{EOL} efficiencies of the selected solar cell technology. All assumptions are as follow:
+
+
+\begin{itemize}
+    \item[\textbf{A-01}] Propulsion power draw for flat terrain traverses is \SI{75}{\watt}.
+    \item[\textbf{A-02}] Propulsion power draw for upslope terrain traverses up to \SI{30}{\degree} inclination is \SI{150}{\watt}.
+    \item[\textbf{A-03}] Solar cell technology is \ac{IMM} solar cell with AM0 efficiency of 32.3\% at \ac{BOL} and 22.5\% at \ac{EOL} \citepower{Sharps2017}.
+    \item[\textbf{A-04}] IMM Solar cell efficiency on Mars surface is 20\% at \ac{EOL}.
+    \item[\textbf{A-05}] Solar cell packing efficiency is 80\%.
+    \item[\textbf{A-06}] Solar array efficiency varies by 3\% due to changing temperature and red-shift spectral losses through the day time-period \citepower{Kerslake1999}.
+    \item[\textbf{A-07}] Solar array permanent dust power loss is 5\% \citepower{McNatt2016}.
+    \item[\textbf{A-08}] Solar array dust performance degradation is 30\% \citepower{Stella2005}.
+    \item[\textbf{A-09}] Solar array performance degradation from shadowing by protruding rover structures is 5\%.
+\end{itemize}
+
+
+
 
 \section{Requirements}
 \label{sec:RequirementsAndDesignDrivers:Requirements}
 
+\begin{itemize}
+    \item[\textbf{R-01}] When $\tau = 0.5$ for at least 2 hours.
+    \item[\textbf{R-02}] aside
+    \item[\textbf{R-03}] asd
+    \item[\textbf{R-04}] asd
+\end{itemize}
+
+
+\section{Design Drivers}
+\label{sec:RequirementsAndDesignDrivers:DesignDrivers}
+The following solar array design drivers were identified:
+
+\begin{itemize}
+    \item[\textbf{DD-01}] Solar cell coverage area of \SI{1.5}{\square\meter}.
+    \item[\textbf{DD-02}] Limited amount of unfolding during deployment.
+    \item[\textbf{DD-03}] Manipulator arm can still access the ground.
+    \item[\textbf{DD-04}] Rover's suspension unit workspace is unobstructed.
+\end{itemize}
+
 \section{Conclusion}
 \label{sec:RequirementsAndDesignDrivers:Conclusion}
+% Future requirements

@@ -1,26 +1,27 @@
-\section{Introduction}
-\label{sec:PropulsionPowerConstraints:Introduction}
-SherpaTT's actively articulated suspension system consists of 4 wheeled-legs with a total of 20 motors. Each leg is equipped with 3 suspension motors and 2 drive motors. The suspension motors are responsible for Pan, \ac{IL}, and \ac{OL} revolute joint rotations whereas the drive motors are responsible for \ac{WS} and \ac{WD}. The distribution of these motors across each leg are shown in Figure \ref{fig:sherpatt-actively-articulated-suspension-system}. Propulsion power draw refers to the summation of suspension and drive motor power draws. These power draws have been studied in detail for SherpaTT during a Mars analogue field campaign in Utah \citeother{Cordes2018}.
+This chapter details the power budget for the reference Sols used in mission planning. Power budgets for the rover modes comprising the reference Sols were taken from \ac{ESA}'s \ac{CDF} Study Report on MarsFAST. Propulsion power budgets for the rover's Traverse mode were determined from data collected during the SherpaTT field trials in Utah.
+
+The chapter is structured as follows: Propulsion power budget are presented in Section \ref{sec:PowerBudget:PropulsionPowerBudget} following an analysis of Mars analogue field test campaign data. Rover modes that were presented in the previous Chapter are complemented with power budgets in Section \ref{sec:PowerBudget:RoverModePowerBudget}. The chapter is then summarized in Section \ref{sec:PowerBudget:SummaryAndConclusion}.
+
+\section{Propulsion Power Budget}
+\label{sec:PowerBudget:PropulsionPowerBudget}
+SherpaTT's actively articulated suspension system consists of four wheeled-legs with a total of 20 motors. Each leg is equipped with three suspension motors and two drive motors. The suspension motors are responsible for Pan, \ac{IL}, and \ac{OL} revolute joint rotations whereas the drive motors are responsible for \ac{WS} and \ac{WD}. The distribution of these motors across each leg are shown in Figure \ref{fig:sherpatt-actively-articulated-suspension-system}. Propulsion power draw refers to the summation of suspension and drive motor power draws. These power draws have been studied in detail for SherpaTT during a Mars analogue field campaign in Utah \citeother{Cordes2018}.
 
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/locomotion-power-draws/images/sherpatt-actively-articulated-suspension-sytem.png}\\
+  \includegraphics[width=0.6\linewidth]{sections/locomotion-power-draws/images/sherpatt-actively-articulated-suspension-sytem.png}\\
   \caption[SherpaTT actively articulated suspension system]
-          {SherpaTT actively articulated suspension system.}
+          {SherpaTT actively articulated suspension system, taken from \citeother{Cordes2018}.}
   \label{fig:sherpatt-actively-articulated-suspension-system}
 \end{figure}
 
- This section restricts power draw analysis to establishing propulsion power constraints for the study of SherpaTT Mars mission scenarios. Lack of motor optimisation as well as lower gravity and pressure on Mars permit the assumption that, given similar topology traversals, measured propulsion power draws are greater than those that would be observed on a Martian environment. This assumption is further supported when considering that SherpaTT's velocities during power draw measurements were much greater than what has been achieved on present and past Mars rover missions.
+\clearpage
+Lack of motor optimisation as well as lower gravity and pressure on Mars permit the assumption that, given similar topology traversals, measured propulsion power draws are greater than those that would be observed on a Martian environment. This assumption is further supported when considering that SherpaTT's velocities during power draw measurements were much greater than what has been achieved on present and past Mars rover missions.
 
-
-\section{Power Draw}
-\label{sec:PropulsionPowerConstraints:PowerDraw}
-Available datasets from the Mars analogue field test campaign cover 2 flat surface runs and 3 steep upslope terrain runs. From the 2 upslope runs, the dataset with the worst-case maximum and mean propulsion power draw was used as the worst-case scenario. Hereafter, all mention of SherpaTT power draws will reference measurements included in these datasets. Measured power draws fluctuate due to slips, skids, noise, and other unknown imperfections. To ease readability, local minima, maxima, and media lines have been traced for all power plot figures.
-
+Available datasets from the Mars analogue field test campaign cover two flat surface runs and three steep upslope terrain runs. From the two upslope runs, the dataset with the worst-case maximum and mean propulsion power draw was used as the worst-case scenario. Hereafter, all mention of SherpaTT power draws will reference measurements included in these datasets. Measured power draws fluctuate due to slips, skids, noise, and other unknown imperfections. To ease readability, local minima, maxima, and media lines have been traced for all power plot figures.
 
 \subsection{Flat Terrain Traverse}
-\label{sec:PropulsionPowerConstraints:FlatTerrainTraverse}
+\label{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse}
 \ac{MER} and \ac{MSL} rovers are each equipped with a total of 10 propulsion motors to drive their Rocker-Bogie passive suspension system: 6 to rotate the wheels and 4 to steer them \citeother{Novak2005} \citeother{Lakdawalla2018}. The \ac{MER} rovers needed approximately \SI{100}{\watt} to drive \citeother{MERRoverEnergy}. Propulsion power draws measured for SherpaTT on flat surface runs are shown in Figure \ref{fig:plot:sherpatt-flat-terrain-power-draw}.
 
 \begin{figure}[h]
@@ -58,7 +59,7 @@ These measurements are summarised in Table \ref{tab:sherpatt-flat-terrain-global
 \input{sections/locomotion-power-draws/tables/flat-terrain-global-minimum-maximum-and-medium-power-draws.tex}
 
 \subsection{Upslope Terrain Traverse}
-\label{sec:PropulsionPowerConstraints:UpslopeTerrainTraverse}
+\label{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse}
 Propulsion power draws on a steep uplsope were measured along an approximately \SI{16}{\meter} track and are shown Figure \ref{fig:plot:sub:sherpatt-disaggregated-upslope-terrain-power-draw-locomotion}. The drive and suspension power draw components are shown in Figures \ref{fig:plot:sub:sherpatt-disaggregated-upslope-terrain-power-draw-drive} and \ref{fig:plot:sub:sherpatt-disaggregated-upslope-terrain-power-draw-suspension}, respectively.
 
 \begin{figure}[h]
@@ -118,11 +119,15 @@ Table \ref{tab:sherpatt-upslope-terrain-local-media-measurement-summary} summari
 \clearpage
 \input{sections/locomotion-power-draws/tables/upslope-terrain-local-media-measurement-summary.tex}
 
-\section{Conclusion}
-\label{sec:PropulsionPowerConstraints:Conclusion}
-Based on data from the SherpaTT field campaign and the assumptions made in Section \ref{sec:PropulsionPowerConstraints:Introduction}, the following power subsystem requirements were proposed with respect to propulsion power draws:
+Based on data from the SherpaTT field campaign and the initial assumptions made in Section \ref{sec:PropulsionPowerConstraints:Introduction}, the following assumption were made with respect to propulsion power draws:
 
 \begin{itemize}
-    \item The rover shall provide up to \SI{75}{\watt} in propulsion power for flat terrain traverses.
-    \item The rover shall provide up to \SI{150}{\watt} in propulsion power for upslope terrain traverses of up to \SI{30}{\degree} inclination.
+    \item \SI{75}{\watt} for flat terrain traverses.
+    \item \SI{150}{\watt} for upslope terrain traverses up to \SI{30}{\degree} inclination.
 \end{itemize}
+
+\section{Rover Mode Power Budget}
+\label{sec:PowerBudget:RoverModePowerBudget}
+
+\section{Conclusion}
+\label{sec:PowerBudget:SummaryAndConclusion}
