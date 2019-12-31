@@ -1,42 +1,56 @@
-Contents of this chapter were taken from \citeother{CDF2014} and simplified for the scope of this thesis. Adjustements were also made with respect to the selected mission sites determined in the previous chapter. Rover modes were identified and then sequenced into high-level Sol mission scenarios. These scenarios served as reference Sols for mission planning. Defining rover modes and reference Sols served as a prerequisite to the following chapter were preliminary power budgets were determined by associating each rover modes with their respective operational duration and power draw.
+Contents of this chapter were taken from \citeother{CDF2014} and constrained for the scope of this thesis. Adjustements were made in relation to the mission sites described in the previous chapter as well as with the rover's capabilities with respect to its active suspension system. Rover modes were identified and then sequenced into high-level Sol mission scenarios. These scenarios served as reference Sols for mission planning. Defining rover modes and reference Sols served as a prerequisite to the following chapter were preliminary power budgets were determined by associating each rover modes with their respective operational duration and power draw.
 
 The chapter is structured as follows: Section \ref{sec:ReferenceSols:RoverModes} provides general definitions of rover modes. The identified rover modes are sequenced into reference Sols in Section \ref{sec:ReferenceSols:ReferenceSols}. The chapter is then summarized in Section \ref{sec:PowerBudget:SummaryAndConclusion}.
 
 \section{Rover Modes}
 \label{sec:ReferenceSols:RoverModes}
-Not all modes defined in \citeother{CDF2014} were included in this section, however; they may become of interest in future design iterations. The omitted modes are Launch, \ac{EDL}, Deployment, and Safe modes.
+Not all modes defined in \citeother{CDF2014} were included in this section, however; they may become of interest in future design iterations. The omitted modes are \textit{Launch}, \textit{\ac{EDL}}, \textit{Deployment}, and \textit{Safe} modes. The \textit{Tilt} mode is not listed in \citeother{CDF2014}, it was created for this thesis to take advantage of the active suspension system so that the rover may be tilted towards achieving an optimal inclination for the subsequent modes (e.g. for \ac{SA} power generation). The rover modes used in this research are as follow:
 
-It is worth noting that \ac{DTE} Communication operations are encapsulated as their own mode whereas \ac{UHF} Communications are mode activities conducted during Traverse, Science, and Idle modes. Communication operations and their schedules were also taken from \citeother{CDF2014}:
+\begin{itemize}
+    \item \textbf{Traverse:} Pre-planned traverses to target destinations.
+    \item \textbf{Science Stop - Short:} Short science activities in between traverses.
+    \item \textbf{Science Stop - Long:} All day dedicated to science activities.
+    \item \textbf{\ac{DTE} Communication:} Pre-planned communication sessions.
+    \item \textbf{Idle - Day:} All day dedicated to charging batteries.
+    \item \textbf{Idle - Night:} Minimal battery usage during night.
+    \item \textbf{Hibernation:} Survival mode during dust storms ($\tau \geq 2$).
+    \item \textbf{Tilt:} Tilting rover to achieve optimal inclination for subsequent modes.
+\end{itemize}
+
+\ac{DTE} Communication operations are encapsulated as their own mode whereas \ac{UHF} Communications are mode activities conducted during Traverse, Science, and Idle modes. Communication operations and their schedules were also taken from \citeother{CDF2014}:
 \begin{itemize}
     \item Uplink of sol plan either early in the morning (\SI{30}{\minute} \ac{DTE} or \SI{7}{\minute} \ac{UHF}) or during the night (\SI{7}{\minute} \ac{UHF}).
     \item Downlink of high priority data required for planning of the next sol either in the afternoon (\SI{5}{\minute} \ac{DTE}) or during the night (\SI{7}{\minute} \ac{UHF}).
 \end{itemize}
 
-The selected rover modes are listed in Table \ref{tab:rover-modes}. Some mode durations were adjusted from those presented in \citeother{CDF2014} in response to power budgeting constraints pertaining to this research.
+The subsystems' states and durations of the selected rover modes are listed in Table \ref{tab:rover-modes}. %Some mode durations were adjusted from those presented in \citeother{CDF2014} in response to power budgeting constraints pertaining to the scope of this research.
 
 \input{sections/reference-sols/tables/rover-modes.tex}
 
-\clearpage
 \section{Reference Sols}
 \label{sec:ReferenceSols:ReferenceSols}
-Rover modes were sequenced into four reference Sols: Traverse Sol, Science Sol, Battery Recharge Sol, and Hibernation Sol. Mode duration distinctions between mission sites are due to differences in worst-case daylight period lengths mentioned in Section \ref{sec:blabla}.
+Rover modes were sequenced into four reference Sols: Traverse Sol, Science Sol, Battery Recharge Sol, and Hibernation Sol. The duration of some modes differ due to the worst-case daytime length differences between Iani Chaos and Ismenius Cavus, which are located at different planetary latitudes. The latter is located at a higher latitude, in the northern hemisphere, and will thus receive less daylight during the winter season.
+
+The rover's active suspection system is taken advantage of during Traverse and Science Sols. At the end of these reference Sols, the suspension system is actuated to position the rover into a tilted configuration from which the \ac{SA} is inclined at an optimal angle for the following Sol's battery recharging during the \textit{Idle - Day} mode. If the rover is on a flat surface, the optimal $\beta_{optimal}$ inclination angle of the \ac{SA} is targetted. However, if the rover is on an inclined surface, then the optimal $\beta_{optimal}$ angle may not be attainable due to the rover's orientation. In the latter case, the best possible inclination angle is targetted, henceforth referred to as $\beta_{best}$.
+
+The mechanical feasibility of achieving $\beta_{optimal}$ does not imply operational feasibility with respect to other subsystems. For instance, tilting the rover to achieve $\beta_{optimal}$ may hinder communication \ac{LOS}, produce thermal imbalances that would complicate heating all of the rover's critical systems during the night, or cast unwanted slope shadows on the \ac{SA} while on an inclined surface. The implications of $\beta_{optimal}$ on all subsystems is a systems engineering problem that is beyond the scope of this research so the assumption was made that all rover subsystems are designed to functional nominally for $\beta_{optimal}$ and $\beta_{best}$.
 
 \subsection{Traverse Sol}
 \label{sec:ReferenceSols:TraverseSol}
-The Traverse Sol use case is for the rover to reach a pre-planned target destination. The sequence and duration of its modes are shown in Table \ref{tab:mission-scenario-traverse-sol}. A Traverse Sol begins with an Idle mode, mostly dedicated to recharging the rover's batteries. Traverse mode duration distinctions were made with respect to terrain inclination on the basis of propulsion power draw differences which are presented in the following chapter. After a traverse is complete, a short time slot is alotted to science operations so that multiple traverse Sols do not result in lack of scientific return, particularly for long traverse campaigns.
-
+The Traverse Sol use case is for the rover to reach a pre-planned target destination. The sequence and duration of its modes are shown in Table \ref{tab:mission-scenario-traverse-sol}.
 \input{sections/reference-sols/tables/mission-scenario-traverse-sol.tex}
+
+A Traverse Sol begins with an \textit{Idle - Day} mode, mostly dedicated to recharging the rover's batteries with power generated from its \ac{SA}. After the \textit{Idle - Day} mode, the rover is tilted out of its \ac{SA} $\beta$ angle to a position that is best suited to execute the following modes, particularly with antenna pointing for the \textit{\ac{DTE} Communication} mode. Minimum and maximum durations are given for the \textit{Traverse} mode which distinguish between a flat surface traverse and the worst-case \SI{30}{\degree} upslope angle traverse. After the traverse, a short time slot is alotted to science operations during the \textit{Science Stop - Short} mode so that multiple traverse Sols do not result in lack of scientific return, particularly for long multi-Sol traverse campaigns. Finally, after tilting the rover to achieve the \ac{SA} $\beta_{optimal}$ or $\beta_{best}$ angle, the rover enters the \textit{Idle - Night} mode during which all critical systems are thermally regulated with heaters in order to survive the night.
 
 \subsection{Science Sol}
 \label{sec:ReferenceSols:ScienceSol}
-The Science Sol dedicates a significant portion of a Martian day to conducting science operations to maximize science data collection. The sequence and duration of its modes are shown in Table \ref{tab:mission-scenario-science-sol}.
-
+The Science Sol maximizes science data collection. The mode sequence is shown in Table \ref{tab:mission-scenario-science-sol}. It only differs from the Traverse Sol with a \textit{Science Stop - Long} mode instead of a \textit{Traverse} mode.
 \input{sections/reference-sols/tables/mission-scenario-science-sol.tex}
 
 \clearpage
 \subsection{Battery Recharge Sol}
 \label{sec:ReferenceSols:BatteryRechargeSol}
-The Battery Recharge Sol dedicates an entire Martian day to recharging the rover's batteries. The sequence and duration of its modes are shown in Table \ref{tab:mission-scenario-science-sol}. Only thermal are communication operations are executed during this Sol so that power draws from the battery are minimized in order to prioritize attaining the targetcharge state.
+The Battery Recharge Sol dedicates an entire Martian day to recharging the rover's batteries. The sequence and duration of its modes are shown in Table \ref{tab:mission-scenario-science-sol}. Only thermal and communication operations are executed during this Sol so that power draws from the battery are minimized in order to prioritize attaining the target charge state. No rover repositioning is required to adjust the \ac{SA} $\beta$ angle as it will have already been set to $\beta_{optimal}$ or $\beta_{best}$ at the end of a previous Sol.
 
 \input{sections/reference-sols/tables/mission-scenario-battery-recharge-sol.tex}
 
@@ -48,4 +62,6 @@ The Hibernation Sol is the rover's survival mode during a dust storm. During thi
 
 \section{Summary And Conclusion}
 \label{sec:ReferenceSols:SummaryAndConclusion}
-The chapter presents selected rover's modes which were used to define reference Sols. Operation durations were established for each mode as a prerequesite to determining power budgets in the following chapter. Some distinctions were made for mode durations, particularly for the Traverse mode which is affected by the daylight time at the mission site location as well as terrain inclination.
+The chapter presents selected rover's modes which were used to define reference Sols. Of particular interest is the \textit{Tilt} mode which takes advantage of the rover's active suspect system to maximize power generation and battery charging during the \textit{Idle - Day} mode. Distinctions were made for the duration of the \textit{Traverse} mode with respect available daylight time at the different mission site locations as well as best and worst case terrain inclination.
+
+% Operation durations were established for each mode as a prerequesite to determining power budgets in the following chapter.

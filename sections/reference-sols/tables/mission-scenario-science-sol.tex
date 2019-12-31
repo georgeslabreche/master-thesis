@@ -1,15 +1,17 @@
 \begin{table}[h]
-\small
+\footnotesize
 \centering
 \caption{Science Sol mission scenario.}
 \label{tab:mission-scenario-science-sol}
 \begin{tabular}{l|l|c|c|}
 \hline
-\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Mode}}} & \multirow{2}{*}{\textbf{Description}} & \multicolumn{2}{c|}{\textbf{Duration {[}min{]}}} \\ \cline{3-4}
-\multicolumn{1}{|l|}{} &  & \multicolumn{1}{l|}{\textbf{Iani Chaos}} & \multicolumn{1}{l|}{\textbf{Ismenius Cavus}} \\ \hline
+\multicolumn{1}{|l|}{\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}\\\textbf{Mode}\\\end{tabular}}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}\\\textbf{Description}\\\end{tabular}} & \multicolumn{2}{c|}{\textbf{Duration {[}min{]}}} \\ \cline{3-4}
+\multicolumn{1}{|l|}{} &  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}c@{}}\textbf{Iani}\\\textbf{Chaos}\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}c@{}}\textbf{Ismenius}\\\textbf{Cavus}\end{tabular}} \\ \hline
 \multicolumn{1}{|l|}{\textbf{Idle - Day}} & \begin{tabular}[c]{@{}l@{}}Pre-Heating (2 hr).\\ UHF Communication (7 min).\\ Battery Charging.\end{tabular} & 88 & 88 \\ \hline
-\multicolumn{1}{|l|}{\textbf{DTE Communication}} & \begin{tabular}[c]{@{}l@{}}Downlink (5 min).\\ Uplink (30 min).\end{tabular} & 35 & 35 \\ \hline
+\multicolumn{1}{|l|}{\textbf{Tilt}} & Optimize antenna pointing for \textit{\ac{DTE} Communication} mode. & 5 & 5 \\ \hline
+\multicolumn{1}{|l|}{\textbf{\ac{DTE} Communication}} & \begin{tabular}[c]{@{}l@{}}Downlink (5 min).\\ Uplink (30 min).\end{tabular} & 35 & 35 \\ \hline
 \multicolumn{1}{|l|}{\textbf{Science Stop - Long}} & Science activities. & 240 & 240 \\ \hline
+\multicolumn{1}{|l|}{\textbf{Tilt}} & Maximize power generation for next Sol's \textit{Idle - Day} mode. & 5 & 5 \\ \hline
 \multicolumn{1}{|l|}{\textbf{Idle - Night}} & \begin{tabular}[c]{@{}l@{}}UHF Communication (7 min).\\ Thermal Regulation.\end{tabular} & 88 & 88 \\ \hline
  & \multicolumn{1}{r|}{\textbf{Total Duration {[}min{]}}} & \textbf{999} & \textbf{999} \\ \cline{2-4}
 \end{tabular}

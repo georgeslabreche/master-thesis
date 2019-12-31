@@ -257,7 +257,14 @@ To illustrate the variation of beam, direct, and diffuse insolations during a Ma
 \subsection{Inclined Surface}
 \label{sec:MartianEnvironment:SolarRadiation:InclinedSurface}
 
-Hitherto the irradiance and insolation calculations on the surface of Mars have been restricted to a horizontal plane. However, scenarios with descent and ascent profiles such as with the topographic slope variation in crater exploration missions make it necessary to consider solar radiation received on inclined surfaces.
+Hitherto the irradiance and insolation calculations on the surface of Mars have been restricted to a horizontal plane. Inclined surfaces were also considered so that power generation may be maximized during the following cases:
+\begin{itemize}
+    \item Taking advantage of the active suspension system to tilt the solar array into an optimal inclination angle while the rover is on a horizontal surface.
+    \item Taking advantage of the active suspension system to tilt the solar array into a horizontal configuration while the rover is on an inclined surface.
+    \item Traversing descent and ascent profiles such as with the topographic slope variation in crater exploration missions.
+\end{itemize}
+
+The above scenarios are further elaborated in Section \ref{sec:ReferenceSols:RoverModes} where rover modes are defined.
 
 \subsubsection{Irradiance}
 \label{sec:MartianEnvironment:SolarRadiation:InclinedSurface:Irradiance}
@@ -278,7 +285,7 @@ The Sun angle of incidence itself is a function of the Sun zenith angle $z$ for 
   \cos{\theta} = \cos{\beta}\cos{z} +  \sin{\beta}\sin{z}\cos{(\gamma_{s} - \gamma_{c})}
 \end{equation}
 
-where the Sun zenith angle is given by \ref{eq:cosz}.
+where the Sun zenith angle is given by Equation \ref{eq:cosz}.
 
 Variation of the global irradiance at the perihelion for different inclination angles are presented in Figure \ref{fig:plot:irradiance-inclined-gamma-c} for South, East, North, and West slope orientations. The influence of the inclination angle is most noticeable for a \SI{20}{\degree} slope oriented southwards resulting in a stronger irradiance profile than all other showcased slope angle and orientation configurations.
 
