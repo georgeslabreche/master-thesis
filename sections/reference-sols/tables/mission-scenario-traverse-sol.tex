@@ -1,19 +1,16 @@
 \begin{table}[h]
 \footnotesize
 \centering
-\caption{Traverse Sol mission scenario.}
+\caption{Reference Sol for flat or upslope traverse.}
 \label{tab:mission-scenario-traverse-sol}
-\begin{tabular}{l|l|c|c|}
+\begin{tabular}{|l|l|}
 \hline
-\multicolumn{1}{|l|}{\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}\\\textbf{Mode}\\\end{tabular}}} & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}\\\textbf{Description}\\\end{tabular}} & \multicolumn{2}{c|}{\textbf{Duration {[}min{]}}} \\ \cline{3-4}
-\multicolumn{1}{|l|}{} &  & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}c@{}}\textbf{Iani}\\\textbf{Chaos}\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}c@{}}\textbf{Ismenius}\\\textbf{Cavus}\end{tabular}} \\ \hline
-\multicolumn{1}{|l|}{\textbf{Idle - Day}} & \begin{tabular}[c]{@{}l@{}}Pre-Heating (2 hr).\\ UHF Communication (7 min).\\ Battery Charging.\end{tabular} & 88 & 88 \\ \hline
-\multicolumn{1}{|l|}{\textbf{Tilt}} & Optimize antenna pointing for \textit{\ac{DTE} Communication} mode. & 5 & 5 \\ \hline
-\multicolumn{1}{|l|}{\textbf{\ac{DTE} Communication}} & \begin{tabular}[c]{@{}l@{}}Downlink (5 min).\\ Uplink (30 min).\end{tabular} & 35 & 35 \\ \hline
-\multicolumn{1}{|l|}{\textbf{Traverse}} & Propulsion to target destination. & 180 & 180 \\ \hline
-\multicolumn{1}{|l|}{\textbf{Science Stop - Short}} & Science activities. & 30 & 30 \\ \hline
-\multicolumn{1}{|l|}{\textbf{Tilt}} & Maximize power generation for next Sol's \textit{Idle - Day} mode. & 5 & 5 \\ \hline
-\multicolumn{1}{|l|}{\textbf{Idle - Night}} & \begin{tabular}[c]{@{}l@{}}UHF Communication (7 min).\\ Thermal Regulation.\end{tabular} & 88 & 88 \\ \hline
- & \multicolumn{1}{r|}{\textbf{Total Duration {[}min{]}}} & \textbf{999} & \textbf{999} \\ \cline{2-4}
+\textbf{Mode} & \textbf{Description} \\ \hline
+\textbf{Idle - Day} & \begin{tabular}[c]{@{}l@{}}Pre-Heating.\\ UHF Communication.\\ Battery Charging.\end{tabular} \\ \hline
+\textbf{DTE Communication} & \begin{tabular}[c]{@{}l@{}}Downlink.\\ Uplink.\end{tabular} \\ \hline
+\textbf{Traverse - Flat or Upslope} & Propulsion to target destination. \\ \hline
+\textbf{Science Stop - Short} & Science operations. \\ \hline
+\textbf{Optimal Pose} & Maximize SA power generation for next Sol. \\ \hline
+\textbf{Idle - Night} & \begin{tabular}[c]{@{}l@{}}UHF Communication.\\ Thermal Regulation.\end{tabular} \\ \hline
 \end{tabular}
 \end{table}

@@ -3,16 +3,16 @@
 \centering
 \caption{Rover modes. DT/NT - Daytime/Night-time; BC - Battery Charging; P - Propulsion; N - Navigation; C - Communication; S - Science; H - Heaters. Duration is per Sol.}
 \label{tab:rover-modes}
-\begin{tabular}{|l|l|c|c|c|c|c|c|c|l|}
+\begin{tabular}{|l|c|c|c|c|c|c|c|l|}
 \hline
-\textbf{ID} & \textbf{Name} & \textbf{DT/NT} & \textbf{BC} & \textbf{P} & \textbf{N} & \textbf{C} & \textbf{S} & \textbf{H} & \textbf{Duration} \\ \hline
-\textbf{RM-01} & Traverse & DT & OFF & ON & ON & ON & OFF & OFF & Max 180 min \\ \hline
-\textbf{RM-02} & Science Stop - Short & DT & ON & OFF & OFF & ON & ON & OFF & 60 min \\ \hline
-\textbf{RM-03} & Science Stop - Long & DT & ON & OFF & OFF & ON & ON & OFF & 240 min \\ \hline
-\textbf{RM-04} & \ac{DTE} Commnunication & DT & OFF & OFF & OFF & ON & OFF & OFF & 5-30 min \\ \hline
-\textbf{RM-05} & Idle - Day & DT & ON & OFF & OFF & ON & OFF & OFF & All day \\ \hline
-\textbf{RM-06} & Idle - Night & NT & OFF & OFF & OFF & ON & OFF & ON & All night \\ \hline
-\textbf{RM-07} & Hibernation & DT/NT & OFF & OFF & OFF & OFF & OFF & ON & All day/night \\ \hline
-\textbf{RM-08} & Tilt & DT & ON & \multicolumn{1}{l|}{ON} & \multicolumn{1}{l|}{OFF} & \multicolumn{1}{l|}{ON} & \multicolumn{1}{l|}{OFF} & \multicolumn{1}{l|}{OFF} & 5 min \\ \hline
+\textbf{Name} & \textbf{DT/NT} & \textbf{BC} & \textbf{P} & \textbf{N} & \textbf{C} & \textbf{S} & \textbf{H} & \textbf{Duration} \\ \hline
+Traverse - Flat & DT & OFF & ON & ON & ON & OFF & OFF & Variable \\ \hline
+Traverse - Upslope & DT & OFF & ON & ON & ON & OFF & OFF & Variable \\ \hline
+Science Stop - Short & DT & ON & OFF & OFF & ON & ON & OFF & 60 min \\ \hline
+\ac{DTE} Commnunication & DT & OFF & OFF & OFF & ON & OFF & OFF & 35 min \\ \hline
+Idle - Day & DT & ON & OFF & OFF & ON & OFF & OFF & All day \\ \hline
+Idle - Night & NT & OFF & OFF & OFF & ON & OFF & ON & All night \\ \hline
+Hibernation & DT/NT & OFF & OFF & OFF & OFF & OFF & ON & All day/night \\ \hline
+Optimal Pose & DT & ON & \multicolumn{1}{l|}{ON} & \multicolumn{1}{l|}{OFF} & \multicolumn{1}{l|}{ON} & \multicolumn{1}{l|}{OFF} & \multicolumn{1}{l|}{OFF} & 10 min \\ \hline
 \end{tabular}
 \end{table}
