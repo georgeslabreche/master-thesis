@@ -259,17 +259,17 @@ To illustrate the variation of beam, direct, and diffuse insolations during a Ma
 
 Hitherto the irradiance and insolation calculations on the surface of Mars have been restricted to a horizontal plane. Inclined surfaces were also considered so that power generation may be maximized during the following cases:
 \begin{itemize}
-    \item Taking advantage of the active suspension system to tilt the solar array into an optimal inclination angle while the rover is on a horizontal surface.
-    \item Taking advantage of the active suspension system to tilt the solar array into a horizontal configuration while the rover is on an inclined surface.
+    \item Taking advantage of the active suspension system to tilt and orient the \ac{SA} surface into optimal angles while the rover is on a horizontal surface.
+    \item Taking advantage of the active suspension system to tilt and orient the \ac{SA} into a horizontal plane while the rover is on an inclined surface.
     \item Traversing descent and ascent profiles such as with the topographic slope variation in crater exploration missions.
 \end{itemize}
 
-The above scenarios are further elaborated in Section \ref{sec:ReferenceSols:RoverModes} where rover modes are defined.
+Descriptions of the angles involved as well as how they serve to position the \ac{SA} surface is presented in Appendix \ref{sec:Appendix:OptimalAngles}.
 
 \subsubsection{Irradiance}
 \label{sec:MartianEnvironment:SolarRadiation:InclinedSurface:Irradiance}
 
-Global irradiance $G_{\beta}$ on an inclined surface can be obtained when parametizing the slope angle $\beta$ and the Sun angle of incidence $\theta$:
+Global irradiance $G_{\beta}$ on an inclined surface can be obtained when parametizing the inclination angle $\beta$ and the Sun angle of incidence $\theta$:
 
 \begin{equation}
   \label{eq:G_beta}
@@ -278,7 +278,7 @@ Global irradiance $G_{\beta}$ on an inclined surface can be obtained when parame
 
 where $al$ is the albedo.
 
-The Sun angle of incidence itself is a function of the Sun zenith angle $z$ for the time of day, the slope angle $\beta$ for the inclination, and the solar azimuth $\gamma_{s}$ as well as the Sun surface azimuth angle $\gamma_{c}$ for the orientation of the inclination:
+The Sun angle of incidence itself is a function of the Sun zenith angle $z$ for the time of day, the slope angle $\beta$ for the inclination, and the solar azimuth $\gamma_{s}$ as well as the Sun surface azimuth angle $\gamma_{c}$ for the orientation that the inclination is facing:
 
 \begin{equation}
   \label{eq:costheta}
@@ -302,26 +302,26 @@ Variation of the global irradiance at the perihelion for different inclination a
 %% 1st row
   	\begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variation-1-for-ls-248-phi-2-tau-05-gammac-0-and-albedo-027.png}
-  		\subcaption{$\gamma_{c} = \SI{0}{\degree}$ (South)}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variationfor-ls-248-phi-2-tau-05-gammac-north-and-albedo-027.png}
+  		\subcaption{$\gamma_{c} = \SI{0}{\degree}$ (North)}
   		\label{fig:sub:irradiance-inclined-gamma-c-0}
   	\end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variation-2-for-ls-248-phi-2-tau-05-gammac-90-and-albedo-027.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variationfor-ls-248-phi-2-tau-05-gammac-east-and-albedo-027.png}
   		\subcaption{$\gamma_{c} = \SI{-90}{\degree}$ (East)}
   		\label{fig:sub:irradiance-inclined-gamma-c-m90}
   	\end{subfigure}\\[0.8ex]
 %% 2nd row
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variation-3-for-ls-248-phi-2-tau-05-gammac-180-and-albedo-027.png}
-  		\subcaption{$\gamma_{c} = \SI{-180}{\degree}$ (North)}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variationfor-ls-248-phi-2-tau-05-gammac-south-and-albedo-027.png}
+  		\subcaption{$\gamma_{c} = \SI{-180}{\degree}$ (South)}
   		\label{fig:sub:irradiance-inclined-gamma-c-m180}
   	\end{subfigure}\hfill
 	   \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variation-4-for-ls-248-phi-2-tau-05-gammac-90-and-albedo-027.png}
+  		\includegraphics[height=\graphicsHeight]{sections/martian-environment/plots/gi-variationfor-ls-248-phi-2-tau-05-gammac-west-and-albedo-027.png}
   		\subcaption{$\gamma_{c} = \SI{90}{\degree}$ (West)}
   		\label{fig:sub:irradiance-inclined-gamma-c-90}
 	   \end{subfigure}\hfill

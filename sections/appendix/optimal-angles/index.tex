@@ -1,4 +1,16 @@
-For clear skies, two approaches to determine the optimal orientation angle $\gamma_{c}$ (surface azimuth angle) and inclination angle $\beta_{opt}$ are shown in \citemarsenv{Appelbaum1993}. Equation \ref{eq:optimal_beta_irradiance} is described as a ``coarse approximation'' in \citeother{Soulayman2016} and gives $\beta_{opt}$ based on the direct beam irradiance at noon:
+A 2-axis sun tracking mechanism is illustrated in Figure \ref{fig:tilted-surface-sun-tracking}. An optimal angle configurations exists so that a \ac{SA} surface generates the maximum amount of power for a given period. These angles are the $\gamma_{c}$ orientation angle (surface azimuth angle) and the $\beta$ inclination angle.
+
+\begin{figure}[h]
+  \centering
+  \hypersetup{linkcolor=captionTextColor}
+  \includegraphics[width=0.7\linewidth]{sections/appendix/optimal-angles/images/beta-and-gamma-angles-on-tilted-surface.png}\\
+  \caption[\ac{SA} surface position orientation and inclination]
+          {\ac{SA} surface position orientation and inclination. $\gamma_{c}$ is the orientation angle (surface azimuth angle) and $\beta$ is the inclination angle. $\gamma_{c} = \SI{0}{\degree}$ when facing the equator, negative when facing East ($\gamma_{c} = \SI{-90}{\degree}$), and positive when facing West ($\gamma_{c} = \SI{+90}{\degree}$). Image taken from and modified for this study.}
+  \label{fig:tilted-surface-sun-tracking}
+\end{figure}
+
+\section{Optimal Angles}
+For clear skies, two approaches to determine the optimal angles for $\gamma_{c}$ and $\beta$ are shown in \citemarsenv{Appelbaum1993}. Equation \ref{eq:optimal_beta_irradiance} is described as a ``coarse approximation'' in \citeother{Soulayman2016} and gives an optimal $\beta$ based on the direct beam irradiance at noon:
 
 \begin{equation}
   \label{eq:optimal_beta_irradiance}
@@ -22,10 +34,11 @@ where $\omega_{sr}$ is the sunrise hour angle. The sign error correction is not 
   \tan{\beta_{L_{s} = \SI{180}{\degree}}} = \frac{\cos{\omega_{sr}}\sin{\phi}\cos{\delta}-\left[1-\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\cos{\phi}\sin{\delta}}{\cos{\omega_{sr}}\cos{\phi}\cos{\delta}+\left[1+\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\sin{\phi}\sin{\delta}}
 \end{equation}
 
-For both cases, $\gamma_{c} = \SI{0}{\degree}$, that is the inclined surface faces the equator (i.e. oriented South when located in the Northern hemisphere and oriented North when located in the Sourthern hemisphere).
+Facing the equator implies a direct orientation towards the sun thus the optimal value for $\gamma_{c}$ is widely accepted as being $\SI{0}{\degree}$. However, plotting out predicted insolations in for all directions at $\SI{1}{\degree}$ increments suggests otherwise.
 
+\section{Iani Chaos}
 
-
+Figures \ref{fig:plot:optimal-angles-iani-chaos} plots daily insolations throughout a Martian year at Iani Chaos for $\beta_{opt}$ angles with different $\gamma_{c}$ orientations. Daily insolations on a flat surface are also included as a reference. An equator facing (North) orientation is suggested only during the first half of the Martian year, after which a Northwestern facing orientation becomes more optimal.
 
 \begin{figure}[h]
 \vspace{-2ex}
@@ -54,9 +67,9 @@ For both cases, $\gamma_{c} = \SI{0}{\degree}$, that is the inclined surface fac
 \vspace{-2ex}
 \end{figure}
 
-\clearpage
+\section{Ismenius Cavus}
 
-Figures \ref{fig:plot:optimal-angles-iani-chaos} and \ref{fig:plot:optimal-angles-ismenius-cavus} plot the resulting insolation throughout a Martian year for the calculated optimal $\beta$ angles with different $\gamma_{c}$ angles at Iani Chaos and Ismenius Cavus. Insolations obtained from a flat surface are also included as a reference.
+Figure \ref{fig:plot:optimal-angles-ismenius-cavus} plots daily insolations throughout a Martian year at Ismenius Cavus for $\beta_{opt}$ angles with different $\gamma_{c}$ orientations. Daily insolations on a flat surface are also included as a reference. Throughout the entire year, a Southwestern orientation appears more optimal than South facing.
 
 \begin{figure}[h]
 \vspace{-2ex}
@@ -85,8 +98,5 @@ Figures \ref{fig:plot:optimal-angles-iani-chaos} and \ref{fig:plot:optimal-angle
 \vspace{-2ex}
 \end{figure}
 
-The results suggest that the optimal pairing between $\gamma_{c}$ and $\beta$ differs than what is calculated with Equations \ref{eq:optimal_beta_irradiance} and \ref{eq:optimal_beta_insolation}.
-
-At Iani Chaos, in the Southern hemisphere, Figure \ref{fig:sub:optimal-angles-iani-chaos-based-on-irradiance} suggests that a South East orientation is optimal during Autumn and Winter season until approximately the Vernal Equinox ($L_{s} = \SI{180}{\degree}$) from which point a South West orientation is preferred for the Spring and Summer seasons. However, Figure \ref{fig:sub:optimal-angles-iani-chaos-based-on-insolation} suggests Northward orientation during Autumn and Winter seasons, preserving a flat surface around the Vernal Equinox, and a South West orientation during the Spring and Summer seasons.
-
-At Ismenius Cavus, in the Northern hemisphere, Figure \ref{fig:sub:optimal-angles-ismenius-cavus-based-on-irradiance} suggests that a South West orientation is mostly optimal during the entire year wherease Figure \ref{fig:sub:optimal-angles-ismenius-cavus-based-on-insolation} suggests
+\section{Summary and Conclusion}
+The optimal $\beta$ inclination angle can be approximated through calculation. However, insolation calculation results do not support the assumption that facing the equator is the optimal $\gamma_c$ orientation. Depending on latitude and season, a Western offset from the equator may be a more preferable orientation.
