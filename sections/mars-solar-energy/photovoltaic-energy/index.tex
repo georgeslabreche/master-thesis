@@ -1,4 +1,4 @@
-\section{Performance Ratio}
+\subsection{Performance Ratio}
 \label{sec:PowerAndEnergyPredictions:PerformanceRatio}
 Power and energy calculations take into account solar cell performance ratio $PR$, also known as the coefficient for losses. $PR$ components are taken from Mars \ac{PV} literature:
 
@@ -17,15 +17,14 @@ Dust deposition induced losses do not perennially degrade the solar cells but fl
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.4\linewidth]{sections/power-and-energy-predictions/images/mer-opportunity-dust-streaks.png}\\
+  \includegraphics[width=0.5\linewidth]{sections/mars-solar-energy/photovoltaic-energy/images/mer-opportunity-dust-streaks.png}\\
   \caption[Streak of dust on \ac{MER} Opportunity's rear solar array during a steep tilt]
           {During a forward, uphill drive on Sol 4311 (March 10, 2016), Opportunity's tilt reached \SI{32}{\degree}. Vibrations from wheels slipping against the ground caused dust to streak down from \ac{MER} Opportunity's rear solar array while the rover was steeply tilted. Image taken on Sol 4322 (March 21, 2016). Image: \ac{NASA}/\ac{JPL}-Caltech.}
   \label{fig:image:mer-opportunity-dust-streaks}
 \end{figure}
 % Source: https://www.nasa.gov/feature/jpl/rover-takes-on-steepest-slope-ever-tried-on-mars
 
-\clearpage
-\section{Predictions}
+\subsection{Predictions}
 \label{sec:PowerAndEnergyPredictions:Predictions}
 
 The power output $P$ generated from a photovoltaic system is measured in watts (\si{\watt}) and is obtained from the global irradiance $G_{h}$ captured by its solar cells:
@@ -64,20 +63,19 @@ It is worth emphasizing the difference between \ac{PV} cell, panel/module, and a
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/images/mer-solar-arrays.png}\\
+  \includegraphics[width=0.8\linewidth]{sections/mars-solar-energy/photovoltaic-energy/images/mer-solar-arrays.png}\\
   \caption[\ac{MER} solar arrays]
           {\ac{MER} solar arrays. Image: \ac{NASA}/\ac{JPL}-Caltech/Cornell.}
   \label{fig:image:mer-solar-arrays}
 \end{figure}
 % Source: https://mars.nasa.gov/resources/5852/opportunity-self-portrait/?site=insight
 
-\clearpage
-\section{Validation}
+\subsection{Validation}
 \label{sec:PowerAndEnergyPredictions:Validation}
 
 \todo[inline]{TODO: Short intro text? Why are we validating? Explain that the equations we are using were based on Viking Lander data and we need to verify if it is still robust today by validating it against the wealth of data we've accumulated since, specifically with MER Opportunity data which is illustrative of mobile rover missions rather than a stationary lander mission.}
 
-\subsection{Horizontal Surface}
+\subsubsection{Horizontal Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}
 
 In order to validate the formulas presented in Section \ref{sec:PowerAndEnergyPredictions:Predictions}, \ac{MER} Opportunity status update parameters were applied to the daily energy calculation presented in Equation \ref{eq:SA_energy}. The following data was scraped from the rover's status update website for Mars years MY29 through MY33:
@@ -105,26 +103,26 @@ For the purpose of insolation calculations, the areocentric longitude $L_{s}$ wa
 %% 1st row
   	\begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/power-and-energy-predictions/plots/predicted-vs-measured-energy-my29.png}
+  		\includegraphics[height=\graphicsHeight]{sections/mars-solar-energy/photovoltaic-energy/plots/predicted-vs-measured-energy-my29.png}
   		\subcaption{MY29}
   		\label{fig:plot:sub:mer-energy-production-predicted-vs-reported-my29}
   	\end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/power-and-energy-predictions/plots/predicted-vs-measured-energy-my30.png}
+  		\includegraphics[height=\graphicsHeight]{sections/mars-solar-energy/photovoltaic-energy/plots/predicted-vs-measured-energy-my30.png}
   		\subcaption{MY30}
   		\label{fig:plot:sub:mer-energy-production-predicted-vs-reported-my30}
   	\end{subfigure}\\[0.8ex]
 %% 2nd row
     \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/power-and-energy-predictions/plots/predicted-vs-measured-energy-my32.png}
+  		\includegraphics[height=\graphicsHeight]{sections/mars-solar-energy/photovoltaic-energy/plots/predicted-vs-measured-energy-my32.png}
   		\subcaption{MY32}
   		\label{fig:plot:sub:mer-energy-production-predicted-vs-reported-my32}
   	\end{subfigure}\hfill
 	   \begin{subfigure}[t]{\subfigureWidth}
       \centering
-  		\includegraphics[height=\graphicsHeight]{sections/power-and-energy-predictions/plots/predicted-vs-measured-energy-my33.png}
+  		\includegraphics[height=\graphicsHeight]{sections/mars-solar-energy/photovoltaic-energy/plots/predicted-vs-measured-energy-my33.png}
   		\subcaption{MY33}
   		\label{fig:plot:sub:mer-energy-production-predicted-vs-reported-my33}
 	   \end{subfigure}\hfill
@@ -154,7 +152,7 @@ Divergences from the predicted energy production are presented in Figure \ref{fi
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/plots/energy-prediction-divergences-from-my28-to-my32.png}\\
+  \includegraphics[width=0.5\linewidth]{sections/mars-solar-energy/photovoltaic-energy/plots/energy-prediction-divergences-from-my28-to-my32.png}\\
   \caption[Divergences from predicted \ac{MER} Opportunity \ac{PV} energy production]
           {Divergences from predicted \ac{MER} Opportunity \ac{PV} energy production.}
   \label{fig:plot:mer-energy-prediction-divergences}
@@ -167,7 +165,7 @@ Figure \ref{fig:plot:binned-error-margins} bins the distribution of divergences 
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/power-and-energy-predictions/plots/binned-error-margins.png}\\
+  \includegraphics[width=0.5\linewidth]{sections/mars-solar-energy/photovoltaic-energy/plots/binned-error-margins.png}\\
   \caption[Binned error margins]
           {Binned error margins.}
   \label{fig:plot:binned-error-margins}
@@ -175,7 +173,7 @@ Figure \ref{fig:plot:binned-error-margins} bins the distribution of divergences 
 
 The wide error margin range is thus a result of isolated local maxima outliers, notably at Sol 2204 (-33\%), 2218 (-27\%), 2519 (-28\%), and 3901 (-24\%). Table \ref{tab:divergences-less-than-m20pc} lists all divergences that are beyond -20\%.
 
-\input{sections/power-and-energy-predictions/tables/divergences-less-than-m20pc.tex}
+\input{sections/mars-solar-energy/photovoltaic-energy/tables/divergences-less-than-m20pc.tex}
 
 With the exception of Sol 2199 and 2218, possible explanations for large divergences beyond -20\% were obtained from MER Opportunity's status logs [?]:
 \begin{enumerate}[(a)]
@@ -201,8 +199,7 @@ Attempts to narrow down the error margin range by adjusting the reported dust fa
 
 By setting aside outliers causing divergences greater than 5\% and lesser than -15\% that were obtained with only 9.2\% of the dataset, the predicted energy production obtained with Equation \ref{eq:SA_energy} become acceptable for preliminary mission scenario analysis on a horizontal surfaces.
 
-\clearpage
-\subsection{Inclined Surface}
+\subsubsection{Inclined Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:InclinedSurface}
 
 Equation \ref{eq:SA_slope_energy} for energy predictions on an inclined surface requires slope and rover orientation angles in order to determine $H_{\beta}$. However, these parameters are seldom reported in the \ac{MER} Opportunity status updates.
@@ -218,7 +215,7 @@ An average slope angle of 13 degrees was assumed based on the following:
 
 As was the case in Section \ref{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}, performance ratios described in Section \ref{sec:PowerAndEnergyPredictions:PerformanceRatio} were also used. Due to large uncertainties regarding slope rover orientation angles, this section only aims to validate that using Equation \ref{eq:SA_slope_energy} results in smaller energy predictions divergences than what would otherwise be obtained using Equation \ref{eq:SA_energy}. The results are presented in Table \ref{tab:divergences-inclined-surfaces}:
 
-\input{sections/power-and-energy-predictions/tables/divergences-inclined-surfaces.tex}
+\input{sections/mars-solar-energy/photovoltaic-energy/tables/divergences-inclined-surfaces.tex}
 
 Equation \ref{eq:SA_slope_energy} resulted in a larger divergence range than with Equation \ref{eq:SA_energy} at -30\%/32\% for the former and -45\%/-27\% for the latter. However, the magnitude of divergences are smaller with Equation \ref{eq:SA_slope_energy}. Furthermore, with the exception of Sol 4582, divergences with \ref{eq:SA_slope_energy} result in conservative under-estimated energy predictions rather than the worst-case over-estimated values consistently obtained with Equation \ref{eq:SA_energy}.
 

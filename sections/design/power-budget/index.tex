@@ -1,26 +1,25 @@
-This chapter details the power budget for the reference Sols used in mission planning. Power budgets for the rover modes that make up the reference Sols were taken from the \ac{ESA} \ac{CDF} Study Report on MarsFAST. Propulsion power budgets for the rover's Traverse mode were determined from data collected during the SherpaTT field trials in Utah.
+This section details the power budget for the reference Sols used in mission planning. Propulsion power budgets for the rover's Traverse modes were determined from data collected during the SherpaTT field trials in Utah. Power budgets for other rover modes that make up the reference Sols were taken from \citeother{CDF2014}.
 
-The chapter is structured as follows: Propulsion power budget are presented in Section \ref{sec:PowerBudget:PropulsionPowerBudget} following an analysis of Mars analogue field test campaign data. Rover modes that were presented in the previous Chapter are complemented with power budgets in Section \ref{sec:PowerBudget:RoverModePowerBudget}. The chapter is then summarized in Section \ref{sec:PowerBudget:SummaryAndConclusion}.
+%The chapter is structured as follows: Propulsion power budget are presented in Section \ref{sec:PowerBudget:PropulsionPowerBudget} following an analysis of Mars analogue field test campaign data. Rover modes that were presented in the previous Chapter are complemented with power budgets in Section \ref{sec:PowerBudget:RoverModePowerBudget}. The chapter is then summarized in Section \ref{sec:PowerBudget:SummaryAndConclusion}.
 
-\section{Propulsion Power Budget}
+\subsection{Propulsion Power}
 \label{sec:PowerBudget:PropulsionPowerBudget}
 SherpaTT's actively articulated suspension system consists of four wheeled-legs with a total of 20 motors. Each leg is equipped with three suspension motors and two drive motors. The suspension motors are responsible for Pan, \ac{IL}, and \ac{OL} revolute joint rotations whereas the drive motors are responsible for \ac{WS} and \ac{WD}. The distribution of these motors across each leg are shown in Figure \ref{fig:sherpatt-actively-articulated-suspension-system}. Propulsion power draw refers to the summation of suspension and drive motor power draws. These power draws have been studied in detail for SherpaTT during a Mars analogue field campaign in Utah \citeother{Cordes2018}.
 
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.6\linewidth]{sections/locomotion-power-draws/images/sherpatt-actively-articulated-suspension-sytem.png}\\
+  \includegraphics[width=0.6\linewidth]{sections/design/power-budget/images/sherpatt-actively-articulated-suspension-sytem.png}\\
   \caption[SherpaTT actively articulated suspension system]
           {SherpaTT actively articulated suspension system, taken from \citeother{Cordes2018}.}
   \label{fig:sherpatt-actively-articulated-suspension-system}
 \end{figure}
 
-\clearpage
 Lack of motor optimisation as well as lower gravity and pressure on Mars permit the assumption that, given similar topology traversals, measured propulsion power draws are greater than those that would be observed on a Martian environment. This assumption is further supported when considering that SherpaTT's velocities during power draw measurements were much greater than what has been achieved on present and past Mars rover missions.
 
 Available datasets from the Mars analogue field test campaign cover two flat surface runs and three steep upslope terrain runs. From the two upslope runs, the dataset with the worst-case maximum and mean propulsion power draw was used as the worst-case scenario. Hereafter, all mention of SherpaTT power draws will reference measurements included in these datasets. Measured power draws fluctuate due to slips, skids, noise, and other unknown imperfections. To ease readability, local minima, maxima, and media lines have been traced for all power plot figures.
 
-\subsection{Flat Terrain Traverse}
+\subsubsection{Flat Terrain Traverse}
 \label{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse}
 Both \ac{MER} and \ac{MSL} rovers are each equipped with a total of 10 propulsion motors to drive their Rocker-Bogie passive suspension system: six to rotate the wheels and four to steer them \citeother{Novak2005} \citeother{Lakdawalla2018}. The \ac{MER} rovers needed approximately \SI{100}{\watt} to drive \citeother{MERRoverEnergy}. Equation \ref{eq:InitialPropulsionPowerEstimate} was used for to determine an initial SherpaTT propulsion power draw using a single \ac{MER} wheel power draw as an estimation unit:
 
@@ -35,7 +34,6 @@ Both \ac{MER} and \ac{MSL} rovers are each equipped with a total of 10 propulsio
 where $P_{prop}$ is the total propulsion power, $P_{susp}$ is the total suspension power, $N_{wheels}$ is the number of wheels, and $P_{susp}^{sherpatt} / P_{prop}^{sherpatt}$ is the suspension system's share of the total propulsion power. For the latter, a worst-case 17\% was taken from \citeother{Cordes2018} for data collected from a flat terrain outdoor setting.
 
 The propulsion power draws measured for SherpaTT on flat surface runs are shown in Figure \ref{fig:plot:sherpatt-flat-terrain-power-draw}. These measurements are summarised in Table \ref{tab:sherpatt-flat-terrain-global-minimum-maximum-and-medium-power-draws}. To eliminate power draw fluctuations from the analysis, only local media values were considered. Local media were selected rather than the worst-case local maxima on the basis of the assumptions made in Section \ref{sec:PowerBudget:PropulsionPowerBudget}. For flat terrain traverses, a worst-case maximum power draw of \SI{74}{\watt} is observed in close accordance with the initial estimate obtained from Equation \ref{eq:InitialPropulsionPowerEstimate}.
-\pagebreak
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -49,13 +47,13 @@ The propulsion power draws measured for SherpaTT on flat surface runs are shown 
     %% the figures
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/locomotion-power-draws/plots/locomotion-power-draw-on-flat-terrain-1.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/power-budget/plots/locomotion-power-draw-on-flat-terrain-1.png}
         \subcaption{Run \#1}
         \label{fig:plot:sub:sherpatt-flat-terrain-power-draw-1}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/locomotion-power-draws/plots/locomotion-power-draw-on-flat-terrain-2.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/power-budget/plots/locomotion-power-draw-on-flat-terrain-2.png}
   		\subcaption{Run \#2}
 		\label{fig:plot:sub:sherpatt-flat-terrain-power-draw-2}
 	\end{subfigure}\\[0.8ex]
@@ -67,10 +65,10 @@ The propulsion power draws measured for SherpaTT on flat surface runs are shown 
 
 
 
-\input{sections/locomotion-power-draws/tables/flat-terrain-global-minimum-maximum-and-medium-power-draws.tex}
+\input{sections/design/power-budget/tables/flat-terrain-global-minimum-maximum-and-medium-power-draws.tex}
 
 \pagebreak
-\subsection{Upslope Terrain Traverse}
+\subsubsection{Upslope Terrain Traverse}
 \label{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse}
 Propulsion power draws on a steep uplsope were measured along an approximately \SI{16}{\meter} track and are shown Figure \ref{fig:plot:sub:sherpatt-disaggregated-upslope-terrain-power-draw-locomotion}. An initial estimate of \SI{132}{\watt} was obtained using Equation \ref{eq:InitialPropulsionPowerEstimate} with a worst case 98\% suspension system's share of the total propulsion power taken from \citeother{Cordes2018} for data collected from a steep slope outdoor setting.
 
@@ -88,19 +86,19 @@ The drive and suspension power draw components are shown in Figures \ref{fig:plo
     %% the figures
 	\begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/locomotion-power-draws/plots/locomotion-power-draw-on-upslope-terrain.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/power-budget/plots/locomotion-power-draw-on-upslope-terrain.png}
   		\subcaption{Propulsion}
 		\label{fig:plot:sub:sherpatt-disaggregated-upslope-terrain-power-draw-locomotion}
 	\end{subfigure}\hfill
 	\begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/locomotion-power-draws/plots/drive-power-draw-on-upslope-terrain.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/power-budget/plots/drive-power-draw-on-upslope-terrain.png}
   		\subcaption{Drive}
 		\label{fig:plot:sub:sherpatt-disaggregated-upslope-terrain-power-draw-drive}
 	\end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/locomotion-power-draws/plots/suspension-power-draw-on-upslope-terrain.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/power-budget/plots/suspension-power-draw-on-upslope-terrain.png}
   		\subcaption{Suspension}
 		\label{fig:plot:sub:sherpatt-disaggregated-upslope-terrain-power-draw-suspension}
 	\end{subfigure}\\[0.8ex]
@@ -112,45 +110,49 @@ The drive and suspension power draw components are shown in Figures \ref{fig:plo
 
 An uplsope traverse has no discernable effect on the suspension power draw, however; there is a clear gradual increase in the drive power draw. The global maximum, minimum, and medium of the traced local minima, maxima, and media power draw lines are presented in Table \ref{tab:sherpatt-upslope-terrain-global-minimum-maximum-and-medium-power-draws}.
 
-\input{sections/locomotion-power-draws/tables/upslope-terrain-global-minimum-maximum-and-medium-power-draws.tex}
+\input{sections/design/power-budget/tables/upslope-terrain-global-minimum-maximum-and-medium-power-draws.tex}
 
-Figure \ref{fig:plot:sherpatt-upslope-terrain-power-draw} overlaps the propulsion local media power draws with the tackled slope angles. The steepest slope angle was \SI{28}{\degree} for an average of \SI{17.52}{\degree}. Slope angle increase are consistently followed by power draw spikes, i.e. at approximately 3, 4, 5, 6, 8, and 9 meters in the odometry measurements. Inversely, slope angle decreases were followed by power draws troughs at approximately 11, 13, 14, and 16 meters.
+Figure \ref{fig:plot:sherpatt-upslope-terrain-power-draw} overlaps the propulsion local media power draws with the tackled slope angles. The steepest slope angle was \SI{28}{\degree} for an average of \SI{17.52}{\degree}. Slope angle increase are consistently followed by power draw spikes, i.e. at approximately 3, 4, 5, 6, 8, and 9 \si{\meter} in the odometry measurements. Inversely, slope angle decreases were followed by power draws troughs at approximately 11, 13, 14, and 16 \si{\meter}.
 
-\clearpage
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/locomotion-power-draws/plots/minima-locomotion-power-draws-on-upslope-terrain.png}\\
+  \includegraphics[width=0.8\linewidth]{sections/design/power-budget/plots/minima-locomotion-power-draws-on-upslope-terrain.png}\\
   \caption[Mean Propulsion power draw for an upslope terrain traverse during SherpaTT Utah field test campaign.]
           {Mean Propulsion power draw for an upslope terrain traverse during SherpaTT Utah field test campaign.}
   \label{fig:plot:sherpatt-upslope-terrain-power-draw}
 \end{figure}
 
+
 The power draws trough following the slope angle change from \SI{28}{\degree} to \SI{20}{\degree} at the \SI{11}{\meter} mark is subsequently followed by an unusual power draw increase and fluctuation. These measurements were discarded as they are outliers with respect to the power draw responses for the slope angle descreases that followed.
 
 Table \ref{tab:sherpatt-upslope-terrain-local-media-measurement-summary} summarises the minimum, maximum, and mean local media propulsion power draws that were measured for different slope angles. Discarding the outlier measurements subsequent to the slope angle change from \SI{28}{\degree} to \SI{20}{\degree} at the \SI{11}{\meter} to \SI{13}{\meter} portion of the track, the maximum mean local media propulsion power draw is \SI{146}{\watt}, which is close to the initial estimate given by Equation \ref{eq:InitialPropulsionPowerEstimate}.
 
-\input{sections/locomotion-power-draws/tables/upslope-terrain-local-media-measurement-summary.tex}
+\input{sections/design/power-budget/tables/upslope-terrain-local-media-measurement-summary.tex}
 
-\pagebreak
-\section{Power Budget}
-\label{sec:PowerBudget:PowerBudget}
-The duration of  due to the worst-case daytime length differences between Iani Chaos and Ismenius Cavus, which are located at different planetary latitudes. The latter is located at a higher latitude, in the northern hemisphere, and will thus receive less daylight during the winter season.
+\subsection{Traverse Power Budget}
+\label{sec:PowerBudget:PowerBudget:TraversePowerBudget}
+Worst-case flat traverse times were set to \SI{15}{\minute} at Iani Chaos and \SI{5}{\minute} at Ismenius Cavus. These durations were determined during the \ac{SA} sizing process covered in Section \ref{sec:Design:Simulation}. Differences in traverse time were a result of available sunlight at both sites on their respective worst days with respect to available daily insolation. Ismenius Cavus is located at a higher latitude, in the northern hemisphere, and thus receives less winter season daylight than Iani Chaos. Worst-case daily insolations for an optical depth of $\tau = 1$ were used to determine the energy requirements of each reference Sol and were taken from Tables \ref{tab:insolation-iani-chaos-clear-and-dusty-days} for Iani Chaos and \ref{tab:insolation-ismenius-cavus-clear-and-dusty-days} for Ismenius Cavus.
 
-\subsection{Flat Traverse}
-\label{sec:PowerBudget:PowerBudget:FlatTraverse}
+\subsubsection{Flat Traverse}
+\label{sec:Design:PowerBudget:TraversePowerBudget:FlatTraverse}
 
-Power and duration values for \textit{DTE Communication}, \textit{Science Stop}, and \textit{Hibernation} modes were taken from \ac{CDF} and assigned to the Reference Sols presented in Section \ref{sec:ReferenceSols:ReferenceSols}, these are shown in Table ref{tab:ReferenceSolsPowerBudget}. Propulsion power for the \textit{Traverse} modes were replaced by values based on power draw estimates in Sections \ref{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse} and \ref{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse}, that is \SI{75}{\watt} for flat terrain traverses and \SI{150}{\watt} for upslope terrain traverses up to \SI{30}{\degree} inclination. The \textit{Optimal Pose} mode's power draw was estimated at \SI{75}{\watt} based on the rover's flat terrain propulsion power draw and is etimated to take up to \SI{10}{\minute} to execute.
+Power and operation al duration of \textit{DTE Communication}, \textit{Science Stop - Short}, and \textit{Hibernation} modes were taken from \citeother{CDF2014} and assigned to the reference Sols presented in Section \ref{sec:ReferenceSols:ReferenceSols}. Power draw estimates made in Sections \ref{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse} and \ref{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse} were used for \textit{Traverse} modes power. The \textit{Optimal Pose} mode power draw was equated to that of the rover's flat terrain propulsion power and etimated to take up to \SI{10}{\minute} to execute. The power budget for the reference \textit{Flat Traverse Sol} is shown in Table XX.
 
-\input{sections/locomotion-power-draws/tables/power-budget-traverse-sol-tau-0p4.tex}
-
+\input{sections/design/power-budget/tables/power-budget-tau-1-traverse-sol-flat.tex}
 
 
-\subsection{Upslope Traverse}
-\label{sec:PowerBudget:PowerBudget:UpslopeTraverse}
 
-\subsection{Hibernation}
-\label{sec:PowerBudget:PowerBudget:Hibernation}
+\subsubsection{Upslope Traverse}
+\label{sec:Design:PowerBudget:TraversePowerBudget:UpslopeTraverse}
+The reference Sol for an upslope traverse only differs from that of the flat traverse by the \textit{Traverse} mode power draw. It is increased from \SI{75}{\watt} to \SI{150}{\watt}. The power budget for the reference \textit{Upslope Traverse Sol} is shown in Table XX.
 
-\section{Summary and Conclusion}
-\label{sec:PowerBudget:SummaryAndConclusion}
+\input{sections/design/power-budget/tables/power-budget-tau-1-traverse-sol-upslope.tex}
+
+\subsubsection{Hibernation}
+\label{sec:Design:PowerBudget:TraversePowerBudget:Hibernation}
+The power budget for the reference \textit{Hibernation Sol} is shown in Table XX.
+
+\subsection{Summary}
+\label{sec:PowerBudget:Summary}
+\todo[inline]{\textbf{TODO:} Write section summary.}
