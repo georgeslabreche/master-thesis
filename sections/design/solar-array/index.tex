@@ -1,0 +1,60 @@
+\todo[inline]{\textbf{TODO:} Write section introduction.}
+
+\subsection{Sizing}
+\todo[inline]{\textbf{TODO:} Short introduction.}
+
+\subsubsection{Solar Array}
+Equation \ref{eq:SA_slope_energy} is rearranged in into an expression of the solar cell coverage area $A$, shown in Equation \ref{eq:solar_cell_coverage_area}:
+
+\begin{equation}
+  \label{eq:solar_cell_coverage_area}
+  A = \frac{E}{\eta \cdot H_{\beta} \cdot PR}
+\end{equation}
+
+where $E$ becomes the energy required by the rover on that Sol and $H_{h}$ the worst-case available daily insolation, henceforth $E_{req}^{worst}$ and $H_{\beta}^{worst}$ respectively. $H_{\beta}^{worst}$ is used instead of $H_{h}^{worst}$ in order to take advantage of the rover's active suspension system to generate the most available worst case daily insolation. The values for these varibles are taken from assumptions and previously calculated energies and daily insolations:
+
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
+    \item From Table \ref{tab:worst-case-traverse-sol-power-budget}, $E_{req}^{worst}$ is \SI{775}{\watt\hour} at Iani Chaos and \SI{750}{\watt\hour} at Ismenius Cavus.
+    \item From Tables \ref{tab:insolation-iani-chaos-clear-and-dusty-days} and \ref{tab:insolation-ismenius-cavus-clear-and-dusty-days}, $H_{\beta}^{worst}$ for $\tau=1$ is \SI{2909}{Wh.m^{-2}} at Iani Chaos and \SI{1752}{Wh.m^{-2}} at Ismenius Cavus.
+    \item From \ref{itm:ass:red_shifts}, \ref{itm:ass:dust_deposition_saturation}, and \ref{itm:ass:protruding_shadowing}, the performance ratio $PR$ at \ac{EOL} is $PR_{EOL} = 1 - (0.03 + 0.3 + 0.05) = 0.63$.
+    \item From \ref{itm:ass:solar_cell_efficiency}, $\eta_{EOL} = 0.22$.
+\end{enumerate}
+
+
+The required solar cell coverage area at Iani Chaos then becomes:
+\begin{align}
+  \label{calc:solar_cell_area_ismenius_cavus}
+  A_{iani} &= \frac{E_{req}^{worst}}{\eta_{EOL} \cdot H_{\beta}^{worst} \cdot PR_{EOL}}\\
+           &= \frac{775}{0.22 \cdot 2479 \cdot 0.63}\\
+           &= \SI{2.26}{m^{2}}
+\end{align}
+
+and at Ismenius Cavus:
+\begin{align}
+  \label{calc:solar_cell_area_iani_chaos}
+  A_{ismenius} &= \frac{E_{req}^{worst}}{\eta_{EOL} \cdot H_{\beta}^{worst} \cdot PR_{EOL}}\\
+               &= \frac{750}{0.22 \cdot 1345 \cdot 0.63}\\
+               &= \SI{4.02}{m^{2}}
+\end{align}
+
+Considering \ref{itm:ass:packing_efficiency}, the required \ac{SA} area is \SI{2.7}{m^{2}} at Iani Chaos and \SI{4.72}{m^{2}} at Ismenius Cavus.
+
+\todo[inline]{\textbf{TODO:} Mention mass. Mention size and mass different if we had used $H_{\beta}^{worst}$ instead of $H_{\beta}^{best}$.}
+
+\subsubsection{Battery}
+\todo[inline]{\textbf{TODO:} Battery size based on energy required to keep the rover Warm through the night. Check if the calculated size satisfies the hibernation requirement. If not, resize.}
+
+\subsection{Baseline Design}
+\todo[inline]{\textbf{TODO:} Refer to design drivers and present solution.}
+
+\subsection{Mechanisms}
+\todo[inline]{\textbf{TODO:} Short introduction.}
+
+\subsubsection{Deployment}
+\todo[inline]{\textbf{TODO:} 1. Sequence and 2. Cantilever beam analysis at every deployment step.}
+
+\subsubsection{HDRMs}
+\todo[inline]{\textbf{TODO:} Calculate for Force acting on the \ac{HDRM}.}
+
+\subsection{Summary}
+\todo[inline]{\textbf{TODO:} Write section summary.}

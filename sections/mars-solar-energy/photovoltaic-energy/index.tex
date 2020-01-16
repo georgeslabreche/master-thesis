@@ -1,8 +1,10 @@
+\todo[inline]{\textbf{TODO:} Write section introduction.}
+
 \subsection{Performance Ratio}
 \label{sec:PowerAndEnergyPredictions:PerformanceRatio}
-Power and energy calculations take into account solar cell performance ratio $PR$, also known as the coefficient for losses. $PR$ components are taken from Mars \ac{PV} literature:
+Power and energy calculations take into account solar cell performance ratio \ac{PR}, also known as the coefficient for losses. \ac{PR} components are taken from Mars \ac{PV} literature:
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
   \item\label{itm:pr:perm_loss}After deployment, \SI{5}{\percent} permanent dust power loss \citepower{McNatt2016}.
   \item\label{itm:pr:temp}Solar cell efficiency varies by \SI{3}{\percent} due to changing temperature and red-shift spectral losses through the day time-period \citepower{Kerslake1999}.
   \item\label{itm:pr:deposition}Dust deposition degrade the performance at a rate of \SI{0.28}{\percent} per sol during the initial 30 Sols of a mission and long-term degradation is about \SI{0.14}{\percent} per sol \citepower{Landis2004}.
@@ -10,7 +12,7 @@ Power and energy calculations take into account solar cell performance ratio $PR
   \item\label{itm:pr:shadowing}Variable shadowing from protruding rover structures \citepower{Stella2005} and terrain masking \citepower{Kerslake1999}.
 \end{enumerate}
 
-The components used for \ac{PR} in the daily energy calculations throughout this chapter will initially be made up of degradation coefficients from (\ref{itm:pr:perm_loss}) and (\ref{itm:pr:temp}) where validation against \ac{MER} Opportunity data will use the solar array dust factor reported by the rover rather than those described in (\ref{itm:pr:deposition}) and (\ref{itm:pr:saturation}). Losses from (\ref{itm:pr:shadowing}) and other unaccounted factors will be initially assumed at \SI{5}{\percent} and then iteratively revised along with the solar array dust factor so that the error margin range may be reduced.
+The components used for \ac{PR} in the daily energy calculations throughout this chapter will initially be made up of degradation coefficients from \ref{itm:pr:perm_loss} and \ref{itm:pr:temp} where validation against \ac{MER} Opportunity data will use the solar array dust factor reported by the rover rather than those described in \ref{itm:pr:deposition} and \ref{itm:pr:saturation}. Losses from \ref{itm:pr:shadowing} and other unaccounted factors will be initially assumed at \SI{5}{\percent} and then iteratively revised along with the solar array dust factor so that the error margin range may be reduced.
 
 Dust deposition induced losses do not perennially degrade the solar cells but fluctuate due to probabilistic dust cleaning events such as encounters with dust devils, storm winds, or even from a steep tilt angle as seen in Figure \ref{fig:image:mer-opportunity-dust-streaks}.
 
@@ -58,7 +60,7 @@ Power and energy calculations for inclined solar arrays are obtained from $G_{\b
 
 It is worth emphasizing the difference between \ac{PV} cell, panel/module, and array surface areas in order to emphasize the correct parameter when calculating generated power and energy. \ac{PV} cells are interconnected together in a package called a panel, or module, which is then wired in series and parallel into a PV array. The interconnections between cells and wiring between panels introduce cell coverage gaps from which no power is generated. As such, considering panel or array rather than cell surface area for power and energy calculations would result in over-estimated values. By way of example, we consider the solar arrays on MER rovers in Figure \ref{fig:image:mer-solar-arrays} which is made up of a total of 499 cells: 165 on the port wing, 167 on the starboard wing, 102 on the stern, and 65 on the body. A cell's dimension is $\SI{3.95}{\centi\meter} \times \SI{6.89}{\centi\meter}$ with two cropped corners. This provides an active area of \SI{26.6}{\centi\meter\squared} thus the solar cell coverage area is $499 \times \SI{26.6}{\centi\meter\squared} = \SI{1.3}{\meter\squared}$.
 
-\todo[inline]{TODO: Source E-mail exchange with Richard C. Ewell (NASA/JPL) for the MER solar cell size.}
+\todo[inline]{\text{TODO:} Source E-mail exchange with Richard C. Ewell (NASA/JPL) for the MER solar cell size.}
 
 \begin{figure}[h]
   \centering
@@ -72,15 +74,16 @@ It is worth emphasizing the difference between \ac{PV} cell, panel/module, and a
 
 \subsection{Validation}
 \label{sec:PowerAndEnergyPredictions:Validation}
+\todo[inline]{\textbf{TODO:} Write section introduction.}
 
-\todo[inline]{TODO: Short intro text? Why are we validating? Explain that the equations we are using were based on Viking Lander data and we need to verify if it is still robust today by validating it against the wealth of data we've accumulated since, specifically with MER Opportunity data which is illustrative of mobile rover missions rather than a stationary lander mission.}
+%\todo[inline]{TODO: Short intro text? Why are we validating? Explain that the equations we are using were based on Viking Lander data and we need to verify if it is still robust today by validating it against the wealth of data we've accumulated since, specifically with MER Opportunity data which is illustrative of mobile rover missions rather than a stationary lander mission.}
 
 \subsubsection{Horizontal Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}
 
 In order to validate the formulas presented in Section \ref{sec:PowerAndEnergyPredictions:Predictions}, \ac{MER} Opportunity status update parameters were applied to the daily energy calculation presented in Equation \ref{eq:SA_energy}. The following data was scraped from the rover's status update website for Mars years MY29 through MY33:
 
-\begin{enumerate}[(a)]
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
   \item Sol: the mission's Martian day when the status report was made.
   \item Terrestrial date: the date on Earth when the status report was made.
   \item Atmospheric opacity: the $\tau$ factor introduced in Section \ref{sec:MartianEnvironment:Dust:AtmosphericOpacity}.
@@ -136,7 +139,7 @@ For the purpose of insolation calculations, the areocentric longitude $L_{s}$ wa
 
 A clear outlier is observed during the second half of MY33 in which predicted daily energy productions are much higher than what was reported. This is due to the rover's inclined descent through ``Bitterroot Valley'' during an intensive investigation into a gully at Endeavour Crater's western rim. Energy production predictions with horizontal surface Equation \ref{eq:SA_energy} not suited due to the inclination and orientation of such a descent. Applying Equation \ref{eq:SA_slope_energy} for $E_{\beta}$ would be more applicable. As such, data from MY33 is not considered in the validation exercise for horizontal surfaces.
 
-\todo[inline]{TODO: Include reference to rover update for Bitterroot Valley descent.}
+\todo[inline]{\textbf{TODO:} Include reference to rover update for Bitterroot Valley descent.}
 % Source: https://mars.nasa.gov/mer/mission/rover-status/opportunity/recent/all/?y=2016
 % Source: https://www.nasa.gov/feature/jpl/rover-takes-on-steepest-slope-ever-tried-on-mars
 
@@ -176,7 +179,8 @@ The wide error margin range is thus a result of isolated local maxima outliers, 
 \input{sections/mars-solar-energy/photovoltaic-energy/tables/divergences-less-than-m20pc.tex}
 
 With the exception of Sol 2199 and 2218, possible explanations for large divergences beyond -20\% were obtained from MER Opportunity's status logs [?]:
-\begin{enumerate}[(a)]
+
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
   \item Sol 2199: No turns or inclinations reported.
   \item Sol 2204: Turn - short sharp arc turn.
   \item Sol 2211: Inclination - crossed a series of ripples.
@@ -185,11 +189,12 @@ With the exception of Sol 2199 and 2218, possible explanations for large diverge
   \item Sol 3901: Inclination - descended from the summit of 'Cape Tribulation'.
 \end{enumerate}
 
-\todo[inline]{TODO: Source MER Opportunity status log.}
+\todo[inline]{\textbf{TODO:} Source MER Opportunity status log.}
 %Sources. For terrestrial year 2010: https://mars.nasa.gov/mer/mission/rover-status/opportunity/2010/
 
 The use of fixed daily values for the certain irradiance calculation variables also contributes to the observed divergences:
-\begin{enumerate}[(a)]
+
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
   \item A fixed $\tau$ factor does not reflect the continuous changes in atmopheric optical depth.
   \item A fixed solar array dust factor does not reflect the irregularity of dust deposition over the entirety of the solar cell coverage area.
   \item A fixed shadowing performance loss coefficient does not reflect the diurnal changes in overshadowed area. Overshadowing changes throughout the day due to the position of the sun with respect to the location of the rover's petruding instruments, notably the Pancam Mast Assembly (PMA) as well as the low-gain and high-gain antennas.
@@ -228,3 +233,6 @@ The pool of measured data used for this validation was much too small to draw co
 
 %Particularly while it was exploring steep outcrops within 'Marathon Valley' when the rover was inclined on the slopes of 'Knudsen Ridge' at Sol 4303 (March 1, 2016).
 %The rover's tilt hit 32 degrees on March 10 while Opportunity was making its closest approach to an intended target near the crest of "Knudsen Ridge."
+
+\subsection{Summary}
+\todo[inline]{\textbf{TODO:} Write section summary.}

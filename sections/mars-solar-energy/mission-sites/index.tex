@@ -1,15 +1,17 @@
+\todo[inline]{\textbf{TODO:} Write section introduction.}
+
 \subsection{Selection Criteria}
 \label{sec:MissionSites:SelectionCriteria}
 Mission sites were required before determining environmental constraints pertaining to available solar radiation on the Martian surface. Two sites, Iani Chaos and Ismenius Cavus, were selected based on the following criteria:
 
-\begin{itemize}
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
     \item The location is of scientific interest, supported by past or ongoing research.
     \item The terrain features complex morphologies so that scenarios with inclined solar array surfaces may be simulated from which the rover's active suspension system may also be evaluated.
     \item Landing sites for the location have been proposed in preceedings such as with the \ac{MSL} Landing Site Workshops in \citeother{MSLLandingSites}. Such proposals suggest technical feasibility in landing a rover for the proposed locations.
     \item \ac{HiRISE} \ac{DTM} are available near the \ac{ROI} so that 3D environment models may be loaded on the mission simulation platform.
     \item The planetary latitude is close to that of the \ac{MER} Opportuniy mission in order to enable future comparative analysis of simulation results with 14 years worth of \ac{MER} power budget data. This target planetary latitude is approximately \SI{2}{\degree}S.
     \item The planetary latitude is close to that of the \ac{VL1} and \ac{VL2} missions in order to more closely align with the environment conditions from which the power and energy prediction models were built. This target planetary latitude is between \SI{22}{\degree}N and \SI{48}{\degree}N.
-\end{itemize}
+\end{enumerate}
 
 Conducting mission scenario simulations for both locations also ensured that a wider range of seasonal driven solar radiation constraints were explored with respect to differences in planetary latitude. Iani Choas is located in the Sourthern hemisphere, close to the equator, whereas Ismenius Cavus is located in the Norhern hemispheres at a significant distance from the equator.
 
@@ -28,7 +30,7 @@ Iani Chaos is centered at approximately \SI{342}{\degree}E, \SI{2}{\degree}S, it
 
 Iani Chaos is ``among the most geomorphologically complex chaotic terrains.'' From  \citeother{Warner2011}, it's morphology has been defined by:
 
-\begin{itemize}
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
     \item Multiple, 1 to \SI{2}{\kilo\meter} deep basins.
     \item Flat‐topped, fractured plateaus that are remnants of highland terrain.
     \item Knobby, fractured remnants of highland terrain.
@@ -36,7 +38,7 @@ Iani Chaos is ``among the most geomorphologically complex chaotic terrains.'' Fr
     \item Interchaos grooved terrain.
     \item \ac{ILD}.
     \item Mantling material.
-\end{itemize}
+\end{enumerate}
 
 Figure \ref{fig:sub:western-iani-chaos-dtm} shows a section of the \ac{DTM} of Western Iani Chaos which was loaded on the rover's mission simulation plaform. The topography of the area is shown in Figure \ref{fig:sub:western-iani-chaos-dtm-altimetry}.
 
@@ -86,7 +88,7 @@ Ismenius Cavus is located at \SI{33.5}{\degree}N, \SI{17}{\degree}E, with elevat
 % https://www.uahirise.org/dtm/dtm.php?ID=ESP_052945_2150
 
 Supported science of interest are taken from \citeother{Dehouck2015}:
-\begin{itemize}
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
     \item Potential for past habitability.
     \item Potential for organic matter with surface exposure.
     \item Noachian/Hesperian rocks with trapped atmospheric gases.
@@ -98,7 +100,7 @@ Supported science of interest are taken from \citeother{Dehouck2015}:
     \item Near-surface ice, glacial or permafrost.
     \item Noachian or pre-Noachian bedrock units.
     \item Diversity of aeolian sediments and/or landforms.
-\end{itemize}
+\end{enumerate}
 
 Supported resources of interest are also presented in \citeother{Dehouck2015} with clay minerals and water ice being two main resources for water. Furthermore, there is a potential for metal/silicon. These resources are located no more than \SI{3}{\meter} below the surface. Mobile material resources for construction purposes also exist.
 
@@ -197,13 +199,13 @@ Large values of $\beta$ are preferred at Ismenius Cavus, up to \SI{58}{\degree} 
 
 \clearpage
 
-Daily insolations on horizontal and inclined surfaces with $\beta_{best}=\pm\SI{10}{\degree}$\footnote{$\beta$ is positive in the northern hemisphere and negative in the southern hemisphere} are presented in Tables \ref{tab:insolation-iani-chaos-clear-and-dusty-days} and \ref{tab:insolation-iani-chaos-global-storm-days} for Iani Chaos and Tables \ref{tab:insolation-ismenius-cavus-clear-and-dusty-days} and \ref{tab:insolation-ismenius-cavus-global-storm-days} for Ismenius Cavus. Gains obtained in daily insolation on an inclined surface over a horizontal surface are more pronounced for sites further away from the equator, with approximately +16\% for a typical optical depth of $\tau = 0.4$ at Ismenius Cavus versus +9\% at Iani Chaos.
+Daily insolations on horizontal and inclined surfaces with $\beta_{best}=\pm\SI{10}{\degree}$\footnote{$\beta$ is positive in the northern hemisphere and negative in the southern hemisphere} are presented in Tables \ref{tab:insolation-iani-chaos-clear-and-dusty-days} and \ref{tab:insolation-iani-chaos-global-storm-days} for Iani Chaos and Tables \ref{tab:insolation-ismenius-cavus-clear-and-dusty-days} and \ref{tab:insolation-ismenius-cavus-global-storm-days} for Ismenius Cavus. Gains obtained in daily insolation with an inclined surface are more pronounced for sites further away from the equator. For a typical optical depth of $\tau = 0.4$, the average daily insolation gain on the inclined surface is approximately 7\% at Iani Chaos and 9\% at Ismenius Cavus versus +9\% at Iani Chaos.
 
 \input{sections/mars-solar-energy/mission-sites/tables/insolation-iani-chaos-clear-and-dusty-days.tex}
 
 \input{sections/mars-solar-energy/mission-sites/tables/insolation-iani-chaos-global-storm-days.tex}
 
-Due to the mostly diffuse composition of solar radiation during higher optical depths, inclined surfaces become irrelevent during global dust storms. For $\tau \geq 2$, gains in daily insolation become negligeable at both mission sites.
+Due to the mostly diffuse composition of solar irradiance at higher optical depths, inclined surfaces become irrelevent during global dust storms. For $\tau \geq 2$, gains in daily insolation become negligeable at both mission sites.
 
 \input{sections/mars-solar-energy/mission-sites/tables/insolation-ismenius-cavus-clear-and-dusty-days.tex}
 \clearpage
@@ -246,5 +248,6 @@ The worst-case slope traverse is an on inclined surface facing opposite the equa
 By way of example, at Ismenius Cavus for $\tau = 0.4$ and $L_{s}=\SI{270}{\degree}$, descending a \SI{30}{\degree} slope bearing North results in a daily insolation of \SI{319}{Whm^{-2}}. This can be increased to \SI{767}{Whm^{-2}} by decreasing $\beta$ from \SI{30}{\degree} to \SI{25}{\degree} after tilting the rover southwards by \SI{5}{\degree} so that $\beta < B$ with $\beta = \SI{25}{\degree}$. A \SI{10}{\degree} tilt would increase the daily insolation to \SI{1046}{Whm^{-2}} with $\beta = \SI{20}{\degree}$.
 
 
-\subsection{Summary and Conclusion}
-As was seen in Section \ref{sec:MartianEnvironment:SolarRadiation}, solar insolation refers to the amount of solar radiation incident on the surface of Mars. Solar insolation is affected by several parameters from which planetary latitude and longitude have been narrowed down by the selected mission sites. Differences in latitude introduces solar radiation variations with respect to seasonal changes throughout a Martian year whereas longitude determines the estimated albedo value. Furthermore, the need to navigate complex topographic morphologies introduces inclination angle constraints when considering solar insolation on a solar array surface. Taking into account the rover's propulsion power constraints explored in Section \ref{sec:PropulsionPowerConstraints}, sufficient design drivers have been put forth to support solar array design requirements for a Mars mission scenario on Iani Chaos and Ismenius Cavus.
+\subsection{Summary}
+\todo[inline]{\textbf{TODO:} Write Summary.}
+%As was seen in Section \ref{sec:MartianEnvironment:SolarRadiation}, solar insolation refers to the amount of solar radiation incident on the surface of Mars. It is affected by several parameters from which planetary latitude and longitude have been narrowed down by the selected mission sites. Differences in latitude introduces solar radiation variations with respect to seasonal changes throughout a Martian year whereas longitude determines the estimated albedo value. The need to navigate complex topographic morphologies introduces inclination angle constraints when considering solar insolation on a solar array surface. Taking into account the rover's propulsion power constraints explored in Section \ref{sec:PropulsionPowerConstraints}, sufficient design drivers have been put forth to support solar array design requirements for a Mars mission scenario on Iani Chaos and Ismenius Cavus.

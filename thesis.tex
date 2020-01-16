@@ -16,6 +16,10 @@
 
 \usepackage{hhline}
 
+\usepackage[dvipsnames]{xcolor}
+\definecolor{BulletBlue}{HTML}{5783a0}
+
+
 %% define control flags
 \usepackage{ifthen}
 \newboolean{printVersion}
@@ -50,13 +54,13 @@
 
 %% Document Meta Data %%
 \newcommand{\myWorkingTitle}[0]{%
-Design of SherpaTT Rover Solar Arrays for Simulated Mars Mission Phases and Analysis of Operational Scenarios%
+\textit{WORKING TITLE:\\} Exploiting the SherpaTT Rover Active Suspension System to Enable Optimal Solar Array Orientation and Inclination for Long Traverses in Martian Environment
 }
 \newcommand{\thesisAuthor}[0]{%
-Georges Labreche%
+Georges L. J. Labrèche%
 }
 \newcommand{\thesisKeyWords}[0]{%
-Mars, rover, solar panel, power, energy%
+Mars, rover, solar array, power, energy%
 }
 \newcommand{\metaDataSubject}[0]{%
 %Dissertation%
@@ -69,6 +73,7 @@ Master Thesis%
 %% for long-term archives (can generate large pdf file size):
 %\input{styles/pdf_a_compability.tex}
 
+\usepackage{enumitem}
 
 
 \begin{document}
@@ -186,17 +191,10 @@ Master Thesis%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Introduction}
+\chapter{Background}
 %\shinyChapterQuote{}
-\label{sec:Introduction}
-\input{sections/introduction/index.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{State of the Art}
-%\shinyChapterQuote{}
-\label{sec:StateOfTheArt}
-\input{sections/state-of-the-art/index.tex}
+\label{sec:Background}
+\input{sections/background/index.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

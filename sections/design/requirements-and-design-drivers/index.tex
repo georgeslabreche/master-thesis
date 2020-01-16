@@ -1,56 +1,69 @@
-Requirements and design drivers constrained the rover's \ac{SA} design. Initial assumptions on \ac{SA} performance degredation as well as propulsion power draw were made in Chapters \ref{sec:PowerAndEnergyPredictions} and \ref{sec:PowerBudget}, respectively. This chapter briefly introduces the selected solar cell technology and incorporates further assumptions pertaining to their \ac{BOL} and \ac{EOL} efficiencies.
-
-The chapter is structured as follows: Section \ref{sec:RequirementsAndDesignDrivers:Assumptions} provides the assumptions. Requirements are presented in Section \ref{sec:RequirementsAndDesignDrivers:Requirements}. Section  \ref{sec:RequirementsAndDesignDrivers:DesignDrivers} presents the design drivers. The chapter is then summarized in Section \ref{sec:RequirementsAndDesignDrivers:SummaryAndConclusion}.
+Requirements and design drivers constrained the rover's \ac{SA} design. Initial assumptions on \ac{SA} performance degredation as well as propulsion power draw were made in Chapters \ref{sec:PowerAndEnergyPredictions} and \ref{sec:PowerBudget}, respectively. This chapter briefly introduces the selected solar cell technology and presents assumptions pertaining to their \ac{BOL} and \ac{EOL} efficiencies. Further assumptions are made regarding the rover's mobility capabilities.
 
 
 \subsection{Assumptions}
 \label{sec:RequirementsAndDesignDrivers:Assumptions}
 The following assumptions were identified:
 
-\begin{itemize}
-    \item[\textbf{A-01}] Propulsion power draw for flat terrain traverses is \SI{75}{\watt}.
-    \item[\textbf{A-02}] Propulsion power draw for upslope terrain traverses up to \SI{30}{\degree} inclination is \SI{150}{\watt}.
-    \item[\textbf{A-03}] Solar cell technology is \ac{IMM} solar cell with AM0 efficiency of 32.3\% at \ac{BOL} and 22.5\% at \ac{EOL} \citepower{Sharps2017}.
-    \item[\textbf{A-04}] IMM Solar cell efficiency on Mars surface is 22\% at \ac{EOL}.
-    \item[\textbf{A-05}] Solar cell packing efficiency is 85\%.
-    \item[\textbf{A-06}] Solar array efficiency varies by 3\% due to changing temperature and red-shift spectral losses through the day time-period \citepower{Kerslake1999}.
-    \item[\textbf{A-07}] Solar array dust performance degradation saturates at 30\% \citepower{Stella2005}.
-    \item[\textbf{A-08}] Solar array performance degradation from shadowing by protruding rover structures is 5\%.
-\end{itemize}
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{A-\arabic*}}]
+    \item Propulsion power draw for flat terrain traverses is \SI{75}{\watt}.
+    \item Propulsion power draw for upslope terrain traverses up to \SI{30}{\degree} inclination is \SI{150}{\watt}.
+    \item Solar cell technology is \ac{IMM} solar cell with AM0 efficiency of 32.3\% at \ac{BOL} and 22.5\% at \ac{EOL} \citepower{Sharps2017}.
+    \item \label{itm:ass:solar_cell_efficiency} \ac{IMM} Solar cell efficiency on Mars surface is 22\% at \ac{EOL}.
+    \item \label{itm:ass:packing_efficiency} Solar cell packing efficiency is 85\%.
+    \item \label{itm:ass:red_shifts} Solar array efficiency varies by 3\% due to changing temperature and red-shift spectral losses through the day time-period \citepower{Kerslake1999}.
+    \item \label{itm:ass:dust_deposition_saturation} Solar array dust performance degradation saturates at 30\% \citepower{Stella2005}.
+    \item \label{itm:ass:protruding_shadowing} Solar array performance degradation from shadowing by protruding rover structures is 5\%.
+    \item The \ac{SA} surface density is \SI{3.7}{kg.m^{-2}}.
+    \item The rover's nominal velocity is at least \SI{2}{cm.s^{-2}}.
+    \item There is an average 15\% slippage when traversing a flat terrains for any given distance.
+    \item There is an average 30\% slippage when traversing an upslope terrain for any given distance and slope angle.
+\end{enumerate}
 
-\clearpage
+\todo[inline]{\textbf{TODO:} Reference past missiosn for A-09 and Cordes 2019 for A-11 and A-12. Is slippage still as high as 15\%-30\% if the system is programmed to stop driving when slippage is detected?}
+
 \subsection{Requirements}
-\label{sec:RequirementsAndDesignDrivers:Requirements}
-The requirements were narrowed down based on the following considerations:
-\begin{itemize}
+\label{sec:sec:Design:RequirementsAndDesignDrivers:Requirements}
+The requirements were narrowed down with the following considerations:
+
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
     \item Interest in long traverses from the PERASPERA programme on space robotics \citeother{PERASPERA}.
     \item Focus on space robotics development for long autonomous traverses at \ac{DFKI} \citeother{OG6} \citeother{OG10}.
     \item Mission site at Iani Chaos is approximately \SI{100}{\kilo\meter} from closest resource deposits of interest.
     \item Area of interest at Ismenius Cavus is approximately $\SI{100}{\kilo\meter} \times \SI{50}{\kilo\meter}$.
-    \item Dust storm tracking in \citemarsenv{Battalio2019} observed that the average duration of local dust storms is approximately 7 Sols.
-\end{itemize}
+    \item Dust storm tracking in \citemarsenv{Battalio2019} observed that the average duration of local dust storms is approximately seven Sols.
+\end{enumerate}
 
-Thus, for the purpose of initial \ac{SA} design, the following \ac{EOL} requirements were identified:
+Thus, for the purpose of initial \ac{SA} design, the following \ac{EOL} requirements were identified for a mission life time of one \ac{MY}:
 
-\begin{itemize}
-    \item[\textbf{R-01}] The rover shall be able to traverse at least \SI{100}{\kilo\meter} of flat surface during a Martian year.
-    \item[\textbf{R-02}] The rover shall be able to traverse inclined surfaces of up to \SI{30}{\degree} at optical depths of up to $\tau = 1$.
-    \item[\textbf{R-03}] The rover shall be able to traverse during any Sol in a Martian year at optical depths of up to $\tau = 1$.
-    \item[\textbf{R-04}] The rover shall be able to survive dust storms at optical depths $\tau = 2$ for at least 7 Sols.
-\end{itemize}
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{R-\arabic*}}]
+    \item The rover shall be able to traverse flat terrain at an optical depth of $\tau = 1$.
+    \item The rover shall be able to traverse \SI{30}{\degree} inclined terrain at an optical depth of $\tau = 1$.
+    \item The rover shall traverse a total of \SI{50}{\kilo\meter}.
+    \item The rover shall be able to survive dust storms at optical depths $\tau = 2$ for at least seven Sols.
+\end{enumerate}
 
+\subsection{Constraint}
+\label{sec:Design:RequirementsAndDesignDrivers:Constraints}
+The design had to allow non-traverse Sols, such as for long science stops, intermittent hibernation periods during dust storms, battery recharging periods, or events of limited activities such as during a Solar Conjunction Break. For the scope of this study the following constraint was considered rather than formalizing requirements for other subsystems:
+
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{C-\arabic*}}]
+    \item The rover may only execute a \textit{Traverse Sol} every third day.
+\end{enumerate}
 
 \subsection{Design Drivers}
-\label{sec:RequirementsAndDesignDrivers:DesignDrivers}
+\label{sec:Design:RequirementsAndDesignDrivers:DesignDrivers}
 The following \ac{SA} design drivers were identified:
 
-\begin{itemize}
-    \item[\textbf{DD-01}] Limited amount of unfolding during deployment.
-    \item[\textbf{DD-02}] Manipulator arm's end effector can access the ground.
-    \item[\textbf{DD-03}] Movement range of the suspension system is unobstructed.
-    \item[\textbf{DD-04}] Position of \ac{CoG} is within the rover's body.
-\end{itemize}
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{D-\arabic*}}]
+    \item Limited amount of unfolding during deployment.
+    \item Manipulator arm's end effector can access the ground.
+    \item Manipulator arm can access four \ac{PLI} stored in the rover.
+    \item Movement range of the suspension system is unobstructed.
+    \item Position of \ac{CoG} is within the rover's body.
+\end{enumerate}
 
-\subsection{Summary and Conclusion}
-\label{sec:RequirementsAndDesignDrivers:SummaryAndConclusion}
-The assumptions, requirements, and design drivers presented in this chapter were applied for both mission sites.
+\subsection{Summary}
+\label{sec:Design:RequirementsAndDesignDrivers:Summary}
+\todo[inline]{\textbf{TODO:} Write section summary.}
+%The assumptions, requirements, and design drivers presented in this chapter were applied for both mission sites.
