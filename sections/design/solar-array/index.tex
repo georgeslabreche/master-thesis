@@ -21,9 +21,9 @@ where $E$ becomes the energy required by the rover on that Sol and $H_{h}$ the w
 \end{enumerate}
 
 
-The required solar cell coverage area at Iani Chaos then becomes:
+The required solar cell coverage area at Iani Chaos was thus determined:
 \begin{align}
-  \label{calc:solar_cell_area_ismenius_cavus}
+  \label{calc:solar_cell_area_iani_chaos}
   A_{iani} &= \frac{E_{req}^{worst}}{\eta_{EOL} \cdot H_{\beta}^{worst} \cdot PR_{EOL}}\\
            &= \frac{775}{0.22 \cdot 2479 \cdot 0.62}\\
            &= \SI{2.29}{m^{2}}
@@ -31,19 +31,37 @@ The required solar cell coverage area at Iani Chaos then becomes:
 
 and at Ismenius Cavus:
 \begin{align}
-  \label{calc:solar_cell_area_iani_chaos}
+  \label{calc:solar_cell_area_ismenius_cavus}
   A_{ismenius} &= \frac{E_{req}^{worst}}{\eta_{EOL} \cdot H_{\beta}^{worst} \cdot PR_{EOL}}\\
                &= \frac{750}{0.22 \cdot 1345 \cdot 0.62}\\
                &= \SI{4.09}{m^{2}}
 \end{align}
 
-At Iani Chaos, from \ref{itm:ass:packing_efficiency} the resulting \ac{SA} area is  \SI{2.7}{m^{2}} and from \ref{itm:ass:sa_surface_density} its mass is 9.95 \si{\kilo\gram}. Taking advantage of \ac{SA} inclination capabilities with $\beta_{best} = \SI{10}{\degree}$ resulted in \ac{SA} sizing decrease of \SI{3.9}{\percent} when compared with a horizontal surface configuration. For $\tau = 1$ during global dust storm season and $\tau = 0.4$ during the remainder of the year, the total maximum flat traverse distance achievable over the course of one \ac{MY} is increased by \SI{8.79}{\percent} from \SI{59.13}{\kilo\meter} to \SI{64.33}{\kilo\meter}.
+At Iani Chaos, from \ref{itm:ass:packing_efficiency} the resulting \ac{SA} area was \SI{2.7}{m^{2}} and from \ref{itm:ass:sa_surface_density} its mass was 9.95 \si{\kilo\gram}. Taking advantage of \ac{SA} inclination capabilities with $\beta_{best} = \SI{10}{\degree}$ resulted in \ac{SA} sizing decrease of \SI{3.9}{\percent} when compared with a horizontal surface configuration. For $\tau = 1$ during global dust storm season and $\tau = 0.4$ for the remainder of the year, the total maximum flat traverse distance achievable over the course of one \ac{MY} was increased by \SI{8.79}{\percent} from \SI{59.13}{\kilo\meter} to \SI{64.33}{\kilo\meter}.
 
-At Ismenius Cavus, the resulting \ac{SA} area and mass are \SI{4.8}{m^{2}} at 17.8 \si{\kilo\gram}. The \ac{SA} sizing decrease is \SI{4.6}{\percent}. The one \ac{MY} maximum achievable flat traverse distance is increased by \SI{1.39}{\percent} from \SI{67.4}{\kilo\meter} to \SI{68.34}{\kilo\meter}.
+At Ismenius Cavus, the resulting \ac{SA} area and mass were \SI{4.8}{m^{2}} at 17.8 \si{\kilo\gram}. The \ac{SA} area was decreased by \SI{4.6}{\percent}. The total maximum achievable flat traverse distance achievable during one \ac{MY} was increased by \SI{1.39}{\percent} from \SI{67.4}{\kilo\meter} to \SI{68.34}{\kilo\meter}.
 
-The traverse distance gains attributed to \ac{SA} inclination capabilities do not seem to justify adopting the complexities of an active suspension system for the purpose of increasing traverse distance via solar tracking. This is particularly true at Ismenius Cavus. The savings in \ac{SA} surface area and mass also leave much to be desired. To explain the lack of significant traverse distance gain with $\beta_{best}$, the generated \ac{SA} energy and  maximum traverse durations are plotted in Figures \ref{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations} and \ref{fig:plot:ismenius-cavus-generated-energy-and-max-traverse-durations}.
+The traverse distance gains attributed to \ac{SA} inclination capabilities did not seem to justify adopting the complexities of an active suspension system for the purpose of increasing traverse distance via solar tracking. This was particularly true at Ismenius Cavus. The savings in \ac{SA} surface area and mass also left much to be desired. The size problem of the resulting \ac{SA} areas are illustrated in Figure \ref{fig:sa-area-initial-sizes}.
 
 \clearpage
+\begin{figure}[h]
+  \centering
+  \hypersetup{linkcolor=captionTextColor}
+  \includegraphics[width=0.8\linewidth]{sections/design/solar-array/images/sa-area-initial-sizes.png}\\
+  \caption[Size comparison between SherpaTT and initial SA areas for Iani Chaos and Ismenius Cavus]
+          {Size comparison between SherpaTT and initial \ac{SA} areas for Iani Chaos and Ismenius Cavus. The outlined square areas are equivalent to \ac{SA} areas of \SI{2.7}{m^{2}} for Iani Chaos and \SI{4.8}{m^{2}} for Ismenius Cavus.}
+  \label{fig:sa-area-initial-sizes}
+\end{figure}
+
+To explain the lack of significant gain with $\beta_{best}$, the generated \ac{SA} energy and maximum traverse durations are plotted in Figures \ref{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations} for Iani Chaos and Figure \ref{fig:plot:ismenius-cavus-generated-energy-and-max-traverse-durations} for Ismenius Cavus.
+
+The \ref{itm:con:daylight_traverse} constraint imposed an upper limit to the maximum traverse durations. This ceiling corresponded to the daylight time that was available for traversing. At Iani Chaos, this resulted in the \ac{SA} generating excess propulsion energy which could not be used. For the scenario plotted in Figure \ref{fig:plot:sub:ismenius-cavus-max-traverse-durations}, this occured before and after the global storm season where both horizontal and $\beta_{best}$ inclined \ac{SA} surfaces generated excess energy which annulled any gains associated with solar tracking. This would have also have been the case during the global storm season for clear days with $\tau = 0.4$.
+
+At Ismenius Cavus, the excess energy problem was further pronounced than in Iani Chaos. As seen in the scenario plotted in Figure \ref{fig:plot:sub:iani-chaos-max-traverse-durations}, an inclined \ac{SA} surface was only relevant during the global dust storm season with a dusty atmosphere of $\tau = 1$. This negligeable advantage resulted in the limited \SI{1.39}{\percent} traverse distance gain with $\beta_{best}$ that was noted earlier.
+
+The \ac{SA} sizing approach using Equations \ref{calc:solar_cell_area_iani_chaos} and \ref{calc:solar_cell_area_ismenius_cavus} had to be re-evaluated towards a solution that resulted in significant gains with $\beta_{best}$, bot in terms of \ac{SA} area reduction and in attainable traverse distances when compared to hose obtained from a horizontal \ac{SA} surface.
+
+
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
@@ -84,6 +102,34 @@ The traverse distance gains attributed to \ac{SA} inclination capabilities do no
     %% the figures
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-daily-generated-energy.png}
+        \subcaption{Generated Energy}
+        \label{fig:plot:sub:ismenius-cavus-generated-energy}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-75w-max-traverse-durations.png}
+  		\subcaption{Maximum Traverse Durations}
+		\label{fig:plot:sub:ismenius-cavus-max-traverse-durations}
+	\end{subfigure}\\[0.8ex]
+    \caption[Generated energy and maxium achievable flat terrain traverse durations at Ismenius Cavus]
+            {Generated energy and maxium achievable flat terrain traverse duration at Ismenius Cavus. The same considerations were taken as in Figure \ref{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations}.}
+    \label{fig:plot:ismenius-cavus-generated-energy-and-max-traverse-durations}
+\vspace{-2ex}
+\end{figure}
+
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{80mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
         \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ianichaos-75w-traverse-gains-for-27m2-sa-area.png}
         \subcaption{\ac{SA} area = \SI{2.7}{\meter\squared}}
         \label{fig:plot:sub:iani-chaos-flat-traverse-gains-for-initial-sa-area}
@@ -101,33 +147,7 @@ The traverse distance gains attributed to \ac{SA} inclination capabilities do no
 \end{figure}
 
 
-\begin{figure}[h]
-\captionsetup[subfigure]{justification=centering}
-\vspace{-2ex}
-	\centering
-    %% setup sizes
-    \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{80mm}
-    %% kill hyper-link highlighting
-    \hypersetup{hidelinks=true}%
-    %% the figures
-    \begin{subfigure}[t]{\subfigureWidth}
-        \centering
-        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-daily-generated-energy.png}
-        \subcaption{Generated Energy}
-        \label{fig:plot:sub:ismenius-cavus-generated-energy}
-    \end{subfigure}\hfill
-    \begin{subfigure}[t]{\subfigureWidth}
-        \centering
-        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-75w-max-traverse-durations.png}
-  		\subcaption{Maximum Traverse Durations}
-		\label{fig:plot:sub:ismenius-cavus-max-traverse-durations}
-	\end{subfigure}\\[0.8ex]
-    \caption[Generated energy and maxium achievable flat terrain traverse durations at Ismenius Cavus]
-            {Generated energy and maxium achievable flat terrain traverse duration at Ismenius Cavus. Optical depth  $\tau = 1$ was used for global dust storm season ($\SI{185}{\degree} \leq L_{s} \leq \SI{315}{\degree}$) and $\tau = 0.4$ for the remainder of the year. The \textit{available daylight traverse time} corresponds to the amount of daylight hours left in a \textit{Traverse Sol} after subtracting the time taken by non-Traverse modes: \textit{Idle - Day}, \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Optimal Pose}. The maximum traverse durations for \ac{SA} horizontal do not consider the \textit{Optimal Pose} mode.}
-    \label{fig:plot:ismenius-cavus-generated-energy-and-max-traverse-durations}
-\vspace{-2ex}
-\end{figure}
+
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}

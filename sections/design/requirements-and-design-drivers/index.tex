@@ -40,8 +40,8 @@ Thus, for the purpose of initial \ac{SA} design, the following \ac{EOL} requirem
     %\item The rover shall be able to traverse flat terrain at an optical depth of $\tau = 1$.
     %\item The rover shall be able to traverse \SI{30}{\degree} inclined terrain at an optical depth of $\tau = 1$.
     \item \label{itm:req:total_distance_flat_terrain} The rover shall traverse flat terrain for a total distance of at least \SI{20}{\kilo\meter}.
-    \item \label{itm:req:survive_tau1}The rover shall survive optical depths of up to $\tau = 1$.
-    \item \label{itm:req:survice_tau2}The rover shall survive optical depths $\tau = 2$ for at least seven Sols.
+    \item \label{itm:req:survive_tau1} The rover shall survive optical depths of up to $\tau = 1$.
+    \item \label{itm:req:survice_tau2} The rover shall survive optical depths $\tau = 2$ for at least seven Sols.
 \end{enumerate}
 
 \subsection{Constraint}
@@ -50,7 +50,7 @@ The design had to allow \textit{non-Traverse Sols}, such as for long science sto
 
 \begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{C-\arabic*}}]
     \item There shall be a minimum of at least two \textit{non-Traverse Sols} between each \textit{Traverse Sol}.
-    \item The rover can be in \textit{Traverse mode} only during daylight.
+    \item \label{itm:con:daylight_traverse} The rover can be in \textit{Traverse mode} only during daylight.
 \end{enumerate}
 
 \subsection{Design Drivers}
