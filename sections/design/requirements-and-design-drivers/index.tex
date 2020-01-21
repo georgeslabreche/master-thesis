@@ -14,7 +14,7 @@ The following assumptions were identified:
     \item \label{itm:ass:red_shifts} Solar array efficiency varies by 3\% due to changing temperature and red-shift spectral losses through the day time-period \citepower{Kerslake1999}.
     \item \label{itm:ass:dust_deposition_saturation} Solar array dust performance degradation saturates at 30\% \citepower{Stella2005}.
     \item \label{itm:ass:protruding_shadowing} Solar array performance degradation from shadowing by protruding rover structures is 5\%.
-    \item The \ac{SA} surface density is \SI{3.7}{kg.m^{-2}}.
+    \item \label{itm:ass:sa_surface_density} The \ac{SA} surface density is \SI{3.7}{kg.m^{-2}}.
     \item The rover's nominal velocity is at least \SI{2}{cm.s^{-2}}.
     \item There is an average 15\% slippage when traversing a flat terrains for any given distance.
     \item There is an average 30\% slippage when traversing an upslope terrain for any given distance and slope angle.
@@ -37,18 +37,20 @@ The requirements were narrowed down with the following considerations:
 Thus, for the purpose of initial \ac{SA} design, the following \ac{EOL} requirements were identified for a mission life time of one \ac{MY}:
 
 \begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{R-\arabic*}}]
-    \item The rover shall be able to traverse flat terrain at an optical depth of $\tau = 1$.
-    \item The rover shall be able to traverse \SI{30}{\degree} inclined terrain at an optical depth of $\tau = 1$.
-    \item The rover shall traverse a total of \SI{50}{\kilo\meter}.
-    \item The rover shall be able to survive dust storms at optical depths $\tau = 2$ for at least seven Sols.
+    %\item The rover shall be able to traverse flat terrain at an optical depth of $\tau = 1$.
+    %\item The rover shall be able to traverse \SI{30}{\degree} inclined terrain at an optical depth of $\tau = 1$.
+    \item \label{itm:req:total_distance_flat_terrain} The rover shall traverse flat terrain for a total distance of at least \SI{20}{\kilo\meter}.
+    \item \label{itm:req:survive_tau1}The rover shall survive optical depths of up to $\tau = 1$.
+    \item \label{itm:req:survice_tau2}The rover shall survive optical depths $\tau = 2$ for at least seven Sols.
 \end{enumerate}
 
 \subsection{Constraint}
 \label{sec:Design:RequirementsAndDesignDrivers:Constraints}
-The design had to allow non-traverse Sols, such as for long science stops, intermittent hibernation periods during dust storms, battery recharging periods, or events of limited activities such as during a Solar Conjunction Break. For the scope of this study the following constraint was considered rather than formalizing requirements for other subsystems:
+The design had to allow \textit{non-Traverse Sols}, such as for long science stops, intermittent hibernation periods during dust storms, battery recharging periods, or events of limited activities such as during a Solar Conjunction Break. Furthermore, traverses may only occur during daylight to allow terrain observations to be made in case of slip and skids that pass a yet to be defined threshold. For the scope of this study, the following constraints were considered rather than formalizing requirements for the implicated subsystems:
 
 \begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{C-\arabic*}}]
-    \item The rover may only execute a \textit{Traverse Sol} every third day.
+    \item There shall be a minimum of at least two \textit{non-Traverse Sols} between each \textit{Traverse Sol}.
+    \item The rover can be in \textit{Traverse mode} only during daylight.
 \end{enumerate}
 
 \subsection{Design Drivers}

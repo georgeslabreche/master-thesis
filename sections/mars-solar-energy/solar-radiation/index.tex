@@ -7,12 +7,13 @@ The red planet's axis is tilted away from the sun at \SI{25}{\degree}. Very much
 
 \input{sections/mars-solar-energy/solar-radiation/tables/mars-seasons.tex}
 
-
+\clearpage
 \subsection{Dust}
 \label{sec:MartianEnvironment:Dust}
 The Martian surface is aeolianly active with varying concentration of airborn dust throughout the year due to processes of dust lifting, transportation, and deposition \citemarsenv{Kahre2006}.
 
 \todo[inline]{\textbf{TODO:} Short overview of dust cycle on Mars.}
+% See: https://www.nasa.gov/feature/goddard/2018/curiosity-photos-show-martian-dust-storm-growing
 
 \subsubsection{Atmospheric Opacity}
 \label{sec:MartianEnvironment:Dust:AtmosphericOpacity}
@@ -20,10 +21,10 @@ The density of suspended dust determines the atmospheric opacity, or optical dep
 
 \todo[inline]{\textbf{TODO:} Source the 99\% claim.}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/mars-solar-energy/solar-radiation/images/tau-factors.png}\\
+  \includegraphics[width=0.7\linewidth]{sections/mars-solar-energy/solar-radiation/images/tau-factors.png}\\
   \caption[Simulated views of atmospheric dust opacity for varying $\tau$ factors]
           {Simulated views of atmospheric dust opacity for varying $\tau$ factors. From left to right frames, tau factors of 1, 3, 5, 7, 9, and 11. Credits: NASA/JPL-Caltech/TAMU.}
   \label{fig:image:tau-factors}
@@ -32,11 +33,18 @@ The density of suspended dust determines the atmospheric opacity, or optical dep
 \subsubsection{Storms}
 \label{sec:MartianEnvironment:Dust:Storms}
 
-Dust storms are likely to occur between $L_{s} = \SI{180}{\degree}$ and $L_{s} = \SI{330}{\degree}$ while Mars approaches the Sun, with the perihelion at $L_{s} = \SI{248}{\degree}$. The Sun's proximity warms the atmosphere which creates temperature differences that produce dust lifting winds. The process is exacerbated by the release of carbon dioxide from the evaporating winter polar cap which thickens the atmosphere and increases surface pressure so that dust particles remain airborn.
+Dust storms are likely to occur while Mars approaches the Sun during the periphelion season between $L_{s} = \SI{185}{\degree}$ and $L_{s} = \SI{315}{\degree}$ \citemarsenv{Smith2019}. The Sun's proximity warms the atmosphere which creates temperature differences that produce dust lifting winds. The process is exacerbated by the release of carbon dioxide from the evaporating winter polar cap which thickens the atmosphere and increases surface pressure so that dust particles remain airborn. Figure \ref{fig:image:global-dust-storm-timing} shows the the timing of global dust storms until \ac{MY} 34.
 
-% Source: https://www.nasa.gov/feature/goddard/2018/curiosity-photos-show-martian-dust-storm-growing
+\begin{figure}[h]
+  \centering
+  \hypersetup{linkcolor=captionTextColor}
+  \includegraphics[width=0.4\linewidth]{sections/mars-solar-energy/solar-radiation/images/timin-of-observed-global-dust-storms.png}\\
+  \caption[Timing of observed global dust storms on Mars]
+          {Timing of observed global dust storms on Mars is concentrated in the season near the periphelion. Taken from \citemarsenv{Smith2019}.}
+  \label{fig:image:global-dust-storm-timing}
+\end{figure}
 
-Global dust storms that cover an area of over \SI{e7}{\kilo\meter\squared} have a yearly probability of \SI{30}{\percent} to \SI{80}{\percent} whereas local dust storms that cover an area less than \SI{e7}{\kilo\meter\squared} occur with a \SI{5}{\percent} probability \citepower{Kerslake1999}. Local dust storms typically have a $\tau$ factor of approximately 1 \citepower{Kerslake1999} whereas the largest in situ $\tau$ factor recorded by \ac{MER} Opportunity was 10.8 on Sol 5111 at $L_{s} = \SI{180}{\degree}$.
+Global dust storms that cover an area of over \SI{e7}{\kilo\meter\squared} have a yearly probability of \SI{30}{\percent} to \SI{80}{\percent} whereas local dust storms that cover an area less than \SI{e7}{\kilo\meter\squared} occur with a \SI{5}{\percent} probability \citepower{Kerslake1999}. Local dust storms typically have a $\tau$ factor of approximately 1 \citepower{Kerslake1999} whereas the largest in situ $\tau$ factor recorded by \ac{MER} Opportunity was 10.8 in \ac{MY}34 near $L_{s} = \SI{180}{\degree}$.
 
 
 \subsection{Solar Radiation}
