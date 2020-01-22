@@ -23,7 +23,7 @@ where $E$ becomes the energy required by the rover on that Sol and $H_{h}$ the w
 
 The required solar cell coverage area at Iani Chaos was thus determined:
 \begin{align}
-  \label{calc:solar_cell_area_iani_chaos}
+  \label{calc:solar_cell_area_iani_chaos_traverse}
   A_{iani} &= \frac{E_{req}^{worst}}{\eta_{EOL} \cdot H_{\beta}^{worst} \cdot PR_{EOL}}\\
            &= \frac{775}{0.22 \cdot 2479 \cdot 0.62}\\
            &= \SI{2.29}{m^{2}}
@@ -31,7 +31,7 @@ The required solar cell coverage area at Iani Chaos was thus determined:
 
 and at Ismenius Cavus:
 \begin{align}
-  \label{calc:solar_cell_area_ismenius_cavus}
+  \label{calc:solar_cell_area_ismenius_cavus_traverse}
   A_{ismenius} &= \frac{E_{req}^{worst}}{\eta_{EOL} \cdot H_{\beta}^{worst} \cdot PR_{EOL}}\\
                &= \frac{750}{0.22 \cdot 1345 \cdot 0.62}\\
                &= \SI{4.09}{m^{2}}
@@ -59,8 +59,7 @@ The \ref{itm:con:daylight_traverse} constraint imposed an upper limit to the max
 
 At Ismenius Cavus, the excess energy problem was further pronounced than in Iani Chaos. As seen in the scenario plotted in Figure \ref{fig:plot:sub:iani-chaos-max-traverse-durations}, an inclined \ac{SA} surface was only relevant during the global dust storm season with a dusty atmosphere of $\tau = 1$. This negligeable advantage resulted in the limited \SI{1.39}{\percent} traverse distance gain with $\beta_{best}$ that was noted earlier.
 
-The \ac{SA} sizing approach using Equations \ref{calc:solar_cell_area_iani_chaos} and \ref{calc:solar_cell_area_ismenius_cavus} had to be re-evaluated towards a solution that resulted in significant gains with $\beta_{best}$, bot in terms of \ac{SA} area reduction and in attainable traverse distances when compared to hose obtained from a horizontal \ac{SA} surface.
-
+The \ac{SA} sizing using Equations \ref{calc:solar_cell_area_iani_chaos_traverse} and \ref{calc:solar_cell_area_ismenius_cavus_traverse} had to be approached differently to achieve significant gains with $\beta_{best}$ over a horizontal \ac{SA} surface, both in terms of \ac{SA} area reduction and in attainable traverse distances. Lack of appreciable distance coverage gains with $\beta_{best}$ lies in the optical depths that were used to determine $H_{\beta}^{worst}$ with $\tau = 1$. For high $\tau$ factors, $H_{\beta}^{worst} \approx H_{h}^{worst}$ due to light scattering by airborn Martian dust. This was previously observed in Figure \ref{fig:plot:insolation-ls}, where diffuse insolation was already the largest component contributing to global insolation at $\tau = 1$. Inclined \ac{SA} surface yield little to no benefits over horizontal surfaces when light is mostly diffuse.
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -74,18 +73,18 @@ The \ac{SA} sizing approach using Equations \ref{calc:solar_cell_area_iani_chaos
     %% the figures
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ianichaos-daily-generated-energy.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ianichaos-daily-generated-energy-for-sa-area-27m2.png}
         \subcaption{Generated Energy}
         \label{fig:plot:sub:iani-chaos-generated-energy}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ianichaos-75w-max-traverse-durations.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ianichaos-75w-max-traverse-durations-for-sa-area-27m2.png}
   		\subcaption{Maximum Traverse Durations}
 		\label{fig:plot:sub:iani-chaos-max-traverse-durations}
 	\end{subfigure}\\[0.8ex]
     \caption[Generated energy and maxium achievable flat terrain traverse durations at Iani Chaos]
-            {Generated energy and maxium achievable flat terrain traverse duration at Iani Chaos. Optical depth  $\tau = 1$ was used for global dust storm season ($\SI{185}{\degree} \leq L_{s} \leq \SI{315}{\degree}$) and $\tau = 0.4$ for the remainder of the year. The \textit{available daylight traverse time} corresponds to the amount of daylight hours left in a \textit{Traverse Sol} after subtracting the time taken by non-Traverse modes: \textit{Idle - Day}, \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Optimal Pose}. The maximum traverse durations for \ac{SA} horizontal do not consider the \textit{Optimal Pose} mode.}
+            {Generated energy and maxium achievable flat terrain traverse duration at Iani Chaos with \ac{SA} area = \SI{2.7}{m^{2}}. Optical depth  $\tau = 1$ was used for global dust storm season ($\SI{185}{\degree} \leq L_{s} \leq \SI{315}{\degree}$) and $\tau = 0.4$ for the remainder of the year. The \textit{available daylight traverse time} corresponds to the amount of daylight hours left in a \textit{Traverse Sol} after subtracting the time taken by non-Traverse modes: \textit{Idle - Day}, \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Optimal Pose}. The maximum traverse durations for \ac{SA} horizontal do not consider the \textit{Optimal Pose} mode.}
     \label{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations}
 \vspace{-2ex}
 \end{figure}
@@ -102,22 +101,44 @@ The \ac{SA} sizing approach using Equations \ref{calc:solar_cell_area_iani_chaos
     %% the figures
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-daily-generated-energy.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-daily-generated-energy-for-sa-area-48m2.png}
         \subcaption{Generated Energy}
         \label{fig:plot:sub:ismenius-cavus-generated-energy}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-75w-max-traverse-durations.png}
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-75w-max-traverse-durations-for-sa-area-48m2.png}
   		\subcaption{Maximum Traverse Durations}
 		\label{fig:plot:sub:ismenius-cavus-max-traverse-durations}
 	\end{subfigure}\\[0.8ex]
     \caption[Generated energy and maxium achievable flat terrain traverse durations at Ismenius Cavus]
-            {Generated energy and maxium achievable flat terrain traverse duration at Ismenius Cavus. The same considerations were taken as in Figure \ref{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations}.}
+            {Generated energy and maxium achievable flat terrain traverse duration at Ismenius Cavus with \ac{SA} area = \SI{4.8}{m^{2}}. The same considerations were taken as in Figure \ref{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations}.}
     \label{fig:plot:ismenius-cavus-generated-energy-and-max-traverse-durations}
 \vspace{-2ex}
 \end{figure}
 
+\clearpage
+\ac{SA} sizes of \SI{2.7}{m^{2}} at Iani Chaos and \SI{4.8}{m^{2}} at Ismenius Cavus resulted in total attainable distance coverages of \SI{64}{\kilo\meter} and \SI{68}{\kilo\meter} of flat traverses within one \ac{MY}. These distances exceeded by over threefolds the \ref{itm:req:total_distance_flat_terrain} requirement of \SI{20}{\kilo\meter}. $E_{req}^{worst}$ was changed from energy required for the worst case \textit{Traverse Sol} to energy required for a \textit{Hibernation Sol}. To attain satisfying results the solar power draw required by the \textit{Hibernation mode} needed to be reduced from \SI{18}{\watt} to \SI{17}{\watt} at Iani Chaos and from \SI{18}{\watt} to \SI{15}{\watt} at Ismenius Cavus. Introducing \acp{RHU} will be necessary should these revised solar power requirements be unachievable. A single \ac{RHU} provides approximately \SI{1}{\watt} of heat thus one \ac{RHU} would be required at Iani Chaos and three at Ismenius Cavus. After taking into account a \SI{20}{percent} system margin, $E_{req}^{worst}$ became \SI{490}{\watt\hour} for a \textit{Hibernation Sol} at Iani Chaos and \SI{432}{\watt\hour} at Ismenius Cavus. Revisting Equation \ref{eq:solar_cell_coverage_area} resulted in the following solar cell coverage areas:
+
+
+\begin{align}
+  \label{calc:solar_cell_area_iani_chaos_hibernation}
+  A_{iani} &= \frac{E_{req}^{worst}}{\eta_{EOL} \cdot H_{\beta}^{worst} \cdot PR_{EOL}}\\
+           &= \frac{490}{0.22 \cdot 2479 \cdot 0.62}\\
+           &= \SI{1.45}{m^{2}}
+\end{align}
+
+\begin{align}
+  \label{calc:solar_cell_area_ismenius_cavus_hibernation}
+  A_{ismenius} &= \frac{E_{req}^{worst}}{\eta_{EOL} \cdot H_{\beta}^{worst} \cdot PR_{EOL}}\\
+               &= \frac{432}{0.22 \cdot 1345 \cdot 0.62}\\
+               &= \SI{2.35}{m^{2}}
+\end{align}
+
+After considering \ref{itm:ass:packing_efficiency}, the \ac{SA} area were \SI{1.7}{m^{2}} at Iani Chaos with a mass of \SI{6.3}{\kilo\gram} and \SI{2.8}{m^{2}} at Ismenius Cavus with a mass of  \SI{10.4}{\kilo\gram}. The \ref{itm:req:total_distance_flat_terrain} requirement remained satisfied with
+a maxmium flat traverse distance coverage of \SI{21}{\kilo\meter} at Iani Chaos and \SI{48}{\kilo\meter} at Ismenius Cavus. Figure \ref{fig:plot:flat-traverse-gains-for-different-sa-area} compares the gains in flat traverse distance coverage for different \ac{SA} sizes and optical depths so that the relationship between \ac{SA} area and benefits of solar tracking may be further appreciated. At Iani Chaos, a \SI{26}{\percent} gain in flat traverse distance coverage was achieved with a $\beta_{best}$ inclined surface during a clear day with $\tau = 0.4$. On a dusty day with $\tau = 1$, this gain was still significant at \SI{14}{\percent}. At Ismenius cavus, $\tau = 0.4$ and $\tau = 1$ gains are \SI{21}{\percent} and \SI{9}{\percent}, respectively. The maximum daily traverse durations attainable at both sites with their respective \ac{SA} sizes are shown in Figure \ref{fig:plot:final-maximum-traverse-durations-at-missions-sites}.
+
+
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
@@ -128,59 +149,51 @@ The \ac{SA} sizing approach using Equations \ref{calc:solar_cell_area_iani_chaos
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
-    \begin{subfigure}[t]{\subfigureWidth}
-        \centering
-        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ianichaos-75w-traverse-gains-for-27m2-sa-area.png}
-        \subcaption{\ac{SA} area = \SI{2.7}{\meter\squared}}
-        \label{fig:plot:sub:iani-chaos-flat-traverse-gains-for-initial-sa-area}
-    \end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
         \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ianichaos-75w-traverse-gains-for-different-sa-areas.png}
-  		\subcaption{For different \ac{SA} areas}
-		\label{fig:plot:sub:iani-chaos-flat-traverse-gains-for-different-sa-area}
-	\end{subfigure}\\[0.8ex]
-    \caption[Flat traverse distance gains at Iani Chaos]
-            {Flat traverse distance gains at Iani Chaos.}
-    \label{fig:plot:iani-chaos-flat-traverse-gains}
-\vspace{-2ex}
-\end{figure}
-
-
-
-
-\begin{figure}[h]
-\captionsetup[subfigure]{justification=centering}
-\vspace{-2ex}
-	\centering
-    %% setup sizes
-    \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{80mm}
-    %% kill hyper-link highlighting
-    \hypersetup{hidelinks=true}%
-    %% the figures
-    \begin{subfigure}[t]{\subfigureWidth}
-        \centering
-        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-75w-traverse-gains-for-48m2-sa-area.png}
-        \subcaption{\ac{SA} area = \SI{4.8}{\meter\squared}}
-        \label{fig:plot:sub:ismenius-chaos-flat-traverse-gains-for-initial-sa-area}
+  		\subcaption{Iani Chaos, \ac{SA} area = \SI{1.7}{m^{2}}}
+		\label{fig:plot:sub:ismenius-chaos-flat-traverse-gains-for-different-sa-area}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
         \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-75w-traverse-gains-for-different-sa-areas.png}
-  		\subcaption{For different \ac{SA} areas}
-		\label{fig:plot:sub:ismenius-chaos-flat-traverse-gains-for-different-sa-area}
+  		\subcaption{Ismenius Cavus, \ac{SA} area = \SI{2.8}{m^{2}}}
+		\label{fig:plot:sub:iani-chaos-flat-traverse-gains-for-different-sa-area}
 	\end{subfigure}\\[0.8ex]
-    \caption[Flat traverse distance gains at Ismnenius Chaos]
-            {Flat traverse distance gains at Ismnenius Chaos.}
-    \label{fig:plot:ismenius-chaos-flat-traverse-gains}
+    \caption[Flat traverse distance gains at Iani Chaos and Ismenius Cavus for different \ac{SA} sizes]
+            {Flat traverse distance gains at Iani Chaos and Ismenius Cavus for different \ac{SA} sizes.}
+    \label{fig:plot:flat-traverse-gains-for-different-sa-area}
 \vspace{-2ex}
 \end{figure}
 
-
-\todo[inline]{\textbf{TODO:} Size SA with hibernation power budget. Reduce Hibernation mode power draw.}
-
-%\label{itm:req:total_distance_flat_terrain}
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{80mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ianichaos-75w-max-traverse-durations-for-sa-area-17m2.png}
+  		\subcaption{Iani Chaos, \ac{SA} area = \SI{1.7}{m^{2}}}
+		\label{fig:plot:sub:final-maximum-traverse-durations-iani-chaos}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/plots/ismeniuscavus-75w-max-traverse-durations-for-sa-area-28m2.png}
+  		\subcaption{Ismenius Cavus, \ac{SA} area = \SI{2.8}{m^{2}}}
+		\label{fig:plot:sub:final-maximum-traverse-durations-ismenius-cavus}
+	\end{subfigure}\\[0.8ex]
+    \caption[Maximum traverse durations at Iani Chaos and Ismenius Cavus]
+            {Maximum traverse durations at Iani Chaos and Ismenius Cavus.}
+    \label{fig:plot:final-maximum-traverse-durations-at-missions-sites}
+\vspace{-2ex}
+\end{figure}
 
 \clearpage
 \subsubsection{Battery}
