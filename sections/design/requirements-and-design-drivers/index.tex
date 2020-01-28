@@ -57,12 +57,13 @@ The design had to allow \textit{non-Traverse Sols}, such as for long science sto
 \label{sec:Design:RequirementsAndDesignDrivers:DesignDrivers}
 The following \ac{SA} design drivers were identified:
 
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{D-\arabic*}}]
-    \item Limited amount of unfolding during deployment.
-    \item Manipulator arm's end effector can access the ground.
-    \item Manipulator arm can access four \ac{PLI} stored in the rover.
-    \item Movement range of the suspension system is unobstructed.
-    \item Position of \ac{CoG} is within the rover's body.
+\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{DD-\arabic*}}]
+    \item \label{itm:dd:limited_unfolding} Limited amount of unfolding during deployment.
+    \item \label{itm:dd:shadowing} Shadowing is minimized.
+    \item \label{itm:dd:end_effector} Manipulator arm end effector can access the ground.
+    \item \label{itm:dd:four_plis} Manipulator arm can access at least four \ac{PLI} stored in the rover.
+    \item \label{itm:dd:unobstructed} Movement range of the suspension system is unobstructed.
+    \item \label{itm:dd:cog} Position of the rover's \ac{CoG} along the x and y axis is centered during stowed position.
 \end{enumerate}
 
 \subsection{Summary}

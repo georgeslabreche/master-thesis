@@ -195,21 +195,277 @@ a maxmium flat traverse distance coverage of \SI{21}{\kilo\meter} at Iani Chaos 
 \vspace{-2ex}
 \end{figure}
 
+
+%\clearpage
+%\subsubsection{Battery}
+%\todo[inline]{\textbf{TODO:} Battery size based on energy required to keep the rover Warm through the night. Check if the calculated size satisfies the hibernation requirement. If not, resize.}
+
 \clearpage
-\subsubsection{Battery}
-\todo[inline]{\textbf{TODO:} Battery size based on energy required to keep the rover Warm through the night. Check if the calculated size satisfies the hibernation requirement. If not, resize.}
-
 \subsection{Baseline Design}
-\todo[inline]{\textbf{TODO:} Refer to design drivers and present solution.}
+As per \ref{itm:dd:shadowing}, the rover's body is redesigned in order to minimize shadowing events. A pyramid shaped body continuously casts a shadow on a surrounding \ac{SA} with an exception during solar noon. Even then, it is likely that the rover would be tilted to achieve $\beta_{best}$ and thus still be subject to shadowing. The redesigned body shown in Figure \ref{fig:rover-body-redesign} opts for a box shape with a flat top on which one of the \ac{SA} panels can be placed. The dimension of the redesigned body is $\SI{65}{\centi\meter}\times\SI{65}{\centi\meter}\times\SI{63}{\centi\meter}$ with the base preserving the pyramid body's dimension in order to minimize changes in sizing dependent considerations.
 
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{48mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/body-before.png}
+        \subcaption{Before}
+		\label{fig:sub:rover-body-redesign-before}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/body-after.png}
+  		\subcaption{After}
+		\label{fig:sub:rover-body-redesign-after}
+	\end{subfigure}\\[0.8ex]
+    \caption[Rover body redesign]
+            {Rover body redesign.}
+    \label{fig:rover-body-redesign}
+\vspace{-2ex}
+\end{figure}
+
+Placement of four \acp{PLI} is driven by \ref{itm:dd:four_plis} and shown in Figure \ref{fig:sub:rover-body-redesign-after}. They are stored in the front of body and are accessible by the rover's robotic arm. As will be seen further in this section, access to the remaining faces is obstructed by the \ac{SA} panels. Spacing is left between the \acp{PLI} and the top of the body to allow for instruments. The \acp{PLI} are oriented upwords by \SI{15}{\degree} in order to compensate against possible forward tilts driven by the rover repositioning itself to attain $\beta_{best}$. The upward tilt of the \ac{PLI} have the added benefit of facilitating access to the robotic arm. The position of the latter is shifted towards the front in order to maximize the surface area that can be uninterruptedly covered by solar cells. As per \ref{itm:dd:unobstructed}, the movemement range of the suspension system must remain unobstructed. The height of the redesigned body is such that the deployed \ac{SA} panels are kept above the legs for any configuration of the active suspension system. This is demonstrated in Figure \ref{fig:rover-body-redesign-stowed-legs} where the rover's stowed posture results in its knees reaching their highest point.
+
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{50mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/stowed-body-pyramid.png}
+        \subcaption{Before}
+		\label{fig:sub:rover-body-redesign-stowed-before}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/stowed-body-box.png}
+  		\subcaption{After}
+		\label{fig:sub:rover-body-redesign-stowed-legs-after}
+	\end{subfigure}\\[0.8ex]
+    \caption[Rover body redesign with stowed legs]
+            {Rover body redesign with stowed legs.}
+    \label{fig:rover-body-redesign-stowed-legs}
+\vspace{-2ex}
+\end{figure}
+
+
+Folded and deployed \ac{SA} panels are show in Figures \ref{fig:solar-array-on-rover-iani-chaos} and \ref{fig:solar-array-on-ismenius-cavus-chaos} as they would appear mounted on top of the rover's body for different mission sites. When folded, the port, starboard, and stern panels do not lay on top of the rover's body and are instead kept upright at a \SI{90}{\degree} angle. The base of the robotic arm occupies an area of the body's surface that prevents the panels from folding in completely. Shifting the robotic arm onto its own support in front of the body would resolve this but prevent the rover's front right leg from assuming its stowed position.
+
+\vspace{0.5cm}
+
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{53mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/iani-chaos-stowed.png}
+  		\subcaption{Folded on stowed rover}
+		\label{fig:sub:solar-array-on-rover-for-iani-chaos-stowed}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/iani-chaos-10deg-pitch.png}
+  		\subcaption{Deployed on rover with \SI{10}{\degree} pitch forward}
+		\label{fig:sub:solar-array-on-rover-for-iani-chaos-deployed}
+	\end{subfigure}\\[0.8ex]
+    \caption[Solar array on rover for Iani Chaos deployment]
+            {\ac{SA} on rover for Iani Chaos deployment.}
+    \label{fig:solar-array-on-rover-iani-chaos}
+\vspace{-2ex}
+\end{figure}
+
+\vspace{0.5cm}
+
+The folded configurations shown in Figures \ref{fig:sub:solar-array-on-rover-for-iani-chaos-stowed} and \ref{fig:sub:solar-array-on-rover-for-iani-chaos-deployed} were accepted considering that the gain in height does not add much to what is already imposed by the stowed robotic arm. In terms of compactness, a preferable configuration would be one in which all panels are folded in and the robotic arm is stowed against the front side of the body. However, supporting existing rover postures is preferred within the scope of this work. Future design iterations of the stowed configuration for both the robotic arm and the \ac{SA} panels should prioritize compactness based on a \ac{LV} payload capacity and the rover's lander constraints.
+
+\vspace{0.5cm}
+
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{53mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/ismenius-cavus-stowed.png}
+  		\subcaption{Folded on stowed rover}
+		\label{fig:sub:solar-array-on-rover-for-ismenius-cavus-stowed}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/ismenius-cavus-10deg-pitch.png}
+  		\subcaption{Deployed on rover with \SI{10}{\degree} pitch forward}
+		\label{fig:sub:solar-array-on-rover-for-ismenius-cavus-deployed}
+	\end{subfigure}\\[0.8ex]
+    \caption[Solar array on rover for Ismenius Cavus deployment]
+            {\ac{SA} on rover for Ismenius Cavus deployment.}
+    \label{fig:solar-array-on-ismenius-cavus-chaos}
+\vspace{-2ex}
+\end{figure}
+
+\clearpage
+The unfolded \ac{SA} panel layouts are shown in Figure \ref{fig:solar-array-layouts-for-missions-sites}. The \ac{SA} at Iani Chaos consists of four panels whereas a six panel design is used at Ismenius Cavus. The bow panels require a cut to accomodate the base of the rover's robotic arm.
+
+\vspace{0.5cm}
+
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{53mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/solar_array_layout_iani_chaos.png}
+  		\subcaption{Iani Chaos, \ac{SA} area = \SI{1.7}{m^{2}}}
+		\label{fig:sub:solar-array-layouts-for-iani-chaos}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+        \includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/solar_array_layout_ismenius_cavus.png}
+  		\subcaption{Ismenius Cavus, \ac{SA} area = \SI{2.8}{m^{2}}}
+		\label{fig:sub:solar-array-layouts-for-ismenius-cavus}
+	\end{subfigure}\\[0.8ex]
+    \caption[Solar array layouts]
+            {\ac{SA} layouts. Green and blue panels are located on the rover's port and starboard, respectively. Port bow and stardboard bow panels are indicated by lighter colors than those on the rover's port quarter and starboard quarter. Light red indicates bow panels which rest over the rover's body. Darker red panels are located on the rover's stern. The yellow dots represent the \ac{CoM} for each panel.}
+    \label{fig:solar-array-layouts-for-missions-sites}
+\vspace{-2ex}
+\end{figure}
+
+\vspace{0.5cm}
+
+Round and diagonal edges negatively affect solar cell packing efficiency and are thus avoided. However, a trade-off is made at Ismenius Cavus due to the large coverage area of the panels and in light of \ref{itm:dd:cog}. Diagonal corners are used for the port and starboard panels to reduce the wingspan of the solar array while preserving the \ac{CoG} within the stowed rover's body and to reduce the panel \ac{CoM} misalignments when they are deployed. Further \ac{CoG} analysis is required for both configurations with respect to the stern and quarter panels when operating the rover's manipulator arm. This could result in shifting the position of the port and starboard panels. The surface areas and masses of each panel are presented in Table \ref{tab:solar-panel-surface-areas}. Masses were determined from \ref{itm:ass:sa_surface_density} with \ac{SA} surface density of \SI{3.7}{kg.m^{-2}}.
+
+\vspace{0.5cm}
+
+\input{sections/design/solar-array/tables/solar-panel-surface-areas.tex}
+
+
+
+\clearpage
 \subsection{Mechanisms}
-\todo[inline]{\textbf{TODO:} Short introduction.}
 
-\subsubsection{Deployment}
-\todo[inline]{\textbf{TODO:} 1. Sequence and 2. Cantilever beam analysis at every deployment step.}
+\ac{SA} panels deployment at Iani Chaos is straightforward and limited two three unfoldings. Port, bow, and starboard panels are deployed simultenously while the rover is still in its stowed posture. The sequence is illustrated in Figure \ref{fig:deployment-sequence-iani-chaos}.
 
-\subsubsection{HDRMs}
-\todo[inline]{\textbf{TODO:} Calculate for Force acting on the \ac{HDRM}.}
+\vspace{0.5cm}
+
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.32\textwidth}
+    \setlength{\graphicsHeight}{40mm} %45
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+	\begin{subfigure}[t]{\subfigureWidth}
+        \centering
+		\includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/deployment/iani-chaos/solar_array_deployment_iani_chaos_000.png}
+		\subcaption{Folded}
+		\label{fig:sub:deployment-sequence-iani-chaos-stowed}
+	\end{subfigure}\hfill
+	\begin{subfigure}[t]{\subfigureWidth}
+        \centering
+		\includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/deployment/iani-chaos/solar_array_deployment_iani_chaos_030.png}
+		\subcaption{Mid-deployment}
+		\label{fig:sub:deployment-sequence-iani-chaos-mid}
+	\end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+		\includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/deployment/iani-chaos/solar_array_deployment_iani_chaos_060.png}
+		\subcaption{Deployed}
+		\label{fig:sub:deployment-sequence-iani-completed}
+	\end{subfigure}
+	\caption{Deployment sequence of \SI{1.7}{\meter\squared} solar array at Iani Chaos.}
+	\label{fig:deployment-sequence-iani-chaos}
+\vspace{-2ex}
+\end{figure}
+
+\vspace{0.5cm}
+
+\ac{SA} panels deployment at Ismenius Cavus goes through five unfoldings. The sequence is illustrated in Figure \ref{fig:deployment-sequence-ismenius-cavus}. The port bow, starboard bow, stern panels are simultenously deployed, completing the first three out of the five unfoldings. The remaining two unfoldings deploy the port quarter and starboard quarter panels.
+
+\vspace{0.5cm}
+
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+	\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.32\textwidth}
+    \setlength{\graphicsHeight}{40mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+	\begin{subfigure}[t]{\subfigureWidth}
+        \centering
+		\includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/deployment/ismenius-cavus/solar_array_deployment_ismenius_cavus_000.png}
+		\subcaption{Folded panels for stowed posture}
+		\label{fig:sub:deployment-sequence-ismenius-cavus-stowed}
+	\end{subfigure}\hfill
+	\begin{subfigure}[t]{\subfigureWidth}
+        \centering
+		\includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/deployment/ismenius-cavus/solar_array_deployment_ismenius_cavus_030.png}
+		\subcaption{Port bow, starboard bow, and stern mid-deployment}
+		\label{fig:sub:deployment-sequence-ismenius-cavus-mid-bow-and-stern}
+	\end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+		\includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/deployment/ismenius-cavus/solar_array_deployment_ismenius_cavus_060.png}
+		\subcaption{Port bow, starboard bow, and stern deployed}
+		\label{fig:sub:deployment-sequence-ismenius-cavus-full-bow-and-stern}
+	\end{subfigure}\\[0.8ex]
+%% 2nd row
+	\begin{subfigure}[t]{\subfigureWidth}
+        \centering
+		\includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/deployment/ismenius-cavus/solar_array_deployment_ismenius_cavus_100.png}
+		\subcaption{Port quarter and starboard quarter mid-deployment}
+		\label{fig:sub:deployment-sequence-ismenius-cavus-mid-quarter}
+	\end{subfigure}\hspace*{2.5cm}
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+		\includegraphics[height=\graphicsHeight]{sections/design/solar-array/images/deployment/ismenius-cavus/solar_array_deployment_ismenius_cavus_130.png}
+		\subcaption{Completed deployment}
+		\label{fig:sub:deployment-sequence-ismenius-cavus-completed}
+	\end{subfigure}
+	\caption{Deployment sequence of \SI{2.8}{\meter\squared} solar array at Ismenius Cavus.}
+	\label{fig:deployment-sequence-ismenius-cavus}
+\vspace{-2ex}
+\end{figure}
+
+\clearpage
+The worst-case motor torque for \ac{SA} deployment occurs when unfolding the port quarter and starboard quarter panels at Ismenius Cavus. This sequence is illustrated from Figure \ref{fig:sub:deployment-sequence-ismenius-cavus-full-bow-and-stern} to \ref{fig:sub:deployment-sequence-ismenius-cavus-mid-quarter}. The motor requirements are determined with calculations that use the Earth's gravitational constant rather than that of Mars as a means of accounting for environmental risks such as wind loads and to introduce margins for error in motor performance. Furthermore, sizing motors for and Earth environment reduces testing costs by eliminating the need for vacuum chamber tests.
 
 \subsection{Summary}
 \todo[inline]{\textbf{TODO:} Write section summary.}
