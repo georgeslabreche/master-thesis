@@ -45,6 +45,7 @@ The traverse distance gains attributed to \ac{SA} inclination capabilities did n
 
 \clearpage
 \begin{figure}[h]
+  \captionsetup[subfigure]{justification=centering}
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.8\linewidth]{sections/design/solar-array/images/sa-area-initial-sizes.png}\\
@@ -232,7 +233,7 @@ As per \ref{itm:dd:shadowing}, the rover's body is redesigned in order to minimi
 \vspace{-2ex}
 \end{figure}
 
-Placement of four \acp{PLI} is driven by \ref{itm:dd:four_plis} and shown in Figure \ref{fig:sub:rover-body-redesign-after}. They are stored in the front of body and are accessible by the rover's robotic arm. As will be seen further in this section, access to the remaining faces is obstructed by the \ac{SA} panels. Spacing is left between the \acp{PLI} and the top of the body to allow for instruments. The \acp{PLI} are oriented upwords by \SI{15}{\degree} in order to compensate against possible forward tilts driven by the rover repositioning itself to attain $\beta_{best}$. The upward tilt of the \ac{PLI} have the added benefit of facilitating access to the robotic arm. The position of the latter is shifted towards the front in order to maximize the surface area that can be uninterruptedly covered by solar cells. As per \ref{itm:dd:unobstructed}, the movemement range of the suspension system must remain unobstructed. The height of the redesigned body is such that the deployed \ac{SA} panels are kept above the legs for any configuration of the active suspension system. This is demonstrated in Figure \ref{fig:rover-body-redesign-stowed-legs} where the rover's stowed posture results in its knees reaching their highest point.
+Placing the four \acp{PLI} is driven by \ref{itm:dd:four_plis} and shown in Figure \ref{fig:sub:rover-body-redesign-after}. They are stored in the front of body and are accessible by the rover's robotic arm. As will be seen further in this section, access to the remaining faces is obstructed by the \ac{SA} panels. Spacing is left between the \acp{PLI} and the top of the body to allow for instruments. The \acp{PLI} are oriented upwords by \SI{15}{\degree} in order to compensate against possible forward tilts driven by the rover repositioning itself to attain $\beta_{best}$. The upward tilt of the \ac{PLI} have the added benefit of facilitating access to the robotic arm. The position of the latter is shifted towards the front in order to maximize the surface area that can be uninterruptedly covered by solar cells. As per \ref{itm:dd:unobstructed}, the movemement range of the suspension system must remain unobstructed. The height of the redesigned body is such that the deployed \ac{SA} panels are kept above the legs for any configuration of the active suspension system. This is demonstrated in Figure \ref{fig:rover-body-redesign-stowed-legs} where the rover's stowed posture results in its knees reaching their highest point.
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -374,8 +375,11 @@ Round and diagonal edges negatively affect solar cell packing efficiency and are
 
 \clearpage
 \subsection{Mechanisms}
+Solar panel deployment sequences are presented in this section. The worst case unfolding is identified with respect to panel mass and traveled rotation distance from which initial motor performance requirements are calculated.
 
-\ac{SA} panels deployment at Iani Chaos is straightforward and limited two three unfoldings. Port, bow, and starboard panels are deployed simultenously while the rover is still in its stowed posture. The sequence is illustrated in Figure \ref{fig:deployment-sequence-iani-chaos}.
+\subsubsection{Deployment Sequence}
+
+\ac{SA} panels deployment at Iani Chaos is straightforward and limited two three unfoldings. Port, bow, and starboard panels are deployed simultaneously while the rover is still in its stowed posture. The sequence is illustrated in Figure \ref{fig:deployment-sequence-iani-chaos}.
 
 \vspace{0.5cm}
 
@@ -385,7 +389,7 @@ Round and diagonal edges negatively affect solar cell packing efficiency and are
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.32\textwidth}
-    \setlength{\graphicsHeight}{40mm} %45
+    \setlength{\graphicsHeight}{30mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -424,7 +428,7 @@ Round and diagonal edges negatively affect solar cell packing efficiency and are
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.32\textwidth}
-    \setlength{\graphicsHeight}{40mm}
+    \setlength{\graphicsHeight}{30mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -465,7 +469,78 @@ Round and diagonal edges negatively affect solar cell packing efficiency and are
 \end{figure}
 
 \clearpage
-The worst-case motor torque for \ac{SA} deployment occurs when unfolding the port quarter and starboard quarter panels at Ismenius Cavus. This sequence is illustrated from Figure \ref{fig:sub:deployment-sequence-ismenius-cavus-full-bow-and-stern} to \ref{fig:sub:deployment-sequence-ismenius-cavus-mid-quarter}. The motor requirements are determined with calculations that use the Earth's gravitational constant rather than that of Mars as a means of accounting for environmental risks such as wind loads and to introduce margins for error in motor performance. Furthermore, sizing motors for and Earth environment reduces testing costs by eliminating the need for vacuum chamber tests.
+\subsubsection{Motor Requirements}
+The worst case motor torque for \ac{SA} deployment occurs when unfolding the port quarter and starboard quarter panels at Ismenius Cavus. This sequence is illustrated from Figure \ref{fig:sub:deployment-sequence-ismenius-cavus-full-bow-and-stern} to \ref{fig:sub:deployment-sequence-ismenius-cavus-completed}. The distance between the \ac{CoM} and the rotation joint is shown in Figure \ref{fig:ismenius-cavus-solar-panel-starboard-quarter-dimensions} and corresponds to $r = \SI{385}{\milli\metre}$.
+
+\vspace{0.25cm}
+
+\begin{figure}[h]
+  \captionsetup[subfigure]{justification=centering}
+  \centering
+  \hypersetup{linkcolor=captionTextColor}
+  \includegraphics[width=0.45\linewidth]{sections/design/solar-array/images/ismenius-cavus-solar-panel-starboard-quarter.png}\\
+  \caption[Dimensions of starboard quarter panel at Ismenius Cavus]
+          {Dimensions of starboard quarter panel at Ismenius Cavus. Measurments are in millimeter. The same dimensions apply for the starboard bow, port bow, and port quarter panels. The length between the base of the panel and the \ac{CoM} is also indicated and corresponds to $r = \SI{385}{\milli\metre}$.}
+  \label{fig:ismenius-cavus-solar-panel-starboard-quarter-dimensions}
+\end{figure}
+
+\vspace{0.25cm}
+
+The distance $d_{rev}$ traveled for one revolution is:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-revolution}
+  d_{rev} &= 2\pi r\\
+          &= 6.18 \times 0.385\\
+          &= 2.38\,\si{\meter}
+\end{align}
+
+The distance $d$ traveled during the deployment sequence from Figure \ref{fig:sub:deployment-sequence-ismenius-cavus-full-bow-and-stern} to \ref{fig:sub:deployment-sequence-ismenius-cavus-completed} corresponds to half a revolution:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-distance}
+  d &= \frac{d_{rev}}{2}\\
+    &= \frac{2.38}{2}\\
+    &= 1.19\,\si{\meter}
+\end{align}
+
+The required acceleration $a'$ for a deployment duration of $t = \SI{20}{\second}$ is:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-acceleration1}
+  a' &= \frac{2 \times d}{t^{2}}\\
+    &= \frac{2 \times 1.19}{20^{2}}\\
+    &= 5.95\times\num{e-3}\,\si{ms^{-2}}
+\end{align}
+
+The gravity acceleration $g$ must be taken into account as it acts against the direction of the calculated acceleration. However, $g_{Earth} = 9.81 \si{ms^{-2}}$ is used rather $g_{Mars} = 3.71 \si{ms^{-2}}$ as a means of introducing a margin that accounts for environmental events such as wind loads. This margin also accounts for imperfections introduced by motor performance degradation factors. Furthermore, sizing motors for an Earth environment reduces design verification and validation costs by eliminating the need for vacuum chamber tests.
+
+\begin{align}
+  \label{eq:solar-panel-deployment-acceleration2}
+  a &= a + g_{Earth}\\
+    &= 5.95\times\num{e-3}\si{ms^{-2}} + 9.81\\
+    &= 9.82\,\si{ms^{-2}}
+\end{align}
+
+The panel has a mass of 1.85 \si{\kilo\gram}, thus the required torque $\tau_{torque}$ is:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-torque}
+  \tau_{torque} &= m \times a \times r\\
+                &= 1.85 \times 9.82 \times 0.385\\
+                &= 6.99\,\si{\newton\meter}
+\end{align}
+
+The \ac{rpm} rotational speed for half a rotation in \SI{20}{\second} is:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-rpm}
+  rpm &= \frac{1}{2t} \times 60\\
+      &= \frac{1}{2 \times 20} \times 60\\
+      &= 1.5\,{\minute^{-1}}
+\end{align}
+
+Transmissions with a 1:30 reduction ratio can be obtained with a planetary gear configuration whereas reduction ratios of 1:100 up to 1:300 are achievable with a harmonic drive. Using a 1:30 transmission will require a motor that must deliver at least 0.23 \si{\newton\meter} of nominal torque and 45 \ac{rpm}. A 1:100 transmission requires a motor with at least $6.99\times\num{e-2}$ \si{\newton\meter} of nominal torque and 150 \ac{rpm}. Finally, a 1:300 transmission requires a motor with at least $2.33\times\num{e-2}$ \si{\newton\meter} of nominal torque and 450 \ac{rpm}.
 
 \subsection{Summary}
-\todo[inline]{\textbf{TODO:} Write section summary.}
+\ac{SA} sizing for the worst case power budget of the rover's \textit{Traverse Sol} at optical depth of $\tau = 1$ does not support the use of solar tracking for the purpose of increasing traverse time. This is due to solar irradiance being mostly diffuse at high optical depths when airborn dust is responsible for scattered light. In a dusty atmosphere, an inclined \ac{SA} surface contributes negligeable energy production gains over those obtained with a horizontal configuration. Furthermore these gains are unusable on clear days due to the limited amount of daylight time available for traversing. To resolve this, the \ac{SA} sizing is instead done for the worst case \textit{Hibernation Sol} in which power draws are reduced by introducing \acp{RHU}. Assumptions, requirements, constraints, and design drivers presented in the previous section are considered in the baseline designs from which deployment sequences and motor requirements are presented. The location and stowed posture of the robotic arm should be approached differently so to enable complete folding of the panels over the rover's body. Such a configuration would significantly reduce the vertical span taken up by the stowed rover by approximately 1/3.
