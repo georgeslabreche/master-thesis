@@ -1,9 +1,9 @@
-Requirements and design drivers constrained the rover's \ac{SA} design. Initial assumptions on \ac{SA} performance degredation as well as propulsion power draw were made in Chapters \ref{sec:PowerAndEnergyPredictions} and \ref{sec:PowerBudget}, respectively. This chapter briefly introduces the selected solar cell technology and presents assumptions pertaining to their \ac{BOL} and \ac{EOL} efficiencies. Further assumptions are made regarding the rover's mobility capabilities.
+Requirements and design drivers constrain the rover's \ac{SA} design. This section reviews and complements the assumptions made thus far. The selected solar cell technology and the assumptions pertaining to its \ac{BOL} and \ac{EOL} efficiencies are also presented. Further assumptions are made regarding the rover's mobility capabilities.
 
 
 \subsection{Assumptions}
 \label{sec:RequirementsAndDesignDrivers:Assumptions}
-The following assumptions were identified:
+The assumptions are:
 
 \begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{A-\arabic*}}]
     \item Propulsion power draw for flat terrain traverses is \SI{75}{\watt}.
@@ -16,15 +16,13 @@ The following assumptions were identified:
     \item \label{itm:ass:protruding_shadowing} Solar array performance degradation from shadowing by protruding rover structures is 5\%.
     \item \label{itm:ass:sa_surface_density} The \ac{SA} surface density is \SI{3.7}{kg.m^{-2}}.
     \item The rover's nominal velocity is at least \SI{2}{cm.s^{-2}}.
-    \item There is an average 15\% slippage when traversing a flat terrains for any given distance.
-    \item There is an average 30\% slippage when traversing an upslope terrain for any given distance and slope angle.
+    \item There is an average 15\% slippage when traversing a flat terrains for any given distance \citeother{Cordes2018}.
+    \item There is an average 30\% slippage when traversing an upslope terrain for any given distance and slope angle \citeother{Cordes2018}.
 \end{enumerate}
-
-\todo[inline]{\textbf{TODO:} Reference past missiosn for A-09 and Cordes 2019 for A-11 and A-12. Is slippage still as high as 15\%-30\% if the system is programmed to stop driving when slippage is detected?}
 
 \subsection{Requirements}
 \label{sec:sec:Design:RequirementsAndDesignDrivers:Requirements}
-The requirements were narrowed down with the following considerations:
+The following considerations are taken into account to narrow down the requirements:
 
 \begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
     \item Interest in long traverses from the PERASPERA programme on space robotics \citeother{PERASPERA}.
@@ -34,7 +32,7 @@ The requirements were narrowed down with the following considerations:
     \item Dust storm tracking in \citemarsenv{Battalio2019} observed that the average duration of local dust storms is approximately seven Sols.
 \end{enumerate}
 
-Thus, for the purpose of initial \ac{SA} design, the following \ac{EOL} requirements were identified for a mission life time of one \ac{MY}:
+The following \ac{EOL} requirements apply for a mission life time of one \ac{MY}:
 
 \begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{R-\arabic*}}]
     %\item The rover shall be able to traverse flat terrain at an optical depth of $\tau = 1$.
@@ -46,7 +44,7 @@ Thus, for the purpose of initial \ac{SA} design, the following \ac{EOL} requirem
 
 \subsection{Constraint}
 \label{sec:Design:RequirementsAndDesignDrivers:Constraints}
-The design had to allow \textit{non-Traverse Sols}, such as for long science stops, intermittent hibernation periods during dust storms, battery recharging periods, or events of limited activities such as during a Solar Conjunction Break. Furthermore, traverses may only occur during daylight to allow terrain observations to be made in case of slip and skids that pass a yet to be defined threshold. For the scope of this study, the following constraints were considered rather than formalizing requirements for the implicated subsystems:
+The design must allow for \textit{non-Traverse Sols} such as long science stops, intermittent hibernation periods during dust storms, battery recharging periods, or limited activities during a Solar Conjunction Break. Furthermore, traverses may only occur during daylight to allow terrain observations to be made in case of slip and skids that pass a yet to be defined threshold. The scope of this thesis consider the following constraints:
 
 \begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{C-\arabic*}}]
     \item There shall be a minimum of at least two \textit{non-Traverse Sols} between each \textit{Traverse Sol}.
@@ -55,9 +53,9 @@ The design had to allow \textit{non-Traverse Sols}, such as for long science sto
 
 \subsection{Design Drivers}
 \label{sec:Design:RequirementsAndDesignDrivers:DesignDrivers}
-The following \ac{SA} design drivers were identified:
+The \ac{SA} design drivers are:
 
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{DD-\arabic*}}]
+\begin{enumerate}[leftmargin=1.31cm,label=\textbf{\textcolor{BulletBlue}{DD-\arabic*}}]
     \item \label{itm:dd:limited_unfolding} Limited amount of unfolding during deployment.
     \item \label{itm:dd:shadowing} Shadowing is minimized.
     \item \label{itm:dd:end_effector} Manipulator arm end effector can access the ground.
@@ -66,7 +64,6 @@ The following \ac{SA} design drivers were identified:
     \item \label{itm:dd:cog} Position of the rover's \ac{CoG} along the x and y axis is centered during stowed position.
 \end{enumerate}
 
-\subsection{Summary}
-\label{sec:Design:RequirementsAndDesignDrivers:Summary}
-\todo[inline]{\textbf{TODO:} Write section summary.}
-%The assumptions, requirements, and design drivers presented in this chapter were applied for both mission sites.
+%\subsection{Summary}
+%\label{sec:Design:RequirementsAndDesignDrivers:Summary}
+%The assumptions, requirements, constraints, and design drivers presented in this section apply to both missions sites and are used to size the rover's \acp{SA}.
