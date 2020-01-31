@@ -215,9 +215,9 @@ Due to the mostly diffuse composition of solar irradiance at higher optical dept
 \input{sections/mars-solar-energy/mission-sites/tables/insolation-ismenius-cavus-global-storm-days.tex}
 
 
-The worst-case slope traverse is an on inclined surface facing opposite the equator. This can be mitigated by using the rover's suspension system to compensate with a tilt in the opposite direction, as illustrated in \refFig{fig:sub:rover-on-slope-beta} where $B$ denotes the slope surface inclination angle and $\beta$ the \ac{SA} surface inclination angle.
+The worst-case slope traverse is an on inclined surface facing opposite the equator. This can be mitigated by using the rover's suspension system to compensate with a tilt in the opposite direction, as illustrated in \refFig{fig:sub:rover-on-slope-beta} where $B$ denotes the slope surface inclination angle and $\beta$ the \ac{SA} surface inclination angle. This scenario will be further explored in \refSec{sec:Design:Simulation}.
 
-\vspace{0.5cm}
+\vspace{1cm}
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -244,11 +244,11 @@ The worst-case slope traverse is an on inclined surface facing opposite the equa
     \caption[Rover on a slope using its active suspension system to reduce the \ac{SA} surface inclination angle]
             {Rover on a slope using its active suspension system to reduce the \ac{SA} surface inclination angle. Slope inclination angle $B = \SI{30}{\degree}$. In (a), $\beta = B = \SI{30}{\degree}$. In (b), the rover is tilted  \SI{10}{\degree} in the opposite direction of the slope so that $\beta = \SI{20}{\degree}$.}
     \label{fig:sub:rover-on-slope-beta}
-\vspace{-2ex}
+%\vspace{-2ex}
 \end{figure}
 
 By way of example, at Ismenius Cavus for $\tau = 0.4$ and $L_{s}=\SI{270}{\degree}$, descending a \SI{30}{\degree} slope bearing North results in a daily insolation of \SI{319}{Whm^{-2}}. This can be increased to \SI{767}{Whm^{-2}} by decreasing $\beta$ from \SI{30}{\degree} to \SI{25}{\degree} after tilting the rover southwards by \SI{5}{\degree} so that $\beta < B$ with $\beta = \SI{25}{\degree}$. A \SI{10}{\degree} tilt would increase the daily insolation to \SI{1046}{Whm^{-2}} with $\beta = \SI{20}{\degree}$.
 
-
 \subsection{Summary}
 Available solar insolation have been constrained by identifying two mission sites based on set of selection criteria. The need to navigate complex topographic morphologies at these sites also introduces considerations for \ac{SA} inclination strategies. Large differences in planetary latitudes between both sites ensures that several environmental variations are considered.
+\clearpage
