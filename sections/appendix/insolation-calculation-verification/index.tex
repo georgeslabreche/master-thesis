@@ -1,9 +1,9 @@
-The formulae for insolation calculations were taken from \citemarsenv{Appelbaum1989}, \citemarsenv{Appelbaum1990}, \citemarsenv{Appelbaum1991}, and \citemarsenv{Appelbaum1993}. For the purpose of this thesis, the formulae were implemented into an R package to be used in mission analysis power budgets and energy predictions. Both \citemarsenv{Appelbaum1990} and \citemarsenv{Appelbaum1993} include tables listing pre-calculated insolation values for horizontal and inclined surfacesnat \ac{VL1} and \ac{VL2} locations. These published values were used to validate the R implementation of the insolation formulae. This chapter compares the published and calculated insolation values with each other in order to verify and validate the R package derived from publication.
+The formulae for insolation calculations are taken from \citemarsenv{Appelbaum1989}, \citemarsenv{Appelbaum1990}, \citemarsenv{Appelbaum1991}, and \citemarsenv{Appelbaum1993}. For the purpose of this thesis, the formulae are implemented into an R package to be used in mission analysis power budgets and energy predictions. Both \citemarsenv{Appelbaum1990} and \citemarsenv{Appelbaum1993} include tables listing pre-calculated insolation values for horizontal and inclined surfacesnat \ac{VL1} and \ac{VL2} locations. These published values are used to validate the R implementation of the insolation formulae. This chapter compares the published and calculated insolation values with each other in order to verify and validate the developed R package.
 
 
 \section{Horizontal Surface}
 \subsection{At Viking Lander 1 (VL1)}
-Figure \ref{fig:sub:comparative-global-insolation-at-vl1-horizontal-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1990}. Both daily variations closely follow the same pattern. Figure \ref{fig:sub:comparative-global-insolation-at-vl1-horizontal-percentage-differences} reveals that the differences between calculated and published values range between \SI{2.8}{\percent} and \SI{3.3}{\percent}. Differences larger than \SI{3}{\percent} are restricted to tau values between 0.5 and 1.9.
+\refFig{fig:sub:comparative-global-insolation-at-vl1-horizontal-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1990}. Both daily variations closely follow the same pattern. \refFig{fig:sub:comparative-global-insolation-at-vl1-horizontal-percentage-differences} reveals that the differences between calculated and published values range between \SI{2.8}{\percent} and \SI{3.3}{\percent}. Differences larger than \SI{3}{\percent} are restricted to tau values between 0.5 and 1.9.
 
 \begin{figure}[H]
 \captionsetup[subfigure]{justification=centering}
@@ -11,7 +11,7 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl1-horizontal-daily-variat
 \centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{80mm}
+    \setlength{\graphicsHeight}{50mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -33,15 +33,15 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl1-horizontal-daily-variat
 \end{figure}
 
 \subsection{At Viking Lander 2 (VL2)}
-Figure \ref{fig:sub:comparative-global-insolation-at-vl2-horizontal-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1990}. Both daily variations closely follow the same patterns. Figure \ref{fig:sub:comparative-global-insolation-at-vl2-horizontal-percentage-differences} reveals that the differences between calculated and published values range between \SI{2.3}{\percent} and \SI{3.9}{\percent}. Differences larger than \SI{3}{\percent} are more frequent for large tau values, particularly above 1.
+\refFig{fig:sub:comparative-global-insolation-at-vl2-horizontal-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1990}. Both daily variations closely follow the same patterns. \refFig{fig:sub:comparative-global-insolation-at-vl2-horizontal-percentage-differences} reveals that the differences between calculated and published values range between \SI{2.3}{\percent} and \SI{3.9}{\percent}. Differences larger than \SI{3}{\percent} are more frequent for large tau values, particularly above 1.
 
 \begin{figure}[H]
 \captionsetup[subfigure]{justification=centering}
-\vspace{-2ex}
+%\vspace{-2ex}
 \centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{80mm}
+    \setlength{\graphicsHeight}{50mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -61,11 +61,10 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl2-horizontal-daily-variat
     \label{fig:plot:comparative-global-insolation-at-vl2-horizontal}
 \vspace{-2ex}
 \end{figure}
-\clearpage
 
 \section{Inclined Surface with Beta Equals Phi}
 \subsection{At Viking Lander 1 (VL1)}
-Figure \ref{fig:sub:comparative-global-insolation-at-vl1-beta-equals-phi-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1993}. Both daily variations closely follow the same pattern. Figure \ref{fig:sub:comparative-global-insolation-at-vl1-beta-equals-phi-percentage-differences} reveals that the differences between calculated and published values range between \SI{2.1}{\percent} and \SI{3.1}{\percent}. Differences larger than \SI{2.5}{\percent} are more frequent for small tau values, particularly below 1.
+\refFig{fig:sub:comparative-global-insolation-at-vl1-beta-equals-phi-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1993}. Both daily variations closely follow the same pattern. \refFig{fig:sub:comparative-global-insolation-at-vl1-beta-equals-phi-percentage-differences} reveals that the differences between calculated and published values range between \SI{2.1}{\percent} and \SI{3.1}{\percent}. Differences larger than \SI{2.5}{\percent} are more frequent for small tau values, particularly below 1.
 
 \begin{figure}[H]
 \captionsetup[subfigure]{justification=centering}
@@ -73,7 +72,7 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl1-beta-equals-phi-daily-v
 \centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{80mm}
+    \setlength{\graphicsHeight}{50mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -95,15 +94,15 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl1-beta-equals-phi-daily-v
 \end{figure}
 
 \subsection{At Viking Lander 2 (VL2)}
-Figure \ref{fig:sub:comparative-global-insolation-at-vl2-beta-equals-phi-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1993}. Both daily variations closely follow the same patterns. Figure \ref{fig:sub:comparative-global-insolation-at-vl2-beta-equals-phi-percentage-differences} reveals that the differences between calculated and published values range between \SI{0.4}{\percent} and \SI{6.6}{\percent}. Differences larger than \SI{3}{\percent} are more frequent for small tau values, particularly from 0.25 to 0.5 with differences larger than \SI{6}{\percent} for tau 0.4 and 0.5.
+\refFig{fig:sub:comparative-global-insolation-at-vl2-beta-equals-phi-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1993}. Both daily variations closely follow the same patterns. \refFig{fig:sub:comparative-global-insolation-at-vl2-beta-equals-phi-percentage-differences} reveals that the differences between calculated and published values range between \SI{0.4}{\percent} and \SI{6.6}{\percent}. Differences larger than \SI{3}{\percent} are more frequent for small tau values, particularly from 0.25 to 0.5 with differences larger than \SI{6}{\percent} for tau 0.4 and 0.5.
 
 \begin{figure}[H]
 \captionsetup[subfigure]{justification=centering}
-\vspace{-2ex}
+%\vspace{-2ex}
 \centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{80mm}
+    \setlength{\graphicsHeight}{50mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -123,11 +122,10 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl2-beta-equals-phi-daily-v
     \label{fig:plot:comparative-global-insolation-at-vl2-beta-equals-phi}
 \vspace{-2ex}
 \end{figure}
-\clearpage
 
 \section{Inclined Surface with Optimal Beta Angle}
 \subsection{At Viking Lander 1 (VL1)}
-Figure \ref{fig:sub:comparative-global-insolation-at-vl1-beta-optimal-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1993}. Both daily variations closely follow the same pattern. Figure \ref{fig:sub:comparative-global-insolation-at-vl1-beta-optimal-percentage-differences} reveals that the differences between calculated and published values range between \SI{2}{\percent} and \SI{2.8}{\percent}. Differences larger than \SI{2.5}{\percent} are more frequent for large tau values starting from 1.9.
+\refFig{fig:sub:comparative-global-insolation-at-vl1-beta-optimal-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1993}. Both daily variations closely follow the same pattern. \refFig{fig:sub:comparative-global-insolation-at-vl1-beta-optimal-percentage-differences} reveals that the differences between calculated and published values range between \SI{2}{\percent} and \SI{2.8}{\percent}. Differences larger than \SI{2.5}{\percent} are more frequent for large tau values starting from 1.9.
 
 \begin{figure}[H]
 \captionsetup[subfigure]{justification=centering}
@@ -135,7 +133,7 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl1-beta-optimal-daily-vari
 \centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{80mm}
+    \setlength{\graphicsHeight}{50mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -157,15 +155,15 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl1-beta-optimal-daily-vari
 \end{figure}
 
 \subsection{At Viking Lander 2 (VL2)}
-Figure \ref{fig:sub:comparative-global-insolation-at-vl2-beta-optimal-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1993}. Both daily variations closely follow the same patterns. Figure \ref{fig:sub:comparative-global-insolation-at-vl2-beta-optimal-percentage-differences} reveals that the differences between calculated and published values range between \SI{0.4}{\percent} and \SI{3.7}{\percent}. Differences larger than \SI{2.5}{\percent} are more frequent for small tau values, particularly below 1.6.
+\refFig{fig:sub:comparative-global-insolation-at-vl2-beta-optimal-daily-variations} shows that calculated values are consistently lower than those published in \citemarsenv{Appelbaum1993}. Both daily variations closely follow the same patterns. \refFig{fig:sub:comparative-global-insolation-at-vl2-beta-optimal-percentage-differences} reveals that the differences between calculated and published values range between \SI{0.4}{\percent} and \SI{3.7}{\percent}. Differences larger than \SI{2.5}{\percent} are more frequent for small tau values, particularly below 1.6.
 
 \begin{figure}[H]
 \captionsetup[subfigure]{justification=centering}
-\vspace{-2ex}
+%\vspace{-2ex}
 \centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{80mm}
+    \setlength{\graphicsHeight}{50mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -186,13 +184,11 @@ Figure \ref{fig:sub:comparative-global-insolation-at-vl2-beta-optimal-daily-vari
 \vspace{-2ex}
 \end{figure}
 
-\clearpage
-
 \section{Conclusion}
-It is not fully understood why differences exist between published and calculated global insolation values considering that, to the best of the author's knowledge, the same input parameters were used in both cases. Not presented in this chapter are differences for the beam, diffuse, and albedo components that compose the global insolation. These do not suggest that a single component is the source of the issue. Analyzing the differences as a function of tau hints that the issue is closely related to tau value inputs. Possible explanations could be:
+It is not fully understood why differences exist between published and calculated global insolation values considering that, to the best of the author's knowledge, the same input parameters is used in both cases. Not presented in this chapter are differences for the beam, diffuse, and albedo components that compose the global insolation. These do not suggest that a single component is the source of the issue. Analyzing the differences as a function of tau hints that the issue is closely related to tau value inputs. Possible explanations could be:
 \begin{itemize}
-    \item The normalized net flux function lookup tables was used for insolations presented in \citemarsenv{Appelbaum1990} and \citemarsenv{Appelbaum1993} rather than approxmiated via the polynomial expression.
-    \item The albedo values were not approximated in the same manner for insolations presented in \citemarsenv{Appelbaum1993}.
+    \item The normalized net flux function lookup tables are used for insolations presented in \citemarsenv{Appelbaum1990} and \citemarsenv{Appelbaum1993} rather than approxmiated via the polynomial expression.
+    \item The albedo values is not approximated in the same manner for insolations presented in \citemarsenv{Appelbaum1993}.
     \item The analytical precision differs between the computational medium used to obtain the published insolations versus the calculations obtained with R.
 \end{itemize}
 
@@ -203,5 +199,3 @@ Regardless of the observed differences, the outputs given by the R package will 
   \item The differences between calculated and published values are small in terms of the resulting insolation relative to the total daily insolation.
   \item The calculated and published values closely follow the same daily variation pattern.
 \end{itemize}
-
-\clearpage

@@ -1,4 +1,4 @@
-A 2-axis sun tracking mechanism is illustrated in Figure \ref{fig:tilted-surface-sun-tracking}. An optimal angle configurations exists so that a \ac{SA} surface generates the maximum amount of power for a given period. These angles are the $\gamma_{c}$ orientation angle (surface azimuth angle) and the $\beta$ inclination angle.
+A 2-axis sun tracking mechanism is illustrated in \refFig{fig:tilted-surface-sun-tracking}. An optimal angle configurations exists so that a \ac{SA} surface generates the maximum amount of power for a given period. These angles are the $\gamma_{c}$ orientation angle (surface azimuth angle) and the $\beta$ inclination angle.
 
 \begin{figure}[h]
   \centering
@@ -10,16 +10,14 @@ A 2-axis sun tracking mechanism is illustrated in Figure \ref{fig:tilted-surface
 \end{figure}
 
 \section{Optimal Angles}
-For clear skies, two approaches to determine the optimal angles for $\gamma_{c}$ and $\beta$ are shown in \citemarsenv{Appelbaum1993}. Equation \ref{eq:optimal_beta_irradiance} is described as a ``coarse approximation'' in \citeother{Soulayman2016} and gives an optimal $\beta$ based on the direct beam irradiance at noon:
+For clear skies, two approaches to determine the optimal angles for $\gamma_{c}$ and $\beta$ are shown in \citemarsenv{Appelbaum1993}. \refEqn{eq:optimal_beta_irradiance} is described as a ``coarse approximation'' in \citeother{Soulayman2016} and gives an optimal $\beta$ based on the direct beam irradiance at noon:
 
 \begin{equation}
   \label{eq:optimal_beta_irradiance}
   \beta_{p} = \phi - \delta_{p}
 \end{equation}
 
-where $\beta_{p}$ is the optimal inclination angle for a period $p$, $\phi$ is the planetary latitude, and $\delta_{p}$ is the average declination angle for the period $p$.
-
-A ``better approximation'' is shown in \citemarsenv{Appelbaum1995} based on the daily beam insolation on the surface from sunrise to sunset. However, comparing the results using this method to those obtained with Equation \ref{eq:optimal_beta_irradiance} suggest a sign error in the published formula which has been rectified in Equation  \ref{eq:optimal_tanbeta_insolation}:
+where $\beta_{p}$ is the optimal inclination angle for a period $p$, $\phi$ is the planetary latitude, and $\delta_{p}$ is the average declination angle for the period $p$. A ``better approximation'' is shown in \citemarsenv{Appelbaum1995} based on the daily beam insolation on the surface from sunrise to sunset. However, comparing the results using this method to those obtained with \refEqn{eq:optimal_beta_irradiance} suggest a sign error in the published formula which has been rectified in \refEqn{eq:optimal_tanbeta_insolation}:
 
 \begin{equation}
   \label{eq:optimal_tanbeta_insolation}
@@ -27,7 +25,7 @@ A ``better approximation'' is shown in \citemarsenv{Appelbaum1995} based on the 
 \end{equation}
 
 
-where $\omega_{sr}$ is the sunrise hour angle. The sign error correction is not necessary for $L_{s} = \SI{180}{\degree}$, as shown in Equation \ref{eq:optimal_tanbeta_insolation_Ls180}.
+where $\omega_{sr}$ is the sunrise hour angle. The sign error correction is not necessary for $L_{s} = \SI{180}{\degree}$, as shown in \refEqn{eq:optimal_tanbeta_insolation_Ls180}.
 
 \begin{equation}
   \label{eq:optimal_tanbeta_insolation_Ls180}
@@ -38,7 +36,7 @@ Facing the equator implies a direct orientation towards the sun thus the optimal
 
 \section{Iani Chaos}
 
-Figures \ref{fig:plot:optimal-angles-iani-chaos} plots daily insolations throughout a Martian year at Iani Chaos for $\beta_{opt}$ angles with different $\gamma_{c}$ orientations. Daily insolations on a flat surface are also included as a reference. An equator facing (North) orientation is suggested only during the first half of the Martian year, after which a Northwestern facing orientation becomes more optimal.
+\refFig{fig:plot:optimal-angles-iani-chaos} plots daily insolations throughout a Martian year at Iani Chaos for $\beta_{opt}$ angles with different $\gamma_{c}$ orientations. Daily insolations on a flat surface are also included as a reference. An equator facing (North) orientation is suggested only during the first half of the Martian year, after which a Northwestern facing orientation becomes more optimal.
 
 \begin{figure}[h]
 \vspace{-2ex}
@@ -69,7 +67,7 @@ Figures \ref{fig:plot:optimal-angles-iani-chaos} plots daily insolations through
 
 \section{Ismenius Cavus}
 
-Figure \ref{fig:plot:optimal-angles-ismenius-cavus} plots daily insolations throughout a Martian year at Ismenius Cavus for $\beta_{opt}$ angles with different $\gamma_{c}$ orientations. Daily insolations on a flat surface are also included as a reference. Throughout the entire year, a Southwestern orientation appears more optimal than South facing.
+\refFig{fig:plot:optimal-angles-ismenius-cavus} plots daily insolations throughout a Martian year at Ismenius Cavus for $\beta_{opt}$ angles with different $\gamma_{c}$ orientations. Daily insolations on a flat surface are also included as a reference. Throughout the entire year, a Southwestern orientation appears more optimal than South facing.
 
 \begin{figure}[h]
 \vspace{-2ex}
@@ -98,5 +96,5 @@ Figure \ref{fig:plot:optimal-angles-ismenius-cavus} plots daily insolations thro
 \vspace{-2ex}
 \end{figure}
 
-\section{Summary and Conclusion}
+\section{Conclusion}
 The optimal $\beta$ inclination angle can be approximated through calculation. However, insolation calculation results do not support the assumption that facing the equator is the optimal $\gamma_c$ orientation. Depending on latitude and season, a Western offset from the equator may be a more preferable orientation.
