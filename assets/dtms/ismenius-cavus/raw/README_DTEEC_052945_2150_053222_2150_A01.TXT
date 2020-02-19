@@ -1,0 +1,122 @@
+PROJECT NAME
+  Ismenius_Cavus_ImpactCrater_0174E_348N
+
+HIRISE SOURCE IMAGES
+ ESP_052945_2150
+ ESP_053222_2150
+
+TECHNICAL CONTACT INFORMATION
+ NAME          SHAVONNE MORIN
+ INSTITUTION   UNIVERSITY OF ARIZONA
+
+Products are tied to MOLA elevations.
+Elevation range for this project:
+  VALID_MINIMUM    = -2011.13 m
+  VALID_MAXIMUM    = -1754.39 m
+
+SOCET SET NGATE was used to extract terrain.
+
+Post spacing in DTM is 1 m.
+
+NOTE: Total RMS ==> 0.22858 px RMS x ==> 0.7423 m RMS y ==> 0.29855 m RMS z
+==> 3.2676 m Total RMS ==> 3.2943 m Mean difference from MOLA is 0.057
+m and the Std Dev is 3.671 m. 
+
+NAMING CONVENTION:
+DTM PRODUCT_ID = aabcd_xxxxxx_xxxx_yyyyyy_yyyy_Vnn
+	where
+		aa = DT, indicating it's a DTM product
+		b = type of data
+			E = areoid elevation
+			R = radii
+			F = Figure of Merit (FOM) map (Extra product, see below)
+		c = projection (others are possible but these are the important ones)
+			E = Equirectangular
+			P = Polar Stereographic
+		d = grid spacing
+			A = 0.25 m
+			B = 0.5 m
+			C = 1.0 m
+			D = 2.0 m
+			etc.
+		xxxxxx_xxxx = orbit number and target code from SOURCE_PRODUCT_ID[1]
+		yyyyyy_yyyy = orbit number and target code from SOURCE_PRODUCT_ID[2]
+		V = letter indicating producing institution
+			A = University of Arizona
+			B = Birkbeck University of London
+			C = Caltech
+			G = Laboratoire de Planétologie et Géodynamique
+			H = Natural History Museum
+			L = University College London
+			J = JPL
+			N = NASA Ames
+			O = Open University
+			P = Planetary Science Institute
+			U = USGS
+			Z = Other     
+		nn = 2 digit version number
+
+ORTHOIMAGE PRODUCT_ID = XSP_xxxxxx_xxxx_CCC_S_NN_ORTHO
+	where
+		XSP_xxxxxx_xxxx = HiRISE source observation ID 
+		                  (mission phase_orbit number_target code)
+		CCC = color content
+			RED = visible RED, 1 band image
+			IRB = 3 band enhanced color (IR, RED, BG)
+		S = grid spacing (comparable to the DTM naming convention above)
+			A = 0.25 m
+			B = 0.5 m
+			C = 1.0 m
+			D = 2.0 m
+			etc.
+		NN = a sequence number to distinguish between orthorectified 
+		     images from the same HiRISE observation that may be 
+		     created from different DTMs.
+		ORTHO indicates that the image has been orthorectified
+
+Figure of Merit (FOM) Map
+  The FOM Map (DTF...JP2) shows stereo correlation quality for each pixel 
+  (elevation post) in the DTM. The quality categories are identifed in
+  the legend file FOM_MAP_LEGEND.JPG. 
+  
+  Figure of merit (FOM) values are 
+  automatically collected by SOCET SET 5.x as part of the stereo 
+  correlation for the output DTM. These values are then simplified 
+  into a more generically defined value based on the Lunar Mapping and 
+  Modeling Project (LMMP) Confidence Map categories.
+
+  SOCET Set 
+  (FOM) values     FOM Map Color        Category Description
+  ------------     -------------        -------------------
+    1             Black                No data, outside boundary 
+    2             Dark Blue            Shadow (if designated as such)
+3,5-20,28,31-39   Orange               Suspicious (edge, corner, did not correlate, 
+                                           other bad value, derived from seed DTM) 
+  4,30            Red                  Interpolated/extrapolated (e.g. from neighbor pixels)
+   21             Pink                 Saturated (in source images)
+  22-27,29        Cyan                 Manually edited/interpolated or smoothed
+  40-59           Yellow               Low end of good correlation range
+  60-99           Sea Green            Good correlation
+  
+  The FOM map shows the color-coded categories draped over a shaded 
+  relief map.
+
+KNOWN ARTIFACTS
+ These are known artifacts present in some, but not all, HiRISE DTMs.
+ They may not be present in this DTM! Look at the terrain shaded relief 
+ to detect these before using the DTM!
+ - Boxes
+	Some DTMs have square areas that are usually about .5-1 m different 
+	in elevation from the surrounding areas. These are artifacts of the 
+	processing algorithms used in Socet Set ((c) BAE Systems). There may 
+	be goups of these boxes. They are almost impossible to edit, so the 
+	user should look for such artifacts in a terrain shaded relief map 
+	before using the DTM for analysis.
+ - CCD seams
+	A HiRISE image is made up of 10 individual images, stitched together 
+	along their long edges.	In a DTM, these seams can be visible as long 
+	lines. These seams are difficult to remove.
+ - Faceted areas
+ 	Areas that were very bland (low contrast) or deeply shadowed with 
+ 	low contrast and low signal may have a "faceted" look to them. 
+ 	Terrain in these areas is not trustworthy.

@@ -1,0 +1,33 @@
+nodelist:
+  - name: heightmap
+    index: 1
+    origname: terrain
+    filename: terrain
+    physicmode: terrain
+    movable: false
+    material_id: 1
+    shadow_id: 1
+    position: {x: 0, y: 0, z: -12}
+    extend: {x: 487, y: 487, z: 26}
+    t_srcname: heightmap.png
+    t_tex_scale: 0.01
+    t_width: 487
+    t_height: 487
+    t_scale: 26
+
+materiallist:
+  - name: terrain
+    id: 1
+    ambientColor: {a: 1.0, r: 0.5, g: 0.5, b: 0.5}
+    diffuseColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
+    specularColor: {a: 1.0, r: 0.2, g: 0.2, b: 0.2}
+    emissionColor: {r: 0.1, g: 0.1, b: 0.1, a: .1}
+    diffuseTexture: texture.png
+    shininess: 1.0
+    bumpNorFac: 0.40
+    envMapSpecular: {r: 0.4, g: 0.0, b: 0.0}
+    envMapScale: {r: 450, g: 150, b: 150.0}
+    tex_scale: 0.00142858
+    scaleZ: 95
+    useWorldTexCoords: true
+
