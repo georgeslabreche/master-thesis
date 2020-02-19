@@ -54,7 +54,7 @@
 
 %% Document Meta Data %%
 \newcommand{\myWorkingTitle}[0]{%
-Exploiting the SherpaTT Rover Active Suspension System to Enable Optimal Solar Array Orientation and Inclination for Long Traverses in Martian Environment
+Exploiting the SherpaTT Rover Active Suspension System to Enable Optimal Solar Array Orientation and Inclination for Long Traverses in a Martian Environment
 }
 \newcommand{\thesisAuthor}[0]{%
 Georges L. J. Labrèche%
@@ -73,7 +73,22 @@ Master Thesis%
 %% for long-term archives (can generate large pdf file size):
 %\input{styles/pdf_a_compability.tex}
 
+% Counter with leading zero.
+\newcounter{LeadingZeroCounter}
+\DeclareRobustCommand\zeroLeadCounter[1]{%
+   \stepcounter{LeadingZeroCounter}%
+   \textcolor{BulletBlue}{#1-\ifnum\theLeadingZeroCounter<10 0\fi\theLeadingZeroCounter}
+}
+
+% There must be a way to automatically reset this counter at the end of a list.
+\newcommand\resetLeadingZeroCounter{
+    \setcounter{LeadingZeroCounter}{0}
+}
+
+
 \usepackage{enumitem}
+% remove the vertical space altogether inalllists:
+\setlist{nosep}
 
 \begin{document}
 \pagestyle{empty}
@@ -113,8 +128,9 @@ Master Thesis%
 \chapter{Thanks}
 \input{sections/thanks.tex}
 %\textcolor{thesisSecondaryColor}{TODO.}
-\cleardoublepage
+\cleardoublepage%
 \setlength\parskip{\myRegularParskip}
+
 
 \ifdraftdoc
     %(do nothing)
@@ -146,9 +162,6 @@ Master Thesis%
 \onecolumn
 
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%the real contents follow here:
@@ -161,33 +174,7 @@ Master Thesis%
 
 \addTocCaption{Thesis}
 
-%\todo[inline]{JOSE: The first part of the conclusion explained me much more than the abstract of the thesis of what i would be expecting. maybe you can re-use some of the conclusion as abstract/intro. The abstractd/intro are currently a bit confusing mixing the 20 systems you developed , the EMI, hybrid locomotion usw. Reading this following paragraph at the very beginning would have helped me:\newline\newline In this thesis, the \electromech design, implementation, locomotion control and experimental validation of a novel type of hybrid wheeled-leg exploration rover are presented. The actively articulated suspension system of the rover is the the basis for advanced locomotive capabilities of a mobile exploration robot.
-%The developed locomotion control system abstracts the complex kinematics of the suspension
-%system and provides platform control inputs usable by autonomous behaviors or human remote
-%control.
-%The rover is part of a multi-robot exploration system with an aspired sample return mission to the lunar south pole or currently hard-to-access regions on Mars. The multi-robot system pursues a modular and reconfigurable design methodology and combines heterogeneous robots
-%with different locomotion capabilities for enhanced overall performance}
 
-%\todo[inline]{JOSE: you are more concise talking about one rover in general. of course, later you mention all the developments as they are, but maybe start a bit more generic and to the point.}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%#%\chapter{Introduction}
-%#%\label{sec:introduction}
-%#%\acresetall                 %% reset all acronym abbreviations and write first appearance long: Ackronyms from toc, lof, lot, loa are not written long in first appearance
-%#%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-%#%\input{sections/introduction}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%#%\chapter{State of the Art}
-%#%\label{sec:sota}
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-%#%\input{sections/sota.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
@@ -219,12 +206,6 @@ Master Thesis%
 \chapter{Power System Design}
 \label{sec:PowerSystemDesign}
 \input{sections/design/index.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\chapter{Power Budget}
-%\label{sec:PowerBudget}
-%\input{sections/locomotion-power-draws/index.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -281,34 +262,6 @@ Master Thesis%
 %\acresetall                 %% reset all acronym abbreviations and write first appearance long
 %\input{sections/acused.tex} %%define ackronyms that are "common sense"
 %#%\input{sections/RobotDesign.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%#%\chapter{Control System Design}
-%#%\label{sec:control}
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-%#%\input{sections/ControlSystemDesign.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%#%\chapter{Experimental Evaluation}
-%#%\label{sec:Experiments}
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-%#%\input{sections/experiments.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%#%\chapter{Conclusion and Outlook}
-%#%\label{sec:ConclusionOutlook}
-%#%\input{sections/ConclusionOutlook.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

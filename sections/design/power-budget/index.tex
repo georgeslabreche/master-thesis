@@ -1,12 +1,10 @@
-This section details the power budget for the reference Sols. Propulsion power budgets for the rover's traverse modes were determined from data collected during the SherpaTT field trials in Utah \citeother{Cordes2018}. Power budgets for other rover modes that make up the reference Sols are taken from \citeother{CDF2014}.
+This section details the power budget for the reference Sols. Propulsion power budgets for the rover's traverse modes are determined from SherpaTT Utah field trial data \citeother{Cordes2018}. Power budgets for other rover modes that make up the reference Sols are taken from \citeother{CDF2014}.
 
 %The chapter is structured as follows: Propulsion power budget are presented in Section \ref{sec:PowerBudget:PropulsionPowerBudget} following an analysis of Mars analogue field test campaign data. Rover modes that were presented in the previous Chapter are complemented with power budgets in Section \ref{sec:PowerBudget:RoverModePowerBudget}. The chapter is then summarized in Section \ref{sec:PowerBudget:SummaryAndConclusion}.
 
 \subsection{Propulsion Power}
 \label{sec:PowerBudget:PropulsionPowerBudget}
-Propulsion power draw refers to the summation of suspension and drive motor power draws. These power draws have been studied in detail for SherpaTT during Mars analogue field trials in Utah. Lack of motor optimisation as well as lower gravity and pressure on Mars permits the assumption that, given similar topology traversals, measured propulsion power draws are greater than those that would be observed on a Martian environment. This assumption is further supported when considering that SherpaTT's velocities during power draw measurements were far greater than what has been achieved in past and ongoing Mars rover missions.
-
-Available datasets from the Mars analogue field test campaign cover two flat surface runs and three steep upslope terrain runs. From the two upslope runs, the dataset with the worst-case maximum and mean propulsion power draw is used as the worst-case scenario. Hereafter, all mention of SherpaTT power draws references measurements included in these datasets. Measured power draws fluctuate due to slip, skid, sensor noise, and unknown imperfections. To ease readability, local minima, maxima, and media lines have been traced for all power plot figures.
+Propulsion power draw refers to the summation of suspension and drive motor power draws. These power draws have been studied in detail for SherpaTT during Mars analogue field trials in Utah. Lack of motor optimisation as well as lower gravity and pressure on Mars permits the assumption that, given similar topology traversals, measured propulsion power draws are greater than those that would be observed on a Martian environment. This assumption is further supported when considering that SherpaTT's velocities during power draw measurements were far greater than what has been achieved in past and ongoing Mars rover missions. Available datasets from the Mars analogue field test campaign cover two flat surface runs and three steep upslope terrain runs. From the two upslope runs, the dataset with the worst-case maximum and mean propulsion power draw is used as the worst-case scenario. Hereafter, all mention of SherpaTT power draws references measurements included in these datasets. Measured power draws fluctuate due to slip, skid, sensor noise, and unknown imperfections. To ease readability, local minima, maxima, and media lines are traced in all power plot figures.
 
 \subsubsection{Flat Terrain Traverse}
 \label{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse}
@@ -20,7 +18,9 @@ Both \ac{MER} and \ac{MSL} rovers are equipped with a total of 10 propulsion mot
 \end{align}
 
 
-where $P_{prop}$ is the total propulsion power, $P_{susp}$ is the total suspension power, $N_{wheels}$ is the number of wheels, and $P_{susp}^{sherpatt} / P_{prop}^{sherpatt}$ is the suspension system's share of the total propulsion power. For the latter, a worst-case \SI{17}{\percent} is taken from \citeother{Cordes2018} for data collected from a flat terrain outdoor setting. The propulsion power draws measured for SherpaTT on flat surface runs are shown in \refFig{fig:plot:sherpatt-flat-terrain-power-draw}.
+where $P_{prop}$ is the total propulsion power, $P_{susp}$ is the total suspension power, $N_{wheels}$ is the number of wheels, and $P_{susp}^{sherpatt} / P_{prop}^{sherpatt}$ is the suspension system's share of the total propulsion power. For the latter, a worst-case \SI{17}{\percent} is taken from \citeother{Cordes2018} for data collected from a flat terrain outdoor setting. The propulsion power draws measured on flat surface runs are shown in \refFig{fig:plot:sherpatt-flat-terrain-power-draw}. Measurements are summarised in \refTab{tab:sherpatt-flat-terrain-global-minimum-maximum-and-medium-power-draws}. To eliminate power draw fluctuations from the analysis, only local media values were considered. Local media were selected rather than the worst-case local maxima on the basis of the assumptions made in \refSec{sec:PowerBudget:PropulsionPowerBudget}. For flat terrain traverses, a worst-case maximum power draw of \SI{74}{\watt} is observed in close accordance with the initial estimate obtained from \refEqn{eq:InitialPropulsionPowerEstimate}.
+
+\input{sections/design/power-budget/tables/flat-terrain-global-minimum-maximum-and-medium-power-draws.tex}
 
 \clearpage
 \begin{figure}[h]
@@ -45,15 +45,12 @@ where $P_{prop}$ is the total propulsion power, $P_{susp}$ is the total suspensi
   		\subcaption{Run \#2}
 		\label{fig:plot:sub:sherpatt-flat-terrain-power-draw-2}
 	\end{subfigure}\\[0.8ex]
-    \caption[Propulsion power draw for a flat terrain traverse during SherpaTT Mars analogue field tests in Utah]
+    \caption[Propulsion power draw for a flat terrain traverse]
             {Propulsion power draw for a flat terrain traverse during SherpaTT Mars analogue field tests in Utah.}
     \label{fig:plot:sherpatt-flat-terrain-power-draw}
 \vspace{-2ex}
 \end{figure}
 
-Measurements are summarised in \refTab{tab:sherpatt-flat-terrain-global-minimum-maximum-and-medium-power-draws}. To eliminate power draw fluctuations from the analysis, only local media values were considered. Local media were selected rather than the worst-case local maxima on the basis of the assumptions made in \refSec{sec:PowerBudget:PropulsionPowerBudget}. For flat terrain traverses, a worst-case maximum power draw of \SI{74}{\watt} is observed in close accordance with the initial estimate obtained from \refEqn{eq:InitialPropulsionPowerEstimate}.
-
-\input{sections/design/power-budget/tables/flat-terrain-global-minimum-maximum-and-medium-power-draws.tex}
 
 \subsubsection{Upslope Terrain Traverse}
 \label{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse}
@@ -87,14 +84,17 @@ Propulsion power draws on a steep uplsope were measured along an approximately \
   		\subcaption{Suspension}
 		\label{fig:plot:sub:sherpatt-disaggregated-upslope-terrain-power-draw-suspension}
 	\end{subfigure}\\[0.8ex]
-    \caption[Disaggregated measurements of power draw for upslope terrain traverse during SherpaTT Mars analogue field tests in Utah]
+    \caption[Disaggregated measurements of power draw for upslope terrain traverse]
             {Disaggregated measurements of power draw for upslope terrain traverse during SherpaTT Mars analogue field tests in Utah: (a) = (b) + (c).}
     \label{fig:plot:sherpatt-disaggregated-upslope-terrain-power-draw}
 \vspace{-2ex}
 \end{figure}
 
+\vspace{0.5cm}
+
 An uplsope traverse has no discernable effect on the suspension power draw, however; there is a clear gradual increase in the drive power draw. The global maximum, minimum, and medium of the traced local minima, maxima, and media power draw lines are presented in \refTab{tab:sherpatt-upslope-terrain-global-minimum-maximum-and-medium-power-draws}.
 
+\clearpage
 \input{sections/design/power-budget/tables/upslope-terrain-global-minimum-maximum-and-medium-power-draws.tex}
 
 \refFig{fig:plot:sherpatt-upslope-terrain-power-draw} overlaps the propulsion local media power draws with the tackled slope angles. The steepest slope angle is \SI{28}{\degree} for an average of \SI{17.52}{\degree}. Slope angle increases are consistently followed by power draw spikes, i.e. at approximately 3, 4, 5, 6, 8, and 9 \si{\meter} in the odometry measurements. Inversely, slope angle decreases are followed by power draws troughs at approximately 11, 13, 14, and 16 \si{\meter}. Slope angles are measured in \SI{1}{meter} discret intervals.
@@ -103,8 +103,8 @@ An uplsope traverse has no discernable effect on the suspension power draw, howe
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.8\linewidth]{sections/design/power-budget/plots/minima-locomotion-power-draws-on-upslope-terrain.png}\\
-  \caption[Mean Propulsion power draw for an upslope terrain traverse during SherpaTT Utah field test campaign.]
-          {Mean Propulsion power draw for an upslope terrain traverse during SherpaTT Utah field test campaign.}
+  \caption[Mean propulsion power draw for an upslope terrain traverse]
+          {Mean propulsion power draw for an upslope terrain traverse during SherpaTT Utah field test campaign.}
   \label{fig:plot:sherpatt-upslope-terrain-power-draw}
 \end{figure}
 
@@ -128,11 +128,10 @@ The total energy requirements for these worst case reference Sols are used as th
 
 \subsubsection{Upslope Traverse}
 \label{sec:Design:PowerBudget:TraversePowerBudget:UpslopeTraverse}
-The worst case upslope traverse reference Sols shown in \refTab{tab:worst-case-upslope-traverse-sol-power-budget} only differ from their flat traverse equivalents by the \textit{Traverse mode} power draw. It is increased from \SI{75}{\watt} to \SI{150}{\watt}.
+The worst case upslope traverse reference Sols shown in \refTab{tab:worst-case-upslope-traverse-sol-power-budget} only differ from their flat traverse equivalents by the \textit{Traverse mode} power draw. It is increased from \SI{75}{\watt} to \SI{150}{\watt}. These worst case reference Sols were are considered in \ac{SA} sizing. Regardless, they are presented for the sake of comparative analysis with the flat traverse equivalent.
 
 \input{sections/design/power-budget/tables/worst-case-power-budget-upslope-traverse-sol-tau-1.tex}
 
-These worst case reference Sols were are considered in \ac{SA} sizing. Regardless, they are presented for the sake of comparative analysis with the flat traverse equivalent.
 
 
 \subsubsection{Hibernation}

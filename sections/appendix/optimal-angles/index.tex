@@ -4,7 +4,7 @@ A 2-axis sun tracking mechanism is illustrated in \refFig{fig:tilted-surface-sun
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.7\linewidth]{sections/appendix/optimal-angles/images/beta-and-gamma-angles-on-tilted-surface.png}\\
-  \caption[\ac{SA} surface position orientation and inclination]
+  \caption[Solar array surface position orientation and inclination]
           {\ac{SA} surface position orientation and inclination. $\gamma_{c}$ is the orientation angle (surface azimuth angle) and $\beta$ is the inclination angle. $\gamma_{c} = \SI{0}{\degree}$ when facing the equator, negative when facing East ($\gamma_{c} = \SI{-90}{\degree}$), and positive when facing West ($\gamma_{c} = \SI{+90}{\degree}$). Image taken from \citeother{ITACA} and modified for this study.}
   \label{fig:tilted-surface-sun-tracking}
 \end{figure}
@@ -21,7 +21,7 @@ where $\beta_{p}$ is the optimal inclination angle for a period $p$, $\phi$ is t
 
 \begin{equation}
   \label{eq:optimal_tanbeta_insolation}
-  \tan{\beta} = -\frac{\cos{\omega_{sr}}\sin{\phi}\cos{\delta}-\left[1-\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\cos{\phi}\sin{\delta}}{\cos{\omega_{sr}}\cos{\phi}\cos{\delta}+\left[1+\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\sin{\phi}\sin{\delta}}
+  \tan{(\beta)} = -\frac{\cos{(\omega_{sr})}\sin{(\phi)}\cos{(\delta)}-\left[1-\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\cos{(\phi)}\sin{(\delta)}}{\cos{(\omega_{sr})}\cos{(\phi)}\cos{(\delta)}+\left[1+\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\sin{(\phi)}\sin{(\delta)}}
 \end{equation}
 
 
@@ -29,7 +29,7 @@ where $\omega_{sr}$ is the sunrise hour angle. The sign error correction is not 
 
 \begin{equation}
   \label{eq:optimal_tanbeta_insolation_Ls180}
-  \tan{\beta_{L_{s} = \SI{180}{\degree}}} = \frac{\cos{\omega_{sr}}\sin{\phi}\cos{\delta}-\left[1-\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\cos{\phi}\sin{\delta}}{\cos{\omega_{sr}}\cos{\phi}\cos{\delta}+\left[1+\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\sin{\phi}\sin{\delta}}
+  \tan{(\beta_{L_{s} = \SI{180}{\degree}})} = \frac{\cos{(\omega_{sr})}\sin{(\phi)}\cos{(\delta)}-\left[1-\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\cos{(\phi)}\sin{(\delta)}}{\cos{(\omega_{sr})}\cos{(\phi)}\cos{(\delta)}+\left[1+\left(\frac{2\omega_{sr}}{\pi}\right)^{2}\right]\sin{(\phi)}\sin{(\delta)}}
 \end{equation}
 
 Facing the equator implies a direct orientation towards the sun thus the optimal value for $\gamma_{c}$ is widely accepted as being $\SI{0}{\degree}$. However, plotting out predicted insolations in for all directions at $\SI{1}{\degree}$ increments suggests otherwise.
@@ -39,6 +39,7 @@ Facing the equator implies a direct orientation towards the sun thus the optimal
 \refFig{fig:plot:optimal-angles-iani-chaos} plots daily insolations throughout a Martian year at Iani Chaos for $\beta_{opt}$ angles with different $\gamma_{c}$ orientations. Daily insolations on a flat surface are also included as a reference. An equator facing (North) orientation is suggested only during the first half of the Martian year, after which a Northwestern facing orientation becomes more optimal.
 
 \begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
 \centering
     %% setup sizes
@@ -50,17 +51,17 @@ Facing the equator implies a direct orientation towards the sun thus the optimal
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
             \includegraphics[height=\graphicsHeight]{sections/appendix/optimal-angles/plots/iani-chaos-tau-04-and-beta-optimal-based-on-direct-beam-irradiance-at-noon.png}
-            \subcaption{Based on the direct beam irradiance at noon.}
+            \subcaption{Based on the direct beam irradiance at noon}
             \label{fig:sub:optimal-angles-iani-chaos-based-on-irradiance}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
             \includegraphics[height=\graphicsHeight]{sections/appendix/optimal-angles/plots/iani-chaos-tau-04-and-beta-optimal-based-on-solar-insolation.png}
-            \subcaption{Based on the daily beam insolation on the surface from sunrise to sunset.}
+            \subcaption{Based on the daily beam insolation on the surface from sunrise to sunset}
             \label{fig:sub:optimal-angles-iani-chaos-based-on-insolation}
     \end{subfigure}\\[0.8ex]
-    \caption[Daily insolation at Iani Chaos with optimal angles $\beta$ for difference orientation angles $\gamma_c$]
-    {Daily insolation at Iani Chaos with optimal angles $\beta$ for difference orientation angles $\gamma_c$. Iani Chaos is located in the Sourthern hemisphere at latitude \SI{2}{\degree}S.}
+    \caption[Daily insolation at Iani Chaos for optimal inclinations with different orientations]
+    {Daily insolation at Iani Chaos for optimal inclinations with different orientations. Clear day at $\tau=0.4$. Iani Chaos is located in the Sourthern hemisphere at latitude \SI{2}{\degree}S.}
     \label{fig:plot:optimal-angles-iani-chaos}
 \vspace{-2ex}
 \end{figure}
@@ -70,6 +71,7 @@ Facing the equator implies a direct orientation towards the sun thus the optimal
 \refFig{fig:plot:optimal-angles-ismenius-cavus} plots daily insolations throughout a Martian year at Ismenius Cavus for $\beta_{opt}$ angles with different $\gamma_{c}$ orientations. Daily insolations on a flat surface are also included as a reference. Throughout the entire year, a Southwestern orientation appears more optimal than South facing.
 
 \begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
 \centering
     %% setup sizes
@@ -81,20 +83,20 @@ Facing the equator implies a direct orientation towards the sun thus the optimal
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
             \includegraphics[height=\graphicsHeight]{sections/appendix/optimal-angles/plots/ismenius-cavus-tau-04-and-beta-optimal-based-on-direct-beam-irradiance-at-noon.png}
-            \subcaption{Based on the direct beam irradiance at noon.}
+            \subcaption{Based on the direct beam irradiance at noon}
             \label{fig:sub:optimal-angles-ismenius-cavus-based-on-irradiance}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
             \includegraphics[height=\graphicsHeight]{sections/appendix/optimal-angles/plots/ismenius-cavus-tau-04-and-beta-optimal-based-on-solar-insolation.png}
-            \subcaption{Based on the daily beam insolation on the surface from sunrise to sunset.}
+            \subcaption{Based on the daily beam insolation on the surface from sunrise to sunset}
             \label{fig:sub:optimal-angles-ismenius-cavus-based-on-insolation}
     \end{subfigure}\\[0.8ex]
-    \caption[Daily insolation at Ismenius Cavus with optimal angles $\beta$ for difference orientation angles $\gamma_c$]
-    {Daily insolation at Ismenius Cavus with optimal angles $\beta$ for difference orientation angles $\gamma_c$. Ismenius Cavus is located in the Northern hemisphere at latitude \SI{34}{\degree}N.}
+    \caption[Daily insolation at Ismenius Cavus for optimal inclinations with different orientations]
+    {Daily insolation at Ismenius Cavus for optimal inclinations with different orientations. Clear day at $\tau=0.4$. Ismenius Cavus is located in the Northern hemisphere at latitude \SI{34}{\degree}N.}
     \label{fig:plot:optimal-angles-ismenius-cavus}
 \vspace{-2ex}
 \end{figure}
 
 \section{Conclusion}
-The optimal $\beta$ inclination angle can be approximated through calculation. However, insolation calculation results do not support the assumption that facing the equator is the optimal $\gamma_c$ orientation. Depending on latitude and season, a Western offset from the equator may be a more preferable orientation.
+The optimal $\beta$ inclination angle can be approximated through calculation. However, insolation calculation results do not support the assumption that facing the equator is the optimal $\gamma_c$ orientation. Depending on latitude and season, a western offset from the equator may be a more preferable orientation.

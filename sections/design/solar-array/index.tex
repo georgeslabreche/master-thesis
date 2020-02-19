@@ -10,9 +10,9 @@
 
 where $E$ is the energy required by the rover and $H$ is the worst-case available daily insolation. The worst case energy requirement is denoted as $E_{req}^{worst}$. An inclined surface is used for the worst case daily insolation rather than a horizontal surface hence $H_{\beta}^{worst}$ is considered instead of $H_{h}^{worst}$. The following values are used:
 
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
+\begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
     \item From \refTab{tab:worst-case-traverse-sol-power-budget}, $E_{req}^{worst}$ is \SI{775}{\watt\hour} at Iani Chaos and \SI{750}{\watt\hour} at Ismenius Cavus.
-    \item From \refTab{tab:insolation-iani-chaos-clear-and-dusty-days} and \ref{tab:insolation-ismenius-cavus-clear-and-dusty-days}, $H_{\beta}^{worst}$ for $\tau=1$ is \SI{2479}{Wh.m^{-2}} at Iani Chaos and \SI{1345}{Wh.m^{-2}} at Ismenius Cavus.
+    \item From \refTab{tab:insolation-iani-chaos-clear-and-dusty-days} and \refTab{tab:insolation-ismenius-cavus-clear-and-dusty-days}, $H_{\beta}^{worst}$ for $\tau=1$ is \SI{2479}{Wh.m^{-2}} at Iani Chaos and \SI{1345}{Wh.m^{-2}} at Ismenius Cavus.
     \item From \ref{itm:ass:red_shifts}, \ref{itm:ass:dust_deposition_saturation}, and \ref{itm:ass:protruding_shadowing}, \ac{PR} at \ac{EOL} is $PR_{EOL} = 1 - (0.03 + 0.3 + 0.05) = 0.62$.
     \item From \ref{itm:ass:solar_cell_efficiency}, $\eta_{EOL} = 0.22$.
 \end{enumerate}
@@ -34,19 +34,19 @@ and at Ismenius Cavus:
                &= \SI{4.09}{m^{2}}
 \end{align}
 
-Considering the solar cell packing efficiency \ref{itm:ass:packing_efficiency} results in a \ac{SA} area of \SI{2.7}{m^{2}} at Iani Chaos. from \ref{itm:ass:sa_surface_density}, the \ac{SA} mass is 9.95 \si{\kilo\gram}. \ac{SA} inclination with $\beta_{best} = \SI{10}{\degree}$ results in a \ac{SA} sizing decrease of \SI{3.9}{\percent} with respect to the horizontal surface alternative. The total maximum flat traverse distance achievable over the course of one \ac{MY} is increased by \SI{13.22}{\percent} from \SI{42.43}{\kilo\meter} to \SI{48.04}{\kilo\meter} when $\tau = 1$ during global dust storm season and $\tau = 0.4$ for the remainder of the year. At Ismenius Cavus, the \ac{SA} area is \SI{4.8}{m^{2}} and its mass 17.8 \si{\kilo\gram}. A \SI{4.6}{\percent} \ac{SA} size descrease is achieve when inclination is taken into account. The total maximum achievable flat traverse distance during one \ac{MY} is increased by \SI{2.13}{\percent} from \SI{63.05}{\kilo\meter} to \SI{64.39}{\kilo\meter}. The traverse distance gains attributed to \ac{SA} inclination capabilities do not justify adopting the complexities of an active suspension system for the purpose of increasing traverse distance via solar tracking. This is particularly true at Ismenius Cavus. The savings in \ac{SA} siye and mass also leave much to be desired. Furthermore, the large \acp{SA} are problematic for rover integration. This is illustrated in \refFig{fig:sa-area-initial-sizes}.
+Considering the solar cell packing efficiency \ref{itm:ass:packing_efficiency} results in a \ac{SA} area of \SI{2.7}{m^{2}} at Iani Chaos. from \ref{itm:ass:sa_surface_density}, the \ac{SA} mass is 9.95 \si{\kilo\gram}. \ac{SA} inclination with $\beta_{best} = \SI{10}{\degree}$ results in a \ac{SA} sizing decrease of \SI{3.9}{\percent} with respect to the horizontal surface alternative. The total maximum flat traverse distance achievable over the course of one \ac{MY} is increased by \SI{13.22}{\percent} from \SI{42.43}{\kilo\meter} to \SI{48.04}{\kilo\meter} when $\tau = 1$ during global dust storm season and $\tau = 0.4$ for the remainder of the year. At Ismenius Cavus, the \ac{SA} area is \SI{4.8}{m^{2}} and its mass 17.8 \si{\kilo\gram}. A \SI{4.6}{\percent} \ac{SA} size decrease is achieved when inclination is taken into account. The total maximum achievable flat traverse distance during one \ac{MY} is increased by \SI{2.13}{\percent} from \SI{63.05}{\kilo\meter} to \SI{64.39}{\kilo\meter}. The traverse distance gains attributed to \ac{SA} inclination capabilities do not justify adopting the complexities of an active suspension system for the purpose of increasing traverse distance via solar tracking. This is particularly true at Ismenius Cavus. The savings in \ac{SA} size and mass also leave much to be desired. Furthermore, the large \acp{SA} are problematic for rover integration. This is illustrated in \refFig{fig:sa-area-initial-sizes}.
 
 \begin{figure}[h]
   \captionsetup[subfigure]{justification=centering}
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.7\linewidth]{sections/design/solar-array/images/sa-area-initial-sizes.png}\\
-  \caption[Size comparison between SherpaTT and initial SA areas for Iani Chaos and Ismenius Cavus]
-          {Size comparison between SherpaTT and initial \ac{SA} areas for Iani Chaos and Ismenius Cavus. The outlined square areas are equivalent to \ac{SA} areas of \SI{2.7}{m^{2}} for Iani Chaos and \SI{4.8}{m^{2}} for Ismenius Cavus.}
+  \caption[Initial solar array sizing for mission sites]
+          {Initial \ac{SA} sizing for mission sites. The outlined square areas are equivalent to \ac{SA} areas of \SI{2.7}{m^{2}} for Iani Chaos and \SI{4.8}{m^{2}} for Ismenius Cavus.}
   \label{fig:sa-area-initial-sizes}
 \end{figure}
 
-To explain the lack of significant gains with $\beta_{best}$, the generated \ac{SA} energy and maximum traverse durations is plotted in \refFig{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations} and \refFig{fig:plot:ismenius-cavus-generated-energy-and-max-traverse-durations}. At Ismenius Cavus, the \ref{itm:con:daylight_traverse} constraint imposes an upper limit to the maximum traverse durations. The ceiling corresponded to the daylight time that is available for traversing. This results in the \ac{SA} generating excess propulsion energy which cannot be used. As seen in \refFig{fig:plot:sub:iani-chaos-max-traverse-durations}, an inclined \ac{SA} is only relevant during the global dust storm season with a dusty atmosphere of $\tau = 1$. This negligeable advantage results in the limited total traverse gains obtained with $\beta_{best}$. Lack of appreciable traverse distance gains obtained with $\beta_{best}$ is due to the $\tau$ factor applied when evaluating the $H_{\beta}^{worst}$ daily insolation with $\tau = 1$. At high optical opacities, $H_{\beta}^{worst} \approx H_{h}^{worst}$ due to light scattering by airborn Martian dust. This was previously observed in \refFig{fig:plot:insolation-ls}, where diffuse insolation was already the largest component contributing to global insolation at $\tau = 1$. Inclined \ac{SA} surface yield little to no benefits over horizontal surfaces when light is mostly diffuse.
+To explain the lack of significant gains with $\beta_{best}$, the generated \ac{SA} energy and maximum traverse durations are plotted in \refFig{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations} and \refFig{fig:plot:ismenius-cavus-generated-energy-and-max-traverse-durations}. At Ismenius Cavus, the \ref{itm:con:daylight_traverse} constraint imposes an upper limit to the maximum traverse durations. The ceiling corresponded to the daylight time that is available for traversing. This results in the \ac{SA} generating excess propulsion energy which cannot be used. As seen in \refFig{fig:plot:sub:iani-chaos-max-traverse-durations}, an inclined \ac{SA} is only relevant during the global dust storm season with a dusty atmosphere of $\tau = 1$. This negligeable advantage results in the limited total traverse gains obtained with $\beta_{best}$. Lack of appreciable traverse distance gains obtained with $\beta_{best}$ is due to the $\tau$ factor applied when evaluating the $H_{\beta}^{worst}$ daily insolation with $\tau = 1$. At high optical opacities, $H_{\beta}^{worst} \approx H_{h}^{worst}$ due to light scattering by airborn Martian dust. This was previously observed in \refFig{fig:plot:insolation-ls}, where diffuse insolation was already the largest component contributing to global insolation at $\tau = 1$. Inclined \ac{SA} surface yield little to no benefits over horizontal surfaces when light is mostly diffuse.
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -70,8 +70,8 @@ To explain the lack of significant gains with $\beta_{best}$, the generated \ac{
   		\subcaption{Maximum Traverse Durations}
 		\label{fig:plot:sub:iani-chaos-max-traverse-durations}
 	\end{subfigure}\\[0.8ex]
-    \caption[Generated energy and maxium achievable flat terrain traverse durations at Iani Chaos]
-            {Generated energy and maxium achievable flat terrain traverse duration at Iani Chaos with solar cell coverage area of \SI{2.3}{m^{2}}. Optical depth  $\tau = 1$ was used for global dust storm season ($\SI{185}{\degree} \leq L_{s} \leq \SI{315}{\degree}$) and $\tau = 0.4$ for the remainder of the year. The \textit{available daylight traverse time} corresponds to the amount of daylight hours left in a \textit{Traverse Sol} after subtracting the time taken by non-Traverse modes: \textit{Idle - Day}, \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Optimal Pose}. The maximum traverse durations for \ac{SA} horizontal do not consider the \textit{Optimal Pose} mode.}
+    \caption[Generated energy and maxium flat terrain traverse durations at Iani Chaos]
+            {Generated energy and maxium flat terrain traverse duration at Iani Chaos with solar cell coverage area of \SI{2.3}{m^{2}}. Optical depth  $\tau = 1$ was used for global dust storm season ($\SI{185}{\degree} \leq L_{s} \leq \SI{315}{\degree}$) and $\tau = 0.4$ for the remainder of the year. The \textit{available daylight traverse time} corresponds to the amount of daylight hours left in a \textit{Traverse Sol} after subtracting the time taken by non-Traverse modes: \textit{Idle - Day}, \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Optimal Pose}. The maximum traverse durations for \ac{SA} horizontal do not consider the \textit{Optimal Pose} mode.}
     \label{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations}
 \vspace{-2ex}
 \end{figure}
@@ -98,14 +98,14 @@ To explain the lack of significant gains with $\beta_{best}$, the generated \ac{
   		\subcaption{Maximum Traverse Durations}
 		\label{fig:plot:sub:ismenius-cavus-max-traverse-durations}
 	\end{subfigure}\\[0.8ex]
-    \caption[Generated energy and maxium achievable flat terrain traverse durations at Ismenius Cavus]
-            {Generated energy and maxium achievable flat terrain traverse duration at Ismenius Cavus with solar cell coverage area of \SI{4.1}{m^{2}}. The same considerations were taken as in Figure \ref{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations}.}
+    \caption[Generated energy and maxium flat terrain traverse durations at Ismenius Cavus]
+            {Generated energy and maxium flat terrain traverse duration at Ismenius Cavus with solar cell coverage area of \SI{4.1}{m^{2}}. The same considerations were taken as in Figure \ref{fig:plot:iani-chaos-generated-energy-and-max-traverse-durations}.}
     \label{fig:plot:ismenius-cavus-generated-energy-and-max-traverse-durations}
 \vspace{-2ex}
 \end{figure}
 
 \clearpage
-\ac{SA} sizes of \SI{2.7}{m^{2}} at Iani Chaos and \SI{4.8}{m^{2}} at Ismenius Cavus results in total attainable flat traverse coverages of \SI{48.04}{\kilo\meter} and \SI{64.39}{\kilo\meter} within one \ac{MY}. These performance exceeded by over approximately five- and six-folds the \ref{itm:req:total_distance_flat_terrain} requirement of \SI{10}{\kilo\meter}. With this in mind, \ac{SA} sizing using \refEqn{calc:solar_cell_area_iani_chaos_traverse} and \refEqn{calc:solar_cell_area_ismenius_cavus_traverse} are approached differently. $E_{req}^{worst}$ is changed from energy required for the worst case \textit{Traverse Sol} to energy required for a \textit{Hibernation Sol}. However, to obtain satisfying results the solar power draw required by the \textit{Hibernation mode} needs to be reduced from \SI{18}{\watt} to \SI{17}{\watt} at Iani Chaos and from \SI{18}{\watt} to \SI{15}{\watt} at Ismenius Cavus. Introducing \acp{RHU} is necessary should these revised solar power requirements be unachievable. A single \ac{RHU} provides approximately \SI{1}{\watt} of heat thus one \ac{RHU} would is required at Iani Chaos and three at Ismenius Cavus. Taking into account a \SI{20}{percent} system margin, $E_{req}^{worst}$ becomes \SI{490}{\watt\hour} for a \textit{Hibernation Sol} at Iani Chaos and \SI{432}{\watt\hour} at Ismenius Cavus. Revisting \refEqn{eq:solar_cell_coverage_area} results in the following solar cell coverage areas:
+\ac{SA} sizes of \SI{2.7}{m^{2}} at Iani Chaos and \SI{4.8}{m^{2}} at Ismenius Cavus results in total attainable flat traverse coverages of \SI{48.04}{\kilo\meter} and \SI{64.39}{\kilo\meter} within one \ac{MY}. These performances exceeded by over approximately five- and six-folds the \ref{itm:req:total_distance_flat_terrain} requirement of \SI{10}{\kilo\meter}. With this in mind, \ac{SA} sizing using \refEqn{calc:solar_cell_area_iani_chaos_traverse} and \refEqn{calc:solar_cell_area_ismenius_cavus_traverse} are approached differently. $E_{req}^{worst}$ is changed from energy required for the worst case \textit{Traverse Sol} to energy required for a \textit{Hibernation Sol}. However, to obtain satisfying results the solar power draw required by the \textit{Hibernation mode} needs to be reduced from \SI{18}{\watt} to \SI{17}{\watt} at Iani Chaos and from \SI{18}{\watt} to \SI{15}{\watt} at Ismenius Cavus. Introducing \acp{RHU} is necessary should these revised solar power requirements be unachievable. A single \ac{RHU} provides approximately \SI{1}{\watt} of heat thus one \ac{RHU} would is required at Iani Chaos and three at Ismenius Cavus. Taking into account a \SI{20}{percent} system margin, $E_{req}^{worst}$ becomes \SI{490}{\watt\hour} for a \textit{Hibernation Sol} at Iani Chaos and \SI{432}{\watt\hour} at Ismenius Cavus. Revisting \refEqn{eq:solar_cell_coverage_area} results in the following solar cell coverage areas:
 
 
 \begin{align}
@@ -148,8 +148,8 @@ a maxmium flat traverse distance coverage of \SI{12}{\kilo\meter} at Iani Chaos 
   		\subcaption{Ismenius Cavus}
 		\label{fig:plot:sub:iani-chaos-flat-traverse-gains-for-different-sa-area}
 	\end{subfigure}\\[0.8ex]
-    \caption[Flat traverse distance gains at Iani Chaos and Ismenius Cavus for different solar cell coverage areas]
-            {Flat traverse distance gains at Iani Chaos and Ismenius Cavus for different solar cell coverage areas.}
+    \caption[Flat traverse distance gains at mission sites for different solar cell coverage areas]
+            {Flat traverse distance gains at mission sites for different solar cell coverage areas.}
     \label{fig:plot:flat-traverse-gains-for-different-sa-area}
 \vspace{-2ex}
 \end{figure}
@@ -177,8 +177,8 @@ a maxmium flat traverse distance coverage of \SI{12}{\kilo\meter} at Iani Chaos 
   		\subcaption{Ismenius Cavus, solar cell coverage area = \SI{2.4}{m^{2}}}
 		\label{fig:plot:sub:final-maximum-traverse-durations-ismenius-cavus}
 	\end{subfigure}\\[0.8ex]
-    \caption[Maximum traverse durations at Iani Chaos and Ismenius Cavus]
-            {Maximum traverse durations at Iani Chaos and Ismenius Cavus.}
+    \caption[Maximum traverse durations at mission sites]
+            {Maximum traverse durations at mission sites.}
     \label{fig:plot:final-maximum-traverse-durations-at-missions-sites}
 \vspace{-2ex}
 \end{figure}
@@ -220,7 +220,7 @@ As per \ref{itm:dd:shadowing}, the rover's body is redesigned in order to minimi
 \vspace{-2ex}
 \end{figure}
 
-Placing the four \acp{PLI} is driven by \ref{itm:dd:four_plis} and shown in \refFig{fig:sub:rover-body-redesign-after}. They are stored in the front of body and are accessible by the rover's robotic arm. As will be seen further in this section, access to the body's other faces is obstructed by the \ac{SA} panels. Spacing is left between the \acp{PLI} and the top of the body to allow for instruments. The \acp{PLI} are oriented upwords by \SI{15}{\degree} in order to compensate against possible forward tilts from the rover repositioning itself to attain $\beta_{best}$. The upward tilt of the \ac{PLI} have the added benefit of facilitating access to the robotic arm. The position of the latter is shifted towards the front in order to maximize the surface area that can be uninterruptedly covered by solar cells. As per \ref{itm:dd:unobstructed}, the movemement range of the suspension system must remain unobstructed. The height of the redesigned body is such that the deployed \ac{SA} panels are kept above the legs for any configuration of the active suspension system. This is demonstrated in \refFig{fig:rover-body-redesign-stowed-legs} where the rover's stowed posture results in its knees reaching their highest point.
+Placing the four \acp{PLI} is driven by \ref{itm:dd:four_plis} and shown in \refFig{fig:sub:rover-body-redesign-after}. They are stored in the front of body and are accessible by the rover's robotic arm. As will be seen further in this section, access to the body's other faces is obstructed by the \ac{SA} panels. Spacing is left between the \acp{PLI} and the top of the body to allow for instruments. The \acp{PLI} are oriented upwards by \SI{15}{\degree} in order to compensate against possible forward tilts from the rover repositioning itself to attain $\beta_{best}$. The upward tilt of the \ac{PLI} has the added benefit of facilitated access for the robotic arm. The position of the latter is shifted towards the front in order to maximize the surface area that can be uninterruptedly covered by solar cells. As per \ref{itm:dd:unobstructed}, the movemement range of the suspension system must remain unobstructed. The height of the redesigned body is such that the deployed \ac{SA} panels are kept above the legs for any configuration of the active suspension system. This is demonstrated in \refFig{fig:rover-body-redesign-stowed-legs} where the rover's stowed posture results in its knees reaching their highest point.
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -359,7 +359,6 @@ Round and diagonal edges negatively affect solar cell packing efficiency and are
 \input{sections/design/solar-array/tables/solar-panel-surface-areas.tex}
 
 
-
 \clearpage
 \subsection{Mechanisms}
 Solar panel deployment sequences are presented in this section. The worst case unfolding is identified with respect to panel mass and traveled rotation distance from which initial motor performance requirements are calculated.
@@ -398,7 +397,8 @@ Solar panel deployment sequences are presented in this section. The worst case u
 		\subcaption{Deployed}
 		\label{fig:sub:deployment-sequence-iani-completed}
 	\end{subfigure}
-	\caption{Deployment sequence of \SI{1.7}{\meter\squared} solar array at Iani Chaos.}
+	\caption[Solar array deployment sequence at Iani Chaos]
+    {\ac{SA} deployment sequence at Iani Chaos. Total \ac{SA} area is \SI{1.7}{\meter\squared}.}
 	\label{fig:deployment-sequence-iani-chaos}
 \vspace{-2ex}
 \end{figure}
@@ -450,7 +450,8 @@ Solar panel deployment sequences are presented in this section. The worst case u
 		\subcaption{Completed deployment}
 		\label{fig:sub:deployment-sequence-ismenius-cavus-completed}
 	\end{subfigure}
-	\caption{Deployment sequence of \SI{2.8}{\meter\squared} solar array at Ismenius Cavus.}
+    \caption[Solar array deployment sequence at Ismenius Cavus]
+    {\ac{SA} deployment sequence at Ismenius Cavus. Total \ac{SA} area is \SI{2.8}{\meter\squared}.}
 	\label{fig:deployment-sequence-ismenius-cavus}
 \vspace{-2ex}
 \end{figure}
@@ -473,52 +474,17 @@ The worst case motor torque for \ac{SA} deployment occurs when unfolding the por
 
 \vspace{0.25cm}
 
-The distance $d_{rev}$ traveled for one revolution is:
-
-\begin{align}
-  \label{eq:solar-panel-deployment-revolution}
-  d_{rev} &= 2\pi r\\
-          &= 6.18 \times 0.385\\
-          &= 2.38\,\si{\meter}
-\end{align}
-
-The distance $d$ traveled during the deployment sequence from \refFig{fig:sub:deployment-sequence-ismenius-cavus-full-bow-and-stern} to \refFig{fig:sub:deployment-sequence-ismenius-cavus-completed} corresponds to half a revolution:
-
-\begin{align}
-  \label{eq:solar-panel-deployment-distance}
-  d &= \frac{d_{rev}}{2}\\
-    &= \frac{2.38}{2}\\
-    &= 1.19\,\si{\meter}
-\end{align}
-
-The required acceleration $a'$ for a deployment duration of $t = \SI{20}{\second}$ is:
-
-\begin{align}
-  \label{eq:solar-panel-deployment-acceleration1}
-  a' &= \frac{2 \times d}{t^{2}}\\
-    &= \frac{2 \times 1.19}{20^{2}}\\
-    &= 5.95\times\num{e-3}\,\si{ms^{-2}}
-\end{align}
-
-The gravity acceleration $g$ must be taken into account as it acts against the direction of the calculated acceleration. However, $g_{Earth} = 9.81 \si{ms^{-2}}$ is used rather $g_{Mars} = 3.71 \si{ms^{-2}}$ as a means of introducing a margin that accounts for environmental events such as wind loads. This margin also accounts for imperfections introduced by motor performance degradation factors. Furthermore, sizing motors for an Earth environment reduces design verification and validation costs by eliminating the need for vacuum chamber tests.
-
-\begin{align}
-  \label{eq:solar-panel-deployment-acceleration2}
-  a &= a' + g_{Earth}\\
-    &= 5.95\times\num{e-3}\si{ms^{-2}} + 9.81\\
-    &= 9.82\,\si{ms^{-2}}
-\end{align}
-
-The panel has a mass of 1.85 \si{\kilo\gram}, thus the required torque $\tau_{torque}$ is:
+The acceleration $a$ required to deploy the port quarter and starboard quarter panels must act against the gravity acceleration $g$. For the sake of introducing margins that accounts for Martian environmental factors such as wind loads, the required acceleration $a$ is set to $g_{Earth} = 9.81 \si{ms^{-2}}$. This margin also accounts for imperfections introduced by motor performance degradation factors. Furthermore, sizing motors for an Earth environment reduces design verification and validation costs by eliminating the need for vacuum chamber tests. The panel has a mass of 1.85 \si{\kilo\gram}, thus the required torque $\tau_{torque}$ is:
 
 \begin{align}
   \label{eq:solar-panel-deployment-torque}
   \tau_{torque} &= m \times a \times r\\
-                &= 1.85 \times 9.82 \times 0.385\\
+                &= 1.85 \times 9.81 \times 0.385\\
                 &= 6.99\,\si{\newton\meter}
 \end{align}
 
-The \ac{rpm} rotational speed for a \SI{20}{\second} rotation is:
+\clearpage
+The \ac{rpm} rotational speed for a deployment rotation duration of \SI{20}{\second} is:
 
 \begin{align}
   \label{eq:solar-panel-deployment-rpm}

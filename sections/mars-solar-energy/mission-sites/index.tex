@@ -4,34 +4,22 @@ The missions sites at Iani Chaos and Ismenius are selected as a prerequisite to 
 \label{sec:MissionSites:SelectionCriteria}
 The mission site selection criteria are:
 
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
+\begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
     \item The location is of scientific interest, supported by past or ongoing research.
-    \item The terrain features complex morphologies so that scenarios with inclined solar array surfaces may be simulated from which the rover's active suspension system may also be evaluated.
+    \item The terrain features complex morphologies so that scenarios with inclined \ac{SA} surfaces may be simulated from which the rover's active suspension system may also be evaluated.
     \item Landing sites for the location have been proposed in preceedings such as with the \ac{MSL} Landing Site Workshops in \citeother{MSLLandingSites}. Such proposals suggest technical feasibility in landing a rover for the proposed locations.
-    \item \ac{HiRISE} \ac{DTM} are available near the \ac{ROI} so that 3D environment models may be loaded on the mission simulation platform.
-    \item The planetary latitude is close to that of the \ac{MER} Opportuniy mission in order to enable future comparative analysis of simulation results with 14 years worth of \ac{MER} power budget data. This target planetary latitude is approximately \SI{2}{\degree}S.
-    \item The planetary latitude is close to that of the \ac{VL1} and \ac{VL2} missions in order to more closely align with the environment conditions from which the power and energy prediction models were built. This target planetary latitude is between \SI{22}{\degree}N and \SI{48}{\degree}N.
+    \item \ac{HiRISE} \acp{DTM} are available near the \ac{ROI} so that 3D environment models may be loaded on the mission simulation platform.
+    \item The planetary latitude is close to that of \ac{MER} Opportuniy in order to enable comparative analysis of simulation results with 14 years worth of \ac{MER} power measurements.
+    \item The planetary latitude is close to that of \ac{VL1} and \ac{VL2} in order to more closely align with the environment conditions from which the power and energy prediction models were built. This target planetary latitude is between \SI{22}{\degree}N and \SI{48}{\degree}N.
 \end{enumerate}
 
 Conducting mission scenario simulations for both locations also ensures that a wider range of seasonal driven solar radiation variations are explored with respect to differences in planetary latitude. Iani Choas is located in the Sourthern hemisphere, close to the equator, whereas Ismenius Cavus is located in the Norhern hemispheres at a significant distance from the equator.
 
 \subsection{Iani Chaos}
 \label{sec:MissionSites:IaniChaos}
-Iani Chaos is centered at approximately \SI{17}{\degree}W, \SI{2}{\degree}S, it is scientific interest due its long-lived, but likely episodic, fluvial activity \citeother{Warner2011}. In particular, hematite- and sulfite-rich light-toned layered deposits suggest past shallow water and groundwater depositional environment \citeother{Glotch2007}. \refFig{fig:mission-site-iani-chaos} shows the distribution of these deposits in region covering \SI{9}{\degree}S – \SI{4}{\degree}N latitude and \SI{12}{\degree} – \SI{32}{\degree}W longitude. Furthermore, ``topography, the observed geomorphology, and measured fracture patterns suggest that the interchaos basins formed as a result of subsurface volume loss and collapse of the crust, likely owing to effusion of groundwater to the surface'' \citeother{Warner2011}. Iani Chaos is a ``clear link to the past presence of surface and subsurface water, making the site of prime astro-biological interest.'' \citeother{Glotch2006}
+Iani Chaos is centered at approximately \SI{17}{\degree}W, \SI{2}{\degree}S, it is scientific interest due its long-lived, but likely episodic, fluvial activity \citeother{Warner2011}. In particular, hematite- and sulfite-rich light-toned layered deposits suggest past shallow water and groundwater depositional environment \citeother{Glotch2007}. \refFig{fig:mission-site-iani-chaos} shows the distribution of these deposits in region covering \SI{9}{\degree}S – \SI{4}{\degree}N latitude and \SI{12}{\degree} – \SI{32}{\degree}W longitude. Furthermore, ``topography, the observed geomorphology, and measured fracture patterns suggest that the interchaos basins formed as a result of subsurface volume loss and collapse of the crust, likely owing to effusion of groundwater to the surface'' \citeother{Warner2011}. Iani Chaos is a ``clear link to the past presence of surface and subsurface water, making the site of prime astro-biological interest.'' \citeother{Glotch2006} Iani Chaos is ``among the most geomorphologically complex chaotic terrains.'' From  \citeother{Warner2011}, its morphology has been defined by:
 
-\begin{figure}[h]
-  \centering
-  \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.7\linewidth]{sections/mars-solar-energy/mission-sites/images/iani-chaos-deposits.png}\\
-  \caption[Map of light‐toned deposits in chaotic terrains in Margaritifer Terra overlaid on a \ac{MOC} \ac{WA} mosaic]
-          {Map of light‐toned deposits in chaotic terrains in Margaritifer Terra overlaid on a \ac{MOC} \ac{WA} mosaic. The mapped region covers \SI{9}{\degree}S – \SI{4}{\degree}N latitude and \SI{12}{\degree} – \SI{32}{\degree}W longitude. Taken from \citeother{Glotch2007}. The yellow asterisk indicates the \ac{HiRISE} \ac{DTM} location in Western Iani Chaos which was used for mission scenario simulation.}
-  \label{fig:mission-site-iani-chaos}
-\end{figure}
-
-
-Iani Chaos is ``among the most geomorphologically complex chaotic terrains.'' From  \citeother{Warner2011}, its morphology has been defined by:
-
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
+\begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
     \item Multiple, 1 to \SI{2}{\kilo\meter} deep basins.
     \item Flat‐topped, fractured plateaus that are remnants of highland terrain.
     \item Knobby, fractured remnants of highland terrain.
@@ -41,9 +29,18 @@ Iani Chaos is ``among the most geomorphologically complex chaotic terrains.'' Fr
     \item Mantling material.
 \end{enumerate}
 
-\clearpage
+\begin{figure}[h]
+  \centering
+  \hypersetup{linkcolor=captionTextColor}
+  \includegraphics[width=0.45\linewidth]{sections/mars-solar-energy/mission-sites/images/iani-chaos-deposits.png}\\
+  \caption[Map of light‐toned deposits in chaotic terrains in Margaritifer Terra]
+          {Map of light‐toned deposits in chaotic terrains in Margaritifer Terra overlaid on a \ac{MOC} \ac{WA} mosaic. The mapped region covers \SI{9}{\degree}S – \SI{4}{\degree}N latitude and \SI{12}{\degree} – \SI{32}{\degree}W longitude. Taken from \citeother{Glotch2007}. The yellow asterisk indicates the \ac{HiRISE} \ac{DTM} location in Western Iani Chaos which was used for mission scenario simulation.}
+  \label{fig:mission-site-iani-chaos}
+\end{figure}
+
 \refFig{fig:sub:western-iani-chaos-dtm} shows a section of the \ac{DTM} of Western Iani Chaos which was loaded on the rover's mission simulation plaform. The topography of the area is shown in \refFig{fig:sub:western-iani-chaos-dtm-altimetry}.
 
+\vspace{0.5cm}
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -51,7 +48,7 @@ Iani Chaos is ``among the most geomorphologically complex chaotic terrains.'' Fr
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{120mm}
+    \setlength{\graphicsHeight}{90mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -67,7 +64,7 @@ Iani Chaos is ``among the most geomorphologically complex chaotic terrains.'' Fr
   		\subcaption{Topography}
 		\label{fig:sub:western-iani-chaos-dtm-altimetry}
 	\end{subfigure}\\[0.8ex]
-    \caption[Western Iani Chaos \ac{HiRISE} \ac{DTM}]
+    \caption[Western Iani Chaos HiRISE digital terrain model]
             {Western Iani Chaos \ac{HiRISE} \ac{DTM}. Taken from \citeother{AreoBrowser}. Image: \ac{NASA}/\ac{JPL}/University of Arizona.}
     \label{fig:western-iani-chaos}
 \vspace{-2ex}
@@ -81,22 +78,22 @@ Ismenius Cavus is located at \SI{33.5}{\degree}N, \SI{17}{\degree}E, with elevat
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/mars-solar-energy/mission-sites/images/ismenius-cavus.png}\\
-  \caption[Geologic context for Ismenius Cavus mission site area]
-          {Geologic context of the mission site area, taken from \citeother{Dehouck2010}. Location shown on a \ac{MOLA} reference map (a) and a geologic map of Ismenius Cavus (b). The yellow asterisk indicates the \ac{HiRISE} \ac{DTM} location which was used for mission scenario simulation.}
+  \includegraphics[width=0.6\linewidth]{sections/mars-solar-energy/mission-sites/images/ismenius-cavus.png}\\
+  \caption[Geologic context of Ismenius Cavus mission site area]
+          {Geologic context of Ismenius Cavus mission site area, taken from \citeother{Dehouck2010}. Location shown on a \ac{MOLA} reference map (a) and a geologic map of Ismenius Cavus (b). The yellow asterisk indicates the \ac{HiRISE} \ac{DTM} location which was used for mission scenario simulation.}
   \label{fig:mission-site-ismenius-cavus}
 \end{figure}
 
 % https://www.uahirise.org/dtm/dtm.php?ID=ESP_052945_2150
 
 Supported science of interest are taken from \citeother{Dehouck2015}:
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
+\begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
     \item Potential for past habitability.
     \item Potential for organic matter with surface exposure.
     \item Noachian/Hesperian rocks with trapped atmospheric gases.
     \item High likelohood of surface-atmosphere exchange.
     \item Amazonian subsurface or high-latitude ice or sediment.
-    \item Range of martian geologic time; datable surfaces.
+    \item Range of Martian geologic time; datable surfaces.
     \item Evidence of aqueous processes.
     \item Potential for interpreting relative ages.
     \item Near-surface ice, glacial or permafrost.
@@ -115,7 +112,7 @@ Supported resources of interest are also presented in \citeother{Dehouck2015} wi
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{100mm}
+    \setlength{\graphicsHeight}{70mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -131,17 +128,17 @@ Supported resources of interest are also presented in \citeother{Dehouck2015} wi
   		\subcaption{Topography}
 		\label{fig:sub:ismenius-cavus-dtm-altimetry}
 	\end{subfigure}\\[0.8ex]
-    \caption[Ismenius Cavus \ac{HiRISE} \ac{DTM}]
+    \caption[Ismenius Cavus HiRISE digital terrain model]
             {Ismenius Cavus \ac{HiRISE} \ac{DTM}, taken from \citeother{AreoBrowser}. Image: \ac{NASA}/\ac{JPL}/University of Arizona.}
     \label{fig:ismenius-cavus}
 \vspace{-2ex}
 \end{figure}
 
-\clearpage
 \subsection{Daily Insolation}
-Worst and best case daily insolations presented in this section are considered when sizing the rover's \ac{SA}. Optical depth is typically around $\tau = 0.4$ on clear days \citemarsenv{Smith2019} and $\tau = 1–1.5$ during local dust storms \citemarsenv{Lemmon2015}. Daily insolations $\tau > 1.5$ were only considered for global dust storm season ($\SI{180}{\degree} < L_{s} < \SI{360}{\degree}$). Year long daily insolations for $\tau = 0.4$ at both sites are shown in \refFig{fig:plot:solar-insolations-for-different-beta} where optimal combinations of $\beta$ inclination and $\gamma_c$ orientation angles were used for the \ac{SA} surface. Details on these optimal angles are found in Appendix \ref{sec:Appendix:OptimalAngles}.
+Worst and best case daily insolations presented in this section are considered when sizing the rover's \ac{SA}. Optical depth is typically around $\tau = 0.4$ on clear days \citemarsenv{Smith2019} and $1 \leq \tau \leq 1.5$ during local dust storms \citemarsenv{Lemmon2015}. Daily insolations $\tau > 1.5$ were only considered for global dust storm season ($\SI{180}{\degree} < L_{s} < \SI{360}{\degree}$). Year long daily insolations for $\tau = 0.4$ at both sites are shown in \refFig{fig:plot:solar-insolations-for-different-beta} where the selected $\beta$ inclination angles are combined with their optimal $\gamma_c$ orientation angles. Descriptions of these angles are found in Appendix \ref{sec:Appendix:OptimalAngles}.
 
 \begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
 \vspace{-2ex}
 \centering
     %% setup sizes
@@ -162,14 +159,13 @@ Worst and best case daily insolations presented in this section are considered w
             \subcaption{Ismenius Cavus.}
             \label{fig:plot:sub:solar-insolations-for-different-beta-ismenius-cavus}
     \end{subfigure}\\[0.8ex]
-    \caption[Daily insolation at mission sites for different combinations of surface inclination and orientation angles]
-    {Daily insolation at mission sites for different combinations of surface inclination and orientation angles.}
+    \caption[Daily insolations at mission sites]
+    {Daily insolations at mission sites for different combinations of surface inclination and orientation angles.}
     \label{fig:plot:solar-insolations-for-different-beta}
 \vspace{-2ex}
 \end{figure}
 
-Large values of $\beta$ are preferred at Ismenius Cavus, up to \SI{58}{\degree} for $\SI{255}{\degree} \leq L_{s} \leq \SI{285}{\degree}$. However, constraints imposed on the rover's active suspension system prevent it from attaining these inclinations. As such, the optimal $\beta$ angle from which maximum insolation can be achieved, henceforth referred to as $\beta_{opt}$, may not be attainable. In such cases, the best possible $\beta$ angle is targetted, hereinafter referred to as $\beta_{best}$. Body pitch commands of up to \SI{10}{\degree} are experimentally evaluated during steep slope climbing in \citeother{Cordes2018}. Modeling higher pitch angles resulted in poor wheel-ground contact angle, as shown in \refFig{fig:postures-sa-beta}. This is due to the wheel-steering axis having the same tilt as the rover's body. The rover's attainable tilt is thus restricted to a maximum of \SI{10}{\degree}.
-
+Large values of $\beta$ are typically preferred in terms of resulting insolation. However, constraints imposed on the rover's active suspension system imposes a limit on the attainable inclination. As such, the optimal $\beta$ angle from which maximum insolation can be achieved, henceforth referred to as $\beta_{opt}$, may not be attainable. In such cases, the best possible $\beta$ angle is targetted, hereinafter referred to as $\beta_{best}$. Body pitch commands of up to \SI{10}{\degree} are experimentally evaluated during steep slope climbing in \citeother{Cordes2018}. Modeling higher pitch angles resulted in poor wheel-ground contact angle, as shown in \refFig{fig:postures-sa-beta}. This is due to the wheel-steering axis having the same tilt as the rover's body. The rover's attainable tilt is thus restricted to a maximum of \SI{10}{\degree}.
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -199,29 +195,31 @@ Large values of $\beta$ are preferred at Ismenius Cavus, up to \SI{58}{\degree} 
 \vspace{-2ex}
 \end{figure}
 
-\clearpage
+\vspace{0.5cm}
 
-Daily insolations on horizontal and inclined surfaces with $\beta_{best}=\pm\SI{10}{\degree}$\footnote{$\beta$ is positive in the northern hemisphere and negative in the southern hemisphere} are presented in Tables \ref{tab:insolation-iani-chaos-clear-and-dusty-days} and \ref{tab:insolation-iani-chaos-global-storm-days} for Iani Chaos and Tables \ref{tab:insolation-ismenius-cavus-clear-and-dusty-days} and \ref{tab:insolation-ismenius-cavus-global-storm-days} for Ismenius Cavus. Gains obtained in daily insolation with an inclined surface are more pronounced for sites further away from the equator. For a typical optical depth of $\tau = 0.4$, the average daily insolation gain on the inclined surface is approximately 7\% at Iani Chaos and 9\% at Ismenius Cavus.
+Daily insolations on horizontal and inclined surfaces with $\beta_{best}=\pm\SI{10}{\degree}$\footnote{$\beta$ is positive in the northern hemisphere and negative in the southern hemisphere.} are presented in \refTab{tab:insolation-iani-chaos-clear-and-dusty-days} and \refTab{tab:insolation-iani-chaos-global-storm-days} for Iani Chaos and \refTab{tab:insolation-ismenius-cavus-clear-and-dusty-days} and \refTab{tab:insolation-ismenius-cavus-global-storm-days} for Ismenius Cavus. Gains obtained in daily insolation with an inclined surface are more pronounced for sites further away from the equator. For a typical optical depth of $\tau = 0.4$, the average daily insolation gain on the inclined surface is approximately \SI{7}{\percent} at Iani Chaos and \SI{9}{\percent} at Ismenius Cavus.
+Due to the mostly diffuse composition of solar irradiance at higher optical depths, inclined surfaces become irrelevent during global dust storms. For $\tau \geq 2$, gains in daily insolation become negligeable at both mission sites.
 
 \input{sections/mars-solar-energy/mission-sites/tables/insolation-iani-chaos-clear-and-dusty-days.tex}
 
+\vspace{0.5cm}
+
 \input{sections/mars-solar-energy/mission-sites/tables/insolation-iani-chaos-global-storm-days.tex}
 
-Due to the mostly diffuse composition of solar irradiance at higher optical depths, inclined surfaces become irrelevent during global dust storms. For $\tau \geq 2$, gains in daily insolation become negligeable at both mission sites.
+\vspace{0.5cm}
 
 \input{sections/mars-solar-energy/mission-sites/tables/insolation-ismenius-cavus-clear-and-dusty-days.tex}
-\clearpage
+
+\vspace{0.5cm}
 
 \input{sections/mars-solar-energy/mission-sites/tables/insolation-ismenius-cavus-global-storm-days.tex}
 
+The worst-case slope traverse is an on inclined surface facing opposite the equator. This can be mitigated by using the rover's suspension system to compensate with a tilt in the opposite direction, as illustrated in \refFig{fig:sub:rover-on-slope-beta} where $B$ denotes the slope surface inclination angle and $\beta$ the \ac{SA} surface inclination angle. This scenario will be further explored in \refSec{sec:Design:Simulation}. By way of example, at Ismenius Cavus for $\tau = 0.4$ and $L_{s}=\SI{270}{\degree}$, descending a \SI{30}{\degree} slope bearing North results in a daily insolation of \SI{319}{Whm^{-2}}. This can be increased to \SI{767}{Whm^{-2}} by decreasing $\beta$ from \SI{30}{\degree} to \SI{25}{\degree} after tilting the rover southwards by \SI{5}{\degree} so that $\beta < B$ with $\beta = \SI{25}{\degree}$. A \SI{10}{\degree} tilt would increase the daily insolation to \SI{1046}{Whm^{-2}} with $\beta = \SI{20}{\degree}$.
 
-The worst-case slope traverse is an on inclined surface facing opposite the equator. This can be mitigated by using the rover's suspension system to compensate with a tilt in the opposite direction, as illustrated in \refFig{fig:sub:rover-on-slope-beta} where $B$ denotes the slope surface inclination angle and $\beta$ the \ac{SA} surface inclination angle. This scenario will be further explored in \refSec{sec:Design:Simulation}.
-
-\vspace{1cm}
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
-\vspace{-2ex}
+%\vspace{-2ex}
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
@@ -241,14 +239,12 @@ The worst-case slope traverse is an on inclined surface facing opposite the equa
   		\subcaption{$\beta < B$}
 		\label{fig:sub:rover-on-slope-beta-small}
 	\end{subfigure}\\[0.8ex]
-    \caption[Rover on a slope using its active suspension system to reduce the \ac{SA} surface inclination angle]
-            {Rover on a slope using its active suspension system to reduce the \ac{SA} surface inclination angle. Slope inclination angle $B = \SI{30}{\degree}$. In (a), $\beta = B = \SI{30}{\degree}$. In (b), the rover is tilted  \SI{10}{\degree} in the opposite direction of the slope so that $\beta = \SI{20}{\degree}$.}
+    \caption[Slope compensation with active suspension system]
+            {Slope compensation with active suspension system to reduce the \ac{SA} surface inclination angle. Slope inclination angle $B = \SI{30}{\degree}$. In (a), $\beta = B = \SI{30}{\degree}$. In (b), the rover is tilted  \SI{10}{\degree} in the opposite direction of the slope so that $\beta = \SI{20}{\degree}$.}
     \label{fig:sub:rover-on-slope-beta}
 %\vspace{-2ex}
 \end{figure}
 
-By way of example, at Ismenius Cavus for $\tau = 0.4$ and $L_{s}=\SI{270}{\degree}$, descending a \SI{30}{\degree} slope bearing North results in a daily insolation of \SI{319}{Whm^{-2}}. This can be increased to \SI{767}{Whm^{-2}} by decreasing $\beta$ from \SI{30}{\degree} to \SI{25}{\degree} after tilting the rover southwards by \SI{5}{\degree} so that $\beta < B$ with $\beta = \SI{25}{\degree}$. A \SI{10}{\degree} tilt would increase the daily insolation to \SI{1046}{Whm^{-2}} with $\beta = \SI{20}{\degree}$.
 
 \subsection{Summary}
 Available solar insolation have been constrained by identifying two mission sites based on set of selection criteria. The need to navigate complex topographic morphologies at these sites also introduces considerations for \ac{SA} inclination strategies. Large differences in planetary latitudes between both sites ensures that several environmental variations are considered.
-\clearpage

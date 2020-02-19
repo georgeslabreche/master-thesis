@@ -1,0 +1,46 @@
+The distance $d_{rev}$ traveled for one revolution is:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-revolution}
+  d_{rev} &= 2\pi r\\
+          &= 6.18 \times 0.385\\
+          &= 2.38\,\si{\meter}
+\end{align}
+
+The distance $d$ traveled during the deployment sequence from \refFig{fig:sub:deployment-sequence-ismenius-cavus-full-bow-and-stern} to \refFig{fig:sub:deployment-sequence-ismenius-cavus-completed} corresponds to half a revolution:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-distance}
+  d &= \frac{d_{rev}}{2}\\
+    &= \frac{2.38}{2}\\
+    &= 1.19\,\si{\meter}
+\end{align}
+
+The required acceleration $a'$ for a deployment duration of $t = \SI{20}{\second}$ is:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-acceleration1}
+  a' &= \frac{2 \times d}{t^{2}}\\
+    &= \frac{2 \times 1.19}{20^{2}}\\
+    &= 5.95\times\num{e-3}\,\si{ms^{-2}}
+\end{align}
+
+The gravity acceleration $g$ must be taken into account as it acts against the direction of the calculated acceleration. However, $g_{Earth} = 9.81 \si{ms^{-2}}$ is used rather $g_{Mars} = 3.71 \si{ms^{-2}}$ as a means of introducing a margin that accounts for environmental events such as wind loads. This margin also accounts for imperfections introduced by motor performance degradation factors. Furthermore, sizing motors for an Earth environment reduces design verification and validation costs by eliminating the need for vacuum chamber tests. The panel has a mass of 1.85 \si{\kilo\gram}, thus the required torque $\tau_{torque}$ is:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-torque}
+  \tau_{torque} &= m \times a \times r\\
+                &= 1.85 \times 9.82 \times 0.385\\
+                &= 6.99\,\si{\newton\meter}
+\end{align}
+
+The \ac{rpm} rotational speed for a \SI{20}{\second} rotation is:
+
+\begin{align}
+  \label{eq:solar-panel-deployment-rpm}
+  rpm &= \frac{1}{t} \times 60\\
+      &= \frac{1}{20} \times 60\\
+      &= 3\,{\minute^{-1}}
+\end{align}
+
+Transmissions with a 1:30 reduction ratio can be obtained with a planetary gear configuration whereas reduction ratios of 1:100 up to 1:300 are achievable with a harmonic drive. Using a 1:30 transmission will require a motor that must deliver at least 0.23 \si{\newton\meter} of nominal torque and 90 \ac{rpm}. A 1:100 transmission requires a motor with at least $6.99\times\num{e-2}$ \si{\newton\meter} of nominal torque and 300 \ac{rpm}. Finally, a 1:300 transmission requires a motor with at least $2.33\times\num{e-2}$ \si{\newton\meter} of nominal torque and 900 \ac{rpm}.

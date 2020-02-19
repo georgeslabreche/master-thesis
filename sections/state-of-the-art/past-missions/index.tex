@@ -89,9 +89,18 @@ Successful landers are shown in \refFig{fig:past-mission-landers}. The Viking Pr
 
 A single Viking Lander was powered by two \ac{RTG} units. Converting heat from decaying plutonium-236 resulted in a continuous nominal electrical power output of \SI{70}{\watt} at \SI{4.4}{\volt}. Four \SI{30}{\volt} nominal, 42-cell \ac{NiCd} batteries were mounted in pairs and charged by the \ac{RTG} units. The battery cells were \SI{8}{\ampere\hour} at \ac{EOL}. Recharge rates depended on available \ac{RTG} energy and varied from C/40 to C/6. Descrease in charge efficieny tied to temperature increase imposed a thermal constraint in which charging did not occur if the battery temperature was greater than \SI{21}{\degree} in order to prevent excessive battery temperatures during charging. Further power subsytem design details can be found in \citepower{Holmburg1980}.
 
+
 \subsubsection{Phoenix}
 
-The Phoenix Lander generated power from its two ATK ``UltraFlex'' \acp{SA} which covered a total surface area of \SI{4.2}{\meter\squared}. The \acp{SA} provided approximately \SI{22}{\watt/\kilo\gram} under Mars conditions \citepower{Badescu2009} \citeother{Linne2012}. Its round fan-fold design unfolded into two separate circular decagon panels. Two rechargeable \ac{Li-ion} \ac{NCO}-cell batteries were manufactured by Yardney and had a nameplate capacity of \SI{25}{\ampere\hour}. The battery cells were arranged in an 8s2p configuration, capacity voltage range was 50‒62 \si{\volt}, operating voltage range 24‒\SI{32.8}{\volt}, mass \SI{17.8}{\kilo\gram}, specific energy \SI{105}{\watt\hour/\kilo\gram}, and the operating temperature was from \SI{-20}{\celsius} to +\SI{30}{\celsius} \citepower{NASAEnergyStorage2017}.
+The Phoenix Lander generated power from its two ATK ``UltraFlex'' \acp{SA} which covered a total surface area of \SI{4.2}{\meter\squared}. The \acp{SA} provided approximately \SI{22}{\watt/\kilo\gram} under Mars conditions \citepower{Badescu2009} \citeother{Linne2012}. Its round fan-fold design unfolded into two separate circular decagon panels. Two rechargeable \ac{Li-ion} \ac{NCO}-cell batteries were manufactured by Yardney and had a nameplate capacity of \SI{25}{\ampere\hour}. The battery cells were arranged in an 8s2p configuration. The battery characteristics taken from \citepower{NASAEnergyStorage2017} are as follow:
+
+\begin{itemize}
+	\item Mass: \SI{17.8}{\kilo\gram}.
+	\item Operating voltage: 24\SI{32.8}{\volt}.
+	\item Capacity voltage: 50‒\SI{62}{\volt}.
+	\item Specific energy:\SI{105}{\watt\hour/\kilo\gram}.
+    \item Operating temperature: \SI{-20}{\celsius} to +\SI{30}{\celsius}.
+\end{itemize}
 
 \subsubsection{InSight}
 
@@ -187,7 +196,17 @@ Successful rovers are shown in \refFig{fig:past-mission-rovers}. The Sojourner r
 The Sojourner microrover was powered by a 0.22\si{\meter\squared}, $\SI{2}{\centi\meter}\times\SI{4}{\centi\meter}$, 5.5 mil thick \ac{GaAs}/\ac{Ge} solar panel. Its operating temperature was from \SI{-140}{\celsius} to +\SI{110}{\celsius}. Each of its three batteries were configured as 3 \ac{Li-SOCL2} D-size cells arranged in series and provided up to \SI{150}{\watt\hour}. The battery cell capacity was \SI{12}{\ampere\hour} at +\SI{25}{\celsius} and \SI{8}{\ampere\hour} at \SI{-20}{\celsius}. Operating voltage was 8‒11 \si{\volt} and mass was 1.24 \si{\kilo\gram}. The rover's power system allowed it to draw of up \SI{30}{\watt} of peak power with a peak solar panel power output of \SI{16}{\watt}. The rover's nominal propulsion power requirement is \SI{10}{\watt}. Further details on Sojourner's power subsystem can be found in \citepower{SojournerDescription} and \citepower{SojournerPowerSubsystem}.
 
 \subsubsection{Opportunity and Spirit}
-The twin rovers generated power from their \ac{TJ} \ac{GaInP}/\ac{GaAs}/\ac{Ge} \acp{SA} with a solar cell coverage area of \SI{1.3}{\square\meter}. The \acp{SA} could generate almost \SI{900}{\watt\hour} of energy at \ac{BOL} on a clear day in absence of dust deposition \citepower{Badescu2009}. The rovers's propulsion power draw was approximately \SI{100}{\watt}. Two rechargeable \ac{Li-ion} NCP-8-1 \ac{NCO}-cell batteries weighing \SI{7.15}{\kilo\gram} were manufactured by Yardney and provided support to the \ac{SA} as well as enabled nighttime experiments \citepower{Badescu2009}. Each battery was configured in 8-cell \SI{10}{\ampere\hour} strings connected in parallel (8s2p). The nameplate capacity was \SI{8}{\ampere\hour} and the \ac{DOD} was designed to typically be 40‒50 \si{\percent} per Sol \citepower{Gulbinska2014}. Capacity voltage range was 16‒20 \si{\volt}, operating voltage range 24‒32.8 \si{\volt}, specific energy \SI{90}{\watt\hour/\kilo\gram}, and the operating temperature was from \SI{-20}{\celsius} to +\SI{30}{\celsius} \citepower{NASAEnergyStorage2017}. The rovers were heated by eight \acp{RHU}, each of which continuously generated \SI{1}{\watt} of thermal energy. The following are notable battery operational requirements taken from \citepower{Gulbinska2014}:
+The twin rovers generated power from their \ac{TJ} \ac{GaInP}/\ac{GaAs}/\ac{Ge} \acp{SA} with a solar cell coverage area of \SI{1.3}{\square\meter}. The \acp{SA} could generate almost \SI{900}{\watt\hour} of energy at \ac{BOL} on a clear day in absence of dust deposition \citepower{Badescu2009}. The rovers's propulsion power draw was approximately \SI{100}{\watt}. Two rechargeable \ac{Li-ion} NCP-8-1 \ac{NCO}-cell batteries were manufactured by Yardney and provided support to the \ac{SA} as well as enabled nighttime experiments \citepower{Badescu2009}. Each battery was configured in 8-cell \SI{10}{\ampere\hour} strings connected in parallel (8s2p). The nameplate capacity was \SI{8}{\ampere\hour} and the \ac{DOD} was designed to typically be 40‒50 \si{\percent} per Sol \citepower{Gulbinska2014}. The battery characteristics taken from \citepower{NASAEnergyStorage2017} are as follow:
+
+\begin{itemize}
+	\item Mass: \SI{7.12}{\kilo\gram}.
+	\item Operating voltage: 24‒\SI{32.8}{\volt}.
+	\item Capacity voltage: 16‒\SI{20}{\volt}.
+	\item Specific energy:\SI{90}{\watt\hour/\kilo\gram}.
+    \item Operating temperature: \SI{-20}{\celsius} to +\SI{30}{\celsius}.
+\end{itemize}
+
+The rovers were heated by eight \acp{RHU}, each of which continuously generated \SI{1}{\watt} of thermal energy. The following are notable battery operational requirements taken from \citepower{Gulbinska2014}:
 
 \begin{itemize}
   \item Maintaining the operating voltage of 24‒36 \si{\volt}.
@@ -197,7 +216,17 @@ The twin rovers generated power from their \ac{TJ} \ac{GaInP}/\ac{GaAs}/\ac{Ge} 
 \end{itemize}
 
 \subsubsection{Curiosity}
-The Curiosity rover uses the \ac{MMRTG} power system. Is is designed to initially provide around \SI{2000}{\watt} of thermal power and \SI{110}{\watt} of electrical power in a deep space environment \citepower{MMRTG}. The electrical output is used to charge its two Yardney \ac{Li-ion} NCP-42-1 \ac{NCO}-cell batteries, which have a nameplate capacity rating of \SI{42}{\ampere\hour}. Curiosity's battery cells are arranged in an 8s2p configuration, capacity voltage range is 86‒92 \si{\volt}, operating voltage range 24‒32.8 \si{\volt}, mass \SI{26.5}{\kilo\gram}, specific energy \SI{104}{\watt\hour/\kilo\gram}, and the operating temperature is from \SI{-20}{\celsius} to +\SI{30}{\celsius} \citepower{NASAEnergyStorage2017}. The following are notable battery performance requirements taken from \citepower{Smart2009}:
+The Curiosity rover uses the \ac{MMRTG} power system. Is is designed to initially provide around \SI{2000}{\watt} of thermal power and \SI{110}{\watt} of electrical power in a deep space environment \citepower{MMRTG}. The electrical output is used to charge its two Yardney \ac{Li-ion} NCP-42-1 \ac{NCO}-cell batteries, which have a nameplate capacity rating of \SI{42}{\ampere\hour}. Curiosity's battery cells are arranged in an 8s2p configuration. The battery characteristics taken from \citepower{NASAEnergyStorage2017} are as follow:
+
+\begin{itemize}
+   \item Mass: \SI{26.5}{\kilo\gram}
+   \item Operating voltage: 24‒\SI{32.8}{\volt}.
+   \item Capacity voltage: 86‒\SI{92}{\volt}.
+   \item Specific energy:\SI{104}{\watt\hour/\kilo\gram}.
+   \item Operating temperature: \SI{-20}{\celsius} to +\SI{30}{\celsius}.
+\end{itemize}
+
+The following are notable battery performance requirements taken from \citepower{Smart2009}:
 
 \begin{itemize}
   \item Operation for more than 40 months after launch and a calendar life of $>$ 4 years.

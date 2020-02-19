@@ -1,11 +1,11 @@
 Requirements and design drivers constrain the rover's \ac{SA} design. This section reviews and complements the assumptions made thus far. The selected solar cell technology and the assumptions pertaining to its \ac{BOL} and \ac{EOL} efficiencies are also presented. Further assumptions are made regarding the rover's mobility capabilities.
 
-
 \subsection{Assumptions}
 \label{sec:RequirementsAndDesignDrivers:Assumptions}
 The assumptions are:
 
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{A-\arabic*}}]
+\resetLeadingZeroCounter
+\begin{enumerate}[leftmargin=1.31cm, label=\zeroLeadCounter{A}]
     \item Propulsion power draw for flat terrain traverses is \SI{75}{\watt}.
     \item Propulsion power draw for upslope terrain traverses up to \SI{30}{\degree} inclination is \SI{150}{\watt}.
     \item Solar cell technology is \ac{IMM} solar cell with AM0 efficiency of 32.3\% at \ac{BOL} and 22.5\% at \ac{EOL} \citepower{Sharps2017}.
@@ -24,7 +24,7 @@ The assumptions are:
 \label{sec:sec:Design:RequirementsAndDesignDrivers:Requirements}
 The following considerations are taken into account to narrow down the requirements:
 
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{(\alph*)}}]
+\begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
     \item Interest in long traverses from the PERASPERA programme on space robotics \citeother{PERASPERA}.
     \item Focus on space robotics development for long autonomous traverses at \ac{DFKI} \citeother{OG6} \citeother{OG10}.
     \item Mission site at Iani Chaos is approximately \SI{100}{\kilo\meter} from closest resource deposits of interest.
@@ -34,7 +34,8 @@ The following considerations are taken into account to narrow down the requireme
 
 The following \ac{EOL} requirements apply for a mission life time of one \ac{MY}:
 
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{R-\arabic*}}]
+\resetLeadingZeroCounter
+\begin{enumerate}[leftmargin=1.30cm, label=\zeroLeadCounter{R}]
     %\item The rover shall be able to traverse flat terrain at an optical depth of $\tau = 1$.
     %\item The rover shall be able to traverse \SI{30}{\degree} inclined terrain at an optical depth of $\tau = 1$.
     \item \label{itm:req:total_distance_flat_terrain} The rover shall traverse flat terrain for a total distance of at least \SI{10}{\kilo\meter}.
@@ -44,9 +45,10 @@ The following \ac{EOL} requirements apply for a mission life time of one \ac{MY}
 
 \subsection{Constraint}
 \label{sec:Design:RequirementsAndDesignDrivers:Constraints}
-The design must allow for \textit{non-Traverse Sols} such as long science stops, intermittent hibernation periods during dust storms, battery recharging periods, or limited activities during a Solar Conjunction Break. Furthermore, traverses may only occur during daylight to allow terrain observations to be made in case of slip and skids that pass a yet to be defined threshold. The scope of this thesis consider the following constraints:
+The design must allow for \textit{non-Traverse Sols} such as long science stops, intermittent hibernation periods during dust storms, battery recharging periods, or limited activities during a solar conjunction break. Furthermore, traverses may only occur during daylight to allow terrain observations to be made. The following constraints are considered:
 
-\begin{enumerate}[label=\textbf{\textcolor{BulletBlue}{C-\arabic*}}]
+\resetLeadingZeroCounter
+\begin{enumerate}[leftmargin=1.47cm, label=\zeroLeadCounter{C}]
     \item There shall be a minimum of at least two \textit{non-Traverse Sols} between each \textit{Traverse Sol}.
     \item \label{itm:con:daylight_traverse} The rover can be in \textit{Traverse mode} only during daylight.
 \end{enumerate}
@@ -55,7 +57,8 @@ The design must allow for \textit{non-Traverse Sols} such as long science stops,
 \label{sec:Design:RequirementsAndDesignDrivers:DesignDrivers}
 The \ac{SA} design drivers are:
 
-\begin{enumerate}[leftmargin=1.31cm,label=\textbf{\textcolor{BulletBlue}{DD-\arabic*}}]
+\resetLeadingZeroCounter
+\begin{enumerate}[leftmargin=1.51cm, label=\zeroLeadCounter{D}]
     \item \label{itm:dd:limited_unfolding} Limited amount of unfolding during deployment.
     \item \label{itm:dd:shadowing} Shadowing is minimized.
     \item \label{itm:dd:end_effector} Manipulator arm end effector can access the ground.
