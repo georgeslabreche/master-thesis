@@ -4,3 +4,4 @@ rm *.blg
 bibtex marsenv.aux
 bibtex power.aux
 bibtex other.aux
+bibtex datasheet.aux

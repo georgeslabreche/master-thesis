@@ -89,9 +89,6 @@ Master Thesis%
 % Remove vertical space in all lists:
 \setlist{nosep}
 
-% Line break before a url.
-\Urlmuskip=0mu plus 1mu\relax
-
 \begin{document}
 \pagestyle{empty}
 
@@ -99,13 +96,9 @@ Master Thesis%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Title page
 \input{sections/titlepage.tex}
-%\clearpage
-%\input{sections/GutachterSeite.tex} %probably not required
-
 
 
 \cleardoublepage
-
 
 %%\pagenumbering{roman}
 \frontmatter
@@ -255,10 +248,11 @@ Master Thesis%
 \raggedright
 %\addcontentsline{toc}{chapter}{Bibliography}
 %\bibliographystyle{alpha}
-%\bibliography{../../ownPublications} % literaturverzeichnis
+
 \bibliographymarsenv{references/marsenv}
 \bibliographypower{references/power}
 \bibliographyother{references/other}
+\bibliographydatasheet{references/datasheet}
 \end{small}
 \cleardoublepage
 
@@ -290,19 +284,10 @@ Master Thesis%
 \input{sections/appendix/optimal-angles/index.tex}
 
 
-%\addcontentsline{toc}{chapter}{Accumulated Publications}
-%#%\chapter{More Stuff}
-%#%\label{sec:Appendix:MoreStuff}
-
-
 %% this is how to teak the toc:
 %% add extra spacing to get caption on next page of toc
 %\cftaddtitleline{toc}{chapter}{\vspace{5mm}}{} %extra neg. space in toc
 
-%#%\chapter{Enough!}
-%#%\label{sec:Appendix:Enough}
-
-%#%\end{appendix}
 
 
 
