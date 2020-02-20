@@ -9,6 +9,7 @@ Not all modes defined in \citeother{CDF2014} are included in this section, howev
 \begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
     \item \textbf{Traverse - Flat:} Pre-planned flat surface traverses to target destinations.
     \item \textbf{Traverse - Upslope:} Pre-planned upslope surface traverses to target destinations.
+    \item \textbf{Traverse - Downslope:} Pre-planned downslope surface traverses to target destinations.
     \item \textbf{Science Stop - Short:} Short science activities in between traverses.
     \item \textbf{\ac{DTE} Communication:} Pre-planned communication sessions.
     \item \textbf{Idle - Day:} All day dedicated to charging batteries.
@@ -16,25 +17,14 @@ Not all modes defined in \citeother{CDF2014} are included in this section, howev
     \item \textbf{Hibernation:} Survival mode during dust storms.
     \item \textbf{Optimal Pose:} Repositioning the rover along its principal yaw, pitch, and roll axes to maximized next Sol \ac{SA} power generation.
 \end{enumerate}
-%\ac{DTE} Communication operations are encapsulated as their own mode whereas \ac{UHF} Communications are mode activities conducted during \textit{Traverse}, \textit{Science Stop}, and \textit{Idle} modes.
 
-%Communication operations and their schedules were also taken from \citeother{CDF2014}:
-%\begin{itemize}
-%    \item Uplink of sol plan either early in the morning (\SI{30}{\minute} \ac{DTE} or \SI{7}{\minute} \ac{UHF}) or during the night (\SI{7}{\minute} \ac{UHF}).
-%    \item Downlink of high priority data required for planning of the next sol either in the afternoon (\SI{5}{\minute} \ac{DTE}) or during the night (\SI{7}{\minute} \ac{UHF}).
-%\end{itemize}
-
-The \textit{Optimal Pose} mode is not taken from \citeother{CDF2014}. It is created for the purpose of this study so that the rover may use its active suspension system as a \ac{SA} orienting mechanism to maximize \ac{SA} power generation. The inclination angle resulting from a pith or roll rotations is  the $\beta$ angle. The orientation angle with respect to the direction of the equator is the surface azimuth angle $\gamma_{c}$ obtained from a yaw rotations. These angles are introduced in \refSec{sec:MartianEnvironment:SolarRadiation:InclinedSurface}. Rover subsystems as well as their states during the rover modes are taken from \citeother{CDF2014} and shown in \refTab{tab:rover-modes}.
-
- %Some mode durations were adjusted from those presented in \citeother{CDF2014} in response to power budgeting constraints pertaining to the scope of this research.
+The \textit{Optimal Pose} mode is not taken from \citeother{CDF2014}. It is created for the purpose of this study so that the rover may use its active suspension system as a \ac{SA} inclination and orientation mechanism to maximize \ac{SA} power generation. The inclination angle resulting from a pith or roll rotations is  the $\beta$ angle. The orientation angle with respect to the direction of the equator is the surface azimuth angle $\gamma_{c}$ obtained from yaw rotations. These angles are introduced in \refSec{sec:MartianEnvironment:SolarRadiation:InclinedSurface}. Rover subsystems as well as their states for different rover modes are taken from \citeother{CDF2014} and shown in \refTab{tab:rover-modes}.
 
 \input{sections/design/reference-sols/tables/rover-modes.tex}
 
-
-
 \subsection{Reference Sols}
 \label{sec:ReferenceSols:ReferenceSols}
-Flat and upslope traverses are the worst-case modes in terms of energy requirements. Worst case hibernation scenarios are tied to battery charge and discharge rates during dust storms in which insufficient solar energy is generated. As such, the scope of this thesis only requires that \textit{Flat Traverse}, \textit{Upslope Traverse}, and \textit{Hibernation} be analyzed.
+Traverse modes have the highest energy requirements and are thus used to determine worst case reference Sol power budgets. For slope traverses, a downslope reference Sol power budget is not explored in favour of the worst case upslope scenario. The worst case hibernation scenario is tied to battery charge and discharge rates during dust storms during which insufficient solar energy is generated. As such, the scope of this thesis only requires that \textit{Flat Traverse}, \textit{Upslope Traverse}, and \textit{Hibernation} be analyzed.
 
 
 \subsubsection{Traverse Sol}
