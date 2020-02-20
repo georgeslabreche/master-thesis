@@ -44,7 +44,7 @@
 
 \ifthenelse{\boolean{printVersion}}
 {%if true
-    \hypersetup{hidelinks=true}
+    \hypersetup{hidelinks=true, breaklinks=true}
     %%furthermore select b/w versions of included publications in styles/appendix_publications.tex
 }
 {%else
@@ -85,10 +85,12 @@ Master Thesis%
     \setcounter{LeadingZeroCounter}{0}
 }
 
-
 \usepackage{enumitem}
-% remove the vertical space altogether inalllists:
+% Remove vertical space in all lists:
 \setlist{nosep}
+
+% Line break before a url.
+\Urlmuskip=0mu plus 1mu\relax
 
 \begin{document}
 \pagestyle{empty}
@@ -145,7 +147,7 @@ Master Thesis%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% indizes
 \begin{normalsize} %to group lists for \hypersetup
-\hypersetup{hidelinks=true} % make list black
+\hypersetup{hidelinks=true, breaklinks=true} % make list black
     \tableofcontents
     \clearpage
 
@@ -241,29 +243,6 @@ Master Thesis%
 \input{sections/conclusion-and-outlook/index.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%#%\chapter[Requirements and Design Drivers: Heterogeneous Modular Multi-Robot Systems] %%for toc
-%#%        [Design Drivers: Heterogeneous Modular Multi-Robot Systems] %% for head
-%#%        {Requirements and Design Drivers: Heterogeneous Modular \\ Multi-Robot Systems} %%for chapter page
-%#%\label{sec:ReqirementsConditions}
-%#%\shinyChapterQuote{A shiny quote for the start?}
-%#%       {If you like to.}
-%#%This is an example chapter for usage of three types of chapter headings. (see source file)
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%#%\chapter{\ElecMech Rover Design}
-%#%\label{sec:RobotDesign}
-%\acresetall                 %% reset all acronym abbreviations and write first appearance long
-%\input{sections/acused.tex} %%define ackronyms that are "common sense"
-%#%\input{sections/RobotDesign.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %% redefine headers for Bibliography
 \makeevenhead{ruled}{\itshape\leftmark}{}{}
@@ -273,6 +252,7 @@ Master Thesis%
 \addTocCaption{Bibliography}
 
 \begin{small}
+\raggedright
 %\addcontentsline{toc}{chapter}{Bibliography}
 %\bibliographystyle{alpha}
 %\bibliography{../../ownPublications} % literaturverzeichnis

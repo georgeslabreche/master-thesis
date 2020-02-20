@@ -1,4 +1,4 @@
-A distinction exists between \ac{PV} cell, panel/module, and the \ac{SA} surface area. \ac{PV} cells are interconnected together in a package called a panel, or module, which is then wired in series and parallel into a \ac{PV} array. The interconnections between cells and wiring between panels introduce cell coverage gaps from which no power is generated. As such, considering panel or array rather than cell surface area for power and energy calculations would result in over-estimated values. By way of example, \refFig{fig:image:mer-solar-arrays} presents the \ac{MER} Opportunity \ac{SA} which is made up of a total of 499 cells: 165 on the port wing, 167 on the starboard wing, 102 on the stern, and 65 on the body. A cell's dimension is $\SI{3.95}{\centi\meter} \times \SI{6.89}{\centi\meter}$ with two cropped corners. This provides an active area of \SI{26.6}{\centi\meter\squared} thus the solar cell coverage area is $499 \times \SI{26.6}{\centi\meter\squared} = \SI{1.3}{\meter\squared}$.
+A distinction exists between \ac{PV} cell, panel/module, and the \ac{SA} surface area. \ac{PV} cells are interconnected together in a package called a panel, or module, which is then wired in series and parallel into a \ac{PV} array. The interconnections between cells and wiring between panels introduce cell coverage gaps from which no power is generated. As such, considering panel or array rather than cell surface area for power and energy calculations would result in over-estimated values. By way of example, \refFig{fig:image:mer-solar-arrays} presents the \ac{MER} Opportunity \ac{SA} which is made up of a total of 499 cells: 165 on the port wing, 167 on the starboard wing, 102 on the stern, and 65 on the body. A cell's dimension is 3.95 \si{\centi\meter} $\times$  6.89 \si{\centi\meter}\footnote{Dimensions obtained from an e-mail exchange Richard C. Ewell (NASA/JPL) on 9-Oct-2019.} with two cropped corners which provides an active area of \SI{26.6}{\centi\meter\squared} resulting in a solar cell coverage area of $499 \times \SI{26.6}{\centi\meter\squared} = \SI{1.3}{\meter\squared}$.
 
 %\todo[inline]{\text{TODO:} Source E-mail exchange with Richard C. Ewell (NASA/JPL) for the MER solar cell size.}
 
@@ -25,7 +25,7 @@ A distinction exists between \ac{PV} cell, panel/module, and the \ac{SA} surface
             \label{fig:image:mer-opportunity-dust-streaks}
     \end{subfigure}\\[0.8ex]
     \caption[Opportunity solar arrays and dust streaks]
-    {Opportunity \acp{SA} and dust streaks. (a) Solar arrays. Image: \ac{NASA}/\ac{JPL}-Caltech/Cornell. (b) During a forward, uphill drive on Sol 4311 (March 10, 2016), Opportunity's tilt reached \SI{32}{\degree}. Vibrations from wheels slipping against the ground caused dust to streak down from \ac{MER} Opportunity's rear solar array while the rover was steeply tilted. Image taken on Sol 4322 (March 21, 2016). Image: \ac{NASA}/\ac{JPL}-Caltech.}
+    {Opportunity \ac{SA} and dust streaks. (a) Solar array. Image: \ac{NASA}/\ac{JPL}-Caltech/Cornell. (b) During a forward, uphill drive on Sol 4311 (March 10, 2016), Opportunity's tilt reached \SI{32}{\degree}. Vibrations from wheels slipping against the ground caused dust to streak down from \ac{MER} Opportunity's rear solar array while the rover was steeply tilted. Image taken on Sol 4322 (March 21, 2016). Image: \ac{NASA}/\ac{JPL}-Caltech.}
     \label{fig:mer-solar-arrays-and-dust-streaks}
 \vspace{-2ex}
 \end{figure}
@@ -61,7 +61,7 @@ The power output $P$ generated from a photovoltaic system is measured in Watts (
   P = A \cdot \eta \cdot G_{h} \cdot PR
 \end{equation}
 
-where $A$ is the solar cell coverage area $\eta$ their efficiency.
+where $A$ is the solar cell coverage area and $\eta$ the solar cell efficiency.
 
 The generated daily energy output $E$ is measured in Watt-hours (\si{\watt\hour}) and is obtained from the daily global insolation $H_{h}$ captured by solar cells:
 
@@ -70,7 +70,7 @@ The generated daily energy output $E$ is measured in Watt-hours (\si{\watt\hour}
   E = A \cdot \eta \cdot H_{h} \cdot PR
 \end{equation}
 
-Power and energy calculations for inclined solar arrays are obtained from $G_{\beta}$ and $I_{\beta}$. They are denoted as $P_{\beta}$ and $E_{\beta}$ respectively:
+Power and energy calculations for inclined \acp{SA} are obtained from $G_{\beta}$ and $I_{\beta}$. They are denoted as $P_{\beta}$ and $E_{\beta}$ respectively:
 
 \begin{equation}
   \label{eq:SA_slope_power}
@@ -92,17 +92,17 @@ Power and energy calculations for inclined solar arrays are obtained from $G_{\b
 \subsubsection{Horizontal Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}
 
-In order to validate the formulas presented in \refSec{sec:PowerAndEnergyPredictions:Predictions}, \ac{MER} Opportunity status update parameters are applied to the daily energy calculation presented in \refEqn{eq:SA_energy}. The following data is scraped from the rover's status update website for Mars years \ac{MY}29 through \ac{MY}33:
+In order to validate the formulae presented in \refSec{sec:PowerAndEnergyPredictions:Predictions}, \ac{MER} Opportunity status update parameters are applied to the daily energy calculation presented in \refEqn{eq:SA_energy}. The following information is scraped from the rover's status update website for Mars years \ac{MY}29 through \ac{MY}33  \citeother{MERRoverUpdateArchive}:
 
 \begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
   \item Sol: the mission's Martian day when the status report was made.
   \item Terrestrial date: the date on Earth when the status report was made.
-  \item Atmospheric opacity: the $\tau$ factor introduced in  \refSec{sec:MartianEnvironment:Dust:AtmosphericOpacity}.
+  \item Atmospheric opacity: the $\tau$ factor, introduced in  \refSec{sec:MartianEnvironment:Dust:AtmosphericOpacity}.
   \item \ac{SA} dust factor: a value between 0 and 1 with the latter represents perfectly clean \acp{SA}.
   \item Daily energy production: in Watt-hours (\si{\watt\hour}).
 \end{enumerate}
 
-For the purpose of insolation calculations, the areocentric longitude $L_{s}$ is determined from the terrestrial date based on the process and equations in \citeother{Allison2000}. The resulting predicted energy production is then compared to the rover's reported daily energy production. These are presented for selected Mars years in \refFig{fig:plot:mer-energy-production-predicted-vs-reported}. A clear outlier is observed during the second half of \ac{MY}33 in which predicted daily energy productions are much higher than reported. This is due to the rover's inclined descent through ``Bitterroot Valley'' during an intensive investigation into a gully at Endeavour Crater's western rim. Energy production predictions with horizontal surface \refEqn{eq:SA_energy} not suited due to the inclination and orientation of such a descent. Applying \refEqn{eq:SA_slope_energy} for $E_{\beta}$ would be more applicable. As such, data from \ac{MY}33 is not considered in the validation exercise for horizontal surfaces.
+For the purpose of insolation calculations, the areocentric longitude $L_{s}$ is determined from the terrestrial date based on the process and equations in \citeother{Allison2000}. The resulting predicted energy production is then compared to the rover's reported daily energy production. These are presented for selected Mars years in \refFig{fig:plot:mer-energy-production-predicted-vs-reported}. A clear outlier is observed during the second half of \ac{MY}33 in which predicted daily energy productions are much higher than reported. This is due to the rover's inclined descent through ``Bitterroot Valley'' during an intensive investigation into a gully at Endeavour Crater's western rim. Energy production predictions with horizontal surface \refEqn{eq:SA_energy} are not suited due to the inclination and orientation of such a descent. Applying \refEqn{eq:SA_slope_energy} for $E_{\beta}$ would be more applicable. As such, data from \ac{MY}33 is not considered in the validation exercise for horizontal surfaces. Not included in \refFig{fig:plot:mer-energy-production-predicted-vs-reported} is data for \ac{MY}34 during which the rover spent most of the year driving down ``Perseverance Valley'' on the west rim of Endeavour Crater. As with \ac{MY}33, applying \refEqn{eq:SA_energy} for the \ac{MY}34 would not be appropriate considering the rover's inclination during descents and is not considered in the validation exercise for horizontal surfaces.
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -146,15 +146,14 @@ For the purpose of insolation calculations, the areocentric longitude $L_{s}$ is
 \vspace{-2ex}
 \end{figure}
 
-Not included in \refFig{fig:plot:mer-energy-production-predicted-vs-reported} is data for \ac{MY}34 during which the rover spent most of the year driving down ``Perseverance Valley'' on the west rim of Endeavour Crater. As with \ac{MY}33, applying \refEqn{eq:SA_energy} for the \ac{MY}34 would not be appropriate considering the rover's inclination during descents and is not considered in the validation exercise for horizontal surfaces.
-
 Divergences of the measured energy production from those calculated are presented in \refFig{fig:plot:mer-energy-prediction-divergences}. A \SI{-33}{\percent}/+\SI{7}{\percent} error margin range is observed. \refFig{fig:plot:binned-error-margins} bins the distribution of divergences across the \SI{-33}{\percent}/+\SI{7}{\percent} error margin range into \SI{5}{\percent} increments. \SI{65.5}{\percent} of the divergences occur within a \SI{-10}{\percent}/\SI{0}{\percent} error margin and \SI{90.7}{\percent} within \SI{-15}{\percent}/+\SI{5}{\percent}. The wide error margin range is thus a result of isolated local maxima outliers, notably at Sol 2204 (\SI{-33}{\percent}), 2218 (\SI{-27}{\percent}), 2519 (\SI{-28}{\percent}), and 3901 (\SI{-24}{\percent}).
 
-\vspace{1cm}
+\clearpage
+\vspace{2cm}
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
-\vspace{-2ex}
+%\vspace{-2ex}
 \centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
@@ -182,13 +181,7 @@ Divergences of the measured energy production from those calculated are presente
 
 \vspace{0.5cm}
 
-Divergences that are beyond \SI{-20}{\percent} are listed in \refTab{tab:divergences-less-than-m20pc}.
-
-\input{sections/mars-solar-energy/photovoltaic-energy/tables/divergences-less-than-m20pc.tex}
-
-\vspace{0.5cm}
-
-With the exception of Sol 2199 and 2218, possible explanations for large divergences beyond \SI{-20}{\percent} are obtained from MER Opportunity's status logs:
+Divergences that are beyond \SI{-20}{\percent} are listed in \refTab{tab:divergences-less-than-m20pc}. With the exception of Sol 2199 and 2218, possible explanations for large divergences beyond \SI{-20}{\percent} are obtained from \ac{MER} Opportunity's status logs \citeother{MERRoverUpdateArchive}:
 
 \begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
   \item Sol 2199: No turns or inclinations reported.
@@ -201,40 +194,42 @@ With the exception of Sol 2199 and 2218, possible explanations for large diverge
 
 \vspace{0.5cm}
 
+\input{sections/mars-solar-energy/photovoltaic-energy/tables/divergences-less-than-m20pc.tex}
+
+\vspace{0.5cm}
+
 %\todo[inline]{\textbf{TODO:} Source MER Opportunity status log.}
 %Sources. For terrestrial year 2010: https://mars.nasa.gov/mer/mission/rover-status/opportunity/2010/
-
 The use of fixed daily values for the certain irradiance calculation variables also contributes to the observed divergences:
-
+\clearpage
 \begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
   \item A fixed $\tau$ factor does not reflect the continuous changes in atmopheric optical depth.
   \item A fixed solar array dust factor does not reflect the irregularity of dust deposition over the entirety of the solar cell coverage area.
   \item A fixed shadowing performance loss coefficient does not reflect the diurnal changes in overshadowed area. Overshadowing changes throughout the day due to the position of the sun with respect to the location of the rover's petruding instruments, notably the \ac{PMA} as well as the low-gain and high-gain antennas.
 \end{enumerate}
 
-Attempts to narrow down the error margin range by adjusting the reported dust factor as well as shadowing and other losses are described in \refApp{sec:Appendix:EnergyErrorMargin}. However, these attempts resulted in overly conservative energy predictions and will not be applied. By setting aside outliers causing divergences greater than \SI{5}{\percent} and lesser than \SI{-15}{\percent} obtained with only \SI{9.2}{\percent} of the dataset, the predicted energy production obtained with \refEqn{eq:SA_energy} becomes acceptable for preliminary mission scenario analysis on a horizontal surfaces.
+Attempts to narrow down the error margin range by adjusting the reported dust factor as well as shadowing and other losses are described in \refApp{sec:Appendix:EnergyErrorMargin}. However, these attempts resulted in overly conservative energy predictions and will not be applied. By setting aside outliers causing divergences greater than \SI{5}{\percent} and lesser than \SI{-15}{\percent} that apply to only \SI{9.2}{\percent} of the dataset. The predicted energy production obtained with \refEqn{eq:SA_energy} is thus acceptable for preliminary mission scenario analysis on horizontal surfaces.
 
 \subsubsection{Inclined Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:InclinedSurface}
 
 \refEqn{eq:SA_slope_energy} for energy predictions on an inclined surface requires slope and rover orientation angles in order to determine $H_{\beta}$. However, these parameters are seldom reported in the \ac{MER} Opportunity status updates. Cherry-picked energy production measurements made while \ac{MER} Opportunity's descent and ascent of Endaveaour crater during \ac{MY}33 is used in an attempt to validate predictions made with \refEqn{eq:SA_slope_energy}. These measurements are selected based on traverse phases that preserved consistent orientations which could be more reliable measured from the rover's Traverse Map Archive \citeother{OpportunityTraverseMapArchive}:
 
-An average slope angle of 13 degrees is assumed based on the following:
+An average slope angle of \SI{13}{\degree} is assumed based on the following:
 \begin{itemize}
   \item On Sol 4269 and 4270, \ac{MER} Opportunity status logs reported that the rover climbed slopes close to \SI{30}{\degree} near the crest of ``Knudsen Ridge'', reaching \SI{32}{\degree} on March 10, 2016 (Sol 4310).
   \item An image taken in March 22, 2016 (Sol 4322), was rotated \SI{13.5}{\degree} degrees to adjust for the tilt of the rover.
   \item Perseverance Valley extends downhill at around \SI{15}{\degree} for about \SI{200}{\meter} toward Endeavour crater's interior.
 \end{itemize}
 
-As in \refSec{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}, performance ratios described in \refSec{sec:PowerAndEnergyPredictions:PerformanceRatio} are also used. Due to large uncertainties regarding slope rover orientation angles, this section only aims to validate that \refEqn{eq:SA_slope_energy} results in smaller energy predictions divergences than what would otherwise be obtained using \refEqn{eq:SA_energy}. The results are presented in \refTab{tab:divergences-inclined-surfaces}.
+As in \refSec{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}, performance ratios described in \refSec{sec:PowerAndEnergyPredictions:PerformanceRatio} are also used. Due to large uncertainties regarding rover inclination and orientation angles, this section only aims to validate that \refEqn{eq:SA_slope_energy} results in smaller energy predictions divergences than what would otherwise be obtained using \refEqn{eq:SA_energy}. The results are presented in \refTab{tab:divergences-inclined-surfaces}.
 
 
 \input{sections/mars-solar-energy/photovoltaic-energy/tables/divergences-inclined-surfaces.tex}
 
-\refEqn{eq:SA_slope_energy} resulted in a larger divergence range than with \refEqn{eq:SA_energy} at \SI{-30}{\percent}/\SI{32}{\percent} for the former and \SI{-45}{\percent}/\SI{-27}{\percent}for the latter. However, the magnitude of divergences are smaller with \refEqn{eq:SA_slope_energy}. Furthermore, with the exception of Sol 4582, divergences with \refEqn{eq:SA_slope_energy} result in conservative under-estimated energy predictions rather than the worst-case over-estimated values consistently obtained with \refEqn{eq:SA_energy}.
+\refEqn{eq:SA_slope_energy} resulted in a larger divergence range than with \refEqn{eq:SA_energy} at \SI{-30}{\percent}/\SI{32}{\percent} for the former and \SI{-45}{\percent}/\SI{-27}{\percent} for the latter. However, the magnitude of divergences are smaller with \refEqn{eq:SA_slope_energy}. Furthermore, with the exception of Sol 4582, divergences with \refEqn{eq:SA_slope_energy} result in conservative under-estimated energy predictions rather than the worst-case over-estimated values consistently obtained with \refEqn{eq:SA_energy}.
 
-
-The pool of measured data used for this validation is much too small to draw convincing conclusions and the magnitude of divergences remain significantly large. Inaccurate slope and rover orientation angles are likely to have contributed to unfavourable results. Further data must be obtained to validate \refEqn{eq:SA_slope_energy} against reported measurements. %However, for the purpose of this thesis, mission scenario analysis on inclined surfaces will still rely on predictions obtained with \refEqn{eq:SA_slope_energy} in light of it being derived from applying solar geometry to \refEqn{eq:SA_energy}, with which favourably results were obtained as described in \refSec{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}.
+The pool of measured data used for this validation is much too small to draw convincing conclusions. Furthermore, the magnitude of divergences remain significantly large. Inaccurate rover inclination and orientation angles are likely to have contributed to unfavourable results. Accurate rover position data is required in order to convincingly validate \refEqn{eq:SA_slope_energy} against reported measurements. However, \refEqn{eq:SA_slope_energy} is still used for this thesis on the basis that it is derived from applying solar geometry to \refEqn{eq:SA_energy}.
 
 % [z] Rover traverse map. [https://mars.nasa.gov/mer/mission/traverse-maps/opportunity/]
 % [a] https://mars.nasa.gov/mer/mission/rover-status/opportunity/recent/all/?y=2016
