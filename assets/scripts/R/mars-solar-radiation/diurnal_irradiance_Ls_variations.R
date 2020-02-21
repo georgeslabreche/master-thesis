@@ -18,10 +18,12 @@ Ls_WS = 270     # Winter Solstice - Dust Storm Season.
 
 # Data plotting order.
 Ls_seq = c(Ls_VE, Ls_SS, Ls_AE, Ls_WS)
+Ls_lty = c(4, 3, 2, 1)
 Ls_lbl_seq = c('Vernal Equinox', 'Summer Solstice', 'Autumn Equinox', 'Winter Solstice')
 
 # Legend rendering order.
 Ls_legend_seq = c(Ls_WS, Ls_AE, Ls_VE, Ls_SS)
+Ls_legend_lty = c(1, 2, 4, 3)
 Ls_lbl_legend_seq = c('Winter Solstice', 'Autumn Equinox', 'Vernal Equinox', 'Summer Solstice')
 
 # Color blind friendly colors.
@@ -45,6 +47,7 @@ for(Ls in Ls_seq){
        xlab="", ylab="",
        ylim=c(0, 700),
        lwd=1.5,
+       lty=Ls_lty[Ls_index],
        col=colors[Ls_index])
 
   Ls_index = Ls_index + 1
@@ -53,7 +56,8 @@ for(Ls in Ls_seq){
 legend("bottom",
        inset=0.05,
        legend=paste0(Ls_lbl_legend_seq, ", Ls=", Ls_legend_seq, "°"),
-       col=colors_legend, lty=1, lwd=1, cex=0.6)
+       col=colors_legend, lwd=1, cex=0.6,
+       lty=Ls_legend_lty)
 
 title(xlab="Solar Time [h]",
       ylab="Irradiance, Gobh [W/m²]")
