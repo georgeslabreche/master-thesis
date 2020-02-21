@@ -6,7 +6,7 @@ Propulsion power draw refers to the summation of suspension and drive motor powe
 
 \subsubsection{Flat Terrain Traverse}
 \label{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse}
-Both \ac{MER} and \ac{MSL} rovers are equipped with a total of 10 propulsion motors to drive their rocker-bogie passive suspension system: six to rotate the wheels and four to steer them \citeother{Novak2005} \citeother{Lakdawalla2018}. The \ac{MER} rovers needed approximately \SI{100}{\watt} to drive \citeother{MERRoverEnergy}. \refEqn{eq:InitialPropulsionPowerEstimate} is used as a crude projection of SherpaTT propulsion power draw. This approach uses a single \ac{MER} wheel power draw as the unit of estimation. The resulting power draw estimate will be used to gauge the power draw conclusions extracted from the Utah field trials datasets.
+Both \ac{MER} and \ac{MSL} rovers are equipped with a total of 10 propulsion motors to drive their rocker-bogie passive suspension system: six to rotate the wheels and four to steer them \citeother{Novak2005} \citeother{Lakdawalla2018}. The \ac{MER} rovers needed approximately \SI{100}{\watt} to drive \citeother{MERRoverEnergy}. \refEqn{eq:InitialPropulsionPowerEstimate} is used as a crude projection of SherpaTT propulsion power draw. This approach uses a single \ac{MER} wheel power draw as the unit of estimation. The resulting power draw estimate is used to gauge the power draw conclusions extracted from the Utah field trials datasets.
 
 \begin{align}
   \label{eq:InitialPropulsionPowerEstimate}
@@ -119,7 +119,7 @@ A worst case daily insolation for an optical depth of $\tau = 1$ is used to dete
 \subsubsection{Flat Traverse}
 \label{sec:Design:PowerBudget:TraversePowerBudget:FlatTraverse}
 
-Power and duration of \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Hibernation} modes are taken from \citeother{CDF2014} and assigned to the reference Sols presented in Section \ref{sec:ReferenceSols:ReferenceSols}. Power draw estimates made in \refSec{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse} and \refSec{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse} are used for \textit{Traverse} modes. Power draw for the \textit{Optimal Pose} mode is equated to that of the rover's flat terrain propulsion power. This mode is estimated to require up to \SI{10}{\minute} to complete.
+Power and duration of \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Hibernation} modes are taken from \citeother{CDF2014} and assigned to the reference Sols presented in \refSec{sec:ReferenceSols:ReferenceSols}. Power draw estimates made in \refSec{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse} and \refSec{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse} are used for \textit{Traverse} modes. Power draw for the \textit{Optimal Pose} mode is equated to that of the rover's flat terrain propulsion power. This mode is estimated to require up to \SI{10}{\minute} to complete.
 
 The worst case power budget for the reference \textit{Flat Traverse Sol} is shown in \refTab{tab:worst-case-traverse-sol-power-budget}. The total energy requirements for these worst case reference Sols are used as the minimum energy output when sizing the \ac{SA}. A \SI{20}{\percent} system margin is applied to account for inefficiencies such as \ac{PCDU} losses.
 
