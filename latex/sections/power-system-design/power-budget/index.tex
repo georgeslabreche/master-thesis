@@ -57,7 +57,7 @@ Propulsion power draws on a steep uplsope were measured along an approximately \
 \clearpage
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
-\vspace{-2ex}
+\vspace{-1ex}
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.32\textwidth}
@@ -89,24 +89,26 @@ Propulsion power draws on a steep uplsope were measured along an approximately \
 \vspace{-2ex}
 \end{figure}
 
+\vspace{0.1cm}
 
 An uplsope traverse has no discernable effect on the suspension power draw, however; there is a clear gradual increase in the drive power draw. The global maximum, minimum, and medium of the traced local minima, maxima, and media power draw lines are presented in \refTab{tab:sherpatt-upslope-terrain-global-minimum-maximum-and-medium-power-draws}.
 
+\vspace{0.1cm}
+
 \input{sections/power-system-design/power-budget/tables/upslope-terrain-global-minimum-maximum-and-medium-power-draws.tex}
 
-\refFig{fig:plot:sherpatt-upslope-terrain-power-draw} overlaps the propulsion local media power draws with the tackled slope angles. The steepest slope angle is \SI{28}{\degree} for an average of \SI{17.52}{\degree}. Slope angle increases are consistently followed by power draw spikes, i.e. at approximately 3, 4, 5, 6, 8, and 9 \si{\meter} in the odometry measurements. Inversely, slope angle decreases are followed by power draws troughs at approximately 11, 13, 14, and 16 \si{\meter}. Slope angles are measured in \SI{1}{meter} discrete intervals.
+\refFig{fig:plot:sherpatt-upslope-terrain-power-draw} overlaps the propulsion local minima power draws with the tackled slope angles. The steepest slope angle is \SI{28}{\degree} for an average of \SI{17.52}{\degree}. Slope angle increases are consistently followed by power draw spikes, i.e. at approximately 3, 4, 5, 6, 8, and 9 \si{\meter} in the odometry measurements. Inversely, slope angle decreases are followed by power draws troughs at approximately 11, 13, 14, and 16 \si{\meter}. Slope angles are measured in \SI{1}{meter} discrete intervals. The power draws trough following the slope angle change from \SI{28}{\degree} to \SI{20}{\degree} at the \SI{11}{\meter} mark is subsequently followed by an unusual power draw increase and fluctuation. These measurements are discarded as outliers.
 
 \begin{figure}[h]
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.8\linewidth]{sections/power-system-design/power-budget/plots/minima-locomotion-power-draws-on-upslope-terrain.png}\\
-  \caption[Mean propulsion power draw for an upslope terrain traverse]
-          {Mean propulsion power draw for an upslope terrain traverse during SherpaTT Utah field test campaign.}
+  \includegraphics[width=0.65\linewidth]{sections/power-system-design/power-budget/plots/minima-locomotion-power-draws-on-upslope-terrain.png}\\
+  \caption[Propulsion power draw for upslope terrain traverse]
+          {Propulsion power draw for upslope terrain traverse at SherpaTT Utah campaign.}
   \label{fig:plot:sherpatt-upslope-terrain-power-draw}
 \end{figure}
 
-
-The power draws trough following the slope angle change from \SI{28}{\degree} to \SI{20}{\degree} at the \SI{11}{\meter} mark is subsequently followed by an unusual power draw increase and fluctuation. These measurements are discarded as outliers. \refTab{tab:sherpatt-upslope-terrain-local-media-measurement-summary} summarizes the minimum, maximum, and mean local media propulsion power draws that are measured for different slope angles. Discarding the outlier measurements subsequent to the slope angle change from \SI{28}{\degree} to \SI{20}{\degree} at the \SI{11}{\meter} to \SI{13}{\meter} portion of the track, the maximum mean local media propulsion power draw is \SI{146}{\watt}. This is close agreement with the initial estimate of \SI{132}{\watt} obtained with \refEqn{eq:InitialPropulsionPowerEstimate}. From these observations, a worst case power draw of \SI{150}{\watt} is considered for rover propulsion during upslope terrain traverses.
+The minimum, maximum, and mean local media propulsion power draws that are measured for different slope angles are summarized in \refTab{tab:sherpatt-upslope-terrain-local-media-measurement-summary}. Discarding the outlier measurements subsequent to the slope angle change from \SI{28}{\degree} to \SI{20}{\degree} at the \SI{11}{\meter} to \SI{13}{\meter} portion of the track, the maximum mean local media propulsion power draw is \SI{146}{\watt}. This is close agreement with the initial estimate of \SI{132}{\watt} obtained with \refEqn{eq:InitialPropulsionPowerEstimate}. From these observations, a worst case power draw of \SI{150}{\watt} is considered for rover propulsion during upslope terrain traverses.
 
 \input{sections/power-system-design/power-budget/tables/upslope-terrain-local-media-measurement-summary.tex}
 
@@ -117,18 +119,18 @@ A worst case daily insolation for an optical depth of $\tau = 1$ is used to dete
 \subsubsection{Flat Traverse}
 \label{sec:Design:PowerBudget:TraversePowerBudget:FlatTraverse}
 
-Power and duration of \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Hibernation} modes are taken from \citeother{CDF2014} and assigned to the reference Sols presented in Section \ref{sec:ReferenceSols:ReferenceSols}. Power draw estimates made in \refSec{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse} and \refSec{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse} are used for \textit{Traverse} modes. Power draw for the \textit{Optimal Pose} mode is equated to that of the rover's flat terrain propulsion power. This mode is estimated to require up to \SI{10}{\minute} to complete. The worst case power budget for the reference \textit{Flat Traverse Sol} is shown in \refTab{tab:worst-case-traverse-sol-power-budget}.
+Power and duration of \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Hibernation} modes are taken from \citeother{CDF2014} and assigned to the reference Sols presented in Section \ref{sec:ReferenceSols:ReferenceSols}. Power draw estimates made in \refSec{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse} and \refSec{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse} are used for \textit{Traverse} modes. Power draw for the \textit{Optimal Pose} mode is equated to that of the rover's flat terrain propulsion power. This mode is estimated to require up to \SI{10}{\minute} to complete.
+
+The worst case power budget for the reference \textit{Flat Traverse Sol} is shown in \refTab{tab:worst-case-traverse-sol-power-budget}. The total energy requirements for these worst case reference Sols are used as the minimum energy output when sizing the \ac{SA}. A \SI{20}{\percent} system margin is applied to account for inefficiencies such as \ac{PCDU} losses.
 
 \input{sections/power-system-design/power-budget/tables/worst-case-power-budget-flat-traverse-sol-tau-1.tex}
 
-The total energy requirements for these worst case reference Sols are used as the minimum energy output when sizing the \ac{SA}. A \SI{20}{\percent} system margin is applied to account for inefficiencies such as \ac{PCDU} losses.
 
 \subsubsection{Upslope Traverse}
 \label{sec:Design:PowerBudget:TraversePowerBudget:UpslopeTraverse}
-The worst case upslope traverse reference Sols shown in \refTab{tab:worst-case-upslope-traverse-sol-power-budget} only differ from their flat traverse equivalents by the \textit{Traverse mode} power draw. It is increased from \SI{75}{\watt} to \SI{150}{\watt}. These worst case reference Sols were are considered in \ac{SA} sizing. Regardless, they are presented for the sake of comparative analysis with the flat traverse equivalent.
+The upslope traverse reference Sol shown in \refTab{tab:worst-case-upslope-traverse-sol-power-budget} differs from the flat traverse by its \textit{Traverse mode} power draw. It is increased from \SI{75}{\watt} to \SI{150}{\watt}. This reference Sol is not considered in the power budget for \ac{SA} sizing. Regardless, it is presented for the sake of comparative purposes against the flat traverse Sol.
 
 \input{sections/power-system-design/power-budget/tables/worst-case-power-budget-upslope-traverse-sol-tau-1.tex}
-
 
 
 \subsubsection{Hibernation}
@@ -139,4 +141,4 @@ The power budget for the reference \textit{Hibernation Sol} is shown in \refTab{
 
 \subsection{Summary}
 \label{sec:PowerBudget:Summary}
-The rover's propulsion power performance was extracted from data collected during the Utah field trials. Reference sols were formalized and a power draw analysis was undertaken in order to determine the rover's worst case energy requirements during traverse and hibernation Sols.
+The rover's propulsion power performance is extracted from data collected during the Utah field trials. Reference sols are formalized and a power draw analysis undertaken in order to determine the rover's worst case energy requirements during traverse and hibernation Sols.
