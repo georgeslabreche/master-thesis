@@ -1,5 +1,4 @@
-%\input{sections/mars-solar-energy/solar-radiation/references.tex}
-%\todo[inline]{\textbf{TODO:} Write section introduction.}
+Solar radiation on Mars is made of beam and diffuse components. Designing \ac{PV} power systems for surface operations requires an understanding of the characteristics of these components as well as how they are affected by the Martian atmosphere.
 
 \subsection{Seasons}
 \label{sec:MartianEnvironment:Seasons}
@@ -9,7 +8,6 @@ The red planet's axis is tilted away from the sun at \SI{25}{\degree}. Very much
 
 A Martian day, known as a Sol, is approximately 40 minutes longer than an Earth day. Mars' position on its orbit is described in terms of areocentric longitude of the Sun, $L_{s}$, and is measured Eastwards from $L_{s} = \SI{0}{\degree}$ at the northern hemisphere's Vernal equinox. The transition of Martian seasons are presented in \refTab{tab:mars-seasonal-advances} with respect to areocentric longitudes.
 
-\clearpage
 \subsection{Dust}
 \label{sec:MartianEnvironment:Dust}
 The Martian surface is aeolianly active with varying concentration of airborn dust throughout the year due to processes of dust lifting, transportation, and deposition \citemarsenv{Kahre2006}.
@@ -34,7 +32,7 @@ The Martian surface is aeolianly active with varying concentration of airborn du
             \label{fig:image:global-dust-storm-timing}
     \end{subfigure}
     \caption[Simulated views of dusty atmosphere and timing of global dust storms]
-    {Simulated views of dusty atmosphere and timing of global dust storms. (a) From left to right, $\tau$ factors of 1, 3, 5, 7, 9, and 11. Credits: NASA/JPL-Caltech/TAMU. (b) Timing of observed global dust storms is concentrated in the season near the periphelion. Taken from \citemarsenv{Smith2019}.}
+    {Simulated views of dusty atmosphere and timing of global dust storms. (a) From left to right, $\tau$ factors of 1, 3, 5, 7, 9, and 11. Image: NASA/JPL-Caltech/TAMU. (b) Timing of observed global dust storms is concentrated in the season near the periphelion. Taken from \citemarsenv{Smith2019}.}
     \label{fig:dust}
 \vspace{-2ex}
 \end{figure}
@@ -53,20 +51,21 @@ Global dust storms that cover an area of over \SI{e7}{\kilo\meter\squared} have 
 \subsection{Solar Radiation}
 \label{sec:MartianEnvironment:SolarRadiation}
 
-%\todo[inline]{\textbf{TODO:} Short introduction on Solar Radiation.}
 The Martian surface radiation profiles showcased throughout this section are for a planetary latitudes of \SI{2}{\degree}S, \SI{34}{\degree}S, and \SI{34}{\degree}N. Calculations presented in this section as well as their nomenclatures are taken from \citemarsenv{Appelbaum1989}, \citemarsenv{Appelbaum1990}, \citemarsenv{Appelbaum1991}, \citemarsenv{Appelbaum1993}, and \citemarsenv{Appelbaum1994} where profiles at \ac{VL1} and \ac{VL2} locations are presented.
 
 \subsubsection{Irradiance}
 \label{sec:MartianEnvironment:SolarRadiation:Irradiance}
 
-Beam irradiance is the total solar flux density expressed in \si{Wm^{-2}}. It is a measure of solar radiation from direct sunlight. At the top of the Martian atmosphere the instantaneous beam irradiance, $G_{ob}$, is a function the areocentric longitude $L_{s}$:
+Beam irradiance is the total solar flux density expressed in \si{Wm^{-2}}. It is a measure of solar radiation from direct sunlight. At the top of the Martian atmosphere the instantaneous beam irradiance, $G_{ob}$, is a function the areocentric longitude $L_{s}$ and is shown in \refEqn{eq:G_ob}.
 
 \begin{equation}
   \label{eq:G_ob}
-  G_{ob} = 590 \frac{[1 + e \cos{(Ls - 248)}]^2}{(1-e^2)^2}
+  G_{ob} = 590 \frac{[1 + e \cos{(L_{s} - 248)}]^2}{(1-e^2)^2}
 \end{equation}
 
 Where \SI{590}{Wm^{-2}} is the mean beam irradiance at the top of the Martian atmosphere, $L_{s} - \SI{248}{\degree}$ is the true anomaly, and $e$ is the Mars eccentricity. The variation of $G_{ob}$ is presented in \refFig{fig:plot:beam-irradiance-top-of-mars-atmosphere}. At its closest, during the perihelion at $L_{s} = \SI{248}{\degree}$, Mars is at a distance of \SI{1.381}{\astronomicalunit} from the Sun with an irradiance on top of its atmosphere reaching a maximum of \SI{718}{Wm^{-2}}. At its furthest of 1.67\si{\astronomicalunit}, during the aphelion at $L_{s} = \SI{71}{\degree}$, the irradiance reaches its minimum of \SI{494}{Wm^{-2}}.
+
+\vspace{0.3cm}
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -96,27 +95,23 @@ Where \SI{590}{Wm^{-2}} is the mean beam irradiance at the top of the Martian at
 \vspace{-2ex}
 \end{figure}
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
-Further parameterization is necessary in order to measure irradiance on a horizontal surface at the top Mars atmosphere where the solar zenith angle $z$ is considered. The solar zenith angle itself is a function of planetary latitude $\phi$, declination angle $\delta$, and hour angle $\omega$ measured from the true noon westward \citemarsenv{Appelbaum1990}. Expressed as $G_{obh}$, it is presented in \refEqn{eq:G_obh}:
+Further parameterization is necessary in order to measure irradiance on a horizontal surface at the top Mars atmosphere where the solar zenith angle $z$ is considered. The solar zenith angle itself is a function of planetary latitude $\phi$, declination angle $\delta$, and hour angle $\omega$ measured from the true noon westward \citemarsenv{Appelbaum1990}. Expressed as $G_{obh}$, it is presented in \refEqn{eq:G_obh}.
 
 \begin{equation}
   \label{eq:G_obh}
   G_{obh} = G_{ob}\cos{(z)}
 \end{equation}
 
-where $z$ is given by:
+where the Sun zenith angle $z$ is given by \refEqn{eq:cosz}.
 
 \begin{equation}
   \label{eq:cosz}
   \cos{(z)} = \sin{(\phi)}\sin{(\delta)} + \cos{(\phi)}\cos{(\delta)}\cos{(\omega)}
 \end{equation}
 
-Solar radiation calculations using \refEqn{eq:G_obh} as a function of solar time are presented in \refFig{fig:plot:diurnal-variation-of-beam-irradiance-on-a-horizontal-surface-at-top-of-mars-atmosphere}. Obtaining the irradiance on the surface of Mars requires the atmospheric opacity $\tau$ as an additional parameter. A distinction exists between global, beam, and diffuse irradiance where global irradiance $G_{h}$ is the sum of beam, $G_{bh}$, and diffuse irradiances, $G_{dh}$:
-
-%\todo[inline]{\textbf{TODO:} Explain scattering and diffuse irradiance.}
-
-% TOOD: Mention scattering: https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20040191326.pdf
+Solar radiation calculations using \refEqn{eq:G_obh} as a function of solar time are presented in \refFig{fig:plot:diurnal-variation-of-beam-irradiance-on-a-horizontal-surface-at-top-of-mars-atmosphere}. Obtaining the irradiance on the surface of Mars requires the atmospheric opacity $\tau$ as an additional parameter. As shown in \refEqn{eq:G_h_1}, the global irradiance $G_{h}$ is the sum of beam, $G_{bh}$, and diffuse irradiances, $G_{dh}$.
 
 \begin{equation}
   \label{eq:G_h_1}
@@ -137,11 +132,7 @@ where $f(z,\tau)$ is the normalized net flux function derived from the net solar
   G_{bh} = G_{ob}\cos{(z)}\exp\left(\frac{-\tau}{cos{(z)}}\right)
 \end{equation}
 
-\vspace{0.5cm}
-
 Diurnal irradiance profiles are presented in \refFig{fig:plot:irradiances-phi} for a clear day during the perihelion. At $L_{s} = \SI{248}{\degree}$, the northern hemisphere is in mid-Autumn whereas the southern hemisphere in mid-Spring. As such, irradiances are much larger at \SI{34}{\degree}S than at \SI{34}{\degree}N.
-
-\vspace{0.5cm}
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -171,7 +162,6 @@ Diurnal irradiance profiles are presented in \refFig{fig:plot:irradiances-phi} f
 \vspace{-2ex}
 \end{figure}
 
-\clearpage
 \subsubsection{Insolation}
 \label{sec:MartianEnvironment:SolarRadiation:Insolation}
 
@@ -222,10 +212,11 @@ Solar insolation is the amount of solar radiation incident on a surface for a gi
 
 Global, beam, and diffuse insolations on a horizontal Mars surface are denoted as $I_{h}$, $I_{bh}$, and $I_{dh}$ respectively. Their values are obtained by integrating \refEqn{eq:G_h_2} for $I_{h}$ and \refEqn{eq:G_bh} for $I_{bh}$. Diffuse insolation $I_{dh}$ is obtained through the same relationship presented in \refEqn{eq:G_h_1}. The variation of insolation as a function of $L_{s}$ for different levels of atmospheric opacities are illustrated in \refFig{fig:plot:insolation-ls}. The insolation curves peak at the perihelion with $L_{s} = \SI{248}{\degree}$ and reach their lowest during the aphelion with $L_{s} = \SI{71}{\degree}$. Due to light scattering by airborn dust \citemarsenv{Merikallio2013}, diffuse insolation is already the largest component contributing to the global insolation at $\tau = 1$. On a dusty day at $\tau = 3$, global insolation is mostly diffuse. Daily insolations are obtained when $\omega_1$ and $\omega_2$ are set for a time period between sunrise and sunset. These are denoted as $H_{h}$, $H_{bh}$, and $H_{dh}$ for global, beam, and diffuse insolations on Mars horizontal surface and $H_{obh}$ for a horizontal surface at the top of Mars atmosphere. Similarly to $I_{dh}$, the daily diffuse insolations $H_{dh}$ is obtained from the relationship presented in \refEqn{eq:G_h_1}.
 
+\vspace{0.5cm}
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
-%\vspace{-2ex}
+\vspace{-2ex}
 \centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
@@ -251,6 +242,8 @@ Global, beam, and diffuse insolations on a horizontal Mars surface are denoted a
 \vspace{-2ex}
 \end{figure}
 
+\vspace{0.5cm}
+
 Diurnal profiles are presented in \refFig{fig:plot:insolation-phi} to illustrate insolation variations at the aphelion during a clear Martian day. At $L_{s} = \SI{71}{\degree}$, it is Autumn in the northern hemisphere where insolations are much greater than in the southern hemisphere. Additionally, more daylight is available at \SI{34}{\degree}N than at \SI{34}{\degree}S.
 
 \subsubsection{Inclined Surface}
@@ -258,26 +251,25 @@ Diurnal profiles are presented in \refFig{fig:plot:insolation-phi} to illustrate
 
 Hitherto the irradiance and insolation calculations on the surface of Mars have been restricted to a horizontal plane. Inclined surfaces are also considered so that \ac{SA} energy production may be maximized during the following cases:
 \begin{itemize}
-    \item Tilting and orienting the \ac{SA} into optimal angles while the rover is on a horizontal surface.
-    \item Tilting and orienting the \ac{SA} towards a horizontal plane while the rover is on an inclined surface facing away from the sun.
+    \item Tilting and orienting the \ac{SA} into optimal inclination and orientation angles while the rover is on a horizontal surface.
+    \item Tilting and orienting the \ac{SA} towards a horizontal plane while the rover is on an inclined surface facing away from the Sun.
     \item Traversing descent and ascent profiles such as in the topographic slope variations in a crater exploration mission.
 \end{itemize}
 
-Descriptions of the angles involved as well as how they serve to position the \ac{SA} surface are presented in \refApp{sec:Appendix:OptimalAngles}. Global irradiance $G_{\beta}$ on an inclined surface can be obtained when parametizing the inclination angle $\beta$ and the Sun angle of incidence $\theta$:
+\clearpage
+Descriptions of the angles involved as well as how they serve to position the \ac{SA} surface are presented in \refApp{sec:Appendix:OptimalAngles}. Global irradiance $G_{\beta}$ on an inclined surface is obtained when parametizing the inclination angle $\beta$ and the Sun angle of incidence $\theta$. This is shown in \refEqn{eq:G_beta}:
 
 \begin{equation}
   \label{eq:G_beta}
   G_{\beta} = G_{b}\cos{(\theta)} + G_{dh}\cos{\left(\frac{\beta}{2}\right)}^2 + al G_{h} \sin{\left(\frac{\beta}{2}\right)}^2
 \end{equation}
 
-where $al$ is the albedo. The Sun angle of incidence itself is a function of the Sun zenith angle $z$ for the time of day, the slope angle $\beta$ for the inclination, and the solar azimuth $\gamma_{s}$ as well as the Sun surface azimuth angle $\gamma_{c}$ for the orientation that the inclination is facing:
+where $al$ is the albedo. The Sun angle of incidence is obtained with \refEqn{eq:costheta}. It is a function of the Sun zenith angle $z$ for the time of day, the solar azimuth $\gamma_{s}$, the angle $\beta$ for the slope inclination, and the Sun surface azimuth angle $\gamma_{c}$ for the orientation that the inclination is facing.
 
 \begin{equation}
   \label{eq:costheta}
   \cos{(\theta)} = \cos{(\beta)}\cos{(z)} + \sin{(\beta)}\sin{(z)}\cos{(\gamma_{s} - \gamma_{c})}
 \end{equation}
-
-where the Sun zenith angle is given by \refEqn{eq:cosz}.
 
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
@@ -321,9 +313,10 @@ where the Sun zenith angle is given by \refEqn{eq:cosz}.
 \vspace{-2ex}
 \end{figure}
 
+\clearpage
 Global irradiance variations at the northern hemisphere during the perihelion are shown in \refFig{fig:plot:irradiance-inclined-gamma-c} for different inclination and orientation angles. The influence of the inclination angle is most noticeable when comparing orientations directed southwards, towards the equator, to those oriented northwards, away from the equator.
 
-A surface pointing towards the equator faces the general direction of the Sun. This is observed in \refFig{fig:sub:irradiance-inclined-gamma-c-0} where larger inclinations result in greater irradiances. The steepest inclination does not necessarily result in the greatest irradiance, as can be seen with $\beta = \SI{80}{\degree}$ compared to $\beta = \SI{40}{\degree}$ and $\beta = \SI{60}{\degree}$. In \refFig{fig:sub:irradiance-inclined-gamma-c-m90}, global irradiances throughout the day are mostly diffuse for highly inclined eastwards oriented surfaces. The beam irradiance only hits the surface around solar noon which results in the noticeable spikes in global irradiance.
+A surface pointing towards the equator faces the general direction of the Sun. This is observed in \refFig{fig:sub:irradiance-inclined-gamma-c-0} where larger inclinations result in greater irradiances. The steepest inclination does not necessarily result in the greatest irradiance, as seen with $\beta = \SI{80}{\degree}$ compared to $\beta = \SI{40}{\degree}$ and $\beta = \SI{60}{\degree}$. In \refFig{fig:sub:irradiance-inclined-gamma-c-m90}, global irradiances throughout the day are mostly diffuse for highly inclined eastwards oriented surfaces. The beam irradiance only hits the surface around solar noon which results in the noticeable spikes in global irradiance.
 
 The global insolations $I_{\beta}$ on an inclined surface for a given time period and daily global insolation $H_{\beta}$ are obtained by following the same procedure described in \refSec{sec:MartianEnvironment:SolarRadiation:Insolation}. That is to say, obtaining $I_{\beta}$ by integrating \refEqn{eq:G_beta} and integrating $I_{\beta}$ over the period from sunrise to sunset in order to obtain $H_{\beta}$.
 
