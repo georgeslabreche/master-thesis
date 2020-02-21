@@ -4,8 +4,8 @@ A 2-axis sun tracking mechanism is illustrated in \refFig{fig:tilted-surface-sun
   \centering
   \hypersetup{linkcolor=captionTextColor}
   \includegraphics[width=0.7\linewidth]{sections/appendix/optimal-angles/images/beta-and-gamma-angles-on-tilted-surface.png}\\
-  \caption[Solar array surface position orientation and inclination]
-          {\ac{SA} surface position orientation and inclination. $\gamma_{c}$ is the orientation angle (surface azimuth angle) and $\beta$ is the inclination angle. $\gamma_{c} = \SI{0}{\degree}$ when facing the equator, negative when facing East ($\gamma_{c} = \SI{-90}{\degree}$), and positive when facing West ($\gamma_{c} = \SI{+90}{\degree}$). Image taken from \citeother{ITACA} and modified for this study.}
+  \caption[Solar array surface inclination and orientation]
+          {\ac{SA} surface inclination and orientation. $\theta$ is the Sun angle of incidence. $\beta$ is the inclination angle and $\gamma_{c}$ is the orientation angle (i.e. the surface azimuth angle). $\gamma_{c} = \SI{0}{\degree}$ when facing the equator, negative when facing East ($\gamma_{c} = \SI{-90}{\degree}$), and positive when facing West ($\gamma_{c} = \SI{+90}{\degree}$). Image taken from \citeother{ITACA} and modified for this study.}
   \label{fig:tilted-surface-sun-tracking}
 \end{figure}
 
@@ -17,7 +17,7 @@ For clear skies, two approaches to determine the optimal angles for $\gamma_{c}$
   \beta_{p} = \phi - \delta_{p}
 \end{equation}
 
-where $\beta_{p}$ is the optimal inclination angle for a period $p$, $\phi$ is the planetary latitude, and $\delta_{p}$ is the average declination angle for the period $p$. A ``better approximation'' is shown in \citemarsenv{Appelbaum1995} based on the daily beam insolation on the surface from sunrise to sunset. However, comparing the results using this method to those obtained with \refEqn{eq:optimal_beta_irradiance} suggest a sign error in the published formula which has been rectified in \refEqn{eq:optimal_tanbeta_insolation}:
+where $\beta_{p}$ is the optimal inclination angle for a period $p$, $\phi$ is the planetary latitude, and $\delta_{p}$ is the average declination angle for the period $p$. A ``better approximation'' is shown in \citemarsenv{Appelbaum1995} based on the daily beam insolation on the surface from sunrise to sunset. However, comparing the results using this method to those obtained with \refEqn{eq:optimal_beta_irradiance} suggest a sign error in the published formula which has been rectified in \refEqn{eq:optimal_tanbeta_insolation}.
 
 \begin{equation}
   \label{eq:optimal_tanbeta_insolation}
