@@ -1,14 +1,12 @@
 write: False
-base_path: /home/dfki.uni-bremen.de/glabreche/Documents/Thesis/Writing/master-thesis/sections/
+base_path: /home/dfki.uni-bremen.de/glabreche/Documents/Thesis/Writing/master-thesis/latex/sections/
 output:
   marsenv: mars-solar-energy/solar-radiation/plots/
   power_and_energy_predictions: mars-solar-energy/photovoltaic-energy/plots/
   mission_sites: mars-solar-energy/mission-sites/plots/
-  locomotion_power_draws: design/power-budget/plots/
+  locomotion_power_draws: power-system-design/power-budget/plots/
   insolationverification: appendix/insolation-calculation-verification/plots/
   narrowed_energy_prediction_error_margin_range: appendix/energy-error-margin/plots/
   appendix_beta_optimal: appendix/optimal-angles/plots/
   solar_array: design/solar-array/plots/
   simulation: design/simulation/plots/
-  
-  

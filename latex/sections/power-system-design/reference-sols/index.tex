@@ -18,7 +18,7 @@ Not all modes defined in \citeother{CDF2014} are included in this section, howev
 
 The \textit{Optimal Pose} mode is not taken from \citeother{CDF2014}. It is created for the purpose of this study so that the rover may use its active suspension system as a \ac{SA} inclination and orientation mechanism to maximize \ac{SA} power generation. The inclination angle resulting from a pith or roll rotations is  the $\beta$ angle. The orientation angle with respect to the direction of the equator is the surface azimuth angle $\gamma_{c}$ obtained from yaw rotations. These angles are introduced in \refSec{sec:MartianEnvironment:SolarRadiation:InclinedSurface}. Rover subsystems as well as their states for different rover modes are taken from \citeother{CDF2014} and shown in \refTab{tab:rover-modes}.
 
-\input{sections/design/reference-sols/tables/rover-modes.tex}
+\input{sections/power-system-design/reference-sols/tables/rover-modes.tex}
 
 \subsection{Reference Sols}
 \label{sec:ReferenceSols:ReferenceSols}
@@ -29,7 +29,7 @@ Traverse modes have the highest energy requirements and are thus used to determi
 \label{sec:ReferenceSols:TraverseSol}
 A \textit{Traverse Sol} allows the rover to reach a pre-planned target destination. Flat and upslope traverses have identical mode sequences, shown in \refTab{tab:mission-scenario-traverse-sol}, only differing in the duration of their respective \textit{Traverse} modes. This distinction relates to propulsion power draw differences that are presented in \refSec{sec:Design:PowerBudget}.
 
-\input{sections/design/reference-sols/tables/mission-scenario-traverse-sol.tex}
+\input{sections/power-system-design/reference-sols/tables/mission-scenario-traverse-sol.tex}
 
 A Traverse Sol begins with the \textit{Idle - Day mode}, which is mostly dedicated to recharging the rover's batteries. At the end of the previous Sol, the \ac{SA} was tilted and oriented into an optimal configuration with respect to the current Sol's sun path in order to maximize power generation. The \textit{\ac{DTE} Communication mode}  follows after which the received traversing commands are processed during the \textit{Traverse mode}. A short time slot is alotted to science operations during the \textit{Science Stop - Short mode} so that multiple traverse Sols do not result in lack of scientific return, particularly for long multi-Sol traverse campaigns. The rover then assumes an optimal power generation pose during the \textit{Optimal Pose mode} to ensure maximum \ac{SA} power generation on the next Sol. Finally, the \textit{Idle - Night mode} is engaged during which the rover's survival is ensured with heaters that thermally regulate all critical systems.
 
@@ -41,13 +41,13 @@ The mechanical feasibility of achieving $\beta_{opt}$ or $\beta_{best}$ does not
 %\label{sec:ReferenceSols:BatteryRechargeSol}
 %The Battery Recharge Sol dedicates an entire Martian day to recharging the rover's batteries. The sequence and duration of its modes are shown in Table \ref{tab:mission-scenario-science-sol}. Only thermal and communication operations are executed during this Sol so that power draws from the battery are minimized in order to prioritize attaining the target charge state. No rover repositioning is required to adjust the \ac{SA} $\beta$ angle as it will have already been set to $\beta_{optimal}$ or $\beta_{best}$ at the end of a previous Sol.
 
-%\input{sections/design/reference-sols/tables/mission-scenario-battery-recharge-sol.tex}
+%\input{sections/power-system-design/reference-sols/tables/mission-scenario-battery-recharge-sol.tex}
 
 \subsubsection{Hibernation Sol}
 \label{sec:ReferenceSols:HibernationSol}
 The \textit{Hibernation Sol} is the rover's survival mode during a dust storm. In this setting, the rover solely draws power from its battery. Only the heaters and a timer are active so that energy may be conserved.
 
-\input{sections/design/reference-sols/tables/mission-scenario-hibernation-sol.tex}
+\input{sections/power-system-design/reference-sols/tables/mission-scenario-hibernation-sol.tex}
 
 \subsection{Summary}
 \label{sec:ReferenceSols:SummaryAndConclusion}
