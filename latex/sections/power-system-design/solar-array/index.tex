@@ -40,7 +40,7 @@ Considering the solar cell packing efficiency \ref{itm:ass:packing_efficiency} r
   \captionsetup[subfigure]{justification=centering}
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.7\linewidth]{sections/power-system-design/solar-array/images/sa-area-initial-sizes.png}\\
+  \includegraphics[width=1\linewidth]{sections/power-system-design/solar-array/images/sa-area-initial-sizes.png}\\
   \caption[Initial solar array sizing for mission sites]
           {Initial \ac{SA} sizing for mission sites. The outlined square areas are equivalent to \ac{SA} areas of \SI{2.7}{m^{2}} for Iani Chaos and \SI{4.8}{m^{2}} for Ismenius Cavus.}
   \label{fig:sa-area-initial-sizes}
@@ -197,7 +197,7 @@ As per \ref{itm:dd:shadowing}, the rover's body is redesigned in order to minimi
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{48mm}
+    \setlength{\graphicsHeight}{50mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -269,7 +269,7 @@ Folded and deployed \ac{SA} panels are show in \refFig{fig:solar-array-on-rover-
         \includegraphics[height=\graphicsHeight]{sections/power-system-design/solar-array/images/iani-chaos-stowed.png}
   		\subcaption{Folded on stowed rover}
 		\label{fig:sub:solar-array-on-rover-for-iani-chaos-stowed}
-    \end{subfigure}\hfill
+    \end{subfigure}\hfill%
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
         \includegraphics[height=\graphicsHeight]{sections/power-system-design/solar-array/images/iani-chaos-10deg-pitch.png}
@@ -303,7 +303,7 @@ The folded configurations shown in \refFig{fig:sub:solar-array-on-rover-for-iani
         \includegraphics[height=\graphicsHeight]{sections/power-system-design/solar-array/images/ismenius-cavus-stowed.png}
   		\subcaption{Folded on stowed rover}
 		\label{fig:sub:solar-array-on-rover-for-ismenius-cavus-stowed}
-    \end{subfigure}\hfill
+    \end{subfigure}\hfill%
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
         \includegraphics[height=\graphicsHeight]{sections/power-system-design/solar-array/images/ismenius-cavus-10deg-pitch.png}
@@ -327,7 +327,7 @@ The unfolded \ac{SA} panel layouts are shown in \refFig{fig:solar-array-layouts-
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{53mm}
+    \setlength{\graphicsHeight}{65mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
@@ -353,7 +353,7 @@ The unfolded \ac{SA} panel layouts are shown in \refFig{fig:solar-array-layouts-
 
 Round and diagonal edges negatively affect solar cell packing efficiency and are thus avoided. However, a trade-off is made at Ismenius Cavus due to the large coverage area of the panels and in light of \ref{itm:dd:cog}. Diagonal corners are used for the port and starboard panels to reduce the wingspan of the solar array while preserving the \ac{CoG} within the stowed rover's body and to reduce the panel \ac{CoM} misalignments once deployed. Further \ac{CoG} analysis is required for both configurations with respect to the stern and quarter panels when operating the rover's \ac{RA}. This could result in shifting the position of the port and starboard panels. The surface areas and masses of each panel are presented in Table \ref{tab:solar-panel-surface-areas}. Masses are determined from \ref{itm:ass:sa_surface_density} with a \ac{SA} surface density of \SI{3.7}{kg.m^{-2}}.
 
-\vspace{0.5cm}
+\vspace{0.4cm}
 
 \input{sections/power-system-design/solar-array/tables/solar-panel-surface-areas.tex}
 
@@ -465,7 +465,7 @@ The worst case motor torque for \ac{SA} deployment occurs when unfolding the por
   \captionsetup[subfigure]{justification=centering}
   \centering
   \hypersetup{linkcolor=captionTextColor}
-  \includegraphics[width=0.45\linewidth]{sections/power-system-design/solar-array/images/ismenius-cavus-solar-panel-starboard-quarter.png}\\
+  \includegraphics[width=0.55\linewidth]{sections/power-system-design/solar-array/images/ismenius-cavus-solar-panel-starboard-quarter.png}\\
   \caption[Dimensions of starboard quarter panel at Ismenius Cavus]
           {Dimensions of starboard quarter panel at Ismenius Cavus. Measurments are in millimeter. The same dimensions apply for the starboard bow, port bow, and port quarter panels. The length between the base of the panel and the \ac{CoM} is also indicated and corresponds to $r = \SI{385}{\milli\metre}$.}
   \label{fig:ismenius-cavus-solar-panel-starboard-quarter-dimensions}
@@ -497,6 +497,6 @@ Transmissions with a 1:30 reduction ratio can be obtained with a planetary gear 
 \subsection{Summary}
 \ac{SA} sizing for the worst case power budget of the rover's \textit{Traverse Sol} at optical depth of $\tau = 1$ does not support the use of inclined surfaces for the purpose of increasing traverse time. This is due to solar irradiance being mostly diffuse at high optical depths when airborn dust is responsible for scattered light.
 
-In a dusty atmosphere, an inclined \ac{SA} surface contributes negligeable energy production gains over those obtained with a horizontal configuration. Under certain conditions, these gains are unusable on clear days due to the limited amount of daylight time available for traversing. To resolve this, the \ac{SA} sizing is instead done for the worst case \textit{Hibernation Sol} in which power draws are reduced by introducing \acp{RHU}.
+In a dusty atmosphere, an inclined \ac{SA} surface contributes negligeable energy production gains over those obtained with a horizontal configuration. Under certain conditions, these gains are unusable on clear days due to the limited amount of daylight time available for traversing. To resolve this, the \ac{SA} sizing is instead done for the worst case \textit{Hibernation Sol} for which power draws are revised.
 
 Assumptions, requirements, constraints, and design drivers presented in the previous section are considered in the baseline designs from which deployment sequences and motor requirements are presented. Redesiging the location and stowed posture of the \ac{RA} is a subject for future work towards completely folding the panels over the rover's body. Such a configuration would significantly reduce the stowed rover's vertical span by approximately 1/3.

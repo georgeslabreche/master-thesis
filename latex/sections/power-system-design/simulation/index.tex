@@ -56,13 +56,13 @@ The slope compensation scenario illustrated in \refFig{fig:sub:rover-on-slope-be
 	\centering
     %% setup sizes
     \setlength{\subfigureWidth}{0.50\textwidth}
-    \setlength{\graphicsHeight}{74mm}
+    \setlength{\graphicsHeight}{77mm}
     %% kill hyper-link highlighting
     \hypersetup{hidelinks=true}%
     %% the figures
     \begin{subfigure}[t]{\subfigureWidth}
         \centering
-        \includegraphics[height=77mm]{sections/power-system-design/simulation/images/counter-slope.png}
+        \includegraphics[height=80mm]{sections/power-system-design/simulation/images/counter-slope.png}
   		\subcaption{Simulation environment}
 		\label{fig:sub:rover-slope-compensation-simulation}
     \end{subfigure}\hfill
@@ -81,7 +81,6 @@ The slope compensation scenario illustrated in \refFig{fig:sub:rover-on-slope-be
 \clearpage
 
 \refFig{fig:sub:rover-slope-compensation-power-profile} shows solar power outputs for different body-pitch configuration while the rover is on a \SI{30}{\degree} slope. The initial state of the \ac{SA} $\beta$ inclination angle is equal to that of the slope angle. Two seperate \SI{5}{\degree} forward pitch increments are executed at \SI{25}{\second} and \SI{35}{\second} which worsen solar power output by changing \ac{SA} $\beta$ inclination angle from ~\SI{30}{\degree} to ~\SI{40}{\degree}. Following that, four separate \SI{5}{\degree} backward pitch decrements are executed from \SI{45}{\second} to \SI{65}{\second}, progressively improving power generation as $\beta$ is changed from ~\SI{40}{\degree} to ~\SI{20}{\degree}. As a final task, the rover is commanded to drive forward at \SI{80}{\second} and it encounters uneven terrain which introduces minor fluctuations to the solar power output.
-
 
 \subsection{Summary}
 A \ac{PMS} is developed to calculate and visualize solar power outputs obtained while the rover model is loaded into a simulator at the crater environment in one of the mission sites. \ac{SA} inclination and orientation scenarios are tested. These produce the expected solar power output variations. A slope compensation scenario is simulated that demonstrate how the rover's active suspension system can be used to maximize power output given a worst case downslope traverse scenario.
