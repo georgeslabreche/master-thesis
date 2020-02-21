@@ -79,9 +79,7 @@ Power and energy calculations for inclined \acp{SA} are obtained from $G_{\beta}
 
 \subsection{Validation}
 \label{sec:PowerAndEnergyPredictions:Validation}
-%\todo[inline]{\textbf{TODO:} Write section introduction.}
-
-%\todo[inline]{TODO: Short intro text? Why are we validating? Explain that the equations we are using were based on Viking Lander data and we need to verify if it is still robust today by validating it against the wealth of data we've accumulated since, specifically with MER Opportunity data which is illustrative of mobile rover missions rather than a stationary lander mission.}
+The energy prediction formulae presented in \ref{eq:SA_energy} and \ref{eq:SA_slope_energy} use solar insolation equations derived from Viking Lander data. They are validated against \ac{MER} opportunity solar energy measurements in order to determine error margins and evaluate their accuracy.
 
 \subsubsection{Horizontal Surface}
 \label{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}
@@ -142,9 +140,6 @@ For the purpose of insolation calculations, the areocentric longitude $L_{s}$ is
 
 Divergences of the measured energy production from those calculated are presented in \refFig{fig:plot:mer-energy-prediction-divergences}. A \SI{-33}{\percent}/+\SI{7}{\percent} error margin range is observed. \refFig{fig:plot:binned-error-margins} bins the distribution of divergences across the \SI{-33}{\percent}/+\SI{7}{\percent} error margin range into \SI{5}{\percent} increments. \SI{65.5}{\percent} of the divergences occur within a \SI{-10}{\percent}/\SI{0}{\percent} error margin and \SI{90.7}{\percent} within \SI{-15}{\percent}/+\SI{5}{\percent}. The wide error margin range is thus a result of isolated local maxima outliers, notably at Sol 2204 (\SI{-33}{\percent}), 2218 (\SI{-27}{\percent}), 2519 (\SI{-28}{\percent}), and 3901 (\SI{-24}{\percent}).
 
-\clearpage
-\vspace{2cm}
-
 \begin{figure}[h]
 \captionsetup[subfigure]{justification=centering}
 %\vspace{-2ex}
@@ -190,10 +185,8 @@ Divergences that are beyond \SI{-20}{\percent} are listed in \refTab{tab:diverge
 
 \input{sections/mars-solar-energy/photovoltaic-energy/tables/divergences-less-than-m20pc.tex}
 
-\vspace{0.5cm}
-
 The use of fixed daily values for the certain irradiance calculation variables also contributes to the observed divergences:
-\clearpage
+
 \begin{enumerate}[label=\textcolor{BulletBlue}{(\alph*)}]
   \item A fixed $\tau$ factor does not reflect the continuous changes in atmopheric optical depth.
   \item A fixed solar array dust factor does not reflect the irregularity of dust deposition over the entirety of the solar cell coverage area.
@@ -214,11 +207,10 @@ An average slope angle of \SI{13}{\degree} is assumed based on the following:
   \item Perseverance Valley extends downhill at around \SI{15}{\degree} for about \SI{200}{\meter} toward Endeavour crater's interior.
 \end{itemize}
 
-As in \refSec{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}, performance ratios described in \refSec{sec:PowerAndEnergyPredictions:PerformanceRatio} are also used. Due to large uncertainties regarding rover inclination and orientation angles, this section only aims to validate that \refEqn{eq:SA_slope_energy} results in smaller energy predictions divergences than what would otherwise be obtained using \refEqn{eq:SA_energy}. The results are presented in \refTab{tab:divergences-inclined-surfaces}.
+As in \refSec{sec:PowerAndEnergyPredictions:Validation:HorizontalSurface}, performance ratios described in \refSec{sec:PowerAndEnergyPredictions:PerformanceRatio} are also used. Due to large uncertainties regarding rover inclination and orientation angles, this section only aims to validate that \refEqn{eq:SA_slope_energy} results in smaller energy predictions divergences than what would otherwise be obtained using \refEqn{eq:SA_energy}. The results are presented in \refTab{tab:divergences-inclined-surfaces}. \refEqn{eq:SA_slope_energy} resulted in a larger divergence range than with \refEqn{eq:SA_energy} at \SI{-30}{\percent}/\SI{32}{\percent} for the former and \SI{-45}{\percent}/\SI{-27}{\percent} for the latter. However, the magnitude of divergences are smaller with \refEqn{eq:SA_slope_energy}. Furthermore, with the exception of Sol 4582, divergences with \refEqn{eq:SA_slope_energy} result in conservative under-estimated energy predictions rather than the worst case over-estimated values consistently obtained with \refEqn{eq:SA_energy}.
 
+\clearpage
 \input{sections/mars-solar-energy/photovoltaic-energy/tables/divergences-inclined-surfaces.tex}
-
-\refEqn{eq:SA_slope_energy} resulted in a larger divergence range than with \refEqn{eq:SA_energy} at \SI{-30}{\percent}/\SI{32}{\percent} for the former and \SI{-45}{\percent}/\SI{-27}{\percent} for the latter. However, the magnitude of divergences are smaller with \refEqn{eq:SA_slope_energy}. Furthermore, with the exception of Sol 4582, divergences with \refEqn{eq:SA_slope_energy} result in conservative under-estimated energy predictions rather than the worst-case over-estimated values consistently obtained with \refEqn{eq:SA_energy}.
 
 The pool of measured data used for this validation is much too small to draw convincing conclusions. Furthermore, the magnitude of divergences remain significantly large. Inaccurate rover inclination and orientation angles are likely to have contributed to unfavourable results. Accurate rover position data is required in order to convincingly validate \refEqn{eq:SA_slope_energy} against reported measurements. However, \refEqn{eq:SA_slope_energy} is still used for this thesis on the basis that it is derived from applying solar geometry to \refEqn{eq:SA_energy}.
 
@@ -230,5 +222,5 @@ The pool of measured data used for this validation is much too small to draw con
 %Particularly while it was exploring steep outcrops within 'Marathon Valley' when the rover was inclined on the slopes of 'Knudsen Ridge' at Sol 4303 (March 1, 2016).
 %The rover's tilt hit 32 degrees on March 10 while Opportunity was making its closest approach to an intended target near the crest of "Knudsen Ridge."
 
-%\subsection{Summary}
-%\todo[inline]{\textbf{TODO:} Write section summary.}
+\subsection{Summary}
+The formula to predict energy outputs from a horizontal surface \ac{SA} is validated against \ac{MER} Opportunity measurements. The results are sufficiently accurate despite a few divergence outliers. There is insufficient data to confidently repeat the same validation process on the inclined surface formula. However, the latter is still accepted as valid on the basis that it is derived from applying solar geometry to the former. 
