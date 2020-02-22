@@ -108,30 +108,26 @@ An uplsope traverse has no discernable effect on the suspension power draw, howe
   \label{fig:plot:sherpatt-upslope-terrain-power-draw}
 \end{figure}
 
-The minimum, maximum, and mean local media propulsion power draws that are measured for different slope angles are summarized in \refTab{tab:sherpatt-upslope-terrain-local-media-measurement-summary}. Discarding the outlier measurements subsequent to the slope angle change from \SI{28}{\degree} to \SI{20}{\degree} at the \SI{11}{\meter} to \SI{13}{\meter} portion of the track, the maximum mean local media propulsion power draw is \SI{146}{\watt}. This is close agreement with the initial estimate of \SI{132}{\watt} obtained with \refEqn{eq:InitialPropulsionPowerEstimate}. From these observations, a worst case power draw of \SI{150}{\watt} is considered for rover propulsion during upslope terrain traverses.
+The minimum, maximum, and mean local media propulsion power draws measured for different slope angles are summarized in \refTab{tab:sherpatt-upslope-terrain-local-media-measurement-summary}. Discarding the outlier measurements subsequent to the slope angle change from \SI{28}{\degree} to \SI{20}{\degree} at the \SI{11}{\meter} to \SI{13}{\meter} portion of the track, the maximum mean local media propulsion power draw is \SI{146}{\watt}. This is in close agreement with the initial estimate of \SI{132}{\watt} obtained with \refEqn{eq:InitialPropulsionPowerEstimate}. From these observations, a worst case \SI{150}{\watt} power draw is considered for rover propulsion during upslope terrain traverses.
 
 \input{sections/power-system-design/power-budget/tables/upslope-terrain-local-media-measurement-summary.tex}
 
 \subsection{Traverse Power Budget}
 \label{sec:PowerBudget:PowerBudget:TraversePowerBudget}
-A worst case daily insolation for an optical depth of $\tau = 1$ is used to determine the energy requirements of the flat and upslope traverse reference Sols. These are taken from \refTab{tab:insolation-iani-chaos-clear-and-dusty-days} for Iani Chaos and \refTab{tab:insolation-ismenius-cavus-clear-and-dusty-days} for Ismenius Cavus. The minimum required traverse distance is assumed to be \SI{5}{\meter} at both mission sites.
+Power budgets and energy requirements are presented in \refTab{tab:worst-case-traverse-sol-power-budget} for a flat traverse and \refTab{tab:worst-case-upslope-traverse-sol-power-budget} for an upslope traverse. Durations of daylight dependent modes are based on the worst case available daily insolations for $\tau$ factor 1 taken from \refTab{tab:insolation-iani-chaos-clear-and-dusty-days} and \refTab{tab:insolation-ismenius-cavus-clear-and-dusty-days}.
+
+\input{sections/power-system-design/power-budget/tables/worst-case-power-budget-flat-traverse-sol-tau-1.tex}
 
 \subsubsection{Flat Traverse}
 \label{sec:Design:PowerBudget:TraversePowerBudget:FlatTraverse}
 
-Power and duration of \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Hibernation} modes are taken from \citeother{CDF2014} and assigned to the reference Sols presented in \refSec{sec:ReferenceSols:ReferenceSols}. Power draw estimates made in \refSec{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse} and \refSec{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse} are used for \textit{Traverse} modes. Power draw for the \textit{Optimal Pose} mode is equated to that of the rover's flat terrain propulsion power. This mode is estimated to require up to \SI{10}{\minute} to complete.
-
-The worst case power budget for the reference \textit{Flat Traverse Sol} is shown in \refTab{tab:worst-case-traverse-sol-power-budget}. The total energy requirements for these worst case reference Sols are used as the minimum energy output when sizing the \ac{SA}. A \SI{20}{\percent} system margin is applied to account for inefficiencies such as \ac{PCDU} losses.
-
-\input{sections/power-system-design/power-budget/tables/worst-case-power-budget-flat-traverse-sol-tau-1.tex}
-
+Power and duration of \textit{\ac{DTE} Communication}, \textit{Science Stop - Short}, and \textit{Hibernation} modes are taken from \citeother{CDF2014} and assigned to the reference Sols presented in \refSec{sec:ReferenceSols:ReferenceSols}. Power draw estimates made in \refSec{sec:PowerBudget:PropulsionPowerBudget:FlatTerrainTraverse} and \refSec{sec:PowerBudget:PropulsionPowerBudget:UpslopeTerrainTraverse} are used for \textit{Traverse} modes. Power draw for the \textit{Optimal Pose} mode is equated to that of the rover's flat terrain propulsion power and is estimated to require up to \SI{10}{\minute} to complete. The worst case power budget for the reference \textit{Flat Traverse Sol} is shown in \refTab{tab:worst-case-traverse-sol-power-budget}. The total energy requirements for these worst case reference Sols are used as the minimum energy output when sizing the \ac{SA}. A \SI{20}{\percent} system margin is applied to account for inefficiencies such as \ac{PCDU} losses.
 
 \subsubsection{Upslope Traverse}
 \label{sec:Design:PowerBudget:TraversePowerBudget:UpslopeTraverse}
 The upslope traverse reference Sol shown in \refTab{tab:worst-case-upslope-traverse-sol-power-budget} differs from the flat traverse by its \textit{Traverse mode} power draw. It is increased from \SI{75}{\watt} to \SI{150}{\watt}. This reference Sol is not considered in the power budget for \ac{SA} sizing. Regardless, it is presented for the sake of comparative purposes against the flat traverse Sol.
 
 \input{sections/power-system-design/power-budget/tables/worst-case-power-budget-upslope-traverse-sol-tau-1.tex}
-
 
 \subsubsection{Hibernation}
 \label{sec:Design:PowerBudget:TraversePowerBudget:Hibernation}
