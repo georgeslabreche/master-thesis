@@ -156,7 +156,7 @@ Diurnal irradiance profiles are presented in \refFig{fig:plot:irradiances-phi} f
             \subcaption{$\phi = \SI{34}{\degree}$}
             \label{fig:plot:sub:irradiance-phi-p34}
     \end{subfigure}\\[0.8ex]
-    \caption[Diurnal irradiance variations]
+    \caption[Diurnal irradiance variations on Mars horizontal surface]
     {Diurnal variations of global, beam, and diffuse irradiance on Mars horizontal surface at (a) southern and (b) nothern hemispheres. $L_{s} = \SI{248}{\degree}$ and $\tau = 0.4$.}
     \label{fig:plot:irradiances-phi}
 \vspace{-2ex}
@@ -204,7 +204,7 @@ Solar insolation is the amount of solar radiation incident on a surface for a gi
   		\subcaption{$\tau = 3$}
   		\label{fig:sub:insolation-ls-tau-factor-3}
 	   \end{subfigure}\hfill
-	\caption[Insolation variations]
+	\caption[Dirunal insolation variations on Mars horizontal surface]
     {Diurnal variations of global, beam, and diffuse insolation on Mars horizontal surface as a function of areocentric longitude at $\phi = \SI{-2}{\degree}$.}
 	\label{fig:plot:insolation-ls}
 \vspace{-2ex}
@@ -236,7 +236,7 @@ Global, beam, and diffuse insolations on a horizontal Mars surface are denoted a
             \subcaption{$\phi = \SI{34}{\degree}$}
             \label{fig:plot:sub:insolation-phi-p34}
     \end{subfigure}\\[0.8ex]
-    \caption[Diurnal insolation variations]
+    \caption[Diurnal insolation variations on Mars horizontal surface]
     {Diurnal variations of global, beam, and diffuse insolation on Mars horizontal surface at (a) southern and (b) nothern hemispheres. Omitted morning insolations are symmetrical to afternoon insolations. $L_{s} = \SI{71}{\degree}$ and $\tau = 0.4$.}
     \label{fig:plot:insolation-phi}
 \vspace{-2ex}
@@ -307,7 +307,7 @@ where $al$ is the albedo. The Sun angle of incidence is obtained with \refEqn{eq
   		\subcaption{$\gamma_{c} = \SI{90}{\degree}$ (West)}
   		\label{fig:sub:irradiance-inclined-gamma-c-90}
 	   \end{subfigure}\hfill
-	\caption[Global irradiance variations on inclined surface]
+	\caption[Diurnal irradiance variations on Mars inclined surface]
     {Diurnal variation of global irradiance on Mars inclined surface for different orientations when $L_{s} = \SI{248}{\degree}$, $\phi = \SI{34}{\degree}$, and $\tau = 0.4$.}
 	\label{fig:plot:irradiance-inclined-gamma-c}
 \vspace{-2ex}
@@ -318,15 +318,40 @@ Global irradiance variations at the northern hemisphere during the perihelion ar
 
 A surface pointing towards the equator faces the general direction of the Sun. This is observed in \refFig{fig:sub:irradiance-inclined-gamma-c-0} where larger inclinations result in greater irradiances. The steepest inclination does not necessarily result in the greatest irradiance, as seen with $\beta = \SI{80}{\degree}$ compared to $\beta = \SI{40}{\degree}$ and $\beta = \SI{60}{\degree}$. In \refFig{fig:sub:irradiance-inclined-gamma-c-m90}, global irradiances throughout the day are mostly diffuse for highly inclined eastwards oriented surfaces. The beam irradiance only hits the surface around solar noon which results in the noticeable spikes in global irradiance.
 
-The global insolations $I_{\beta}$ on an inclined surface for a given time period and daily global insolation $H_{\beta}$ are obtained by following the same procedure described in \refSec{sec:MartianEnvironment:SolarRadiation:Insolation}. That is to say, obtaining $I_{\beta}$ by integrating \refEqn{eq:G_beta} and integrating $I_{\beta}$ over the period from sunrise to sunset in order to obtain $H_{\beta}$.
+The global insolations $I_{\beta}$ on an inclined surface for a given time period and daily global insolation $H_{\beta}$ are obtained by following the same procedure described in \refSec{sec:MartianEnvironment:SolarRadiation:Insolation}. That is to say, obtaining $I_{\beta}$ by integrating \refEqn{eq:G_beta} and integrating $I_{\beta}$ over the period from sunrise to sunset in order to obtain $H_{\beta}$. Daily insolation $H_{\beta}$ obtained for different surface inclination angles during dusty days are shown in \refFig{fig:plot:diurnal-insolation-variations-inclined-surface} for $\tau$ factors 1 and 1.5.
+
+\begin{figure}[h]
+\captionsetup[subfigure]{justification=centering}
+\vspace{-2ex}
+\centering
+    %% setup sizes
+    \setlength{\subfigureWidth}{0.50\textwidth}
+    \setlength{\graphicsHeight}{80mm}
+    %% kill hyper-link highlighting
+    \hypersetup{hidelinks=true}%
+    %% the figures
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+            \includegraphics[height=\graphicsHeight]{sections/mars-solar-energy/solar-radiation/plots/ismenius-cavus-solar-insolations-for-different-beta-inclinations-at-tau-factor-1.png}
+            \subcaption{$\tau = 1$}
+            \label{fig:plot:sub:diurnal-insolation-variations-inclined-surface-tau-1}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{\subfigureWidth}
+        \centering
+            \includegraphics[height=\graphicsHeight]{sections/mars-solar-energy/solar-radiation/plots/ismenius-cavus-solar-insolations-for-different-beta-inclinations-at-tau-factor-15.png}
+            \subcaption{$\tau = 1.5$}
+            \label{fig:plot:sub:diurnal-insolation-variations-inclined-surface-tau-1p5}
+    \end{subfigure}\\[0.8ex]
+    \caption[Diurnal insolation variations on Mars inclined surface]
+    {Diurnal variations of global insolation on Mars inclined surface for difference inclination angles with optimal orientation angles. Dusty atmosphere at $\phi = \SI{34}{\degree}.$}
+    \label{fig:plot:diurnal-insolation-variations-inclined-surface}
+\vspace{-2ex}
+\end{figure}
+
+\vspace{0.2cm}
+
+For high atmospheric opacities, the daily insolation gains obtained with an optimally oriented inclined surface become negligeable. In \refFig{fig:plot:sub:diurnal-insolation-variations-inclined-surface-tau-1p5} for $\tau = 1.5$, inclined surfaces result in approximately the same daily insolations than what is obtained with a horizontal surface.
 
 
 \subsection{Summary}
-Solar radiation on Mars is made out of beam and diffuse components. Irradiance is mostly diffuse for high $\tau$ factors due to light scattering from airborn dust. A combination of different surface inclination and orientation angles can serve to increase solar irradiance with respect to the position of the Sun. These gains are negligeable when irradiance is mostly diffuse.
-
-%\todo[inline]{TODO: Present plots for diurnal variation of global insolation on Mars inclined surface for different orientations. This is obtained by integrating the global irradiance on Mars incline surface.}
-
-%\todo[inline]{\textbf{TODO:} Emphasize that it doesn't matter which inclination and orientation configuration you have when most of the irradiance is scattered (dusty days).}
-
-%\subsection{Summary}
-%\todo[inline]{\textbf{TODO:} Write section summary.}
+Global irradiance on the Martian surface is made of beam and diffuse components. For a given inclination angle on a clear day, irradiance can be increased with daily arrangments of the surface orientation angle with respect to the Sun's path. However, these gains are negligeable on dusty days when irradiance is mostly diffuse due to light scattering from airborn dust.
