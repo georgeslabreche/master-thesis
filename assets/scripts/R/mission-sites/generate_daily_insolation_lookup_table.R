@@ -8,29 +8,24 @@ ROIs = list(
   "IaniChaos" = list(
     "phi" = -2,
     "longitude" = -17,
-    "data_dump_dir" = "~/Documents/H_csvs/IaniChaos"
+    "data_dump_dir" = "data/mission-sites/IaniChaos"
   ), # https://trek.nasa.gov/mars/#v=0.1&x=-16.962890308581592&y=-2.10937496065263&z=2&p=urn%3Aogc%3Adef%3Acrs%3AEPSG%3A%3A104905&d=
   "IsmeniusCavus" = list(
     "phi" = 34,
     "longitude" = 17,
-    "data_dump_dir" = "~/Documents/H_csvs/IsmeniusCavus"
-  ), # https://trek.nasa.gov/mars/#v=0.1&x=17.138671555302636&y=33.92578061716317&z=2&p=urn%3Aogc%3Adef%3Acrs%3AEPSG%3A%3A104905&d=
-  "TestLocation" = list(
-    "phi" = 15,
-    "longitude" = 0,
-    "data_dump_dir" = "~/Documents/H_csvs/TestLocation"
-  )
+    "data_dump_dir" = "data/mission-sites/IsmeniusCavus"
+  ) # https://trek.nasa.gov/mars/#v=0.1&x=17.138671555302636&y=33.92578061716317&z=2&p=urn%3Aogc%3Adef%3Acrs%3AEPSG%3A%3A104905&d=
 )
 
 data_dump_at_every_Ls = FALSE
 
 # Variables that requires updating in case of location change.
-roi = ROIs$IaniChaos
-beta_min = -15 # Must be negative in southern hemisphere.
-beta_max = -15 # Must be negative in southern hemisphere.
+roi = ROIs$IsmeniusCavus
+beta_min = 15 # Must be negative in southern hemisphere.
+beta_max = 15 # Must be negative in southern hemisphere.
 beta_seq = beta_min:beta_max
 
-tau = 0.4
+tau = 1.5
 
 phi = roi$phi
 longitude = roi$longitude

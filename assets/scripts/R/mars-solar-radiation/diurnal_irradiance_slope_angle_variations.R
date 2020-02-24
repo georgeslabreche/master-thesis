@@ -32,8 +32,6 @@ orientations = list(
 #    "SouthWest" = 135)
 )
 
-
-
 Ls = 248 # Periphelion.
 phi = 34 # Ismenius Cavus.
 tau = 0.4 # Optical depth.
@@ -61,77 +59,79 @@ cols = rev(c(
 # Title: Variation of Mars solar irradiance Gβ for different slope orientations γ. #
 # Subtitle: Effect of solar time with slope angle β as a parameter.                #
 ####################################################################################
-plot_a = function(Ls, phi, tau, al, Ts_range, betas, gammas, xTs=TRUE, lwd=2){
+plot_a = function(Ls, phi, tau, al, Ts_range, betas, orientations_filter, xTs=TRUE, lwd=2){
   
   gamma_c_index = 1
   
   for(gamma_c in gamma_orientation_angles){
     orientation_name = names(gamma_orientation_angles)[gamma_c_index]
     
-    # Plot title.
-    title_template = "Gi variation for Ls {{Ls}}, phi {{phi}}, tau {{tau}}, gamma_c {{gamma_c}}, and albedo {{al}}."
-    title_data = list(Ls=Ls, phi=phi, tau=tau, gamma_c=orientation_name, al=al)
-    title = whisker.render(title_template, title_data)
-    
-    # Convenience plot start function.
-    plot_start("marsenv", title)
-    
-    beta_index = 1
-    for(beta in betas){
+    if(orientation_name %in% orientations_filter){
       
-      x = c()
-      y = c()
+      # Plot title.
+      title_template = "Gi variation for Ls {{Ls}}, phi {{phi}}, tau {{tau}}, gamma_c {{gamma_c}}, and albedo {{al}}."
+      title_data = list(Ls=Ls, phi=phi, tau=tau, gamma_c=orientation_name, al=al)
+      title = whisker.render(title_template, title_data)
       
-      for(T_s in Ts_range){
-        if(isTRUE(xTs)){
-          x = c(x, T_s)
+      # Convenience plot start function.
+      plot_start("marsenv", title)
+      
+      beta_index = 1
+      for(beta in betas){
+        
+        x = c()
+        y = c()
+        
+        for(T_s in Ts_range){
+          if(isTRUE(xTs)){
+            x = c(x, T_s)
+          }else{
+            z = Z(Ls=Ls, phi=phi, Ts=T_s)
+            x = c(x, z)
+          }
+          
+          G = G_i(Ls=Ls, phi=phi, longitude=NULL, Ts=T_s, tau=tau, al=al, beta=beta, gamma_c=gamma_c)
+          y = c(y, G)
+        }
+        
+        if(beta_index == 1){
+          plot(x, y,
+               xlab=if(isTRUE(xTs)) "Solar Time [h]" else "Z [deg]",
+               ylab="Irradiance [W/m²]",
+               xlim=if(isTRUE(xTs)) c(Ts_range[1], Ts_range[length(Ts_range)]) else c(0, 75),
+               ylim=ylim,
+               #sub=paste("γ = ", gamma_c, "°", sep=""),
+               font.sub=2,
+               cex.sub=1.2,
+               type="l",
+               lty=beta_index,
+               lwd=lwd,
+               col=cols[beta_index])
+          
+          if(orientation_name == "South"){
+            legend("topright",
+                   title="β",
+                   paste(betas, "°" , sep=""),
+                   col=cols,
+                   cex=0.7, lwd=1,
+                   lty=1:length(betas))
+          }
+          
         }else{
-          z = Z(Ls=Ls, phi=phi, Ts=T_s)
-          x = c(x, z)
+          lines(x, y,
+                type="l",
+                col=cols[beta_index],
+                lty=beta_index,
+                lwd=lwd)
         }
         
-        G = G_i(Ls=Ls, phi=phi, longitude=NULL, Ts=T_s, tau=tau, al=al, beta=beta, gamma_c=gamma_c)
-        y = c(y, G)
+        beta_index = beta_index + 1
       }
       
-      if(beta_index == 1){
-        plot(x, y,
-             xlab=if(isTRUE(xTs)) "Solar Time [h]" else "Z [deg]",
-             ylab="Irradiance [W/m²]",
-             xlim=if(isTRUE(xTs)) c(Ts_range[1], Ts_range[length(Ts_range)]) else c(0, 75),
-             ylim=ylim,
-             #sub=paste("γ = ", gamma_c, "°", sep=""),
-             font.sub=2,
-             cex.sub=1.2,
-             type="l",
-             lty=beta_index,
-             lwd=lwd,
-             col=cols[beta_index])
-        
-        if(orientation_name == "South"){
-          legend("topright",
-                 title="β",
-                 paste(betas, "°" , sep=""),
-                 col=cols,
-                 cex=0.7, lwd=1,
-                 lty=1:length(betas))
-        }
-        
-      }else{
-        lines(x, y,
-              type="l",
-              col=cols[beta_index],
-              lty=beta_index,
-              lwd=lwd)
-      }
+      plot_end()
       
-      beta_index = beta_index + 1
+      gamma_c_index = gamma_c_index + 1
     }
-    
-    plot_end()
-    
-    gamma_c_index = gamma_c_index + 1
-    
   }
 }
 
@@ -142,7 +142,14 @@ plot_a = function(Ls, phi, tau, al, Ts_range, betas, gammas, xTs=TRUE, lwd=2){
 # Solar time range.
 Ts_range = seq(7, 17, 0.25)
 
-# Plot.
+# Plot for clear day.
 plot_a(Ls=Ls, phi=phi, tau=tau, al=al, Ts_range=Ts_range, betas=betas,
-       gammas=gamma_orientation_angles, xTs=TRUE)
+      xTs=TRUE)
 
+# # Plot for dusting day tau factor 1.
+# plot_a(Ls=Ls, phi=phi, tau=1, al=al, Ts_range=Ts_range, betas=betas,
+#        orientations_filter=c("South"), xTs=TRUE)
+# 
+# # Plot for very dusting day tau factor 2.
+# plot_a(Ls=Ls, phi=phi, tau=2, al=al, Ts_range=Ts_range, betas=betas,
+#        orientations_filter=c("South"), xTs=TRUE)
