@@ -48,23 +48,21 @@ Dust deposition induced losses do not perennially degrade the solar cells but fl
 \subsection{Predictions}
 \label{sec:PowerAndEnergyPredictions:Predictions}
 
-The power output $P$ generated from a photovoltaic system is measured in Watts (\si{\watt}) and is obtained from the global irradiance $G_{h}$ captured by its solar cells:
+The power output $P$ generated from a \ac{PV} system is obtained with \refEqn{eq:SA_power}. It is measured in Watts (\si{\watt}) and is a function of the global irradiance $G_{h}$ captured by solar cells:
 
 \begin{equation}
   \label{eq:SA_power}
   P = A \cdot \eta \cdot G_{h} \cdot PR
 \end{equation}
 
-where $A$ is the solar cell coverage area and $\eta$ the solar cell efficiency.
-
-The generated daily energy output $E$ is measured in Watt-hours (\si{\watt\hour}) and is obtained from the daily global insolation $H_{h}$ captured by solar cells:
+where $A$ is the solar cell coverage area and $\eta$ the solar cell efficiency. The generated daily energy output $E$ is measured in Watt-hours (\si{\watt\hour}) and is obtained from the daily global insolation $H_{h}$ captured by solar cells. Its expression is shown in \refEqn{eq:SA_energy}.
 
 \begin{equation}
   \label{eq:SA_energy}
   E = A \cdot \eta \cdot H_{h} \cdot PR
 \end{equation}
 
-Power and energy calculations for inclined \acp{SA} are obtained from $G_{\beta}$ and $I_{\beta}$. They are denoted as $P_{\beta}$ and $E_{\beta}$ respectively:
+Power and energy calculations for inclined \acp{SA} are obtained from $G_{\beta}$ and $I_{\beta}$. They are denoted as $P_{\beta}$ and $E_{\beta}$ respectively and are obtained with \refEqn{eq:SA_slope_power} and \refEqn{eq:SA_slope_energy}.
 
 \begin{equation}
   \label{eq:SA_slope_power}
