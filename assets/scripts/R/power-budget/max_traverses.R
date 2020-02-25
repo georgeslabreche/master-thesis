@@ -437,7 +437,7 @@ generate_plots = function(location_id, phi, beta_max, SA_area_targets, SA_area_a
                                                  Ls_seq=Ls_seq, Ls_clear_Sols=Ls_clear_Sols, Ls_dusty_Sols=Ls_dusty_Sols,
                                                  tau_clear=tau_clear, tau_dusty=tau_dusty,
                                                  draw_plots=draw_plots, verbose=verbose,
-                                                 ylim_energy=ylim_energy, ylim_traverse_time=ylim_traverse_duration)  
+                                                 ylim_energy=ylim_energy, ylim_traverse_time=ylim_traverse_duration)
   }
 
   
@@ -498,13 +498,12 @@ location_id = "IaniChaos"
 phi = -2
 beta_max = -10
 
-#SA_area_targets = c(2.7, 1.7)
 SA_area_targets = c(2.3, 1.5)
 SA_area_alts = c(2, 3, 4) # MUST be integers from 1 to 4 due to plot line color logic.
 
 ylim_energy = c(500, 3000)
 ylim_traverse_duration = c(0, 15)
-ylim_traverse_distance_gains = c (0, 50)
+ylim_traverse_distance_gains = c(0, 50)
 
 generate_plots(location_id=location_id, phi=phi, beta_max=beta_max,
                SA_area_targets=SA_area_targets, SA_area_alts=SA_area_alts, taus=taus,
@@ -520,14 +519,13 @@ location_id = "IsmeniusCavus"
 phi = 34
 beta_max = 10
 
-#SA_area_targets = c(4.8, 2.8)
 SA_area_targets = c(4.1, 2.4)
 SA_area_alts = c(2, 3, 4) # MUST be integers from 1 to 4 due to plot line color logic.
 
 
 ylim_energy = c(500, 3000)
 ylim_traverse_duration = c(0, 15)
-ylim_traverse_distance_gains = c (0, 35)
+ylim_traverse_distance_gains = c(0, 35)
 
 # Generate plots. 
 generate_plots(location_id=location_id, phi=phi, beta_max=beta_max,

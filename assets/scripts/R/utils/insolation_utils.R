@@ -1,7 +1,7 @@
 library(mars)
 library(here)
 
-data_dir = "mission-sites/data"
+data_dir = "data/mission-sites"
 
 # Cache for traverse power budgets.
 # So we don't have to rebuild the dataframe every time (it takes a while).
